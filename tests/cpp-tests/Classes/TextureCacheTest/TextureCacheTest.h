@@ -1,11 +1,12 @@
 #ifndef _TEXTURECACHE_TEST_H_
 #define _TEXTURECACHE_TEST_H_
 
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Label; }
+namespace cocos2d { class Texture2D; }
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-
-class TextureCacheTest : public Layer
+class TextureCacheTest : public cocos2d::Layer
 {
 public:
     TextureCacheTest();

@@ -2,6 +2,7 @@
 #define __PERFORMANCE_PARTICLE_3D_TEST_H__
 
 #include "PerformanceTest.h"
+namespace cocos2d { class Label; }
 
 class Particle3DMenuLayer : public PerformBasicLayer
 {
@@ -10,7 +11,7 @@ public:
     virtual void showCurrentTest();
 };
 
-class Particle3DMainScene : public Scene
+class Particle3DMainScene : public cocos2d::Scene
 {
 public:
     virtual void initWithSubTest(int subtest, int particles);
@@ -18,7 +19,7 @@ public:
 
     void step(float dt);
     void createParticleSystem(int idx);
-    void testNCallback(Ref* sender);
+    void testNCallback(cocos2d::Ref* sender);
     void updateQuantityLabel();
     int getSubTestNum() { return _subtestNumber; }
     int getParticlesNum() { return _quantityParticles; }

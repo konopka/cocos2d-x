@@ -23,47 +23,59 @@
  ****************************************************************************/
 
 #include "FlatBuffersSerialize.h"
-
-#include "base/ObjectFactory.h"
-#include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
-#include "CSParseBinary_generated.h"
-
-#include "WidgetReader/NodeReaderProtocol.h"
-#include "WidgetReader/NodeReaderDefine.h"
-
-#include "WidgetReader/NodeReader/NodeReader.h"
-#include "WidgetReader/SingleNodeReader/SingleNodeReader.h"
-#include "WidgetReader/SpriteReader/SpriteReader.h"
-#include "WidgetReader/ParticleReader/ParticleReader.h"
-#include "WidgetReader/GameMapReader/GameMapReader.h"
-#include "WidgetReader/ComAudioReader/ComAudioReader.h"
-#include "WidgetReader/ProjectNodeReader/ProjectNodeReader.h"
-
-#include "WidgetReader/ButtonReader/ButtonReader.h"
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi, atof
+#include <string.h>                     // for strcmp
+#include "CCFileUtils.h"                // for FileUtils
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, USING_NS_CC
+#include "CSParseBinary_generated.h"    // for CreateFrame, CreateOptions, etc
+#include "WidgetReader/ButtonReader/ButtonReader.h"  // for ButtonReader
 #include "WidgetReader/CheckBoxReader/CheckBoxReader.h"
+#include "WidgetReader/ComAudioReader/ComAudioReader.h"
+#include "WidgetReader/GameMapReader/GameMapReader.h"
 #include "WidgetReader/ImageViewReader/ImageViewReader.h"
-#include "WidgetReader/TextBMFontReader/TextBMFontReader.h"
-#include "WidgetReader/TextReader/TextReader.h"
-#include "WidgetReader/TextFieldReader/TextFieldReader.h"
-#include "WidgetReader/TextAtlasReader/TextAtlasReader.h"
-#include "WidgetReader/LoadingBarReader/LoadingBarReader.h"
-#include "WidgetReader/SliderReader/SliderReader.h"
-#include "WidgetReader/LayoutReader/LayoutReader.h"
-#include "WidgetReader/ScrollViewReader/ScrollViewReader.h"
-#include "WidgetReader/PageViewReader/PageViewReader.h"
+#include "WidgetReader/LayoutReader/LayoutReader.h"  // for LayoutReader
 #include "WidgetReader/ListViewReader/ListViewReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
-#include "flatbuffers/util.h"
-
-
+#include "WidgetReader/LoadingBarReader/LoadingBarReader.h"
+#include "WidgetReader/NodeReader/NodeReader.h"  // for NodeReader
+#include "WidgetReader/NodeReaderDefine.h"
+#include "WidgetReader/NodeReaderProtocol.h"  // for NodeReaderProtocol
+#include "WidgetReader/PageViewReader/PageViewReader.h"
+#include "WidgetReader/ParticleReader/ParticleReader.h"
+#include "WidgetReader/ProjectNodeReader/ProjectNodeReader.h"
+#include "WidgetReader/ScrollViewReader/ScrollViewReader.h"
+#include "WidgetReader/SingleNodeReader/SingleNodeReader.h"
+#include "WidgetReader/SliderReader/SliderReader.h"  // for SliderReader
+#include "WidgetReader/SpriteReader/SpriteReader.h"  // for SpriteReader
+#include "WidgetReader/TextAtlasReader/TextAtlasReader.h"
+#include "WidgetReader/TextBMFontReader/TextBMFontReader.h"
+#include "WidgetReader/TextFieldReader/TextFieldReader.h"
+#include "WidgetReader/TextReader/TextReader.h"  // for TextReader
+#include "base/CCRef.h"                 // for Ref
+#include "base/ObjectFactory.h"         // for ObjectFactory
+#include "base/ccTypes.h"               // for Color3B
+#include "flatbuffers/flatbuffers.h"    // for Offset, FlatBufferBuilder, etc
+#include "flatbuffers/util.h"           // for SaveFile
+#include "math/Vec2.h"                  // for Vec2
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute, etc
+#include "ui/UIButton.h"                // for Button
+#include "ui/UICheckBox.h"              // for CheckBox
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIListView.h"              // for ListView
+#include "ui/UILoadingBar.h"            // for LoadingBar
+#include "ui/UIPageView.h"              // for PageView
+#include "ui/UIScrollView.h"            // for ScrollView
+#include "ui/UISlider.h"                // for Slider
+#include "ui/UIText.h"                  // for Text
+#include "ui/UITextAtlas.h"             // for TextAtlas
+#include "ui/UITextBMFont.h"            // for TextBMFont
+#include "ui/UITextField.h"             // for TextField
+#include "ui/UIWidget.h"                // for Widget
 
 USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio;
-using namespace cocostudio::timeline;
 using namespace flatbuffers;
 
 namespace cocostudio {

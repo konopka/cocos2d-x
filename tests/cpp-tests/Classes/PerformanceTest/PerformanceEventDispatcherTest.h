@@ -4,7 +4,16 @@
 #ifndef __PERFORMANCE_EVENTDISPATCHER_TEST_H__
 #define __PERFORMANCE_EVENTDISPATCHER_TEST_H__
 
-#include "PerformanceTest.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class EventListener; }
+namespace cocos2d { class MenuItemFont; }
+namespace cocos2d { class MenuItemToggle; }
+namespace cocos2d { class Node; }
 
 class EventDispatcherBasicLayer : public PerformBasicLayer
 {
@@ -14,7 +23,7 @@ public:
     virtual void showCurrentTest();
 };
 
-class PerformanceEventDispatcherScene : public Scene
+class PerformanceEventDispatcherScene : public cocos2d::Scene
 {
 public:
     static const int TAG_TITLE = 100;
@@ -52,13 +61,13 @@ protected:
     int    _currentQuantityOfNodes;
     unsigned int _type;
     std::vector<TestFunction> _testFunctions;
-    std::vector<Node*> _nodes;
-    std::vector<EventListener*> _fixedPriorityListeners;
-    MenuItemFont* _increase;
-    MenuItemFont* _decrease;
-    MenuItemFont* _startItem;
-    MenuItemFont* _stopItem;
-    MenuItemToggle* _toggle;
+    std::vector<cocos2d::Node*> _nodes;
+    std::vector<cocos2d::EventListener*> _fixedPriorityListeners;
+    cocos2d::MenuItemFont* _increase;
+    cocos2d::MenuItemFont* _decrease;
+    cocos2d::MenuItemFont* _startItem;
+    cocos2d::MenuItemFont* _stopItem;
+    cocos2d::MenuItemToggle* _toggle;
 };
 
 class TouchEventDispatchingPerfTest : public PerformanceEventDispatcherScene
@@ -97,7 +106,7 @@ public:
     virtual std::string subtitle() const override;
     
 private:
-    std::vector<EventListener*> _customListeners;
+    std::vector<cocos2d::EventListener*> _customListeners;
 };
 
 void runEventDispatcherPerformanceTest();

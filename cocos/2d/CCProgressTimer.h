@@ -26,11 +26,20 @@ THE SOFTWARE.
 #ifndef __MISC_NODE_CCPROGRESS_TIMER_H__
 #define __MISC_NODE_CCPROGRESS_TIMER_H__
 
-#include "renderer/CCCustomCommand.h"
-#include "2d/CCNode.h"
+#include "platform/CCGL.h"				// for GLubyte
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B (ptr only), Tex2F, etc
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 NS_CC_BEGIN
 
+class Renderer;
 class Sprite;
 
 /**

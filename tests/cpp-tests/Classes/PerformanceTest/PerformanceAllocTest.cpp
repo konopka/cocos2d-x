@@ -2,8 +2,27 @@
  *
  */
 #include "PerformanceAllocTest.h"
+#include <stdio.h>                      // for snprintf, sprintf
+#include <stdlib.h>                     // for srand
+#include <functional>                   // for function
+#include <new>                          // for nothrow, operator new[], etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "PerformanceTest/../testBasic.h"  // for CL
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCProfiling.h"           // for ProfilingBeginTimingBlock, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
-#include <algorithm>
+using namespace cocos2d;
 
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS

@@ -1,5 +1,36 @@
 #include "UnitTest.h"
-#include "RefPtrTest.h"
+#include <math.h>                       // for fabs
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for srand
+#include <string.h>                     // for memset, memcmp
+#include <sys/types.h>                  // for ssize_t
+#include <time.h>                       // for time
+#include <algorithm>                    // for find, move, sort
+#include <functional>                   // for function
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator==, etc
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "RefPtrTest.h"                 // for RefPtrTest
+#include "UnitTest/../BaseTest.h"       // for BaseTest
+#include "UnitTest/../testBasic.h"      // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCMap.h"                 // for Map
+#include "base/CCValue.h"               // for Value, Value::Type, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccUTF8.h"                // for isCJKUnicode, etc
+#include "deprecated/CCString.h"        // for toString
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "math/MathUtil.h"				// for MathUtilC
+namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #if defined (__arm64__)

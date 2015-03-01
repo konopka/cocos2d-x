@@ -1,5 +1,24 @@
 #include "ParallaxTest.h"
-#include "../testResource.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_LevelMapTga, s_Power, etc
+#include "2d/CCActionInterval.h"        // for MoveBy, RepeatForever, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParallaxNode.h"          // for ParallaxNode
+#include "2d/CCTileMapAtlas.h"          // for TileMapAtlas
+#include "ParallaxTest/../BaseTest.h"   // for BaseTest
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"					// for Vec2::operator+, etc
+#include "renderer/CCTexture2D.h"       // for Texture2D
+
+using namespace cocos2d;
 
 enum 
 {

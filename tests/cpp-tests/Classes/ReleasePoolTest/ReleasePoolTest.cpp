@@ -1,4 +1,15 @@
 #include "ReleasePoolTest.h"
+#include <assert.h>                     // for assert
+#include <stdio.h>                      // for snprintf
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCLabel.h"                 // for Label
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCAutoreleasePool.h"     // for AutoreleasePool, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 

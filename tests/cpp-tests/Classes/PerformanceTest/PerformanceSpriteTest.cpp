@@ -26,8 +26,33 @@
  ****************************************************************************/
 
 #include "PerformanceSpriteTest.h"
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for rand, srand
+#include <string.h>                     // for strcat
+#include <cmath>                        // for roundf
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, Ref
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::GRAY
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
-#include <cmath>
+using namespace cocos2d;
 
 #if defined(_MSC_VER) && _MSC_VER<1800
 #define CC_ROUND(__f__) __f__

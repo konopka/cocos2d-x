@@ -1,8 +1,11 @@
 #ifndef _TOUCHES_TEST__H_
 #define _TOUCHES_TEST__H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCVector.h"              // for Vector
+#include "math/Vec2.h"                  // for Vec2
 
 USING_NS_CC;
 

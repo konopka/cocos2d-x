@@ -1,9 +1,13 @@
 #ifndef __MOUSE_TEST_H_
 #define __MOUSE_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
 #include "../BaseTest.h"
+
+namespace cocos2d { class Event; }
+namespace cocos2d { class EventListenerMouse; }
+namespace cocos2d { class Label; }
 
 class BaseMouseTest : public BaseTest
 {
@@ -11,9 +15,9 @@ public:
     BaseMouseTest(void);
     virtual ~BaseMouseTest(void);
     
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
     
     // overrides
     virtual std::string title() const override;
@@ -34,18 +38,18 @@ public:
     MouseEventTest();
     ~MouseEventTest();
 
-    void onMouseDown(Event* event);
-    void onMouseUp(Event* event);
-    void onMouseMove(Event* event);
-    void onMouseScroll(Event* event);
-    
+    void onMouseDown(cocos2d::Event* event);
+    void onMouseUp(cocos2d::Event* event);
+    void onMouseMove(cocos2d::Event* event);
+    void onMouseScroll(cocos2d::Event* event);
+
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
 private:
-    Label*   _labelAction;
-    Label*   _labelPosition;
-    EventListenerMouse* _mouseListener;
+	cocos2d::Label*   _labelAction;
+	cocos2d::Label*   _labelPosition;
+	cocos2d::EventListenerMouse* _mouseListener;
 };
 
 class HideMouseTest : public BaseMouseTest
@@ -59,7 +63,7 @@ public:
     virtual std::string subtitle() const override;
     
 private:
-    EventListenerMouse* _lis;
+    cocos2d::EventListenerMouse* _lis;
 };
 
 #endif

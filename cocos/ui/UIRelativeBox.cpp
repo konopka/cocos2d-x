@@ -23,8 +23,11 @@
  ****************************************************************************/
 
 #include "ui/UIRelativeBox.h"
+#include <new>                          // for nothrow, operator new
 
 NS_CC_BEGIN
+
+class Size;
 
 namespace ui{
     

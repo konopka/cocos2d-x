@@ -1,11 +1,12 @@
 #ifndef __DATAVISITOR_TEST_H__
 #define __DATAVISITOR_TEST_H__
 
-#include "../testBasic.h"
+#include <string>                       // for string
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
 
-#include <string>
-
-class PrettyPrinterDemo : public Layer
+class PrettyPrinterDemo : public cocos2d::Layer
 {
 public:
     virtual std::string title() const;

@@ -30,11 +30,22 @@ extern "C" {
 #include "lua.h"
 }
 
-#include "cocos2d.h"
-#include "base/CCScriptSupport.h"
-#include "CCLuaStack.h"
-#include "CCLuaValue.h"
-#include "cocos2d/LuaScriptHandlerMgr.h"
+#include <stddef.h>                     // for NULL
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCScriptSupport.h"       // for lua_State, etc
+#include "cocos2d/LuaScriptHandlerMgr.h"  // for ScriptHandlerMgr, etc
+namespace cocos2d { class Acceleration; }
+namespace cocos2d { class CallFunc; }
+namespace cocos2d { class Layer; }
+namespace cocos2d { class LuaStack; }
+namespace cocos2d { class MenuItem; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
+namespace cocos2d { class __NotificationCenter; }
+namespace cocos2d { class __Set; }
 
 /**
  * @addtogroup lua

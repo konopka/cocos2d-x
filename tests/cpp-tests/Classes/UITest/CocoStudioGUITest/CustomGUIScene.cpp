@@ -1,10 +1,22 @@
 
 
 #include "CustomGUIScene.h"
-#include "CocoStudioGUITest.h"
-#include "CustomTest/CustomImageTest/CustomImageTest.h"
-#include "CustomTest/CustomParticleWidgetTest/CustomParticleWidgetTest.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "CocoStudioGUITest.h"          // for CocoStudioGUITestScene
 #include "CustomTest/CustomWidgetCallbackBindTest/CustomWidgetCallbackBindTest.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 
 enum
@@ -128,7 +140,7 @@ void CustomGUITestMainLayer::onTouchesMoved(const std::vector<Touch *> &touches,
 
 void CustomGUITestScene::onEnter()
 {
-    CCScene::onEnter();
+    Scene::onEnter();
     
     auto label = Label::createWithTTF("Back", "fonts/arial.ttf", 20);
     //#endif
@@ -148,7 +160,7 @@ void CustomGUITestScene::runThisTest()
     addChild(pLayer);
     pLayer->release();
     
-    CCDirector::getInstance()->replaceScene(this);
+    Director::getInstance()->replaceScene(this);
 }
 
 void CustomGUITestScene::BackCallback(Ref* pSender)

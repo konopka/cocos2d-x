@@ -31,6 +31,7 @@
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 
 #include "UIEditBoxImpl.h"
+#include "2d/CCLabel.h"
 
 NS_CC_BEGIN
 

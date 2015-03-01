@@ -25,7 +25,9 @@
 #ifndef __TestCpp__UIScrollViewTest_Editor__
 #define __TestCpp__UIScrollViewTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIScrollViewTest_Vertical_Editor : public UIScene_Editor
 {
@@ -37,7 +39,7 @@ public:
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIScrollViewTest_Vertical_Editor)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 
@@ -51,7 +53,7 @@ public:
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIScrollViewTest_Horizontal_Editor)
-    Text* _displayValueLabel;
+	cocos2d::ui::Text* _displayValueLabel;
 };
 
 
@@ -65,7 +67,7 @@ public:
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIScrollViewTest_Both_Editor)
-    Text* _displayValueLabel;
+	cocos2d::ui::Text* _displayValueLabel;
 };
 
 
@@ -78,7 +80,7 @@ public:
  
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection_Editor)
-    Text* _displayValueLabel;
+	cocos2d::ui::Text* _displayValueLabel;
 };
 
 
@@ -91,7 +93,7 @@ public:
     
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection_Bounce_Editor)
-    Text* _displayValueLabel;
+	cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UIScrollViewTest_Editor__) */

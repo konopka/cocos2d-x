@@ -23,7 +23,10 @@
  *
  */
 
-#include "../CCControlScene.h"
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class ControlSliderTest : public ControlScene
 {
@@ -31,9 +34,9 @@ public:
     ControlSliderTest();
     virtual ~ControlSliderTest();
     bool init();
-    void valueChanged(Ref *sender, Control::EventType controlEvent);
+    void valueChanged(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
 protected:
-    Label* _displayValueLabel;
+	cocos2d::Label* _displayValueLabel;
     CONTROL_SCENE_CREATE_FUNC(ControlSliderTest)
 };
 

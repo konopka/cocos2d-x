@@ -1,9 +1,28 @@
 
 #include "UIListViewTest_Editor.h"
-#include "VisibleRect.h"
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenuItem.h"              // for MenuItemToggle
+#include "2d/CCNode.h"                  // for Node
+#include "UITest/CocoStudioGUITest/UIListViewTest/../UIScene_Editor.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color4B
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UICheckBox.h"              // for CheckBox
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget
 
-
-// UIListViewTest_Vertical_Editor
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 UIListViewTest_Vertical_Editor::UIListViewTest_Vertical_Editor()
 : _displayValueLabel(nullptr)

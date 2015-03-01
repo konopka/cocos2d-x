@@ -5,7 +5,36 @@
 //
 
 #include "ChipmunkTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemImage
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "CCDevice.h"                   // for Device
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerAcceleration.h"
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Acceleration
+#include "chipmunk.h"                   // for cpMomentForPoly
+//#include "chipmunk_types.h"             // for cpVect
+//#include "cpBody.h"                     // for cpBodyNew, cpBody
+//#include "cpPolyShape.h"                // for cpPolyShapeNew
+//#include "cpShape.h"                    // for cpSegmentShapeNew, cpShape, etc
+//#include "cpSpace.h"                    // for cpSpace, cpSpaceAddBody, etc
+//#include "cpVect.h"                     // for cpv, cpvzero
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Vec2.h"					// for Vec2::operator*
+#include "physics-nodes/CCPhysicsDebugNode.h"  // for PhysicsDebugNode
+#include "physics-nodes/CCPhysicsSprite.h"  // for PhysicsSprite
 
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 enum {
     kTagParentNode = 1,

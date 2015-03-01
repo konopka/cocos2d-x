@@ -1,10 +1,20 @@
 #ifndef _SCHEDULER_TEST_H_
 #define _SCHEDULER_TEST_H_
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <set>                          // for set
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class ActionManager; }
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Scheduler; }
+namespace cocos2d { class Touch; }
+namespace cocos2d { namespace extension { class ControlSlider; } }
 
 USING_NS_CC_EXT;
 
@@ -16,9 +26,9 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void backCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void restartCallback(Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
 };
 
 class SchedulerAutoremove : public SchedulerTestLayer
@@ -203,7 +213,7 @@ public:
     void stopUpdate(float dt);
 };
 
-class TestNode : public Node
+class TestNode : public cocos2d::Node
 {
 public:
     CREATE_FUNC(TestNode);
@@ -251,9 +261,9 @@ public:
     void onExit() override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    ControlSlider* sliderCtl();
-    void sliderAction(Ref* sender, Control::EventType controlEvent);
-    ControlSlider* _sliderCtl;
+	cocos2d::extension::ControlSlider* sliderCtl();
+    void sliderAction(cocos2d::Ref* sender, Control::EventType controlEvent);
+	cocos2d::extension::ControlSlider* _sliderCtl;
 };
 
 
@@ -266,15 +276,15 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     void onEnter() override;
-    ControlSlider* sliderCtl();
-    void sliderAction(Ref* sender, Control::EventType controlEvent);
-    Scheduler *sched1;
-    Scheduler *sched2;
-    ActionManager *actionManager1;
-    ActionManager *actionManager2;
+	cocos2d::extension::ControlSlider* sliderCtl();
+    void sliderAction(cocos2d::Ref* sender, Control::EventType controlEvent);
+    cocos2d::Scheduler *sched1;
+    cocos2d::Scheduler *sched2;
+    cocos2d::ActionManager *actionManager1;
+	cocos2d::ActionManager *actionManager2;
 
-    ControlSlider    *sliderCtl1;
-    ControlSlider    *sliderCtl2;
+    cocos2d::extension::ControlSlider *sliderCtl1;
+    cocos2d::extension::ControlSlider *sliderCtl2;
 };
 
 class SchedulerIssue2268 : public SchedulerTestLayer
@@ -319,7 +329,7 @@ public:
     
     virtual void update(float dt) override;
     
-    bool onTouchBegan(Touch* touch, Event* event) override;
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event) override;
 };
 
 class SchedulerTestScene : public TestScene

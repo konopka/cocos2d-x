@@ -8,6 +8,23 @@
 //
 
 #include "Bug-1159.h"
+#include <functional>                   // for _Bind
+#include "2d/CCActionInterval.h"        // for MoveTo, RepeatForever, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCTransitionPageTurn.h"    // for TransitionPageTurn
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color4B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 Scene* Bug1159Layer::scene()
 {

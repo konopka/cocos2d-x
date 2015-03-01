@@ -1,8 +1,10 @@
 #ifndef _EFFECTS_TEST_H_
 #define _EFFECTS_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class NodeGrid; }
+namespace cocos2d { class Ref; }
 
 class EffectTestScene : public TestScene
 {
@@ -14,7 +16,7 @@ class TextLayer : public BaseTest
 {
 protected:
     //UxString    _title;
-    NodeGrid* _gridNodeTarget;
+    cocos2d::NodeGrid* _gridNodeTarget;
 public:
     TextLayer(void);
     ~TextLayer(void);
@@ -23,9 +25,9 @@ public:
 
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
     void newScene();
 

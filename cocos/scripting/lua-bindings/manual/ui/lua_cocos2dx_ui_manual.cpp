@@ -22,19 +22,33 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_ui_manual.hpp"
-#include "lua_cocos2dx_ui_auto.hpp"
+#include "lua_cocos2dx_ui_auto.hpp"     // for register_all_cocos2dx_ui
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "lua_cocos2dx_experimental_video_auto.hpp"
 #include "lua_cocos2dx_experimental_video_manual.hpp"
 #endif
-#include "cocos2d.h"
-#include "tolua_fix.h"
-#include "LuaBasicConversions.h"
-#include "LuaScriptHandlerMgr.h"
-#include "CCLuaValue.h"
-#include "ui/CocosGUI.h"
-#include "CCLuaEngine.h"
+#include <stddef.h>                     // for NULL
+#include <functional>                   // for function
+#include "CCEventListenerFocus.h"       // for EventListenerFocus
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CCScriptSupport.h"            // for lua_State, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "UICheckBox.h"                 // for CheckBox, etc
+#include "UIEditBox/UIEditBox.h"        // for EditBox
+#include "UILayoutParameter.h"          // for Margin, LayoutParameter
+#include "UIListView.h"                 // for ListView, etc
+#include "UIPageView.h"                 // for PageView, etc
+#include "UIScrollView.h"               // for ScrollView, etc
+#include "UISlider.h"                   // for Slider, Slider::EventType
+#include "UITextField.h"                // for TextField, etc
+#include "UIWidget.h"                   // for Widget, etc
+#include "lauxlib.h"                    // for luaL_error
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
+using namespace cocos2d;
 using namespace ui;
 
 static int handleUIEvent(int handler, cocos2d::Ref* sender, int eventType)

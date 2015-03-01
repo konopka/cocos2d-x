@@ -1,4 +1,12 @@
 #include "QuestionContainerSprite.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color3B, Color3B::BLUE, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 #define kLabelTag
 

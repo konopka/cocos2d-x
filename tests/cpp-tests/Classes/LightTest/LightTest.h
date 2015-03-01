@@ -25,8 +25,13 @@
 #ifndef _LIGHT_TEST_H_
 #define _LIGHT_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLight.h"                 // for AmbientLight (ptr only), etc
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class LightTest : public BaseTest
 {
@@ -38,16 +43,16 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    virtual void restartCallback(Ref* sender) override;
-    virtual void nextCallback(Ref* sender) override;
-    virtual void backCallback(Ref* sender) override;
+    virtual void restartCallback(cocos2d::Ref* sender) override;
+    virtual void nextCallback(cocos2d::Ref* sender) override;
+    virtual void backCallback(cocos2d::Ref* sender) override;
 
     virtual void onEnter() override;
     virtual void onExit() override;
 
     virtual void update(float delta) override;
 
-    void SwitchLight(Ref* sender, LightType lightType);
+    void SwitchLight(cocos2d::Ref* sender, cocos2d::LightType lightType);
 
 private:
 
@@ -56,15 +61,15 @@ private:
 
 private:
 
-    AmbientLight *_ambientLight;
-    DirectionLight *_directionalLight;
-    PointLight *_pointLight;
-    SpotLight *_spotLight;
+    cocos2d::AmbientLight *_ambientLight;
+    cocos2d::DirectionLight *_directionalLight;
+    cocos2d::PointLight *_pointLight;
+    cocos2d::SpotLight *_spotLight;
 
-    Label *_ambientLightLabel;
-    Label *_directionalLightLabel;
-    Label *_pointLightLabel;
-    Label *_spotLightLabel;
+    cocos2d::Label *_ambientLightLabel;
+    cocos2d::Label *_directionalLightLabel;
+    cocos2d::Label *_pointLightLabel;
+    cocos2d::Label *_spotLightLabel;
 };
 
 class LightTestScene : public TestScene

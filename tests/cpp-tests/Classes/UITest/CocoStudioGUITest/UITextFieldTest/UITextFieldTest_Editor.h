@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UITextFieldTest_Editor__
 #define __TestCpp__UITextFieldTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+#include "ui/UITextField.h"             // for TextField, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UITextFieldTest_Editor : public UIScene_Editor
 {
@@ -33,12 +36,12 @@ public:
     UITextFieldTest_Editor();
     ~UITextFieldTest_Editor();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
-    virtual void switchLoadMethod(Ref* pSender);
+    void textFieldEvent(cocos2d::Ref* pSender, cocos2d::ui::TextField::EventType type);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UITextFieldTest_Editor)
-    Text* _displayValueLabel;
+	cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UITextFieldTest_Editor__) */

@@ -26,9 +26,18 @@
 #ifndef _NODE_TEST_H_
 #define _NODE_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "base/CCDirector.h"            // for Director, etc
+#include "math/CCGeometry.h"            // for Size
+namespace cocos2d { class Event; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 class TestCocosNodeDemo : public BaseTest
 {
@@ -38,16 +47,16 @@ public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
 protected:
     TestCocosNodeDemo();
     virtual ~TestCocosNodeDemo();
     
 protected:
-    Director::Projection _preProjection;
+	cocos2d::Director::Projection _preProjection;
 };
 
 class Test2 : public TestCocosNodeDemo
@@ -99,7 +108,7 @@ class StressTest1 : public TestCocosNodeDemo
 public:
     CREATE_FUNC(StressTest1);
     void shouldNotCrash(float dt);
-    void removeMe(Node* node);
+    void removeMe(cocos2d::Node* node);
     virtual std::string subtitle() const override;
 
 protected:
@@ -214,8 +223,8 @@ public:
 protected:
     CameraTest1();
 
-    Sprite *_sprite1;
-    Sprite *_sprite2;
+    cocos2d::Sprite *_sprite1;
+    cocos2d::Sprite *_sprite2;
 };
 
 class CameraTest2 : public TestCocosNodeDemo
@@ -230,15 +239,15 @@ public:
 protected:
     CameraTest2();
 
-    Sprite *_sprite1;
-    Sprite *_sprite2;
+    cocos2d::Sprite *_sprite1;
+    cocos2d::Sprite *_sprite2;
 };
 
 class ConvertToNode : public TestCocosNodeDemo
 {
 public:
     CREATE_FUNC(ConvertToNode);
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event *event);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
@@ -279,7 +288,7 @@ public:
 
 protected:
     NodeGlobalZValueTest();
-    Sprite *_sprite;
+	cocos2d::Sprite *_sprite;
 };
 
 class NodeNormalizedPositionTest1 : public TestCocosNodeDemo
@@ -304,7 +313,7 @@ protected:
     NodeNormalizedPositionTest2();
 
     void update(float dt) override;
-    Size _copyContentSize;
+    cocos2d::Size _copyContentSize;
     float _accum;
 };
 
@@ -320,7 +329,7 @@ protected:
     
     void update(float dt) override;
     float _accum;
-    Sprite *sprite;
+	cocos2d::Sprite *sprite;
 };
 
 class NodeNameTest : public TestCocosNodeDemo

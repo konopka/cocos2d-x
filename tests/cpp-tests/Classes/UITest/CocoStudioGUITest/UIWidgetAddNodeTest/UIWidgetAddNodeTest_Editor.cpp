@@ -1,7 +1,25 @@
 
 
 #include "UIWidgetAddNodeTest_Editor.h"
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenuItem.h"              // for MenuItemToggle
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "UITest/CocoStudioGUITest/UIWidgetAddNodeTest/../UIScene_Editor.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UIWidgetAddNodeTest_Editor
 

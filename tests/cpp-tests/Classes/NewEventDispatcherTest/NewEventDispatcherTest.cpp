@@ -7,7 +7,46 @@
 //
 
 #include "NewEventDispatcherTest.h"
-#include "testResource.h"
+#include <stdio.h>                      // for snprintf, sprintf
+#include <functional>                   // for _Bind, function, bind, _1
+#include <memory>                       // for shared_ptr, __shared_ptr
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for DelayTime, Sequence
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCDevice.h"                   // for Device
+#include "NewEventDispatcherTest/../BaseTest.h"  // for BaseTest
+#include "NewEventDispatcherTest/../testBasic.h"  // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCAutoreleasePool.h"     // for AutoreleasePool
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCEvent.h"               // for Event
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCEventListener.h"       // for EventListener, etc
+#include "base/CCEventListenerAcceleration.h"
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "base/CCEventListenerKeyboard.h"  // for EventListenerKeyboard
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventType.h"           // for EVENT_COME_TO_BACKGROUND
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccConfig.h"
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Acceleration, Color3B, etc
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"					// for Vec2::operator+
+#include "testResource.h"               // for s_Ball
+
+using namespace cocos2d;
 
 namespace {
     

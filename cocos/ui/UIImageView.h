@@ -25,14 +25,21 @@ THE SOFTWARE.
 #ifndef __UIIMAGEVIEW_H__
 #define __UIIMAGEVIEW_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::TextureResType, etc
 
 /**
  * @addtogroup ui
  * @{
  */
 NS_CC_BEGIN
+
+class Node;
 
 namespace ui {
     class Scale9Sprite;

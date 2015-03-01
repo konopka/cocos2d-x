@@ -7,9 +7,15 @@
 #ifndef __NewRendererTest_H_
 #define __NewRendererTest_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
 #define kTagSpriteBatchNode 100
 #define kTagClipperNode     101
@@ -29,9 +35,9 @@ public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
 protected:
     MultiSceneTest();
@@ -49,7 +55,7 @@ public:
 
     void createSpriteTest();
     void createNewSpriteTest();
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
 
 protected:
     NewSpriteTest();
@@ -77,8 +83,8 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
-    void addNewSpriteWithCoords(Vec2 p);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
+    void addNewSpriteWithCoords(cocos2d::Vec2 p);
 
 protected:
     NewSpriteBatchTest();
@@ -93,16 +99,16 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 
 protected:
     NewClippingNodeTest();
     virtual ~NewClippingNodeTest();
 
     bool _scrolling;
-    Vec2 _lastPoint;
+	cocos2d::Vec2 _lastPoint;
 };
 
 class NewDrawNodeTest : public MultiSceneTest
@@ -129,9 +135,9 @@ public:
 protected:
     NewCullingTest();
     virtual ~NewCullingTest();
-    bool onTouchBegan(Touch* touch, Event  *event);
-    void onTouchMoved(Touch* touch, Event  *event);
-    Vec2 _lastPos;
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event  *event);
+    void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event  *event);
+	cocos2d::Vec2 _lastPos;
 };
 
 class VBOFullTest : public MultiSceneTest
@@ -158,7 +164,7 @@ protected:
     CaptureScreenTest();
     ~CaptureScreenTest();
 
-    void onCaptured(Ref*);
+    void onCaptured(cocos2d::Ref*);
     void afterCaptured(bool succeed, const std::string& outputFile);
 
     std::string _filename;

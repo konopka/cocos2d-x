@@ -25,14 +25,23 @@ THE SOFTWARE.
 #ifndef __UICHECKBOX_H__
 #define __UICHECKBOX_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "math/CCGeometry.h"            // for Size
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::TextureResType, etc
 
 /**
  * @addtogroup ui
  * @{
  */
 NS_CC_BEGIN
+
+class Node;
 class Sprite;
 
 namespace ui {

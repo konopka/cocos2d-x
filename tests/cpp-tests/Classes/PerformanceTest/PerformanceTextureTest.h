@@ -1,7 +1,9 @@
 #ifndef __PERFORMANCE_TEXTURE_TEST_H__
 #define __PERFORMANCE_TEXTURE_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class Scene; }
 
 class TextureMenuLayer : public PerformBasicLayer
 {
@@ -32,7 +34,7 @@ public:
     virtual std::string subtitle() const override;
     void performTestsPNG(const char* filename);
 
-    static Scene* scene();
+    static cocos2d::Scene* scene();
 };
 
 void runTextureTest();

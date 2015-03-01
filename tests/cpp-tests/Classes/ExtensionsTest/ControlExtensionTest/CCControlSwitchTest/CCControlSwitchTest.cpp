@@ -25,6 +25,22 @@
  */
 
 #include "CCControlSwitchTest.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE
+#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "ExtensionsTest/ControlExtensionTest/CCControlSwitchTest/../CCControlScene.h"
+#include "GUI/CCControlExtension/CCControlSwitch.h"  // for ControlSwitch
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
+using namespace cocos2d::extension;
 
 ControlSwitchTest::~ControlSwitchTest()
 {
@@ -44,7 +60,7 @@ bool ControlSwitchTest::init()
         double layer_width = 0;
         
         // Add the black background for the text
-        auto background = Scale9Sprite::create("extensions/buttonBackground.png");
+        auto background = cocos2d::ui::Scale9Sprite::create("extensions/buttonBackground.png");
         background->setContentSize(Size(80, 50));
         background->setPosition(layer_width + background->getContentSize().width / 2.0f, 0);
         layer->addChild(background);

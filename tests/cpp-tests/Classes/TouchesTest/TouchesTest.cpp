@@ -1,7 +1,13 @@
 #include "TouchesTest.h"
-#include "Ball.h"
-#include "Paddle.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_Ball, s_Paddle
+#include "Ball.h"                       // for Ball
+#include "Paddle.h"                     // for Paddle
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "math/Vec2.h"					// for Vec2::operator*
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 enum tagPlayer 
 {

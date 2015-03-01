@@ -43,17 +43,28 @@ THE SOFTWARE.
 //
 
 #include "2d/CCParticleSystem.h"
-
-#include <string>
-
-#include "2d/CCParticleBatchNode.h"
-#include "renderer/CCTextureAtlas.h"
-#include "base/base64.h"
-#include "base/ZipUtils.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "deprecated/CCString.h"
-#include "platform/CCFileUtils.h"
+#include "platform/CCGL.h"				// for GL_ONE, GL_SRC_ALPHA
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for free, calloc
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string, allocator, etc
+#include <unordered_map>
+#include "2d/CCParticleBatchNode.h"     // for ParticleBatchNode
+#include "CCImage.h"                    // for Image
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/ZipUtils.h"              // for ZipUtils
+#include "base/base64.h"                // for base64Decode
+#include "base/ccMacros.h"              // for CCASSERT, CCRANDOM_MINUS1_1, etc
+#include "deprecated/CCString.h"		// for CCLOGWARN
+#include "CCStdC.h"						// for MAX, cosf, sinf
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "math/Vec3.h"                  // for Vec3
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 using namespace std;
 

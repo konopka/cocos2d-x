@@ -26,7 +26,12 @@
 #ifndef __CCCONTROLSTEPPERTEST_H__
 #define __CCCONTROLSTEPPERTEST_H__
 
-#include "../CCControlScene.h"
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace extension { class ControlStepper; } }
 
 class ControlStepperTest : public ControlScene
 {
@@ -35,12 +40,12 @@ public:
     virtual ~ControlStepperTest();
     bool init();
     /** Creates and returns a new ControlStepper. */
-    ControlStepper* makeControlStepper();
+    cocos2d::extension::ControlStepper* makeControlStepper();
 
     /** Callback for the change value. */
-    void valueChanged(Ref *sender, Control::EventType controlEvent);
+    void valueChanged(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
 protected:
-    CC_SYNTHESIZE_RETAIN(Label*, _displayValueLabel, DisplayValueLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label*, _displayValueLabel, DisplayValueLabel)
     CONTROL_SCENE_CREATE_FUNC(ControlStepperTest)
 };
 

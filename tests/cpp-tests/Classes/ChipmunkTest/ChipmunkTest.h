@@ -4,14 +4,21 @@
 #ifndef __CHIPMUNKTEST_H__
 #define __CHIPMUNKTEST_H__
 
-#include "cocos2d.h"
-#include "chipmunk.h"
-#include "../testBasic.h"
-#include "extensions/cocos-ext.h"
+#include <vector>                       // for vector
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Acceleration; }
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Texture2D; }
+namespace cocos2d { class Touch; }
+namespace cocos2d { namespace extension { class PhysicsDebugNode; } }
+struct cpShape;
+struct cpSpace;
 
-USING_NS_CC_EXT;
-
-class ChipmunkTestLayer : public Layer
+class ChipmunkTestLayer : public cocos2d::Layer
 {
 public:
     ChipmunkTestLayer();
@@ -19,18 +26,18 @@ public:
     void onEnter() override;
     void initPhysics();
     void createResetButton();
-    void reset(Ref* sender);
+    void reset(cocos2d::Ref* sender);
 
     void addNewSpriteAtPosition(cocos2d::Vec2 p);
     void update(float dt) override;
-    void toggleDebugCallback(Ref* sender);
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
-    virtual void onAcceleration(Acceleration* acc, Event* event) override;
+    void toggleDebugCallback(cocos2d::Ref* sender);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
+    virtual void onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event) override;
 
 private:
-    Texture2D* _spriteTexture; // weak ref
+    cocos2d::Texture2D* _spriteTexture; // weak ref
 #if CC_ENABLE_CHIPMUNK_INTEGRATION    
-    PhysicsDebugNode* _debugLayer; // weak ref
+    cocos2d::extension::PhysicsDebugNode* _debugLayer; // weak ref
 #endif
     cpSpace* _space; // strong ref
     cpShape* _walls[4];

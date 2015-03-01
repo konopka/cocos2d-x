@@ -26,19 +26,32 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTransition.h"
-#include "2d/CCActionInterval.h"
-#include "2d/CCActionInstant.h"
-#include "2d/CCActionEase.h"
-#include "2d/CCActionCamera.h"
-#include "2d/CCActionTiledGrid.h"
-#include "2d/CCActionGrid.h"
-#include "2d/CCLayer.h"
-#include "2d/CCRenderTexture.h"
-#include "2d/CCNodeGrid.h"
-#include "base/CCDirector.h"
-#include "base/CCEventDispatcher.h"
+#include "platform/CCGL.h"				// for GL_DEPTH24_STENCIL8, GL_ONE, etc
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionCamera.h"          // for OrbitCamera
+#include "2d/CCActionEase.h"            // for EaseOut, EaseInOut
+#include "2d/CCActionGrid.h"            // for StopGrid
+#include "2d/CCActionInstant.h"         // for CallFunc, Show, Hide
+#include "2d/CCActionInterval.h"        // for Sequence, ActionInterval, etc
+#include "2d/CCActionTiledGrid.h"       // for FadeOutBLTiles, etc
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "2d/CCRenderTexture.h"         // for RenderTexture
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "base/ccMacros.h"              // for CC_CALLBACK_0, CCASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 NS_CC_BEGIN
+
+class Action;
+class Renderer;
 
 const unsigned int kSceneFade = 0xFADEFADE;
 

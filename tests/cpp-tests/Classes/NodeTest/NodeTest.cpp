@@ -24,8 +24,45 @@
  ****************************************************************************/
 
 #include "NodeTest.h"
-#include <regex>
-#include "../testResource.h"
+#include "platform/CCGL.h"				// for glVertexAttribPointer, etc
+#include <stddef.h>                     // for offsetof, size_t
+#include <stdint.h>                     // for uint32_t
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathSister1, s_back3, etc
+#include "2d/CCActionCamera.h"          // for OrbitCamera
+#include "2d/CCActionEase.h"            // for EaseInOut
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleExamples.h"      // for ParticleFire, ParticleSun
+#include "2d/CCSprite.h"                // for Sprite
+#include "NodeTest/../BaseTest.h"       // for BaseTest
+#include "NodeTest/../testBasic.h"      // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCAssert, CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for V3F_C4B_T2F, Color3B, etc
+#include "base/ccUtils.h"               // for findChildren
+#include "CCStdC.h"         // for sinf
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO, clampf
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccGLStateCache.h"    // for bindTexture2D, blendFunc, etc
+
+using namespace cocos2d;
 
 enum 
 {

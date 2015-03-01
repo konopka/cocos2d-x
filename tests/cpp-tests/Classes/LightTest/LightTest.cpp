@@ -1,4 +1,29 @@
 #include "LightTest.h"
+#include "platform/CCGL.h"				// for GLfloat
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include "2d/CCActionInterval.h"        // for TintTo, RepeatForever, etc
+#include "2d/CCCamera.h"                // for Camera, CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "3d/CCAnimate3D.h"             // for Animate3D
+#include "3d/CCAnimation3D.h"           // for Animation3D
+#include "3d/CCAttachNode.h"            // for AttachNode
+#include "3d/CCSprite3D.h"              // for Sprite3D
+#include "LightTest/../BaseTest.h"      // for BaseTest
+#include "LightTest/../testBasic.h"     // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "CCStdC.h"         // for cosf, sinf
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_TOP_LEFT, etc
+#include "math/Vec3.h"                  // for Vec3
+
+using namespace cocos2d;
 
 static int sceneIdx = -1;
 

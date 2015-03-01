@@ -1,6 +1,14 @@
 #include "UserDefaultTest.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCLabel.h"                 // for Label
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "base/CCDirector.h"            // for Director
+#include "base/CCUserDefault.h"         // for UserDefault
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 // enable log
 #define COCOS2D_DEBUG 1

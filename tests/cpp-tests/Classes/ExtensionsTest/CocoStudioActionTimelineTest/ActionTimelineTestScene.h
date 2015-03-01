@@ -1,13 +1,16 @@
 #ifndef __ANIMATION_TEST_SCENE_H__
 #define __ANIMATION_TEST_SCENE_H__
 
-#include "cocos2d.h"
-#include "../../VisibleRect.h"
-#include "../../testBasic.h"
-#include "cocostudio/CocoStudio.h"
-
-using namespace cocostudio::timeline;
-
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../../testBasic.h"            // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Event; }
+namespace cocos2d { class MenuItemImage; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
+namespace cocostudio { namespace timeline { class ActionTimeline; } }
+namespace cocostudio { namespace timeline { class Frame; } }
 
 class ActionTimelineTestScene : public TestScene
 {
@@ -17,7 +20,7 @@ public:
     virtual void runThisTest();
 
     // The CallBack for back to the main menu scene
-    virtual void MainMenuCallback(Ref* pSender);
+    virtual void MainMenuCallback(cocos2d::Ref* pSender);
 };
 
 enum {
@@ -33,24 +36,24 @@ enum {
     TEST_ANIMATION_LAYER_COUNT
 };
 
-class ActionTimelineTestLayer : public Layer
+class ActionTimelineTestLayer : public cocos2d::Layer
 {
 public:
     virtual std::string title() const;
     virtual std::string subtitle() const;
 
-    virtual void restartCallback(Ref* pSender);
-    virtual void nextCallback(Ref* pSender);
-    virtual void backCallback(Ref* pSender);
+    virtual void restartCallback(cocos2d::Ref* pSender);
+    virtual void nextCallback(cocos2d::Ref* pSender);
+    virtual void backCallback(cocos2d::Ref* pSender);
 
     // overrides
     virtual void onEnter() override;
     virtual void onExit() override;
 
 protected:
-    MenuItemImage *restartItem;
-    MenuItemImage *nextItem;
-    MenuItemImage *backItem;
+    cocos2d::MenuItemImage *restartItem;
+    cocos2d::MenuItemImage *nextItem;
+    cocos2d::MenuItemImage *backItem;
 };
 
 
@@ -67,10 +70,10 @@ public:
     virtual void onEnter() override;
     virtual std::string title() const override;
 
-	void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+	void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
 
 protected:
-    ActionTimeline* action;
+	cocostudio::timeline::ActionTimeline* action;
 };
 
 class TestTimelineFrameEvent : public ActionTimelineTestLayer
@@ -79,7 +82,7 @@ public:
     virtual void onEnter() override;
     virtual std::string title() const override;
 
-    void onFrameEvent(Frame* frame);
+    void onFrameEvent(cocostudio::timeline::Frame* frame);
 };
 
 class TestTimelinePerformance : public ActionTimelineTestLayer

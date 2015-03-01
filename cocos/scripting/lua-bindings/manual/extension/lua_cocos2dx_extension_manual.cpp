@@ -22,14 +22,32 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_extension_manual.h"
+#include <stddef.h>                     // for NULL
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "CCRef.h"                      // for Ref
+#include "CCScriptSupport.h"            // for lua_State, BasicScriptData, etc
+#include "CCValue.h"                    // for ValueVector
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control (ptr only), etc
+#include "GUI/CCScrollView/CCScrollView.h"  // for ScrollView, etc
+#include "GUI/CCScrollView/CCTableView.h"  // for TableView, etc
+#include "LuaBasicConversions.h"        // for luaval_to_size
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticlePool, etc
+#include "assets-manager/AssetsManager.h"  // for AssetsManager, etc
+#include "assets-manager/CCEventAssetsManagerEx.h"
+#include "assets-manager/CCEventListenerAssetsManagerEx.h"
+#include "ccMacros.h"                   // for CCASSERT
+#include "deprecated/CCDictionary.h"    // for __Dictionary
+#include "lauxlib.h"                    // for luaL_error
 #include "lua_cocos2dx_extension_auto.hpp"
-#include "cocos2d.h"
-#include "tolua_fix.h"
-#include "LuaBasicConversions.h"
-#include "CCLuaValue.h"
-#include "cocos-ext.h"
-#include "CCLuaEngine.h"
-#include "LuaScriptHandlerMgr.h"
+#include "math/CCGeometry.h"            // for Size, Size::ZERO
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 USING_NS_CC;
 USING_NS_CC_EXT;

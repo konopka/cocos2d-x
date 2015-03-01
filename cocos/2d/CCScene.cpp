@@ -26,18 +26,24 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCScene.h"
-#include "base/CCDirector.h"
-#include "2d/CCCamera.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventListenerCustom.h"
-#include "renderer/CCRenderer.h"
-#include "deprecated/CCString.h"
+#include <algorithm>                    // for stable_sort
+#include <functional>                   // for _Bind, function, bind, _1
+#include <new>                          // for nothrow, operator new
+#include "2d/CCCamera.h"                // for Camera, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCRenderer.h"        // for Renderer
 
 #if CC_USE_PHYSICS
 #include "physics/CCPhysicsWorld.h"
 #endif
 
 NS_CC_BEGIN
+
+class Size;
 
 Scene::Scene()
 #if CC_USE_PHYSICS

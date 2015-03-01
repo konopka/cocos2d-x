@@ -26,7 +26,10 @@
 #ifndef _TRANSITIONS_TEST_H_
 #define _TRANSITIONS_TEST_H_
 
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+namespace cocos2d { class Ref; }
 
 USING_NS_CC;
 

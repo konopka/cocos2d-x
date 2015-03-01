@@ -1,7 +1,8 @@
 #ifndef __BUG_458_H__
 #define __BUG_458_H__
 
-#include "../BugsTest.h"
+#include "../BugsTest.h"                // for BugsTestBaseLayer
+namespace cocos2d { class Ref; }
 
 class Bug458Layer : public BugsTestBaseLayer
 {

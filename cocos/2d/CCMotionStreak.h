@@ -26,12 +26,22 @@ THE SOFTWARE.
 #ifndef __CCMOTION_STREAK_H__
 #define __CCMOTION_STREAK_H__
 
-#include "base/CCProtocols.h"
-#include "2d/CCNode.h"
-#include "renderer/CCCustomCommand.h"
+#include "platform/CCGL.h"				// for GLubyte
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/CCProtocols.h"           // for TextureProtocol
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B (ptr only), etc
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 NS_CC_BEGIN
 
+class Renderer;
 class Texture2D;
 
 /**

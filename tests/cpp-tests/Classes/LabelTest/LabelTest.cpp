@@ -1,6 +1,40 @@
 #include "LabelTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
+#include <math.h>                       // for fabs
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for unordered_map, etc
+#include "../testResource.h"            // for s_AtlasTest
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabelAtlas.h"            // for LabelAtlas
+#include "2d/CCLabelBMFont.h"           // for LabelBMFont
+#include "2d/CCLabelTTF.h"              // for LabelTTF
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemImage
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCFileUtils.h"                // for FileUtils
+#include "LabelTest/../BaseTest.h"      // for BaseTest
+#include "LabelTest/../testBasic.h"     // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "deprecated/CCString.h"        // for __String
+#include "CCStdC.h"						// for MAX, MIN
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_MIDDLE, etc
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+
+using namespace cocos2d;
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -1057,7 +1091,7 @@ const char* LabelTTFTest::getCurrentAlignment()
             break;
     }
 
-    return String::createWithFormat("Alignment %s %s", vertical, horizontal)->getCString();
+    return StringUtils::format("Alignment %s %s", vertical, horizontal).c_str();
 }
 
 std::string LabelTTFTest::title() const

@@ -23,9 +23,12 @@
  ****************************************************************************/
 
 #include "CCEventListenerAssetsManagerEx.h"
-#include "CCEventAssetsManagerEx.h"
-#include "AssetsManagerEx.h"
-#include "cocos2d.h"
+#include "CCEventAssetsManagerEx.h"     // for EventAssetsManagerEx
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventListener.h"       // for EventListener
+#include "deprecated/CCString.h"        // for format
 
 NS_CC_EXT_BEGIN
 

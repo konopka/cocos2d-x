@@ -2,6 +2,7 @@
 #include "GLES-Render.h"
 #include "Test.h"
 #include "renderer/CCRenderer.h"
+#include "VisibleRect.h"			// for VisibleRect
 
 #define kAccelerometerFrequency 30
 #define FRAMES_BETWEEN_PRESSES_FOR_DOUBLE_CLICK 10
@@ -9,6 +10,8 @@
 extern int g_totalEntries;
 
 Settings settings;
+
+using namespace cocos2d;
 
 enum 
 {

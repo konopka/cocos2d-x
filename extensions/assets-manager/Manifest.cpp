@@ -23,11 +23,16 @@
  ****************************************************************************/
 
 #include "Manifest.h"
-#include "json/filestream.h"
-#include "json/prettywriter.h"
-#include "json/stringbuffer.h"
-
-#include <fstream>
+#include <stddef.h>                     // for size_t
+#include <fstream>                      // for ofstream, basic_ostream, etc
+#include <utility>                      // for pair
+#include "CCFileUtils.h"                // for FileUtils
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "assets-manager/Downloader.h"  // for Downloader::DownloadUnit, etc
+#include "json/prettywriter.h"          // for PrettyWriter
+#include "json/rapidjson.h"             // for SizeType
+#include "json/stringbuffer.h"          // for StringBuffer
 
 #define KEY_VERSION             "version"
 #define KEY_PACKAGE_URL         "packageUrl"

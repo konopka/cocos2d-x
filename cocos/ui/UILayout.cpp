@@ -23,20 +23,26 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UILayout.h"
-#include "ui/UIHelper.h"
-#include "ui/UIScale9Sprite.h"
-#include "renderer/CCGLProgram.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/ccGLStateCache.h"
-#include "base/CCDirector.h"
-#include "2d/CCDrawingPrimitives.h"
-#include "renderer/CCRenderer.h"
+#include <float.h>                      // for FLT_MAX
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLayer.h"                 // for LayerGradient, LayerColor
+#include "2d/CCNode.h"                  // for Node, ::kNodeOnEnter
+#include "2d/CCProtectedNode.h"         // for ProtectedNode
+#include "CCGLView.h"                   // for GLView
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_2, etc
+#include "math/CCAffineTransform.h"     // for AffineTransform
+#include "math/Vec2.h"					// for Vec2::operator-
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs, etc
 #include "ui/UILayoutManager.h"
-#include "2d/CCDrawNode.h"
-#include "2d/CCLayer.h"
-#include "2d/CCSprite.h"
-#include "base/CCEventFocus.h"
-
+#include "ui/UILayoutParameter.h"       // for Margin, LayoutParameter, etc
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 NS_CC_BEGIN
 

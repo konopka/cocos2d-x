@@ -4,7 +4,20 @@
 //
 
 #include "Bug-458.h"
-#include "QuestionContainerSprite.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemSprite
+#include "BugsTest/Bug-458/../BugsTest.h"  // for BugsTestBaseLayer
+#include "QuestionContainerSprite.h"    // for QuestionContainerSprite
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color4B
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 bool Bug458Layer::init()
 {

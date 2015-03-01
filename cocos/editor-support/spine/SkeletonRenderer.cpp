@@ -29,10 +29,34 @@
  *****************************************************************************/
 
 #include <spine/SkeletonRenderer.h>
-#include <spine/spine-cocos2dx.h>
-#include <spine/extension.h>
-#include <spine/PolygonBatch.h>
-#include <algorithm>
+#include "platform/CCGL.h"				// for glLineWidth, GL_ONE
+#include <float.h>                      // for FLT_MAX, FLT_MIN
+#include <spine/PolygonBatch.h>         // for PolygonBatch
+#include <spine/extension.h>            // for FREE, MALLOC
+#include <algorithm>                    // for max, min
+#include <functional>                   // for _Bind, function
+#include "2d/CCDrawingPrimitives.h"     // for setDrawColor4B, drawLine, etc
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for blendFunc
+#include "spine/Atlas.h"                // for spAtlasPage, spAtlasRegion, etc
+#include "spine/Attachment.h"           // for spAttachment, etc
+#include "spine/Bone.h"                 // for spBone
+#include "spine/BoneData.h"             // for spBoneData
+#include "spine/MeshAttachment.h"       // for spMeshAttachment, etc
+#include "spine/RegionAttachment.h"     // for spRegionAttachment, etc
+#include "spine/Skeleton.h"             // for spSkeleton, etc
+#include "spine/SkeletonJson.h"         // for spSkeletonJson, etc
+#include "spine/SkinnedMeshAttachment.h"  // for spSkinnedMeshAttachment, etc
+#include "spine/SlotData.h"             // for spSlotData
+
+namespace cocos2d { class Texture2D; }
 
 USING_NS_CC;
 using std::min;
@@ -74,7 +98,7 @@ void SkeletonRenderer::initialize () {
 	_blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
 	setOpacityModifyRGB(true);
 
-	setGLProgram(ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
+	setGLProgram(GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
 	scheduleUpdate();
 }
 

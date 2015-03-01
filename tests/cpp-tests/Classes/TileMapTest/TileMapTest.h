@@ -1,8 +1,15 @@
 #ifndef _TILEMAP_TEST_H_
 #define _TILEMAP_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class Event; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 class TileDemo : public BaseTest
 {
@@ -15,11 +22,11 @@ public:
     virtual void onEnter() override;
     virtual void onExit() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 };
 
 class TileMapTest : public TileDemo
@@ -88,7 +95,7 @@ public:
     TMXReadWriteTest(void);
     virtual std::string title() const override;
 
-    void removeSprite(Node* sender);
+    void removeSprite(cocos2d::Node* sender);
     void updateCol(float dt);
     void repaintWithGID(float dt);
     void removeTiles(float dt);
@@ -167,7 +174,7 @@ public:
 
 class TMXIsoZorder : public TileDemo
 {
-    Sprite*    _tamara;
+	cocos2d::Sprite*    _tamara;
 public:
     TMXIsoZorder(void);
     virtual std::string title() const override;
@@ -180,7 +187,7 @@ public:
 
 class TMXOrthoZorder : public TileDemo
 {
-    Sprite*    _tamara;
+	cocos2d::Sprite*    _tamara;
 public:
     TMXOrthoZorder(void);
     virtual std::string title() const override;
@@ -192,7 +199,7 @@ public:
 
 class TMXIsoVertexZ : public TileDemo
 {
-    Sprite*    _tamara;
+	cocos2d::Sprite*    _tamara;
 public:
     TMXIsoVertexZ(void);
     virtual std::string title() const override;
@@ -206,7 +213,7 @@ public:
 
 class TMXOrthoVertexZ : public TileDemo
 {
-    Sprite*    _tamara;
+	cocos2d::Sprite*    _tamara;
 public:
     TMXOrthoVertexZ(void);
     virtual std::string title() const override;

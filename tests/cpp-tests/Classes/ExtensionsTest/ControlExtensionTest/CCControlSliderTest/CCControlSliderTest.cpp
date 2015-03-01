@@ -25,6 +25,18 @@
 
 
 #include "CCControlSliderTest.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE_NULL
+#include "ExtensionsTest/ControlExtensionTest/CCControlSliderTest/../CCControlScene.h"
+#include "GUI/CCControlExtension/CCControlSlider.h"  // for ControlSlider
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 ControlSliderTest::ControlSliderTest()
 {
@@ -85,8 +97,8 @@ void ControlSliderTest::valueChanged(Ref *sender, Control::EventType controlEven
     ControlSlider* pSlider = (ControlSlider*)sender;
     // Change value of label.
 	if(pSlider->getTag() == 1)
-		_displayValueLabel->setString(String::createWithFormat("Upper slider value = %.02f", pSlider->getValue())->getCString());  
+		_displayValueLabel->setString(StringUtils::format("Upper slider value = %.02f", pSlider->getValue()));  
 	if(pSlider->getTag() == 2)
-		_displayValueLabel->setString(String::createWithFormat("Lower slider value = %.02f", pSlider->getValue())->getCString());  
+		_displayValueLabel->setString(StringUtils::format("Lower slider value = %.02f", pSlider->getValue()));  
 }
 

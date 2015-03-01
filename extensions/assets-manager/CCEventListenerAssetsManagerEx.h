@@ -25,15 +25,16 @@
 #ifndef __cocos2d_libs__CCEventListenerAssetsManagerEx__
 #define __cocos2d_libs__CCEventListenerAssetsManagerEx__
 
-#include "base/CCEventListener.h"
-#include "base/CCEventListenerCustom.h"
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
+namespace cocos2d { namespace extension { class AssetsManagerEx; } }
+namespace cocos2d { namespace extension { class EventAssetsManagerEx; } }
 
 NS_CC_EXT_BEGIN
-
-class EventAssetsManagerEx;
-class AssetsManagerEx;
 
 /**
  *  Usage:

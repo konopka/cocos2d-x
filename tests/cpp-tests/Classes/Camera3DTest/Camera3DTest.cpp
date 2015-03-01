@@ -24,6 +24,50 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "Camera3DTest.h"
+#include "platform/CCGL.h"				// for GLfloat, GL_FALSE, GLvoid
+#include <stdio.h>                      // for sprintf, NULL
+#include <cmath>                        // for sqrt, asin, fabs
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for Sequence, MoveBy, MoveTo, etc
+#include "2d/CCCamera.h"                // for Camera, CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "3d/CCAABB.h"                  // for AABB
+#include "3d/CCAnimate3D.h"             // for Animate3D
+#include "3d/CCAnimation3D.h"           // for Animation3D
+#include "3d/CCBillBoard.h"             // for BillBoard
+#include "3d/CCBundle3DData.h"          // for MeshVertexAttrib
+#include "3d/CCMesh.h"                  // for Mesh
+#include "3d/CCSprite3D.h"              // for Sprite3D, s_attributeNames
+#include "Camera3DTest/../BaseTest.h"   // for BaseTest
+#include "Camera3DTest/../Sprite3DTest/DrawNode3D.h"  // for DrawNode3D
+#include "Camera3DTest/../testBasic.h"  // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEvent.h"               // for Event
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color3B, Color4F, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
+#include "math/Quaternion.h"			// for Quaternion::operator*
+#include "math/Vec2.h"                  // for Vec2, Point, Vec2::ZERO
+#include "math/Vec3.h"					// for Vec3::operator*, etc
+#include "math/Vec4.h"                  // for Vec4
+#include "renderer/CCGLProgram.h"       // for GLProgram
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+
+using namespace cocos2d;
 
 enum
 {

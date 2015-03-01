@@ -1,6 +1,35 @@
 #include "ShaderTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
+#include "platform/CCGL.h"				// for GLchar, glDrawArrays, etc
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCFileUtils.h"                // for FileUtils
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "GUI/CCControlExtension/CCControlSlider.h"  // for ControlSlider
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventType.h"			// for EVENT_RENDERER_RECREATED, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
+#include "deprecated/CCString.h"        // for __String
+#include "CCStdC.h"         // for sinf
+#include "math/CCGeometry.h"            // for Size, Rect (ptr only)
+#include "renderer/CCGLProgram.h"       // for GLProgram
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccShaders.h"
+#include "ui/UISlider.h"                // for Slider, Slider::EventType, etc
+
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 static int sceneIdx = -1; 
 
@@ -419,11 +448,11 @@ std::string ShaderPlasma::subtitle() const
 
 // ShaderBlur
 
-class SpriteBlur : public Sprite
+class SpriteBlur : public cocos2d::Sprite
 {
 public:
     ~SpriteBlur();
-    bool initWithTexture(Texture2D* texture, const Rect&  rect);
+    bool initWithTexture(cocos2d::Texture2D* texture, const cocos2d::Rect&  rect);
     void initGLProgram();
 
     static SpriteBlur* create(const char *pszFileName);
@@ -478,7 +507,7 @@ bool SpriteBlur::initWithTexture(Texture2D* texture, const Rect& rect)
 
 void SpriteBlur::initGLProgram()
 {
-    GLchar * fragSource = (GLchar*) String::createWithContentsOfFile(
+    GLchar * fragSource = (GLchar*) __String::createWithContentsOfFile(
                                 FileUtils::getInstance()->fullPathForFilename("Shaders/example_Blur.fsh").c_str())->getCString();  
     auto program = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource);
 
@@ -607,7 +636,7 @@ bool ShaderRetroEffect::init()
 {
     if( ShaderTestDemo::init() ) {
 
-        GLchar * fragSource = (GLchar*) String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("Shaders/example_HorizontalColor.fsh"))->getCString();
+        GLchar * fragSource = (GLchar*) __String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("Shaders/example_HorizontalColor.fsh"))->getCString();
         auto p = GLProgram::createWithByteArrays(ccPositionTexture_vert, fragSource);
 
         auto director = Director::getInstance();

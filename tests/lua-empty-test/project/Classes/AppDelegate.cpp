@@ -3,6 +3,7 @@
 #include "audio/include/SimpleAudioEngine.h"
 #include "base/CCScriptSupport.h"
 #include "CCLuaEngine.h"
+#include "CCLuaStack.h"					// for LuaStack
 #include "lua_module_register.h"
 
 USING_NS_CC;

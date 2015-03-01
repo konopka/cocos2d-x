@@ -22,15 +22,28 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "LuaOpengl.h"
-#include <map>
-#include <string>
-#include "tolua_fix.h"
-#include "cocos2d.h"
-#include "CCLuaStack.h"
-#include "CCLuaValue.h"
-#include "CCLuaEngine.h"
-#include "LuaScriptHandlerMgr.h"
-#include "LuaBasicConversions.h"
+#include "platform/CCGL.h"				// for GLenum, GLint, GLsizei, etc
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for NULL, memset, strlen, etc
+#include <functional>                   // for _Bind, function
+#include <list>                         // for _List_const_iterator
+#include <new>                          // for nothrow, operator new[], etc
+#include <string>                       // for string
+#include "CCActionCatmullRom.h"         // for PointArray
+#include "CCDrawingPrimitives.h"        // for drawCardinalSpline, etc
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LuaValueArray, LuaValue, etc
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE_ARRAY, etc
+#include "LuaBasicConversions.h"        // for luaval_to_vec2, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "ccMacros.h"                   // for CC_CALLBACK_0
+#include "ccTypes.h"                    // for Color4F
+#include "lua.h"                        // for lua_pushnumber, etc
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 using namespace cocos2d;
 

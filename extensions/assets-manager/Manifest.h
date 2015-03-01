@@ -25,15 +25,15 @@
 #ifndef __Manifest__
 #define __Manifest__
 
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
-#include "Downloader.h"
-
-#include <string>
-#include <unordered_map>
-#include <vector>
-
-#include "json/document.h"
+#include <string>                       // for string, basic_string
+#include <unordered_map>                // for unordered_map
+#include <vector>                       // for vector
+#include "Downloader.h"                 // for Downloader, etc
+#include "base/CCRef.h"                 // for Ref
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
+#include "json/document.h"              // for Document, Value
+namespace cocos2d { class FileUtils; }
 
 NS_CC_EXT_BEGIN
 

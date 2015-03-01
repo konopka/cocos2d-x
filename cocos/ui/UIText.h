@@ -25,8 +25,15 @@ THE SOFTWARE.
 #ifndef __UILABEL_H__
 #define __UILABEL_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color4B, Color4B::BLACK, etc
+#include "math/CCGeometry.h"            // for Size
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget
 
 /**
  * @addtogroup ui
@@ -36,6 +43,7 @@ THE SOFTWARE.
 NS_CC_BEGIN
 
 class Label;
+class Node;
 
 namespace ui {
 

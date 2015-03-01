@@ -25,19 +25,37 @@ THE SOFTWARE.
 #ifndef __CCARMATURE_H__
 #define __CCARMATURE_H__
 
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCTweenFunction.h"         // for TweenType
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCMap.h"                 // for Map
+#include "base/CCProtocols.h"           // for BlendProtocol
+#include "base/CCVector.h"              // for Vector
+#include "base/ccTypes.h"               // for BlendFunc
+#include "cocostudio/CCArmatureAnimation.h"  // for ArmatureAnimation
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
 #include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCBatchNode.h"
-#include "cocostudio/CCArmatureAnimation.h"
+#include "cocostudio/CCBatchNode.h"     // for BatchNode
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCColliderDetector.h"  // for ColliderBody, etc
+#include "cocostudio/CCDatas.h"         // for DisplayData, AnimationData, etc
+#include "cocostudio/CCDecorativeDisplay.h"  // for DecorativeDisplay
+#include "cocostudio/CCDisplayFactory.h"  // for DisplayFactory
+#include "cocostudio/CCDisplayManager.h"  // for DisplayManager
+#include "cocostudio/CCProcessBase.h"   // for ProcessBase
 #include "cocostudio/CCSpriteFrameCacheHelper.h"
-#include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "math/CCMath.h"
-
-class b2Body;
-struct cpBody;
+#include "cocostudio/CCTween.h"         // for TweenType
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Renderer; }
 
 namespace cocostudio {
+
+	class Armature;
 
 CC_DEPRECATED_ATTRIBUTE typedef ProcessBase CCProcessBase;
 CC_DEPRECATED_ATTRIBUTE typedef BaseData CCBaseData;

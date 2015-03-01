@@ -1,8 +1,14 @@
 #ifndef __TABLEVIEWTESTSCENE_H__
 #define __TABLEVIEWTESTSCENE_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
+#include <sys/types.h>                  // for ssize_t
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "GUI/CCScrollView/CCTableView.h"  // for TableView (ptr only), etc
+#include "GUI/CCScrollView/CCTableViewCell.h"  // for TableViewCell
+#include "math/CCGeometry.h"            // for Size
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace extension { class ScrollView; } }
 
 void runTableViewTest();
 

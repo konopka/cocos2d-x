@@ -1,12 +1,32 @@
 #include "ActionTimelineTestScene.h"
-#include "../../testResource.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCCustomCommand.h"
-#include "VisibleRect.h"
-
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../../testResource.h"         // for s_pathB1, s_pathB2, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "ExtensionsTest/CocoStudioActionTimelineTest/../../testBasic.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "cocostudio/ActionTimeline/CCActionTimeline.h"
+#include "cocostudio/ActionTimeline/CCActionTimelineCache.h"
+#include "cocostudio/ActionTimeline/CCFrame.h"  // for EventFrame, Frame
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Point
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
 
 using namespace cocos2d;
-using namespace cocostudio;
+using namespace cocostudio::timeline;
 
 Layer *NextAnimationTest();
 Layer *BackAnimationTest();
@@ -156,7 +176,7 @@ void ActionTimelineTestLayer::onEnter()
 
     addChild(menu, 100);
 
-    setGLProgram(ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
+    setGLProgram(GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
 
 }
 void ActionTimelineTestLayer::onExit()

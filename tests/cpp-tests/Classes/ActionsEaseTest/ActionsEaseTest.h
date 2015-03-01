@@ -26,9 +26,12 @@
 #ifndef _ACTIONS__EASE_TEST_H_
 #define _ACTIONS__EASE_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
 
 USING_NS_CC;
 

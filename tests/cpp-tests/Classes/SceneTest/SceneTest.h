@@ -1,10 +1,13 @@
 #ifndef _SCENE_TEST_H_
 #define _SCENE_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer, LayerColor
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
 
-class SceneTestLayer1 : public Layer
+using namespace cocos2d;
+
+class SceneTestLayer1 : public cocos2d::Layer
 {
 public:
     SceneTestLayer1();
@@ -14,23 +17,23 @@ public:
     virtual void onEnterTransitionDidFinish() override;
 
     void testDealloc(float dt);
-    void onPushScene(Ref* sender);
-    void onPushSceneTran(Ref* sender);
-    void onQuit(Ref* sender);
+    void onPushScene(cocos2d::Ref* sender);
+    void onPushSceneTran(cocos2d::Ref* sender);
+    void onQuit(cocos2d::Ref* sender);
 
     //CREATE_NODE(SceneTestLayer1);
 } ;
 
-class SceneTestLayer2 : public Layer
+class SceneTestLayer2 : public cocos2d::Layer
 {
     float    _timeCounter;
 public:
     SceneTestLayer2();
 
     void testDealloc(float dt);
-    void onGoBack(Ref* sender);
-    void onReplaceScene(Ref* sender);
-    void onReplaceSceneTran(Ref* sender);
+    void onGoBack(cocos2d::Ref* sender);
+    void onReplaceScene(cocos2d::Ref* sender);
+    void onReplaceSceneTran(cocos2d::Ref* sender);
 
     //CREATE_NODE(SceneTestLayer2);
 } ;
@@ -41,10 +44,10 @@ public:
     SceneTestLayer3();
     bool init();
     virtual void testDealloc(float dt);
-    void item0Clicked(Ref* sender);
-    void item1Clicked(Ref* sender);
-    void item2Clicked(Ref* sender);
-    void item3Clicked(Ref* sender);
+    void item0Clicked(cocos2d::Ref* sender);
+    void item1Clicked(cocos2d::Ref* sender);
+    void item2Clicked(cocos2d::Ref* sender);
+    void item3Clicked(cocos2d::Ref* sender);
     CREATE_FUNC(SceneTestLayer3)
 } ;
 

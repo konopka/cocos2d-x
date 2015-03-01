@@ -1,7 +1,35 @@
 #include "LabelTestNew.h"
-#include "../testResource.h"
-#include "renderer/CCRenderer.h"
+#include <math.h>                       // for fabs
+#include <stddef.h>                     // for size_t
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for unordered_map, etc
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label, TTFConfig, etc
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCFileUtils.h"                // for FileUtils
+#include "LabelTest/../BaseTest.h"      // for BaseTest
+#include "LabelTest/../testBasic.h"     // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "deprecated/CCString.h"        // for __String
+#include "CCStdC.h"						// for MAX, MIN
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, etc
 
+using namespace cocos2d;
 using namespace ui;
 
 enum {
@@ -1672,7 +1700,7 @@ const char* LabelAlignmentTest::getCurrentAlignment()
         break;
     }
 
-    return String::createWithFormat("Alignment %s %s", vertical, horizontal)->getCString();
+    return StringUtils::format("Alignment %s %s", vertical, horizontal).c_str();
 }
 
 std::string LabelAlignmentTest::title() const

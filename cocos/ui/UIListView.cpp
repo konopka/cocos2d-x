@@ -23,9 +23,17 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIListView.h"
-#include "ui/UIHelper.h"
+#include <stddef.h>                     // for size_t
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "ui/UILayout.h"                // for Layout, Layout::Type, etc
+#include "ui/UILayoutParameter.h"       // for LinearLayoutParameter, etc
 
 NS_CC_BEGIN
+
+class Touch;
 
 namespace ui {
     

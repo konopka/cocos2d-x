@@ -1,9 +1,22 @@
 #ifndef __SCENEEDITORTESTSCENE_H__
 #define __SCENEEDITORTESTSCENE_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCLayer.h"                 // for Layer
+#include "ExtensionsTest/CocoStudioSceneTest/../../testBasic.h"
+#include "cocostudio/CCArmatureAnimation.h"  // for MovementEventType
+#include "math/Mat4.h"                  // for Mat4
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Event; }
+namespace cocos2d { class EventListener; }
+namespace cocos2d { class Label; }
+namespace cocos2d { class MenuItemImage; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Renderer; }
+namespace cocos2d { class Touch; }
+namespace cocostudio { class Armature; }
 
 class SceneEditorTestScene : public TestScene
 {
@@ -43,12 +56,12 @@ public:
 	virtual void nextCallback(cocos2d::Ref* pSender);
 	virtual void backCallback(cocos2d::Ref* pSender);
 
-	virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+	virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 
 protected:
-	MenuItemImage *restartItem;
-	MenuItemImage *nextItem;
-	MenuItemImage *backItem;
+	cocos2d::MenuItemImage *restartItem;
+	cocos2d::MenuItemImage *nextItem;
+	cocos2d::MenuItemImage *backItem;
     
 protected:
 	virtual void changeLoadTypeCallback(cocos2d::Ref *pSender);
@@ -120,7 +133,7 @@ public:
 	virtual void onEnter() override;
     virtual void onExit() override;
     cocos2d::Node* createGameScene();
-	void touchEvent(cocos2d::Ref *pSender, ui::Widget::TouchEventType type);
+	void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 private:
 	void defaultPlay();
 };
@@ -211,10 +224,10 @@ public:
     virtual void onExit() override;
     
 	// default implements are used to call script callback if exist
-	virtual bool onTouchBegan(Touch *touch, Event *unused_event); 
-    virtual void onTouchMoved(Touch *touch, Event *unused_event); 
-    virtual void onTouchEnded(Touch *touch, Event *unused_event); 
-    virtual void onTouchCancelled(Touch *touch, Event *unused_event);
+	virtual bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event); 
+    virtual void onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *unused_event); 
+    virtual void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event); 
+    virtual void onTouchCancelled(cocos2d::Touch *touch, cocos2d::Event *unused_event);
 
 	// update of game
 	void gameLogic(float dt);

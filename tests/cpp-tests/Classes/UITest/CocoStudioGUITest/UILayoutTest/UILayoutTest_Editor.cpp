@@ -1,10 +1,31 @@
 
 
 #include "UILayoutTest_Editor.h"
-#include "VisibleRect.h"
+#include <functional>                   // for _Bind
+#include <string>                       // for string
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemToggle, MenuItem
+#include "2d/CCNode.h"                  // for Node
+#include "UITest/CocoStudioGUITest/UILayoutTest/../UIScene_Editor.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UILayoutComponent.h"       // for LayoutComponent, etc
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
-// UILayoutTest_Editor
 
 UILayoutTest_Editor::UILayoutTest_Editor()
 {

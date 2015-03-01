@@ -25,18 +25,29 @@ THE SOFTWARE.
 #ifndef __UISLIDER_H__
 #define __UISLIDER_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::TextureResType, etc
 
 NS_CC_BEGIN
+
+
+class Event;
+class Node;
+class Sprite;
+class Touch;
 
 /**
  * @addtogroup ui
  * @{
  */
-
-class Sprite;
-
 namespace ui {
     class Scale9Sprite;
     

@@ -1,20 +1,23 @@
 #ifndef _DRAW_PRIMITIVES_TEST_H_
 #define _DRAW_PRIMITIVES_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
-
-#include <string>
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Renderer; }
 
 class BaseLayer : public BaseTest
 {
 public:
     BaseLayer();
     
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
@@ -27,11 +30,11 @@ public:
     
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 
 protected:
-    void onDraw(const Mat4 &transform, uint32_t flags);
-    CustomCommand _customCommand;
+    void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
+    cocos2d::CustomCommand _customCommand;
 };
 
 class DrawNodeTest : public BaseLayer

@@ -1,5 +1,24 @@
 #include "EffectsTest.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "../testResource.h"            // for s_back3, s_pathSister1, etc
+#include "2d/CCActionGrid3D.h"          // for FlipX3D, FlipY3D, Lens3D, etc
+#include "2d/CCActionInterval.h"        // for Sequence, DelayTime, etc
+#include "2d/CCActionPageTurn3D.h"      // for PageTurn3D
+#include "2d/CCActionTiledGrid.h"       // for FadeOutBLTiles, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "2d/CCSprite.h"                // for Sprite
+#include "EffectsTest/../BaseTest.h"    // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccTypes.h"               // for Color4B
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum {
     kTagTextLayer = 1,

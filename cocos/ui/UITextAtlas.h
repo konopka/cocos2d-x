@@ -25,8 +25,13 @@ THE SOFTWARE.
 #ifndef __UILABELATLAS_H__
 #define __UILABELATLAS_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "math/CCGeometry.h"            // for Size
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget
 
 NS_CC_BEGIN
 
@@ -36,6 +41,7 @@ NS_CC_BEGIN
  */
 
 class Label;
+class Node;
 
 namespace ui {
     

@@ -1,6 +1,21 @@
 #include "ActionManagerTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini
+#include "2d/CCActionInstant.h"         // for CallFunc, CallFuncN
+#include "2d/CCActionInterval.h"        // for Sequence, MoveBy, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_0, etc
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum 
 {

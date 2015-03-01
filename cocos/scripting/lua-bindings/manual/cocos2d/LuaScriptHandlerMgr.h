@@ -30,11 +30,16 @@ extern "C" {
 }
 
 
-#include "base/CCRef.h"
-#include "base/ccMacros.h"
-#include "2d/CCActionInstant.h"
-#include <vector>
-#include <map>
+#include <functional>                   // for function
+#include <map>                          // for map, map<>::value_compare
+#include <utility>                      // for pair
+#include <vector>                       // for allocator, vector
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "lua.h"                        // for lua_State
+namespace cocos2d { class Node; }
+namespace cocos2d { class ScheduleHandlerDelegate; }
 
 /**
  * @addtogroup lua
@@ -44,10 +49,10 @@ extern "C" {
 NS_CC_BEGIN
 
 class ScheduleHandlerDelegate;
+typedef std::vector<ScheduleHandlerDelegate*> VecShedule;
+typedef std::map<cocos2d::Node*, VecShedule> MapNodeSchedules;
 
 /// @cond
-typedef std::vector<ScheduleHandlerDelegate*> VecShedule;
-typedef std::map<cocos2d::Node*,VecShedule> MapNodeSchedules;
 
 class ScheduleHandlerDelegate:public cocos2d::Ref
 {

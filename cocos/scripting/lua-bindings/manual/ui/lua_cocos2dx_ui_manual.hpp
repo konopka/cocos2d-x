@@ -32,6 +32,8 @@ extern "C" {
 }
 #endif
 
+#include "lua.h"                        // for lua_State
+
 TOLUA_API int register_all_cocos2dx_ui_manual(lua_State* L);
 
 /**

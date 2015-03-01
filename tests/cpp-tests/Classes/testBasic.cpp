@@ -1,7 +1,15 @@
 #include "testBasic.h"
-#include "controller.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "controller.h"                 // for TestController
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Ref; }
 
 TestScene::TestScene(bool bPortrait, bool physics/* = false*/)
 {

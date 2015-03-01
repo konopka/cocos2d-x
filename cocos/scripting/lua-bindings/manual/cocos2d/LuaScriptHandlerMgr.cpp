@@ -22,14 +22,16 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "LuaScriptHandlerMgr.h"
-#include <map>
-#include <string>
-#include "tolua_fix.h"
-#include "cocos2d.h"
-#include "CCLuaStack.h"
-#include "CCLuaValue.h"
-#include "CCLuaEngine.h"
-#include "LuaOpengl.h"
+#include <assert.h>                     // for assert
+//#include <ext/alloc_traits.h>
+#include <stddef.h>                     // for NULL
+#include <map>                          // for _Rb_tree_iterator, etc
+#include <new>                          // for nothrow, operator new
+#include "CCActionInstant.h"            // for CallFuncN
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "CCScriptSupport.h"            // for lua_State, etc
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 using namespace cocos2d;
 

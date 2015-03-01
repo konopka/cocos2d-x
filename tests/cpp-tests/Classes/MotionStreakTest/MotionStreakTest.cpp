@@ -1,5 +1,28 @@
 #include "MotionStreakTest.h"
-#include "../testResource.h"
+#include <math.h>                       // for M_PI
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathR1, s_streak
+#include "2d/CCActionInterval.h"        // for TintTo, RepeatForever, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, etc
+#include "2d/CCMotionStreak.h"          // for MotionStreak
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "MotionStreakTest/../BaseTest.h"  // for BaseTest
+#include "MotionStreakTest/../testBasic.h"  // for CL
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::GREEN, etc
+#include "CCStdC.h"         // for cosf, sinf
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 enum {
 	kTagLabel = 1,
@@ -247,7 +270,7 @@ void MotionStreakTest::nextCallback(Ref* sender)
 
 void MotionStreakTest::backCallback(Ref* sender)
 {
-    auto s = new (std::nothrow) MotionStreakTestScene;//CCScene::create();
+    auto s = new (std::nothrow) MotionStreakTestScene();//CCScene::create();
     s->addChild( backMotionAction() );
     Director::getInstance()->replaceScene(s);
     s->release();

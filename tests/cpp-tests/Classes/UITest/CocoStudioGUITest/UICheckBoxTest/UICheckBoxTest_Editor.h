@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UICheckBoxTest_Editor__
 #define __TestCpp__UICheckBoxTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+#include "ui/UICheckBox.h"              // for CheckBox, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UICheckBoxTest_Editor : public UIScene_Editor
 {
@@ -33,12 +36,12 @@ public:
     UICheckBoxTest_Editor();
     ~UICheckBoxTest_Editor();
     bool init();
-    void selectedStateEvent(Ref* pSender, CheckBox::EventType type);
-    virtual void switchLoadMethod(Ref* pSender);
+    void selectedStateEvent(cocos2d::Ref* pSender, cocos2d::ui::CheckBox::EventType type);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UICheckBoxTest_Editor)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UICheckBoxTest_Editor__) */

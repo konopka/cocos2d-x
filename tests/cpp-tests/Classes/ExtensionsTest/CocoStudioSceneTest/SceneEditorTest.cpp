@@ -1,11 +1,41 @@
 
-#include "extensions/cocos-ext.h"
-#include "../ExtensionsTest.h"
 #include "SceneEditorTest.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
-#include "TriggerCode/EventDef.h"
-#include "../../testResource.h"
+#include <functional>                   // for _Bind, _1, _2, _3
+#include <new>                          // for nothrow, operator new
+#include "../../testResource.h"         // for s_pathB1, s_pathB2, etc
+#include "2d/CCAction.h"                // for FiniteTimeAction
+#include "2d/CCActionInterval.h"        // for ActionInterval, MoveBy, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCScene.h"                 // for Scene
+#include "CCDevice.h"                   // for Device
+#include "platform/CCPlatformMacros.h" // for CC_BREAK_IF
+#include "TriggerCode/EventDef.h"       // for ::TRIGGEREVENT_ENTERSCENE, etc
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color4B, Color4B::BLACK, etc
+#include "cocostudio/CCActionManagerEx.h"  // for ActionManagerEx
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "cocostudio/CCComAttribute.h"  // for ComAttribute
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "cocostudio/CCComRender.h"     // for ComRender
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "cocostudio/CCSSceneReader.h"  // for SceneReader
+#include "cocostudio/TriggerBase.h"     // for sendEvent
+#include "json/document.h"              // for Document
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Point
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "ui/UIButton.h"                // for Button
 
 using namespace cocos2d;
 using namespace cocostudio;

@@ -1,7 +1,22 @@
 #include "CocosGUIScene.h"
-#include "CocoStudioGUITest.h"
-#include "UISceneManager.h"
-#include "cocostudio/CocoStudio.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CocoStudioGUITest.h"          // for CocoStudioGUITestScene
+#include "UISceneManager.h"             // for UISceneManager, etc
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
 
 enum
 {

@@ -32,6 +32,8 @@ extern "C" {
 }
 #endif
 
+#include "lua.h"                        // for lua_State
+
 /**
  * @addtogroup lua
  * @{

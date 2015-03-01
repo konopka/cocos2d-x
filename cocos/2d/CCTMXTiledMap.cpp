@@ -25,10 +25,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCTMXTiledMap.h"
-#include "2d/CCTMXXMLParser.h"
-#include "2d/CCTMXLayer.h"
-#include "2d/CCSprite.h"
-#include "deprecated/CCString.h" // For StringUtils::format
+#include <stdint.h>                     // for uint32_t
+#include <algorithm>                    // for max
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator!=, etc
+#include <vector>                       // for vector
+#include "2d/CCTMXLayer.h"              // for TMXLayer
+#include "2d/CCTMXXMLParser.h"          // for TMXMapInfo, TMXLayerInfo, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "deprecated/CCString.h"        // for format
 
 NS_CC_BEGIN
 

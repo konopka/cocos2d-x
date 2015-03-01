@@ -27,16 +27,24 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCSpriteBatchNode.h"
-#include "2d/CCSprite.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCQuadCommand.h"
-
-#include "deprecated/CCString.h" // For StringUtils::format
-
+#include <algorithm>                    // for swap, find, sort
+#include <iterator>                     // for next, begin, end
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
+
+class Ref;
 
 /*
 * creation with Texture2D

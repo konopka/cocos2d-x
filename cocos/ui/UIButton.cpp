@@ -23,14 +23,19 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIButton.h"
-#include "ui/UIScale9Sprite.h"
-#include "2d/CCLabel.h"
-#include "2d/CCSprite.h"
-#include "2d/CCActionInterval.h"
-#include "platform/CCFileUtils.h"
-#include "ui/UIHelper.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for ScaleTo
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCProtectedNode.h"         // for ProtectedNode
+#include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_MIDDLE
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite, etc
 
 NS_CC_BEGIN
+
+class Action;
+class Node;
 
 namespace ui {
 

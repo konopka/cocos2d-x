@@ -25,10 +25,24 @@ THE SOFTWARE.
 #ifndef __LAYOUT_H__
 #define __LAYOUT_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
-#include "renderer/CCCustomCommand.h"
-#include "renderer/CCGroupCommand.h"
+#include "platform/CCGL.h"				// for GLubyte, GLenum, GLboolean, etc
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+#include "renderer/CCGroupCommand.h"    // for GroupCommand
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::FocusDirection, etc
 
 /**
  * @addtogroup ui
@@ -39,7 +53,8 @@ NS_CC_BEGIN
 class DrawNode;
 class LayerColor;
 class LayerGradient;
-
+class Node;
+class Renderer;
 
 namespace ui {
     

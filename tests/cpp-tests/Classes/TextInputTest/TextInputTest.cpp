@@ -1,6 +1,29 @@
 // #define COCOS2D_DEBUG   1
 
 #include "TextInputTest.h"
+#include <stdlib.h>                     // for abs, rand, RAND_MAX
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "2d/CCActionInterval.h"        // for Sequence, FadeOut, MoveTo, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_ANDROID, etc
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "TextInputTest/../BaseTest.h"  // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Rect, Size
+
+using namespace cocos2d;
 
 //////////////////////////////////////////////////////////////////////////
 // local function

@@ -1,11 +1,19 @@
 #ifndef _ATLAS_TEST_NEW_H_
 #define _ATLAS_TEST_NEW_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include "renderer/CCCustomCommand.h"
-#include "ui/CocosGUI.h"
-
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "base/ccTypes.h"               // for TextHAlignment, etc
+#include "ui/UISlider.h"                // for Slider, Slider::EventType
+namespace cocos2d { class Event; }
+namespace cocos2d { class Label; }
+namespace cocos2d { class MenuItemFont; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 class AtlasDemoNew : public BaseTest
 {
@@ -21,9 +29,9 @@ public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 };
 
 class LabelTTFAlignmentNew : public AtlasDemoNew
@@ -189,15 +197,15 @@ public:
     virtual std::string subtitle() const override;
     void stringChanged(Ref *sender);
     void alignmentChanged(Ref *sender);
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 
 public:
-    Label *_labelShouldRetain;
-    Sprite *_arrowsBarShouldRetain;
-    Sprite *_arrowsShouldRetain;
-    MenuItemFont *_lastSentenceItem, *_lastAlignmentItem;
+    cocos2d::Label *_labelShouldRetain;
+    cocos2d::Sprite *_arrowsBarShouldRetain;
+    cocos2d::Sprite *_arrowsShouldRetain;
+    cocos2d::MenuItemFont *_lastSentenceItem, *_lastAlignmentItem;
     bool _drag;
 };
 
@@ -267,13 +275,13 @@ public:
     
 private:
     
-    void setAlignmentLeft(Ref* sender);
-    void setAlignmentCenter(Ref* sender);
-    void setAlignmentRight(Ref* sender);
+    void setAlignmentLeft(cocos2d::Ref* sender);
+    void setAlignmentCenter(cocos2d::Ref* sender);
+    void setAlignmentRight(cocos2d::Ref* sender);
     void updateAlignment();
     
-    Label          * _label;
-    TextHAlignment   _horizAlign;
+    cocos2d::Label          * _label;
+    cocos2d::TextHAlignment   _horizAlign;
     
 };
 
@@ -361,11 +369,11 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void sliderEvent(Ref *pSender, ui::Slider::EventType type);
+    void sliderEvent(cocos2d::Ref *pSender, cocos2d::ui::Slider::EventType type);
 private:
-    Label* shadowLabelOutline;
-    Label* shadowLabelTTF;
-    Label* shadowLabelBMFont;
+    cocos2d::Label* shadowLabelOutline;
+    cocos2d::Label* shadowLabelTTF;
+    cocos2d::Label* shadowLabelBMFont;
 };
 
 class LabelCharMapTest : public AtlasDemoNew
@@ -444,17 +452,17 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 private:
-    void  setAlignmentLeft(Ref* sender);
-    void  setAlignmentCenter(Ref* sender);
-    void  setAlignmentRight(Ref* sender);
-    void  setAlignmentTop(Ref* sender);
-    void  setAlignmentMiddle(Ref* sender);
-    void  setAlignmentBottom(Ref* sender);
+    void  setAlignmentLeft(cocos2d::Ref* sender);
+    void  setAlignmentCenter(cocos2d::Ref* sender);
+    void  setAlignmentRight(cocos2d::Ref* sender);
+    void  setAlignmentTop(cocos2d::Ref* sender);
+    void  setAlignmentMiddle(cocos2d::Ref* sender);
+    void  setAlignmentBottom(cocos2d::Ref* sender);
     const char* getCurrentAlignment();
 
-    Label* _label;
-    TextHAlignment _horizAlign;
-    TextVAlignment _vertAlign;
+	cocos2d::Label* _label;
+	cocos2d::TextHAlignment _horizAlign;
+	cocos2d::TextVAlignment _vertAlign;
 };
 
 class LabelIssue4428Test : public AtlasDemoNew
@@ -489,9 +497,9 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void sliderEvent(Ref *sender, ui::Slider::EventType type);
+    void sliderEvent(cocos2d::Ref *sender, cocos2d::ui::Slider::EventType type);
 private:
-    Label* label;
+	cocos2d::Label* label;
 };
 
 class LabelAdditionalKerningTest : public AtlasDemoNew
@@ -504,9 +512,9 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void sliderEvent(Ref *sender, ui::Slider::EventType type);
+    void sliderEvent(cocos2d::Ref *sender, cocos2d::ui::Slider::EventType type);
 private:
-    Label* label;
+	cocos2d::Label* label;
 };
 
 class LabelIssue8492Test : public AtlasDemoNew

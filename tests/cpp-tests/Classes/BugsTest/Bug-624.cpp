@@ -4,6 +4,22 @@
 //
 
 #include "Bug-624.h"
+#include <functional>                   // for _Bind
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCTransition.h"            // for TransitionFade
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "CCDevice.h"                   // for Device
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerAcceleration.h"
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Acceleration (ptr only), etc
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 ////////////////////////////////////////////////////////
 //

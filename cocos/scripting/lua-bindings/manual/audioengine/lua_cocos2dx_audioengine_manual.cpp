@@ -32,6 +32,10 @@
 #include "LuaBasicConversions.h"
 #include "CCLuaEngine.h"
 #include "AudioEngine.h"
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "CCLuaStack.h"					// for LuaStack
+
+using namespace cocos2d;
 
 static int lua_get_AudioProfile_name(lua_State* L)
 {

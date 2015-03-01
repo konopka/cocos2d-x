@@ -1,7 +1,12 @@
 #ifndef __PERFORMANCE_NODE_CHILDREN_TEST_H__
 #define __PERFORMANCE_NODE_CHILDREN_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "PerformanceTest.h"            // for PerformBasicLayer
+#include "base/ccConfig.h"              // for CC_ENABLE_PROFILERS
+namespace cocos2d { class SpriteBatchNode; }
 
 class NodeChildrenMenuLayer : public PerformBasicLayer
 {
@@ -18,7 +23,7 @@ public:
     virtual void onEnterTransitionDidFinish() override;
 };
 
-class NodeChildrenMainScene : public Scene
+class NodeChildrenMainScene : public cocos2d::Scene
 {
 public:
     virtual void initWithQuantityOfNodes(unsigned int nNodes);
@@ -53,7 +58,7 @@ public:
     virtual const char* testName();
 
 protected:
-    SpriteBatchNode    *batchNode;
+	cocos2d::SpriteBatchNode    *batchNode;
 };
 
 class IterateSpriteSheetForLoop : public IterateSpriteSheet
@@ -105,7 +110,7 @@ public:
     virtual const char* testName();
 
 protected:
-    SpriteBatchNode    *batchNode;
+	cocos2d::SpriteBatchNode    *batchNode;
 
 #if CC_ENABLE_PROFILERS
     ProfilingTimer* _profilingTimer;

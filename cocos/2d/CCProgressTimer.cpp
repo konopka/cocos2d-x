@@ -24,14 +24,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCProgressTimer.h"
-
-#include <algorithm>
-
-#include "base/ccMacros.h"
-#include "base/CCDirector.h"
-#include "2d/CCSprite.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCRenderer.h"
+#include <float.h>                      // for FLT_MAX
+#include <math.h>                       // for M_PI
+#include <stdlib.h>                     // for malloc
+#include <algorithm>                    // for swap
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"			// for CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/ccGLStateCache.h"    // for bindTexture2D, blendFunc, etc
 
 NS_CC_BEGIN
 

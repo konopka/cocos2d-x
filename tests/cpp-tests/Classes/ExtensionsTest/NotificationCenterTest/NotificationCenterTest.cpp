@@ -1,5 +1,23 @@
 #include "NotificationCenterTest.h"
-#include "../ExtensionsTest.h"
+#include <stdint.h>                     // for intptr_t
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../ExtensionsTest.h"          // for ExtensionsTestScene
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemToggle, etc
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for CC_UNUSED, USING_NS_CC
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, CCASSERT
+#include "deprecated/CCNotificationCenter.h"  // for __NotificationCenter
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+
+using namespace cocos2d;
 
 #define kTagLight 100
 #define kTagConnect 200
@@ -33,7 +51,7 @@ Light::Light()
 
 Light::~Light()
 {
-    NotificationCenter::getInstance()->removeObserver(this, MSG_SWITCH_STATE);
+    __NotificationCenter::getInstance()->removeObserver(this, MSG_SWITCH_STATE);
 }
 
 Light* Light::lightWithFile(const char* name)
@@ -49,11 +67,11 @@ void Light::setIsConnectToSwitch(bool bConnectToSwitch)
     _connected = bConnectToSwitch;
     if (_connected)
     {
-        NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(Light::switchStateChanged), MSG_SWITCH_STATE, nullptr);
+        __NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(Light::switchStateChanged), MSG_SWITCH_STATE, nullptr);
     }
     else
     {
-        NotificationCenter::getInstance()->removeObserver(this, MSG_SWITCH_STATE);
+        __NotificationCenter::getInstance()->removeObserver(this, MSG_SWITCH_STATE);
     }
     updateLightState();
 }
@@ -124,18 +142,18 @@ NotificationCenterTest::NotificationCenterTest()
         light->setIsConnectToSwitch(bConnected);
     }
 
-    NotificationCenter::getInstance()->postNotification(MSG_SWITCH_STATE, (Ref*)(intptr_t)item->getSelectedIndex());
+    __NotificationCenter::getInstance()->postNotification(MSG_SWITCH_STATE, (Ref*)(intptr_t)item->getSelectedIndex());
 
     /* for testing removeAllObservers */
-    NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer1", nullptr);
-    NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer2", nullptr);
-    NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer3", nullptr);
+    __NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer1", nullptr);
+    __NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer2", nullptr);
+    __NotificationCenter::getInstance()->addObserver(this, CC_CALLFUNCO_SELECTOR(NotificationCenterTest::doNothing), "random-observer3", nullptr);
 }
 
 void NotificationCenterTest::toExtensionsMainLayer(cocos2d::Ref* sender)
 {
     /* for testing removeAllObservers */
-    int CC_UNUSED numObserversRemoved = NotificationCenter::getInstance()->removeAllObservers(this);
+    int CC_UNUSED numObserversRemoved = __NotificationCenter::getInstance()->removeAllObservers(this);
     CCASSERT(numObserversRemoved >= 3, "All observers were not removed!");
 
     auto scene = new (std::nothrow) ExtensionsTestScene();
@@ -147,7 +165,7 @@ void NotificationCenterTest::toggleSwitch(Ref *sender)
 {
     auto item = (MenuItemToggle*)sender;
     int index = item->getSelectedIndex();
-    NotificationCenter::getInstance()->postNotification(MSG_SWITCH_STATE, (Ref*)(intptr_t)index);
+    __NotificationCenter::getInstance()->postNotification(MSG_SWITCH_STATE, (Ref*)(intptr_t)index);
 }
 
 void NotificationCenterTest::connectToSwitch(Ref *sender)

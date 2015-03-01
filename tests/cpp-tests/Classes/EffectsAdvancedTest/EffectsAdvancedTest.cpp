@@ -1,4 +1,23 @@
 #include "EffectsAdvancedTest.h"
+#include "platform/CCGL.h"				// for GL_ONE_MINUS_SRC_ALPHA, etc
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionGrid.h"            // for ReuseGrid, StopGrid
+#include "2d/CCActionGrid3D.h"          // for Lens3D, Shaky3D, Liquid, etc
+#include "2d/CCActionInterval.h"        // for Sequence, RepeatForever, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCActionTiledGrid.h"       // for TurnOffTiles, ShakyTiles3D, etc
+#include "2d/CCLayer.h"                 // for Layer, LayerColor
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "2d/CCSprite.h"                // for Sprite
+#include "EffectsAdvancedTest/../BaseTest.h"  // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/ccTypes.h"               // for Color4B, BlendFunc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum 
 {

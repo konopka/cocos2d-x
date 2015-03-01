@@ -23,10 +23,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIText.h"
-#include "2d/CCLabel.h"
-#include "platform/CCFileUtils.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 NS_CC_BEGIN
+
+class Node;
 
 namespace ui {
 

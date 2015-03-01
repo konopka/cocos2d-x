@@ -28,21 +28,30 @@ THE SOFTWARE.
 
 
 #include "2d/CCParticleSystemQuad.h"
-
-#include <algorithm>
-
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCParticleBatchNode.h"
-#include "renderer/CCTextureAtlas.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCRenderer.h"
-#include "base/CCDirector.h"
-#include "base/CCEventType.h"
-#include "base/CCConfiguration.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-
-#include "deprecated/CCString.h"
+#include <stddef.h>                     // for offsetof, size_t
+#include <stdlib.h>                     // for realloc, malloc
+#include <string.h>                     // for memset, memcpy
+#include <algorithm>                    // for swap
+#include <new>                          // for nothrow, operator new
+#include "2d/CCParticleBatchNode.h"     // for ParticleBatchNode
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCDirector.h"			// for CC_CONTENT_SCALE_FACTOR
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventType.h"			// for EventType
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
+#include "base/ccTypes.h"               // for V3F_C4B_T2F_Quad, etc
+#include "deprecated/CCString.h"        // for format
+#include "CCStdC.h"						// for cosf, sinf
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/ccGLStateCache.h"    // for bindVAO
 
 NS_CC_BEGIN
 

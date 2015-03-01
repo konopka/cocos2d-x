@@ -27,16 +27,22 @@ THE SOFTWARE.
 #ifndef __CCTMX_TILE_MAP_H__
 #define __CCTMX_TILE_MAP_H__
 
-#include "2d/CCNode.h"
-#include "2d/CCTMXObjectGroup.h"
-#include "base/CCValue.h"
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCValue.h"               // for Value, ValueMap, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
 
 NS_CC_BEGIN
 
 class TMXLayer;
 class TMXLayerInfo;
-class TMXTilesetInfo;
 class TMXMapInfo;
+class TMXTilesetInfo;
 
 /**
  * @addtogroup _2d

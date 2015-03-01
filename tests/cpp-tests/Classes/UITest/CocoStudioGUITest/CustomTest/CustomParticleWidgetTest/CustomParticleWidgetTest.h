@@ -9,9 +9,9 @@
 #ifndef __CustomUI__CustomParticleWidgetTest__
 #define __CustomUI__CustomParticleWidgetTest__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../../../../testBasic.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCScene.h"                 // for Scene
+namespace cocos2d { class Ref; }
 
 class CustomParticleWidgetLayer : public cocos2d::Layer
 {

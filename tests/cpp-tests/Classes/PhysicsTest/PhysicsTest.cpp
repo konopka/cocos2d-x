@@ -1,7 +1,40 @@
 #include "PhysicsTest.h"
-#include <cmath>
-#include "../testResource.h"
-#include "ui/CocosGUI.h"
+#include <stdio.h>                      // for sprintf, NULL
+#include <stdlib.h>                     // for rand, RAND_MAX
+#include <cmath>                        // for fabs, M_PI_2, M_PI
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new, etc
+#include <utility>                      // for pair, make_pair
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "CCDevice.h"                   // for Device
+#include "PhysicsTest/../BaseTest.h"    // for BaseTest
+#include "PhysicsTest/../testBasic.h"   // for CL, TestScene
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerAcceleration.h"
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, Ref
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color3B, Color4F, etc
+#include "platform/CCPlatformDefine.h"	// for CC_ASSERT, etc
+#include "CCStdC.h"						// for cosf, sinf
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"					// for Vec2::operator+, etc
+#include "physics/CCPhysicsContact.h"
+#include "physics/CCPhysicsJoint.h"     // for PhysicsJointPin, etc
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+namespace cocos2d { class Event; }
+
 USING_NS_CC;
 
 namespace

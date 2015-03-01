@@ -25,8 +25,18 @@ THE SOFTWARE.
 #ifndef __UISCROLLVIEW_H__
 #define __UISCROLLVIEW_H__
 
-#include "ui/UILayout.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UILayout.h"                // for Layout::Type, Layout
+#include "ui/UIWidget.h"                // for Widget, etc
 
 NS_CC_BEGIN
 /**
@@ -34,7 +44,10 @@ NS_CC_BEGIN
  * @{
  */
 
-class EventFocusListener;
+class Event;
+class Node;
+class Size;
+class Touch;
 
 namespace ui {
 

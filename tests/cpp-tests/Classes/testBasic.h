@@ -1,13 +1,10 @@
 #ifndef _TEST_BASIC_H_
 #define _TEST_BASIC_H_
 
-#include "cocos2d.h"
-#include "audio/include/SimpleAudioEngine.h"
-#include "VisibleRect.h"
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
 
-USING_NS_CC;
-
-class TestScene : public Scene
+class TestScene : public cocos2d::Scene
 {
 public: 
     TestScene(bool bPortrait = false, bool physics = false);

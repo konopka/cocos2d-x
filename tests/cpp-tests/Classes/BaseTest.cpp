@@ -23,9 +23,20 @@
  ****************************************************************************/
 
 #include "BaseTest.h"
-#include "VisibleRect.h"
-#include "testResource.h"
-#include "AppDelegate.h"
+#include <functional>                   // for _Bind
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage
+#include "AppDelegate.h"                // for AppDelegate
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "linux/CCApplication-linux.h"  // for Application
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "testResource.h"               // for s_pathB1, s_pathB2, etc
+namespace cocos2d { class Ref; }
 
 USING_NS_CC;
 

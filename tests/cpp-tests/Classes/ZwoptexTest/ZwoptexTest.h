@@ -1,17 +1,21 @@
 #ifndef __ZWOPTEX_TEST_H__
 #define __ZWOPTEX_TEST_H__
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
 
 class ZwoptexTest : public BaseTest
 {
 public:
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
@@ -29,8 +33,8 @@ public:
     virtual std::string subtitle() const override;
 
 protected:
-    Sprite * sprite1;
-    Sprite * sprite2;
+	cocos2d::Sprite * sprite1;
+	cocos2d::Sprite * sprite2;
     int counter;
 };
 

@@ -23,9 +23,12 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UITextBMFont.h"
-#include "2d/CCLabel.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
 
 NS_CC_BEGIN
+
+class Node;
 
 namespace ui {
     

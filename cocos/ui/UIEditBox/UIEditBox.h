@@ -26,12 +26,22 @@
 #ifndef __UIEDITTEXT_H__
 #define __UIEDITTEXT_H__
 
-#include "base/CCIMEDelegate.h"
-#include "ui/GUIDefine.h"
-#include "ui/UIButton.h"
-#include "ui/UIScale9Sprite.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCIMEDelegate.h"         // for IMEKeyboardNotificationInfo, etc
+#include "base/ccConfig.h"              // for CC_ENABLE_SCRIPT_BINDING
+#include "base/ccTypes.h"               // for Color3B
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::TextureResType, etc
 
 NS_CC_BEGIN
+
+class Ref;
+class Renderer;
+class Size;
 
 /**
  * @addtogroup ui
@@ -39,9 +49,10 @@ NS_CC_BEGIN
  */
 namespace ui {
         
-    class EditBox;
-    class EditBoxImpl;
-        
+class EditBox;
+class EditBoxImpl;
+class Scale9Sprite;
+
     /**
      *@brief Editbox delgate class.
      * It's useful when you want to do some customization duing Editbox input event
@@ -53,7 +64,7 @@ namespace ui {
     {
     public:
         virtual ~EditBoxDelegate() {};
-            
+                        
         /**
          * This method is called when an edit box gains focus after keyboard is shown.
          * @param editBox The edit box object that generated the event.

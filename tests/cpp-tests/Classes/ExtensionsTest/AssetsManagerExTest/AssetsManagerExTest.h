@@ -1,9 +1,16 @@
 #ifndef __AssetsManagerEx_Test_H__
 #define __AssetsManagerEx_Test_H__
 
-#include "extensions/cocos-ext.h"
-#include "../../testBasic.h"
-#include "../../BaseTest.h"
+#include <string>                       // for string
+#include "../../BaseTest.h"             // for BaseTest
+#include "../../testBasic.h"            // for TestScene
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { namespace extension { class AssetsManagerEx; } }
+namespace cocos2d { namespace extension { class EventListenerAssetsManagerEx; } }
 
 USING_NS_CC;
 USING_NS_CC_EXT;

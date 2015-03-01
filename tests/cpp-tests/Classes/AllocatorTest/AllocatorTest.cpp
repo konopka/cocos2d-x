@@ -24,8 +24,18 @@
  ****************************************************************************/
 
 #include "AllocatorTest.h"
-#include "cocos2d.h"
-#include <chrono>
+#include <stdio.h>                      // for sprintf
+#include <chrono>                       // for time_point, duration, etc
+#include <functional>                   // for function
+#include <ratio>                        // for ratio
+#include <vector>                       // for vector
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "AllocatorTest/../BaseTest.h"  // for BaseTest
+#include "AllocatorTest/../testBasic.h"  // for CL
+#include "base/CCDirector.h"            // for Director
+
+using namespace cocos2d;
 
 namespace AllocatorTestNS
 {

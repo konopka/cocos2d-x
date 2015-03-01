@@ -1,5 +1,31 @@
 #include "SchedulerTest.h"
-#include "../testResource.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_stars1
+#include "2d/CCAction.h"                // for Speed
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCParticleExamples.h"      // for ParticleFireworks
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControlSlider.h"  // for ControlSlider
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "SchedulerTest/../BaseTest.h"  // for BaseTest
+#include "SchedulerTest/../testBasic.h"  // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCScheduler.h"           // for Scheduler, etc
+#include "base/ccMacros.h"              // for CCASSERT, CCRANDOM_0_1, etc
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 enum {
     kTagAnimationDance = 1,

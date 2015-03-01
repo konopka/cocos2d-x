@@ -1,11 +1,11 @@
 #ifndef _TextureAtlasEncryption_TEST_H_
 #define _TextureAtlasEncryption_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include <string>
+#include <string>                       // for string
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
 
-class TextureAtlasEncryptionDemo : public Layer
+class TextureAtlasEncryptionDemo : public cocos2d::Layer
 {
 public:
     virtual std::string title() const;

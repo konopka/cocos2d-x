@@ -24,6 +24,21 @@
  */
 
 #include "CCControlStepperTest.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "ExtensionsTest/ControlExtensionTest/CCControlStepperTest/../CCControlScene.h"
+#include "GUI/CCControlExtension/CCControlStepper.h"
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 ControlStepperTest::ControlStepperTest()
 : _displayValueLabel(nullptr)
@@ -91,6 +106,6 @@ void ControlStepperTest::valueChanged(Ref *sender, Control::EventType controlEve
 {
     ControlStepper* pControl = (ControlStepper*)sender;
     // Change value of label.
-    _displayValueLabel->setString(String::createWithFormat("%0.02f", (float)pControl->getValue())->getCString());	
+    _displayValueLabel->setString(StringUtils::format("%0.02f", (float)pControl->getValue()));	
 }
 

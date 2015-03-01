@@ -1,6 +1,21 @@
 #include "TableViewTestScene.h"
-#include "CustomTableViewCell.h"
-#include "../ExtensionsTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../ExtensionsTest.h"          // for ExtensionsTestScene
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "CustomTableViewCell.h"        // for CustomTableViewCell
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCScrollView/CCScrollView.h"  // for ScrollView, etc
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "deprecated/CCString.h"        // for __String
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Ref; }
 
 USING_NS_CC;
 USING_NS_CC_EXT;

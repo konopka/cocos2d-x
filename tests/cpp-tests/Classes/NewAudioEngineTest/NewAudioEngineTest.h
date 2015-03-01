@@ -28,13 +28,13 @@
 #ifndef __NEWAUDIOENGINE_TEST_H_
 #define __NEWAUDIOENGINE_TEST_H_
 
-#include "cocos2d.h"
 #include "../testBasic.h"
 #include "../BaseTest.h"
 
 #include "audio/include/AudioEngine.h"
 
-using namespace cocos2d;
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Label; }
 
 class AudioEngineTestScene : public TestScene
 {
@@ -48,9 +48,9 @@ public:
     virtual std::string title() const override;
     virtual void onExit() override;
 
-    void backCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void restartCallback(Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
     
 };
 
@@ -117,7 +117,7 @@ private:
     cocos2d::experimental::AudioProfile _audioProfile;
     
     int _audioCount;
-    Label* _showLabel;
+	cocos2d::Label* _showLabel;
     float _time;
     float _minDelay;
     void* _timeSlider;

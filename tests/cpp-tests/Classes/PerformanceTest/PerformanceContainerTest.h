@@ -4,7 +4,14 @@
 #ifndef __PERFORMANCE_CONTAINER_TEST_H__
 #define __PERFORMANCE_CONTAINER_TEST_H__
 
-#include "PerformanceTest.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class MenuItemFont; }
+namespace cocos2d { class MenuItemToggle; }
 
 class ContainerBasicLayer : public PerformBasicLayer
 {
@@ -14,7 +21,7 @@ public:
     virtual void showCurrentTest();
 };
 
-class PerformanceContainerScene : public Scene
+class PerformanceContainerScene : public cocos2d::Scene
 {
 public:
     static const int TAG_TITLE = 100;
@@ -53,11 +60,11 @@ protected:
     unsigned int _type;
     std::vector<TestFunction> _testFunctions;
     
-    MenuItemFont* _increase;
-    MenuItemFont* _decrease;
-    MenuItemFont* _startItem;
-    MenuItemFont* _stopItem;
-    MenuItemToggle* _toggle;
+    cocos2d::MenuItemFont* _increase;
+    cocos2d::MenuItemFont* _decrease;
+    cocos2d::MenuItemFont* _startItem;
+    cocos2d::MenuItemFont* _stopItem;
+    cocos2d::MenuItemToggle* _toggle;
 };
 
 class TemplateVectorPerfTest : public PerformanceContainerScene

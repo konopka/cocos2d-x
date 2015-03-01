@@ -26,8 +26,17 @@ THE SOFTWARE.
 #ifndef __UILISTVIEW_H__
 #define __UILISTVIEW_H__
 
-#include "ui/UIScrollView.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+#include "ui/UIWidget.h"                // for Widget::TouchEventType, etc
 
 /**
  * @addtogroup ui
@@ -35,7 +44,11 @@ THE SOFTWARE.
  */
 NS_CC_BEGIN
 
+class Node;
+class Touch;
+
 namespace ui{
+    class LinearLayoutParameter;
     
 /**
  * ListView click item event type.

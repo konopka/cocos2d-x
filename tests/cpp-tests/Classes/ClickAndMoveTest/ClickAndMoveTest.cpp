@@ -1,5 +1,20 @@
 #include "ClickAndMoveTest.h"
-#include "../testResource.h"
+#include <math.h>                       // for fabs, atanf
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini
+#include "2d/CCActionInterval.h"        // for FadeIn, JumpTo, MoveTo, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color4B
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum
 {

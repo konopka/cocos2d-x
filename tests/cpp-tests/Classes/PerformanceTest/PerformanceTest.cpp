@@ -1,19 +1,33 @@
 #include "PerformanceTest.h"
-#include "../testResource.h"
-#include "PerformanceNodeChildrenTest.h"
-#include "PerformanceParticleTest.h"
-#include "PerformanceParticle3DTest.h"
-#include "PerformanceSpriteTest.h"
-#include "PerformanceTextureTest.h"
-#include "PerformanceTouchesTest.h"
-#include "PerformanceAllocTest.h"
-#include "PerformanceLabelTest.h"
-#include "PerformanceRendererTest.h"
-#include "PerformanceContainerTest.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathB1, s_pathB2, etc
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage, MenuItemFont
+#include "PerformanceAllocTest.h"       // for runAllocPerformanceTest
+#include "PerformanceCallbackTest.h"    // for runCallbackPerformanceTest
+#include "PerformanceContainerTest.h"   // for runContainerPerformanceTest
 #include "PerformanceEventDispatcherTest.h"
-#include "PerformanceScenarioTest.h"
-#include "PerformanceCallbackTest.h"
-#include "PerformanceMathTest.h"
+#include "PerformanceLabelTest.h"       // for runLabelTest
+#include "PerformanceMathTest.h"        // for runMathPerformanceTest
+#include "PerformanceNodeChildrenTest.h"  // for runNodeChildrenTest
+#include "PerformanceParticleTest.h"    // for runParticleTest
+#include "PerformanceParticle3DTest.h"  // for runParticle3DTest
+#include "PerformanceScenarioTest.h"    // for runScenarioTest
+#include "PerformanceSpriteTest.h"      // for runSpriteTest
+#include "PerformanceTextureTest.h"     // for runTextureTest
+#include "PerformanceTouchesTest.h"     // for runTouchesTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerMouse.h"  // for EventListenerMouse
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventMouse.h"          // for EventMouse
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+
+using namespace cocos2d;
 
 enum
 {

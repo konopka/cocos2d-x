@@ -25,46 +25,40 @@
 #ifndef __cocos2d_libs__FlatBuffersSerialize__
 #define __cocos2d_libs__FlatBuffersSerialize__
 
-#include "cocos2d.h"
-#include "ExtensionMacros.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "flatbuffers/flatbuffers.h"
+namespace cocos2d { namespace ui { class Widget; } }
+namespace flatbuffers { struct AnimationInfo; }
+namespace flatbuffers { struct BoolFrame; }
+namespace flatbuffers { struct CSParseBinary; }
+namespace flatbuffers { struct ColorFrame; }
+namespace flatbuffers { struct EventFrame; }
+namespace flatbuffers { struct InnerActionFrame; }
+namespace flatbuffers { struct IntFrame; }
+namespace flatbuffers { struct NodeAction; }
+namespace flatbuffers { struct NodeTree; }
+namespace flatbuffers { struct PointFrame; }
+namespace flatbuffers { struct ProjectNodeOptions; }
+namespace flatbuffers { struct ScaleFrame; }
+namespace flatbuffers { struct TextureFrame; }
+namespace flatbuffers { struct TimeLine; }
+namespace tinyxml2 { class XMLElement; }
 
 namespace flatbuffers
 {
-    class FlatBufferBuilder;
     template<typename T> struct Offset;
-    struct String;
     
     struct CSParseBinary;
     struct NodeTree;
     
-    struct WidgetOptions;
-    
     struct SingleNodeOptions;
-    struct SpriteOptions;
-    struct ParticleSystemOptions;
-    struct TMXTiledMapOptions;
     
-    struct ButtonOptions;
-    struct CheckBoxOptions;
-    struct ImageViewOptions;
-    struct TextBMFontOptions;
-    struct TextOptions;
-    struct TextFieldOptions;
-    struct LoadingBarOptions;
     struct SliderOptions;
-    struct PanelOptions;
-    struct ScrollViewOptions;
-    struct PageViewOptions;
-    struct ListViewOptions;
     
     struct ProjectNodeOptions;
-    
-    struct ComponentOptions;
-    struct ComAudioOptions;
-    
-    struct TextAtlasOptions;
-    
+       
     struct NodeAction;
     struct AnimationInfo;
     struct TimeLine;

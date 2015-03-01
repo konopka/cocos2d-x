@@ -1,9 +1,13 @@
 #ifndef _BALL_H_
 #define _BALL_H_
 
-#include "cocos2d.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "math/Vec2.h"                  // for Vec2
 
 class Paddle;
+
+namespace cocos2d { class Texture2D; }
 
 USING_NS_CC;
 

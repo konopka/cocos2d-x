@@ -23,6 +23,22 @@
  ****************************************************************************/
 
 #include "ConsoleTest.h"
+//#include <bits/socket_type.h>           // for SOCK_STREAM
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for memset, strcpy, strlen
+#include <time.h>                       // for time
+#include <functional>                   // for function
+#include <new>                          // for nothrow, operator new
+#include <thread>                       // for thread
+#include "2d/CCLayer.h"                 // for Layer
+#include "CCFileUtils.h"                // for FileUtils
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "ConsoleTest/../BaseTest.h"    // for BaseTest
+#include "ConsoleTest/../testBasic.h"   // for CL
+#include "base/CCConsole.h"             // for Console, Console::Command
+#include "base/CCDirector.h"            // for Director
+#include "base/base64.h"                // for base64Encode
+namespace cocos2d { class Ref; }
 #include "../testResource.h"
 #include <stdio.h>
 #include <stdlib.h>

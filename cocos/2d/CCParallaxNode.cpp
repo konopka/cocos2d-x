@@ -25,9 +25,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCParallaxNode.h"
-#include "base/ccCArray.h"
+#include <new>                          // for nothrow, operator new
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccCArray.h"              // for _ccArray, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/Vec2.h"					// for Vec2::operator+
 
 NS_CC_BEGIN
+
+class Renderer;
 
 class PointObject : public Ref
 {

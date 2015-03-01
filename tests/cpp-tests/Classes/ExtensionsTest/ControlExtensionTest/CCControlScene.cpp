@@ -24,8 +24,23 @@
  */
 
 #include "CCControlScene.h"
-#include "CCControlSceneManager.h"
-#include "../ExtensionsTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../ExtensionsTest.h"          // for ExtensionsTestScene
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage, MenuItemFont
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCControlSceneManager.h"      // for ControlSceneManager
+#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 ControlScene::ControlScene()
 : _sceneTitleLabel(nullptr)

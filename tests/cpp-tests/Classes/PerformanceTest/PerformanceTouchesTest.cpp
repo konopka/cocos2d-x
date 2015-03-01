@@ -1,4 +1,26 @@
 #include "PerformanceTouchesTest.h"
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for rand, srand
+#include <time.h>                       // for time
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventTouch.h"          // for EventTouch, etc
+#include "base/CCProfiling.h"           // for Profiler, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS

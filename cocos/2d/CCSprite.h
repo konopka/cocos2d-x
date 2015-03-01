@@ -28,23 +28,27 @@ THE SOFTWARE.
 #ifndef __SPRITE_NODE_CCSPRITE_H__
 #define __SPRITE_NODE_CCSPRITE_H__
 
-#include <string>
-#include "2d/CCNode.h"
-#include "2d/CCDrawNode.h"
-#include "base/CCProtocols.h"
-#include "renderer/CCTextureAtlas.h"
-#include "renderer/CCQuadCommand.h"
-#include "renderer/CCCustomCommand.h"
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCProtocols.h"           // for TextureProtocol
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS, etc
+#include "base/ccTypes.h"               // for BlendFunc, V3F_C4B_T2F_Quad
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/CCGeometry.h"            // for Rect, Size (ptr only)
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCQuadCommand.h"     // for QuadCommand
 
 NS_CC_BEGIN
 
+class Renderer;
 class SpriteBatchNode;
 class SpriteFrame;
-class Animation;
-class Rect;
-class Size;
 class Texture2D;
-struct transformValues_;
+class TextureAtlas;
 
 /**
  * @addtogroup _2d

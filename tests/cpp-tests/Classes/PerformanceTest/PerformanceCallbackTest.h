@@ -4,7 +4,13 @@
 #ifndef __PERFORMANCE_CALLBACK_TEST_H__
 #define __PERFORMANCE_CALLBACK_TEST_H__
 
-#include "PerformanceTest.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "PerformanceTest.h"            // for PerformBasicLayer
+#include "base/CCRef.h"                 // for SEL_SCHEDULE
+namespace cocos2d { class Node; }
 
 class CallbackBasicLayer : public PerformBasicLayer
 {
@@ -14,7 +20,7 @@ public:
     virtual void showCurrentTest();
 };
 
-class PerformanceCallbackScene : public Scene
+class PerformanceCallbackScene : public cocos2d::Scene
 {
 public:
     virtual void onEnter() override;
@@ -75,8 +81,8 @@ public:
     virtual void update(float dt) override { _placeHolder = 200; };
     
 private:
-    Node* _target;
-    SEL_SCHEDULE _selector;
+	cocos2d::Node* _target;
+    cocos2d::SEL_SCHEDULE _selector;
 };
 
 // InvokeStdFunctionPerfTest

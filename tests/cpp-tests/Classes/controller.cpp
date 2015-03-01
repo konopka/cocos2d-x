@@ -1,16 +1,103 @@
+//#include <bits/socket_type.h>           // for SOCK_STREAM
+#include <errno.h>                      // for EINTR, errno
+#include <string.h>                     // for strlen, strcpy, memset, etc
+#include <new>                          // for nothrow, operator new
+#include <ratio>                        // for ratio
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage, etc
+#include "2d/CCScene.h"                 // for Scene
+#include "ActionManagerTest/ActionManagerTest.h"
+#include "ActionsEaseTest/ActionsEaseTest.h"  // for ActionsEaseTestScene
+#include "ActionsProgressTest/ActionsProgressTest.h"
+#include "ActionsTest/ActionsTest.h"    // for ActionsTestScene
+#include "AllocatorTest/AllocatorTest.h"  // for AllocatorTestScene
+#include "BillBoardTest/BillBoardTest.h"  // for BillBoardTestScene
+#include "BugsTest/BugsTest.h"          // for BugsTestScene
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "Camera3DTest/Camera3DTest.h"  // for Camera3DTestScene
+#include "ChipmunkTest/ChipmunkTest.h"  // for ChipmunkAccelTouchTestScene
+#include "ClickAndMoveTest/ClickAndMoveTest.h"
+#include "ClippingNodeTest/ClippingNodeTest.h"
+#include "CocosDenshionTest/CocosDenshionTest.h"
+#include "CocosStudio3DTest/CocosStudio3DTest.h"  // for CS3DTestScene
+#include "ConfigurationTest/ConfigurationTest.h"
+#include "ConsoleTest/ConsoleTest.h"    // for ConsoleTestScene
+#include "CurlTest/CurlTest.h"          // for CurlTestScene
+#include "CurrentLanguageTest/CurrentLanguageTest.h"
+#include "DrawPrimitivesTest/DrawPrimitivesTest.h"
+#include "EffectsAdvancedTest/EffectsAdvancedTest.h"
+#include "EffectsTest/EffectsTest.h"    // for EffectTestScene
+#include "ExtensionsTest/ExtensionsTest.h"  // for ExtensionsTestScene
+#include "FileUtilsTest/FileUtilsTest.h"  // for FileUtilsTestScene
+#include "FontTest/FontTest.h"          // for FontTestScene
+#include "InputTest/MouseTest.h"        // for MouseTestScene
+#include "IntervalTest/IntervalTest.h"  // for IntervalTestScene
+#include "LabelTest/LabelTest.h"        // for AtlasTestScene
+#include "LabelTest/LabelTestNew.h"     // for AtlasTestSceneNew
+#include "LayerTest/LayerTest.h"        // for LayerTestScene
+#include "LightTest/LightTest.h"        // for LightTestScene
+#include "MenuTest/MenuTest.h"          // for MenuTestScene
+#include "MotionStreakTest/MotionStreakTest.h"
+#include "MutiTouchTest/MutiTouchTest.h"  // for MutiTouchTestScene
+#include "NewAudioEngineTest/NewAudioEngineTest.h"
+#include "NewEventDispatcherTest/NewEventDispatcherTest.h"
+#include "NewRendererTest/NewRendererTest.h"  // for NewRendererTestScene
+#include "NodeTest/NodeTest.h"          // for CocosNodeTestScene
+#include "OpenURLTest/OpenURLTest.h"    // for OpenURLTestScene
+#include "ParallaxTest/ParallaxTest.h"  // for ParallaxTestScene
+#include "Particle3DTest/Particle3DTest.h"  // for Particle3DTestScene
+#include "ParticleTest/ParticleTest.h"  // for ParticleTestScene
+#include "PerformanceTest/PerformanceTest.h"  // for PerformanceTestScene
+#include "PhysicsTest/PhysicsTest.h"    // for PhysicsTestScene
+#include "ReleasePoolTest/ReleasePoolTest.h"  // for ReleasePoolTestScene
+#include "RenderTextureTest/RenderTextureTest.h"
+#include "RotateWorldTest/RotateWorldTest.h"  // for RotateWorldTestScene
+#include "SceneTest/SceneTest.h"        // for SceneTestScene
+#include "SchedulerTest/SchedulerTest.h"  // for SchedulerTestScene
+#include "ShaderTest/ShaderTest.h"      // for ShaderTestScene
+#include "ShaderTest/ShaderTest2.h"     // for ShaderTestScene2
+#include "SpineTest/SpineTest.h"        // for SpineTestScene
+#include "Sprite3DTest/Sprite3DTest.h"  // for Sprite3DTestScene
+#include "SpriteTest/SpriteTest.h"      // for SpriteTestScene
+#include "TextInputTest/TextInputTest.h"  // for TextInputTestScene
+#include "Texture2dTest/Texture2dTest.h"  // for TextureTestScene
+#include "TextureCacheTest/TextureCacheTest.h"
+#include "TexturePackerEncryptionTest/TextureAtlasEncryptionTest.h"
+#include "TileMapTest/TileMapTest.h"    // for TileMapTestScene
+#include "TileMapTest/TileMapTest2.h"   // for TileMapTestSceneNew
+#include "TouchesTest/TouchesTest.h"    // for PongScene
+#include "TransitionsTest/TransitionsTest.h"  // for TransitionsTestScene
+#include "UITest/../BaseTest.h"         // for BaseTest
+#include "UITest/../testBasic.h"        // for TestScene
+#include "UnitTest/UnitTest.h"          // for UnitTestScene
+#include "UserDefaultTest/UserDefaultTest.h"  // for UserDefaultTestScene
+#include "VisibleRect.h"                // for VisibleRect
+#include "ZwoptexTest/ZwoptexTest.h"    // for ZwoptexTestScene
+#include "base/CCConsole.h"             // for Console, Console::Command
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerMouse.h"  // for EventListenerMouse
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventMouse.h"          // for EventMouse
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "CCApplication.h"				// for Application
+#include "math/CCGeometry.h"            // for Size, Rect
+
+using namespace cocos2d;
 
 // C++ includes
-#include <map>
 #include <functional>
 #include <string>
 #include <chrono>
 #include <thread>
 // test inclues
 #include "AppDelegate.h"
-#include "BaseTest.h"
 #include "controller.h"
 #include "testResource.h"
-#include "tests.h"
 
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32) && (CC_TARGET_PLATFORM != CC_PLATFORM_WP8) && (CC_TARGET_PLATFORM != CC_PLATFORM_WINRT)
 #include <unistd.h>
@@ -21,7 +108,6 @@
 #include <io.h>
 #include <WS2tcpip.h>
 #endif
-#include "cocostudio/CocoStudio.h"
 #include "UITest/UITest.h"
 
 typedef struct _Controller{

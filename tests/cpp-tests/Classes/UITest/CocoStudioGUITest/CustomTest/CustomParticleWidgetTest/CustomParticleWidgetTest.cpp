@@ -7,10 +7,22 @@
 //
 
 #include "CustomParticleWidgetTest.h"
-#include "../../CustomGUIScene.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../../CustomGUIScene.h"       // for CustomGUITestScene
 #include "../../CustomWidget/CustomParticleWidget.h"
 #include "../../CustomWidget/CustomParticleWidgetReader.h"
-#include "cocostudio/CCSGUIReader.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader, parseselector
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Ref; }
 
 
 USING_NS_CC;

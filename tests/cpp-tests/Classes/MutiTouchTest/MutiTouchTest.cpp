@@ -1,5 +1,21 @@
 #include "MutiTouchTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCMap.h"                 // for Map
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B, Color3B::BLUE, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
+using namespace cocos2d;
 
 static const Color3B* s_TouchColors[5] = {
     &Color3B::YELLOW,

@@ -1,7 +1,8 @@
 #ifndef __NOTIFICATIONCENTERTEST_H__
 #define __NOTIFICATIONCENTERTEST_H__
 
-#include "cocos2d.h"
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Ref; }
 
 class NotificationCenterTest : public cocos2d::Layer
 {

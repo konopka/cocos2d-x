@@ -22,16 +22,32 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_spine_manual.hpp"
-#include "lua_cocos2dx_spine_auto.hpp"
-#include "cocos2d.h"
+#include "platform/CCGL.h"				// for GLenum
+#include <stdint.h>                     // for int32_t
+#include <string.h>                     // for NULL, strlen
+#include <string>                       // for string
+#include <typeinfo>                     // for type_info
+#include <unordered_map>                // for unordered_map, etc
+#include <utility>                      // for pair
+#include "Animation.h"                  // for spAnimation
+#include "AnimationState.h"             // for spEventType, etc
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LuaValue, LuaValueDict
+#include "platform/CCPlatformMacros.h" // for CCLOG, etc
+#include "CCScriptSupport.h"            // for lua_State
+#include "Event.h"                      // for spEvent
+#include "EventData.h"                  // for spEventData
+#include "LuaBasicConversions.h"        // for luaval_to_int32, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "LuaSkeletonAnimation.h"       // for LuaSkeletonAnimation
+#include "SkeletonAnimation.h"          // for SkeletonAnimation
+#include "ccTypes.h"                    // for BlendFunc
+#include "deprecated/CCString.h"        // for format
+#include "lauxlib.h"                    // for luaL_error
+#include "lua_cocos2dx_spine_auto.hpp"  // for register_all_cocos2dx_spine
+#include "luaconf.h"                    // for LUA_NUMBER
 #include "tolua_fix.h"
-#include "LuaBasicConversions.h"
-#include "LuaScriptHandlerMgr.h"
-#include "CCLuaValue.h"
-#include "spine.h"
-#include "spine-cocos2dx.h"
-#include "LuaSkeletonAnimation.h"
-#include "CCLuaEngine.h"
 
 using namespace spine;
 

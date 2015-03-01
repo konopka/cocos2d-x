@@ -1,7 +1,15 @@
 #ifndef _CONTROLLER_H_
 #define _CONTROLLER_H_
 
-#include "cocos2d.h"
+#include <stddef.h>                     // for size_t
+#include <sys/types.h>                  // for ssize_t
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
 USING_NS_CC;
 

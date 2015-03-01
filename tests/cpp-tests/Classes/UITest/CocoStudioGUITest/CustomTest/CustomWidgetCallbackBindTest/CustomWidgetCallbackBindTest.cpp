@@ -1,19 +1,24 @@
 
 
 #include "CustomWidgetCallbackBindTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../../CustomGUIScene.h"       // for CustomGUITestScene
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "CustomRootNodeReader.h"       // for CustomRootNodeReader
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ObjectFactory.h"         // for ObjectFactory, etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
-#include "../../CustomGUIScene.h"
-#include "cocostudio/ActionTimeline/CSLoader.h"
-
-#include "base/ObjectFactory.h"
-
-#include "CustomRootNode.h"
-#include "CustomRootNodeReader.h"
-
-USING_NS_CC;
+using namespace cocos2d;
 using namespace flatbuffers;
-
-// CustomWidgetCallbackBindScene
 
 void CustomWidgetCallbackBindScene::onEnter()
 {

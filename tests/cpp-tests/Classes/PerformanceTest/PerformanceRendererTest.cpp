@@ -7,8 +7,15 @@
 //
 
 #include "PerformanceRendererTest.h"
-#include "PerformanceTextureTest.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "platform/CCPlatformMacros.h" // for CCLOG, CC_UNUSED
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 RenderTestLayer::RenderTestLayer()
 : PerformBasicLayer(true, 1, 1)
@@ -32,7 +39,7 @@ Scene* RenderTestLayer::scene()
 void RenderTestLayer::onEnter()
 {
     PerformBasicLayer::onEnter();
-    auto map = TMXTiledMap::create("TileMaps/map/sl.tmx");
+    auto map = cocos2d::TMXTiledMap::create("TileMaps/map/sl.tmx");
     
     Size CC_UNUSED s = map->getContentSize();
     CCLOG("ContentSize: %f, %f", s.width,s.height);
@@ -51,5 +58,5 @@ void RenderTestLayer::showCurrentTest()
 void runRendererTest()
 {
     auto scene = RenderTestLayer::scene();
-    Director::getInstance()->replaceScene(scene);
+	cocos2d::Director::getInstance()->replaceScene(scene);
 }

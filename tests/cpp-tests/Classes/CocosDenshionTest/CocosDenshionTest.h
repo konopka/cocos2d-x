@@ -1,11 +1,12 @@
 #ifndef __COCOS_DENSHION_TEST__
 #define __COCOS_DENSHION_TEST__
 
-#include "../testBasic.h"
-
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
 class AudioSlider;
+namespace cocos2d { class Node; }
 
-class CocosDenshionTest : public Layer
+class CocosDenshionTest : public cocos2d::Layer
 {
 public:
     CocosDenshionTest(void);
@@ -16,7 +17,7 @@ public:
 private:
     void addButtons();
     void addSliders();
-    void addChildAt(Node *node, float percentageX, float percentageY);
+    void addChildAt(cocos2d::Node *node, float percentageX, float percentageY);
 
     void updateVolumes(float);
 

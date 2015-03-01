@@ -24,6 +24,38 @@
 
 
 #include "NewRendererTest.h"
+#include <stdint.h>                     // for uint32_t
+#include <stdlib.h>                     // for rand, RAND_MAX
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for RepeatForever, MoveBy, etc
+#include "2d/CCClippingNode.h"          // for ClippingNode
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "NewRendererTest/../BaseTest.h"  // for BaseTest
+#include "NewRendererTest/../testBasic.h"  // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, CCRANDOM_0_1, etc
+#include "base/ccTypes.h"               // for Color4F
+#include "base/ccUtils.h"               // for captureScreen
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"					// for Vec2::operator+, etc
+#include "renderer/CCGroupCommand.h"    // for GroupCommand
+#include "renderer/CCRenderer.h"        // for Renderer, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 static int sceneIdx = -1;
 

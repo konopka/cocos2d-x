@@ -26,15 +26,27 @@ THE SOFTWARE.
 #ifndef __CCRENDER_TEXTURE_H__
 #define __CCRENDER_TEXTURE_H__
 
-#include "2d/CCNode.h"
-#include "2d/CCSprite.h"
-#include "platform/CCImage.h"
-#include "renderer/CCGroupCommand.h"
-#include "renderer/CCCustomCommand.h"
+#include "platform/CCGL.h"				// for GLuint, GLbitfield, GLint, etc
+#include <stdint.h>                     // for uint32_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"				// for Sprite
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/ccTypes.h"               // for Color4F
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCImage.h"           // for Image, Image::Format
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+#include "renderer/CCGroupCommand.h"    // for GroupCommand
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 NS_CC_BEGIN
 
 class EventCustom;
+class Renderer;
 
 /**
  * @addtogroup _2d

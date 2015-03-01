@@ -1,5 +1,14 @@
 #include "RotateWorldTest.h"
-#include "../testResource.h"
+#include "../testResource.h"            // for s_pathGrossini, etc
+#include "2d/CCActionInterval.h"        // for RotateBy, Repeat, Sequence, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color4B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 //------------------------------------------------------------------
 //

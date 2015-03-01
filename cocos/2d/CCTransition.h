@@ -28,7 +28,13 @@ THE SOFTWARE.
 #ifndef __CCTRANSITION_H__
 #define __CCTRANSITION_H__
 
-#include "2d/CCScene.h"
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B (ptr only), Color4B
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
 
@@ -42,8 +48,9 @@ NS_CC_BEGIN
 //so, all classes need creation method.
 
 class ActionInterval;
-class Node;
 class NodeGrid;
+class Renderer;
+class Size;
 
 /** @class TransitionEaseScene
  * @brief TransitionEaseScene can ease the actions of the scene protocol.

@@ -24,7 +24,25 @@
  ****************************************************************************/
 
 #include "TransitionsTest.h"
-#include "../testResource.h"
+#include <functional>                   // for function, _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathB1, s_pathB2, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCTransition.h"            // for TransitionScene, etc
+#include "2d/CCTransitionPageTurn.h"    // for TransitionPageTurn
+#include "2d/CCTransitionProgress.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Scene; }
 
 #define TRANSITION_DURATION (1.2f)
 

@@ -24,8 +24,21 @@
  */
 
 #include "CCControlColourPickerTest.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "ExtensionsTest/ControlExtensionTest/CCControlColourPicker/../CCControlScene.h"
+#include "GUI/CCControlExtension/CCControlColourPicker.h"
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color3B
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 ControlColourPickerTest::ControlColourPickerTest()
 {
@@ -92,7 +105,7 @@ ControlColourPickerTest::~ControlColourPickerTest()
 void ControlColourPickerTest::colourValueChanged(Ref *sender, Control::EventType controlEvent)
 {
     ControlColourPicker* pPicker = (ControlColourPicker*)sender;
-    _colorLabel->setString(String::createWithFormat("#%02X%02X%02X",pPicker->getColor().r, pPicker->getColor().g, pPicker->getColor().b)->getCString());
+    _colorLabel->setString(StringUtils::format("#%02X%02X%02X",pPicker->getColor().r, pPicker->getColor().g, pPicker->getColor().b));
 }
 
 

@@ -9,7 +9,8 @@
 #ifndef __PERFORMANCE_RENDERER_TEST_H__
 #define __PERFORMANCE_RENDERER_TEST_H__
 
-#include "PerformanceTest.h"
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class Scene; }
 
 class RenderTestLayer : public PerformBasicLayer
 {
@@ -21,7 +22,7 @@ public:
     virtual void onEnter() override;
     virtual void showCurrentTest() override;
 public:
-    static Scene* scene();
+    static cocos2d::Scene* scene();
 };
 
 void runRendererTest();

@@ -1,4 +1,14 @@
 #include "CurrentLanguageTest.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "CCCommon.h"                   // for LanguageType, etc
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT
+#include "CCApplication.h"			    // for Application
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 CurrentLanguageTest::CurrentLanguageTest()
 {

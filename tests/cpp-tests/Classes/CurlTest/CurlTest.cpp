@@ -1,7 +1,22 @@
 #include "CurlTest.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "curl/curl.h"
+#include "curl/curl.h"                  // for curl
+#include <stddef.h>                     // for size_t, NULL
+#include <stdlib.h>                     // for malloc, realloc
+#include <string.h>                     // for memcpy
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "curl/curl.h"                  // for curl_easy_setopt, etc
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2
+#include "stdio.h"                      // for printf, sprintf
+
+using namespace cocos2d;
 
 CurlTest::CurlTest()
 {

@@ -1,10 +1,20 @@
 
 
 #include "UIScene_Editor.h"
-#include "GUIEditorTest.h"
-#include "ui/CocosGUI.h"
-#include "UISceneManager_Editor.h"
+#include <functional>                   // for _Bind
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItem, MenuItemFont, etc
+#include "GUIEditorTest.h"              // for GUIEditorTestScene
+#include "UISceneManager_Editor.h"      // for UISceneManager_Editor
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 UIScene_Editor::UIScene_Editor()
 : _sceneTitle(nullptr)

@@ -25,16 +25,23 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCRenderTexture.h"
-
-#include "base/ccUtils.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCEventType.h"
-#include "base/CCConfiguration.h"
-#include "base/CCDirector.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "renderer/CCRenderer.h"
-
+#include <ctype.h>                      // for tolower
+#include <stdlib.h>                     // for malloc
+#include <string.h>                     // for memcpy, memset
+#include <algorithm>                    // for transform
+#include <new>                          // for nothrow, operator new, etc
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCImage.h"                    // for Image, Image::Format, etc
+#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_WP8, etc
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventType.h"			// for EventType
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0, etc
+#include "base/ccUtils.h"               // for ccNextPOT
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN
 

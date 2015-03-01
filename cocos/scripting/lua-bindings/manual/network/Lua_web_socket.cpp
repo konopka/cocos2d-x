@@ -24,14 +24,19 @@
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 #include "Lua_web_socket.h"
-#include <map>
-#include <string>
-#include "tolua_fix.h"
-#include "cocos2d.h"
-#include "CCLuaStack.h"
-#include "CCLuaValue.h"
-#include "CCLuaEngine.h"
-#include "LuaScriptHandlerMgr.h"
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for NULL, strlen
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string, allocator
+#include <vector>                       // for vector
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LuaValue, LuaValueArray
+#include "CCScriptSupport.h"            // for lua_State, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "deprecated/CCArray.h"         // for __Array (ptr only), etc
+#include "deprecated/CCString.h"        // for __String
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 using namespace cocos2d;
 

@@ -9,26 +9,31 @@
 #ifndef __Bug_Child__
 #define __Bug_Child__
 
-#include "BugsTest.h"
+#include "BugsTest.h"                   // for BugsTestBaseLayer
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Scene; }
+namespace cocos2d { class Sprite; }
 
 class BugChild : public BugsTestBaseLayer
 {
 public:
-    static Scene* scene();
+    static cocos2d::Scene* scene();
     virtual bool init() override;
     
-    void switchChild(Ref* sender);
+    void switchChild(cocos2d::Ref* sender);
     
     CREATE_FUNC(BugChild);
     
 protected:
     
-    Sprite* parent1;
-    Sprite* parent2;
+	cocos2d::Sprite* parent1;
+	cocos2d::Sprite* parent2;
     
-    Sprite* child;
+	cocos2d::Sprite* child;
     
-    Menu* menu;
+	cocos2d::Menu* menu;
 };
 
 #endif /* defined(__Bug_Child__) */

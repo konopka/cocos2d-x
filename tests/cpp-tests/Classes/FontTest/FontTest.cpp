@@ -1,5 +1,13 @@
 #include "FontTest.h"
-#include "../testResource.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "FontTest/../BaseTest.h"       // for BaseTest
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for TextVAlignment, Color4B, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum {
     kTagLabel1,

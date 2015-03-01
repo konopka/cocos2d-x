@@ -24,8 +24,34 @@
  ****************************************************************************/
 
 #include "Particle3DTest.h"
-#include "Particle3D/CCParticleSystem3D.h"
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCCamera.h"                // for CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "3d/CCSprite3D.h"
+#include "3d/CCAnimate3D.h"
+#include "3d/CCBillBoard.h"
+#include "CCFileUtils.h"                // for FileUtils
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticleSystem3D, etc
 #include "Particle3D/PU/CCPUParticleSystem3D.h"
+#include "Particle3DTest/../BaseTest.h"  // for BaseTest
+#include "Particle3DTest/../testBasic.h"  // for CL
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for TextHAlignment, etc
+#include "CCStdC.h"         // for cosf, sinf
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+
+using namespace cocos2d;
 
 enum
 {

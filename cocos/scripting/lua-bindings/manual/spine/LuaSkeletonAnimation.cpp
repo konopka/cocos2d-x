@@ -24,10 +24,9 @@
  ****************************************************************************/
 
 #include "LuaSkeletonAnimation.h"
-#include "cocos2d.h"
-#include "LuaScriptHandlerMgr.h"
-#include "CCLuaStack.h"
-#include "CCLuaEngine.h"
+#include <new>                          // for nothrow, operator new
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr
 
 using namespace spine;
 USING_NS_CC;

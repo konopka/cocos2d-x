@@ -23,8 +23,18 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIPageView.h"
+#include <math.h>                       // for fabs
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for ::kNodeOnEnter, Node
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
+
+class Event;
 
 namespace ui {
     

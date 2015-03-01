@@ -4,7 +4,10 @@
 #ifndef __PERFORMANCE_ALLOC_TEST_H__
 #define __PERFORMANCE_ALLOC_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "PerformanceTest.h"            // for PerformBasicLayer
 
 class AllocBasicLayer : public PerformBasicLayer
 {
@@ -14,7 +17,7 @@ public:
     virtual void showCurrentTest();
 };
 
-class PerformceAllocScene : public Scene
+class PerformceAllocScene : public cocos2d::Scene
 {
 public:
     virtual void initWithQuantityOfNodes(unsigned int nNodes);

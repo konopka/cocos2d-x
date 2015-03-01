@@ -22,13 +22,23 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_cocosbuilder_manual.h"
+#include <stddef.h>                     // for NULL
+#include <string>                       // for string
+#include <typeinfo>                     // for type_info
+#include <unordered_map>                // for unordered_map, etc
+#include "CCBAnimationManager.h"        // for CCBAnimationManager
+#include "CCBProxy.h"                   // for CCBProxy
+#include "CCBReader.h"                  // for CCBReader
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "CCNode.h"                     // for Node
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "CCScriptSupport.h"            // for lua_State
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "LuaBasicConversions.h"        // for luaval_to_size, etc
+#include "lauxlib.h"                    // for luaL_error
 #include "lua_cocos2dx_cocosbuilder_auto.hpp"
-#include "cocos2d.h"
+#include "math/CCGeometry.h"            // for Size
 #include "tolua_fix.h"
-#include "LuaBasicConversions.h"
-#include "CCLuaEngine.h"
-#include "CCLuaValue.h"
-#include "CCBProxy.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;

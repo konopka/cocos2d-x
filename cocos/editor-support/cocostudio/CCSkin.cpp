@@ -22,15 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "base/CCDirector.h"
-#include "renderer/CCRenderer.h"
-
 #include "cocostudio/CCSkin.h"
-#include "cocostudio/CCTransformHelp.h"
-#include "cocostudio/CCArmature.h"
-
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, CCLOG
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/ccConfig.h"
+#include "base/ccMacros.h"              // for CC_RADIANS_TO_DEGREES, etc
+#include "base/ccTypes.h"               // for V3F_C4B_T2F, etc
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCBone.h"          // for Bone
+#include "math/CCAffineTransform.h"     // for TransformConcat, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+namespace cocos2d { class SpriteFrame; }
 
 using namespace cocos2d;
 

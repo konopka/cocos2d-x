@@ -23,11 +23,16 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UISlider.h"
-#include "ui/UIScale9Sprite.h"
-#include "ui/UIHelper.h"
-#include "2d/CCSprite.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCTouch.h"               // for Touch
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 NS_CC_BEGIN
+
+class Event;
 
 namespace ui {
     

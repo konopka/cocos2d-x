@@ -26,20 +26,30 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCSprite.h"
-
-#include <algorithm>
-
-#include "2d/CCSpriteBatchNode.h"
-#include "2d/CCAnimationCache.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCTexture2D.h"
-#include "renderer/CCRenderer.h"
-#include "base/CCDirector.h"
-
-#include "deprecated/CCString.h"
-
+#include <stdio.h>                      // for sprintf
+#include <string.h>                     // for memset
+#include <algorithm>                    // for swap, sort
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCAnimation.h"             // for Animation, AnimationFrame
+#include "2d/CCAnimationCache.h"        // for AnimationCache
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCImage.h"                    // for Image
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "math/Mat4.h"                  // for Mat4::operator*
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
 

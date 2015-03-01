@@ -1,7 +1,41 @@
 #include "ArmatureScene.h"
-#include "../../testResource.h"
-#include "cocostudio/CocoStudio.h"
-
+#include <stddef.h>                     // for size_t
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, _1, _2, _3, _4
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "../../testResource.h"         // for s_pathB1, s_pathB2, etc
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for ActionInterval, Sequence, etc
+#include "2d/CCActionTiledGrid.h"       // for ShatteredTiles3D
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage, MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "2d/CCParticleSystem.h"        // for ParticleSystem
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "ExtensionsTest/CocoStudioArmatureTest/../../testBasic.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::BLACK, etc
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "cocostudio/CCBatchNode.h"     // for BatchNode
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCColliderDetector.h"  // for ColliderBody, etc
+#include "cocostudio/CCSkin.h"          // for Skin
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
 
 using namespace cocos2d;
 using namespace cocostudio;
@@ -633,8 +667,8 @@ void TestParticleDisplay::onEnter()
     addChild(armature);
 
 
-    ParticleSystem *p1 = CCParticleSystemQuad::create("Particles/SmallSun.plist");
-    ParticleSystem *p2 = CCParticleSystemQuad::create("Particles/SmallSun.plist");
+    ParticleSystem *p1 = ParticleSystemQuad::create("Particles/SmallSun.plist");
+    ParticleSystem *p2 = ParticleSystemQuad::create("Particles/SmallSun.plist");
 
     cocostudio::Bone *bone  = cocostudio::Bone::create("p1");
     bone->addDisplay(p1, 0);
@@ -794,7 +828,7 @@ void TestColliderDetector::onFrameEvent(cocostudio::Bone *bone, const std::strin
     bullet->setPosition(p.x + 60, p.y);
 
     bullet->stopAllActions();
-    bullet->runAction(CCMoveBy::create(1.5f, Vec2(350, 0)));
+    bullet->runAction(MoveBy::create(1.5f, Vec2(350, 0)));
 }
 
 
@@ -1293,7 +1327,7 @@ void TestArmatureNesting2::onEnter()
     touchedMenu = false;
 
     auto label = Label::createWithTTF("Change Mount", "fonts/arial.ttf", 20);
-    MenuItemLabel* pMenuItem = CCMenuItemLabel::create(label, CC_CALLBACK_1(TestArmatureNesting2::changeMountCallback, this));
+    MenuItemLabel* pMenuItem = MenuItemLabel::create(label, CC_CALLBACK_1(TestArmatureNesting2::changeMountCallback, this));
 
     Menu* pMenu =Menu::create(pMenuItem, nullptr);
 
@@ -1345,7 +1379,7 @@ void TestArmatureNesting2::onTouchesEnded(const std::vector<Touch*>& touches, Ev
         armature->setScaleX(1);
     }
 
-    ActionInterval *move = CCMoveTo::create(2, point);
+    ActionInterval *move = MoveTo::create(2, point);
     armature->stopAllActions();
     armature->runAction(Sequence::create(move, nullptr));
 }

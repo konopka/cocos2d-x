@@ -31,7 +31,12 @@
 #ifndef SPINE_POLYGONBATCH_H_
 #define SPINE_POLYGONBATCH_H_
 
-#include "cocos2d.h"
+#include "platform/CCGL.h"				// for GLushort
+#include "CCStdC.h"						// for ssize_t
+#include "base/CCRef.h"                 // for Ref
+namespace cocos2d { class Texture2D; }
+namespace cocos2d { struct Color4B; }
+namespace cocos2d { struct V2F_C4B_T2F; }
 
 namespace spine {
 

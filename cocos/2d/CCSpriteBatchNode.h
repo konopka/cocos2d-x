@@ -29,12 +29,19 @@ THE SOFTWARE.
 #ifndef __CC_SPRITE_BATCH_NODE_H__
 #define __CC_SPRITE_BATCH_NODE_H__
 
-#include <vector>
-
-#include "2d/CCNode.h"
-#include "base/CCProtocols.h"
-#include "renderer/CCTextureAtlas.h"
-#include "renderer/CCBatchCommand.h"
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE, etc
+#include "base/CCProtocols.h"           // for TextureProtocol
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for BlendFunc
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCBatchCommand.h"    // for BatchCommand
+#include "renderer/CCTextureAtlas.h"	// for TextureAtlas
 
 NS_CC_BEGIN
 
@@ -43,8 +50,9 @@ NS_CC_BEGIN
  * @{
  */
 
-
+class Renderer;
 class Sprite;
+class Texture2D;
 
 /** SpriteBatchNode is like a batch node: if it contains children, it will draw them in 1 single OpenGL call
  * (often known as "batch draw").

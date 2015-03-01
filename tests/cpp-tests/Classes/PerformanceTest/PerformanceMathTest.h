@@ -1,7 +1,9 @@
 #ifndef __PERFORMANCE_MATH_TEST_H__
 #define __PERFORMANCE_MATH_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class Ref; }
 
 class PerformanceMathLayer : public PerformBasicLayer
 {

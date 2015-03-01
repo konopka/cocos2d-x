@@ -1,16 +1,20 @@
 #ifndef _OPEN_URL_TEST_H_
 #define _OPEN_URL_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
+#include <vector>                       // for vector
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Event; }
+namespace cocos2d { class Label; }
+namespace cocos2d { class Touch; }
 
-class OpenURLTest : public Layer
+class OpenURLTest : public cocos2d::Layer
 {
 public:
     OpenURLTest();
     ~OpenURLTest();
 
-    void onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event  *event);
 private:
     cocos2d::Label* _label;
 };

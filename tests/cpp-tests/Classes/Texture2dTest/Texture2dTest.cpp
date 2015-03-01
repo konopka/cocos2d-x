@@ -25,7 +25,32 @@
 
 // local import
 #include "Texture2dTest.h"
-#include "../testResource.h"
+#include "platform/CCGL.h"				// for GL_CLAMP_TO_EDGE, GL_LINEAR, etc
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include "2d/CCActionEase.h"            // for EaseOut
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "Texture2dTest/../BaseTest.h"  // for BaseTest
+#include "Texture2dTest/../testBasic.h"  // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, CCASSERT, etc
+#include "base/ccTypes.h"               // for Color4B, BlendFunc, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 enum {
     kTagLabel = 1,

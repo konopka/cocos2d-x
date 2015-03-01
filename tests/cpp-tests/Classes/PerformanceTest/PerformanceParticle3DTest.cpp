@@ -1,5 +1,12 @@
 #include "PerformanceParticle3DTest.h"
 #include "Particle3D/PU/CCPUParticleSystem3D.h"
+#include "base/CCDirector.h"
+#include "2d/CCMenuItem.h"
+#include "2d/CCLabel.h"
+#include "2d/CCMenu.h"
+#include "2d/CCCamera.h"
+
+using namespace cocos2d;
 
 static int kTagInfoLayer = 1;
 static int kTagMenuLayer = 1000;

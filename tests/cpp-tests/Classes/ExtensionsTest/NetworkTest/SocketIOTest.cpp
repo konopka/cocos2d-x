@@ -9,6 +9,7 @@
 
 #include "SocketIOTest.h"
 #include "../ExtensionsTest.h"
+#include "VisibleRect.h"		// for VisibleRect
 
 USING_NS_CC;
 USING_NS_CC_EXT;

@@ -1,5 +1,16 @@
 #include "DataVisitorTest.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCConsole.h"             // for log
+#include "base/CCDataVisitor.h"         // for PrettyPrinter
+#include "base/CCDirector.h"            // for Director
+#include "deprecated/CCDictionary.h"    // for __Dictionary
+#include "deprecated/CCSet.h"           // for __Set
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
 
 std::string PrettyPrinterDemo::title() const
 {
@@ -55,14 +66,14 @@ void PrettyPrinterDemo::onEnter()
     PrettyPrinter vistor;
     
     // print dictionary
-    auto dict = Dictionary::createWithContentsOfFile("animations/animations.plist");
+    auto dict = __Dictionary::createWithContentsOfFile("animations/animations.plist");
     dict->acceptVisitor(vistor);
     log("%s", vistor.getResult().c_str());
     log("-------------------------------");
     
     __Set myset;
     for (int i = 0; i < 30; ++i) {
-        myset.addObject(String::createWithFormat("str: %d", i));
+        myset.addObject(__String::createWithFormat("str: %d", i));
     }
     vistor.clear();
     myset.acceptVisitor(vistor);

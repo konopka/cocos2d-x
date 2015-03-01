@@ -24,19 +24,65 @@
  ****************************************************************************/
 
 #include "Sprite3DTest.h"
-#include "base/CCAsyncTaskPool.h"
-#include "3d/CCAnimation3D.h"
-#include "3d/CCAnimate3D.h"
-#include "3d/CCAttachNode.h"
-#include "3d/CCRay.h"
-#include "3d/CCSprite3D.h"
-#include "3d/CCTextureCube.h"
-#include "3d/CCSkybox.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "DrawNode3D.h"
+#include "platform/CCGL.h"				// for GL_FALSE, glBindBuffer, etc
+#include <assert.h>                     // for assert
+//#include <ext/alloc_traits.h>
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for rand
+#include <string.h>                     // for memset
+#include <algorithm>                    // for sort
+#include <cmath>                        // for fabs, M_PI
+#include <functional>                   // for _Bind, function, bind, _1, etc
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCCamera.h"                // for Camera, CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCLight.h"                 // for AmbientLight, PointLight
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel, MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "3d/CCAABB.h"                  // for AABB
+#include "3d/CCAnimate3D.h"             // for Animate3D
+#include "3d/CCAnimation3D.h"           // for Animation3D
+#include "3d/CCAttachNode.h"            // for AttachNode
+#include "3d/CCBundle3DData.h"          // for MeshVertexAttrib
+#include "3d/CCMesh.h"                  // for Mesh
+#include "3d/CCMeshSkin.h"              // for MeshSkin
+#include "3d/CCRay.h"                   // for Ray
+#include "3d/CCSprite3D.h"              // for Sprite3D, s_attributeNames, etc
+#include "DrawNode3D.h"                 // for DrawNode3D
+#include "Sprite3DTest/../BaseTest.h"   // for BaseTest
+#include "Sprite3DTest/../testBasic.h"  // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCAsyncTaskPool.h"       // for AsyncTaskPool, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEvent.h"               // for Event
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color4F, Color3B, Color4B
+#include "CCStdC.h"						// for cosf, sinf
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"					// for Vec2::operator-, etc
+#include "math/Vec3.h"					// for Vec3::operator-, etc
+#include "math/Vec4.h"                  // for Vec4, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, Uniform
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D::TexParams, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
-#include <algorithm>
-#include "../testResource.h"
+using namespace cocos2d;
 
 enum
 {

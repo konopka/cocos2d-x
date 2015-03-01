@@ -1,14 +1,34 @@
 #include "BugsTest.h"
-#include "Bug-350.h"
-#include "Bug-422.h"
-#include "Bug-458/Bug-458.h"
-#include "Bug-624.h"
-#include "Bug-886.h"
-#include "Bug-899.h"
-#include "Bug-914.h"
-#include "Bug-1159.h"
-#include "Bug-1174.h"
-#include "Bug-Child.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCScene.h"                 // for Scene
+#include "Bug-1159.h"                   // for Bug1159Layer
+#include "Bug-1174.h"                   // for Bug1174Layer
+#include "Bug-350.h"                    // for Bug350Layer
+#include "Bug-422.h"                    // for Bug422Layer
+#include "Bug-458/Bug-458.h"            // for Bug458Layer
+#include "Bug-624.h"                    // for Bug624Layer
+#include "Bug-886.h"                    // for Bug886Layer
+#include "Bug-899.h"                    // for Bug899Layer
+#include "Bug-914.h"                    // for Bug914Layer
+#include "Bug-Child.h"                  // for BugChild
+#include "BugsTest/Bug-458/../BugsTest.h"  // for BugsTestMainLayer, etc
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 #define TEST_BUG(__bug__)									\
 {															\

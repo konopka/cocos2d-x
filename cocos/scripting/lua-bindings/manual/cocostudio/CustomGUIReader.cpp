@@ -1,5 +1,6 @@
 #include "CustomGUIReader.h"
 #include "CCLuaEngine.h"
+#include "CCLuaStack.h"					// for LuaStack
 #include "json/writer.h"
 #include "json/stringbuffer.h"
 

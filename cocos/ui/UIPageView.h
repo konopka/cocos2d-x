@@ -25,14 +25,26 @@ THE SOFTWARE.
 #ifndef __UIPAGEVIEW_H__
 #define __UIPAGEVIEW_H__
 
-#include "ui/UILayout.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UILayout.h"                // for Layout::Type, Layout, etc
+#include "ui/UIWidget.h"                // for Widget (ptr only), etc
 
 /**
  * @addtogroup ui
  * @{
  */
 NS_CC_BEGIN
+
+class Event;
+class Touch;
 
 namespace ui {
 

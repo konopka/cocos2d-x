@@ -26,16 +26,20 @@
 #ifndef __CCCONTROLBUTTONTEST_H__
 #define __CCCONTROLBUTTONTEST_H__
 
-#include "../CCControlScene.h"
-
-USING_NS_CC_EXT;
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace extension { class ControlButton; } }
 
 class ControlButtonTest_HelloVariableSize : public ControlScene
 {
 public:
     bool init();
     /** Creates and return a button with a default background and title color. */
-    ControlButton *standardButtonWithTitle(const char * title);
+	cocos2d::extension::ControlButton *standardButtonWithTitle(const char * title);
 
     CONTROL_SCENE_CREATE_FUNC(ControlButtonTest_HelloVariableSize)
 };
@@ -46,18 +50,18 @@ public:
     ControlButtonTest_Event();
     ~ControlButtonTest_Event();
     bool init();
-    void touchDownAction(Ref *sender, Control::EventType controlEvent);
-    void touchDragInsideAction(Ref *sender, Control::EventType controlEvent);
-    void touchDragOutsideAction(Ref *sender, Control::EventType controlEvent);
-    void touchDragEnterAction(Ref *sender, Control::EventType controlEvent);
-    void touchDragExitAction(Ref *sender, Control::EventType controlEvent);
-    void touchUpInsideAction(Ref *sender, Control::EventType controlEvent);
-    void touchUpOutsideAction(Ref *sender, Control::EventType controlEvent);
-    void touchCancelAction(Ref *sender, Control::EventType controlEvent);
-    void touchBitmaskAction(Ref *sender, Control::EventType controlEvent);
+    void touchDownAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchDragInsideAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchDragOutsideAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchDragEnterAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchDragExitAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchUpInsideAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchUpOutsideAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchCancelAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
+    void touchBitmaskAction(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
 protected:
-    CC_SYNTHESIZE_RETAIN(Label *, _displayValueLabel, DisplayValueLabel)
-    CC_SYNTHESIZE_RETAIN(Label *, _displayBitmaskLabel, DisplayBitmaskLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label *, _displayValueLabel, DisplayValueLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label *, _displayBitmaskLabel, DisplayBitmaskLabel)
     CONTROL_SCENE_CREATE_FUNC(ControlButtonTest_Event)
 };
 
@@ -66,7 +70,7 @@ class ControlButtonTest_Styling : public ControlScene
 {
 public:
     bool init();
-    ControlButton *standardButtonWithTitle(const char *title);
+	cocos2d::extension::ControlButton *standardButtonWithTitle(const char *title);
     CONTROL_SCENE_CREATE_FUNC(ControlButtonTest_Styling)
 };
 

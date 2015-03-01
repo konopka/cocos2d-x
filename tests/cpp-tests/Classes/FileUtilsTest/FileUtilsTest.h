@@ -1,10 +1,12 @@
 #ifndef __FILEUTILSTEST_H__
 #define __FILEUTILSTEST_H__
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-
-USING_NS_CC;
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC, USING_NS_CC
+namespace cocos2d { class Ref; }
 
 class FileUtilsTestScene : public TestScene
 {
@@ -18,9 +20,9 @@ public:
     virtual void onEnter() override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    void backCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void restartCallback(Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
 };
 
 class TestResolutionDirectories : public FileUtilsDemo

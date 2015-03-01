@@ -1,7 +1,10 @@
 #ifndef _GAME_OVER_SCENE_H_
 #define _GAME_OVER_SCENE_H_
 
-#include "cocos2d.h"
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_READONLY, etc
+namespace cocos2d { class Label; }
 
 class GameOverLayer : public cocos2d::LayerColor
 {

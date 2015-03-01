@@ -1,5 +1,7 @@
 #include "RefPtrTest.h"
 
+using namespace cocos2d;
+
 void RefPtrTest::onEnter()
 {
     UnitTestDemo::onEnter();

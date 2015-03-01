@@ -30,7 +30,7 @@
 #include "../CustomWidget/CustomImageViewReader.h"
 #include "../CustomWidget/CustomParticleWidgetReader.h"
 #include "../CustomWidget/CustomParticleWidget.h"
-
+#include "VisibleRect.h"                // for VisibleRect
 
 USING_NS_CC;
 using namespace cocostudio;

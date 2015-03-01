@@ -23,6 +23,20 @@
  */
 
 #include "CCControlPotentiometerTest.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "ExtensionsTest/ControlExtensionTest/CCControlPotentiometerTest/../CCControlScene.h"
+#include "GUI/CCControlExtension/CCControlPotentiometer.h"
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/CCDirector.h"            // for Director
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 ControlPotentiometerTest::ControlPotentiometerTest()
 : _displayValueLabel(nullptr)
@@ -88,6 +102,6 @@ void ControlPotentiometerTest::valueChanged(Ref *sender, Control::EventType cont
 {
     ControlPotentiometer* pControl = (ControlPotentiometer*)sender;
 	// Change value of label.
-    _displayValueLabel->setString(String::createWithFormat("%.02f", pControl->getValue())->getCString());	
+    _displayValueLabel->setString(StringUtils::format("%.02f", pControl->getValue()));	
 }
 

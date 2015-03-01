@@ -25,9 +25,12 @@
 #ifndef _CONSOLE_TEST_H_
 #define _CONSOLE_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+namespace cocos2d { class Console; }
+namespace cocos2d { class Ref; }
 
 USING_NS_CC;
 

@@ -1,10 +1,10 @@
 #ifndef _CURRENT_LANGUAGE_TEST_H_
 #define _CURRENT_LANGUAGE_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
 
-class CurrentLanguageTest : public Layer
+class CurrentLanguageTest : public cocos2d::Layer
 {
 public:
     CurrentLanguageTest();

@@ -25,11 +25,22 @@ THE SOFTWARE.
 #ifndef __UIWIDGET_H__
 #define __UIWIDGET_H__
 
-#include "2d/CCProtectedNode.h"
-#include "ui/UILayoutParameter.h"
-#include "ui/GUIDefine.h"
-#include "ui/GUIExport.h"
-#include "base/CCMap.h"
+#include <stdint.h>                     // for uint32_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCProtectedNode.h"         // for ProtectedNode
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "math/CCGeometry.h"            // for Size
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UILayoutParameter.h"       // for LayoutParameter, etc
 
 /**
  * @addtogroup ui
@@ -37,8 +48,11 @@ THE SOFTWARE.
  */
 NS_CC_BEGIN
 
+class Event;
 class EventListenerTouchOneByOne;
-
+class GLProgramState;
+class Renderer;
+class Touch;
 
 namespace ui {
     class LayoutComponent;

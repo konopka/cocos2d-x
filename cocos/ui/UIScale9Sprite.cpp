@@ -23,13 +23,31 @@
  ****************************************************************************/
 
 #include "UIScale9Sprite.h"
-#include "2d/CCSprite.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "base/CCVector.h"
-#include "base/CCDirector.h"
-#include "renderer/CCGLProgram.h"
-#include "ui/shaders/UIShaders.h"
+#include <math.h>                       // for ceilf
+#include <stddef.h>                     // for NULL
+#include <algorithm>                    // for max, min, sort
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_ENABLE_SCRIPT_BINDING
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE
+#include "math/CCAffineTransform.h"     // for RectApplyAffineTransform, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCTexture2D.h"       // for Texture2D
 #include "renderer/ccShaders.h"
+#include "ui/shaders/UIShaders.h"       // for ccUIGrayScale_frag
+namespace cocos2d { class Renderer; }
 
 NS_CC_BEGIN
 namespace ui {

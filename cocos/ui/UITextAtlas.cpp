@@ -23,9 +23,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UITextAtlas.h"
-#include "2d/CCLabel.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "math/Vec2.h"                  // for Point
 
 NS_CC_BEGIN
+
+class Node;
 
 namespace ui {
     

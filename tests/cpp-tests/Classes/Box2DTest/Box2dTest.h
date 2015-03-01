@@ -5,9 +5,9 @@
 #include "Box2D/Box2D.h"
 #include "../testBasic.h"
 
-class Box2DTestLayer : public Layer
+class Box2DTestLayer : public cocos2d::Layer
 {
-    Texture2D* _spriteTexture;    // weak ref
+    cocos2d::Texture2D* _spriteTexture;    // weak ref
     b2World* world;
 //    GLESDebugDraw* _debugDraw;
 
@@ -17,17 +17,17 @@ public:
 
     void initPhysics();
     void createResetButton();
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 
-    void addNewSpriteAtPosition(Vec2 p);
+    void addNewSpriteAtPosition(cocos2d::Vec2 p);
     void update(float dt) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
 
 #if CC_ENABLE_BOX2D_INTEGRATION
 protected:
-    Mat4 _modelViewMV;
+	cocos2d::Mat4 _modelViewMV;
     void onDraw();
-    CustomCommand _customCommand;
+	cocos2d::CustomCommand _customCommand;
 #endif
 } ;
 

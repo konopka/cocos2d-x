@@ -2,25 +2,29 @@
 #define __BUGS_TEST_H__
 
 #include "../testBasic.h"
+#include "2d/CCLayer.h"
 
-class BugsTestMainLayer : public Layer
+namespace cocos2d {	class Vec2; }
+namespace cocos2d { class Menu; }
+
+class BugsTestMainLayer : public cocos2d::Layer
 {
 public:
     virtual void onEnter() override;
 
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>&touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 
 protected:
-    Vec2 _beginPos;
-    Menu* _itmeMenu;
+	cocos2d::Vec2 _beginPos;
+	cocos2d::Menu* _itmeMenu;
 };
 
-class BugsTestBaseLayer : public Layer
+class BugsTestBaseLayer : public cocos2d::Layer
 {
 public:
     virtual void onEnter() override;
-    void backCallback(Ref* sender);
+    void backCallback(cocos2d::Ref* sender);
 };
 
 class BugsTestScene : public TestScene

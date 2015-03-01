@@ -1,19 +1,30 @@
 #ifndef _SHADER_TEST2_H_
 #define _SHADER_TEST2_H_
-#include "../testBasic.h"
-#include "extensions/cocos-ext.h"
-#include "../BaseTest.h"
 
-USING_NS_CC_EXT;
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+namespace cocos2d { class Event; }
+namespace cocos2d { class EventListenerCustom; }
+namespace cocos2d { class GLProgramState; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 class ShaderTestDemo2 : public BaseTest
 {
 public:
     ShaderTestDemo2(void);
     virtual std::string title() const override { return "Effects on Sprites";}
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 };
 
 class ShaderTestScene2 : public TestScene
@@ -29,20 +40,20 @@ public:
 //
 class EffectSprite;
 
-class Effect : public Ref
+class Effect : public cocos2d::Ref
 {
 public:
-    GLProgramState* getGLProgramState() const { return _glprogramstate; }
+	cocos2d::GLProgramState* getGLProgramState() const { return _glprogramstate; }
     virtual void setTarget(EffectSprite *sprite){}
 
 protected:
     bool initGLProgramState(const std::string &fragmentFilename);
     Effect();
     virtual ~Effect();
-    GLProgramState *_glprogramstate;
+	cocos2d::GLProgramState *_glprogramstate;
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
     std::string _fragSource;
-    EventListenerCustom* _backgroundListener;
+    cocos2d::EventListenerCustom* _backgroundListener;
 #endif
 };
 
@@ -67,13 +78,13 @@ public:
     virtual std::string subtitle() const {return "Sprite Lamp effects";}
     //callback
 public:
-    virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event) override;
-    virtual void onTouchesMoved(const std::vector<Touch*>& touches, Event *unused_event) override;
-    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event *unused_event) override;
+    virtual void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *unused_event) override;
+    virtual void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *unused_event) override;
+    virtual void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *unused_event) override;
 protected:
     EffectSprite *_sprite;
     Effect* _effect;
-    Sprite* _lightSprite;
+	cocos2d::Sprite* _lightSprite;
 };
 
 #endif

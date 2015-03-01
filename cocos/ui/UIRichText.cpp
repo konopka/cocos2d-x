@@ -23,11 +23,16 @@
  ****************************************************************************/
 
 #include "UIRichText.h"
-#include "platform/CCFileUtils.h"
-#include "2d/CCLabel.h"
-#include "2d/CCSprite.h"
+#include <stddef.h>                     // for size_t
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
 #include "base/ccUTF8.h"
-#include "ui/UIHelper.h"
+#include "CCStdC.h"						// for MAX
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "ui/UIHelper.h"                // for Helper
 
 NS_CC_BEGIN
 

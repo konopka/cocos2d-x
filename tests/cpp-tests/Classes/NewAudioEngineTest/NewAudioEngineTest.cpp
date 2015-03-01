@@ -27,6 +27,13 @@
 
 #include "NewAudioEngineTest.h"
 #include "ui/CocosGUI.h"
+#include "2d/CCActionInterval.h"		// for ScaleTo
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"	// for
+#include "2d/CCSprite.h"				// for Sprite
+#include "2d/CCLabel.h"					// for Label
+#include "base/ccUtils.h"				// for gettime
 
 using namespace cocos2d;
 using namespace cocos2d::ui;

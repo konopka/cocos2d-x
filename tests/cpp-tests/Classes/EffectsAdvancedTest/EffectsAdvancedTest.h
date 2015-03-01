@@ -1,20 +1,23 @@
 #ifndef _EFFECT_ADVANCED_TEST_H_
 #define _EFFECT_ADVANCED_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class TextureAtlas; }
 
 class EffectAdvanceTextLayer: public BaseTest
 {
 protected:
-    TextureAtlas* _atlas;
+    cocos2d::TextureAtlas* _atlas;
 
     std::string    _title;
 
-    Node* _bgNode;
-    Node* _target1;
-    Node* _target2;
+    cocos2d::Node* _bgNode;
+    cocos2d::Node* _target1;
+    cocos2d::Node* _target2;
 
 public:
     virtual void onEnter() override;
@@ -23,9 +26,9 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 };
 
 class Effect1 : public EffectAdvanceTextLayer

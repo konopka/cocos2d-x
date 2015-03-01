@@ -1,8 +1,10 @@
 #ifndef __COMPONENTSTESTSCENE_H__
 #define __COMPONENTSTESTSCENE_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Node; }
+namespace cocos2d { class Scene; }
 
 void runComponentsTestLayerTest();
 

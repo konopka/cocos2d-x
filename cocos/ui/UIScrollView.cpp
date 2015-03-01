@@ -23,8 +23,19 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIScrollView.h"
+#include <math.h>                       // for fabs
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node, ::kNodeOnEnter
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccTypes.h"               // for Color3B
+#include "CCStdC.h"						// for MAX, MIN
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"					// for Vec2::operator-, etc
 
 NS_CC_BEGIN
+
+class Event;
 
 namespace ui {
 

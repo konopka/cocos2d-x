@@ -26,18 +26,19 @@
 #ifndef __CCCONTROLSCENE_H__
 #define __CCCONTROLSCENE_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-
-
-USING_NS_CC;
-USING_NS_CC_EXT;
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+class ControlScene;
+namespace cocos2d { class Ref; }
 
 #define CONTROL_SCENE_CREATE_FUNC(controlScene) \
 public: \
-static Scene* sceneWithTitle(const char * title) \
+static cocos2d::Scene* sceneWithTitle(const char * title) \
 { \
-    Scene* scene = Scene::create(); \
+    cocos2d::Scene* scene = cocos2d::Scene::create(); \
     controlScene* controlLayer = new controlScene(); \
     if (controlLayer && controlLayer->init()) \
     { \
@@ -53,20 +54,20 @@ static Scene* sceneWithTitle(const char * title) \
 }
 
 
-class ControlScene : public Layer
+class ControlScene : public cocos2d::Layer
 {
 public:
     ControlScene();
     ~ControlScene();
     bool init();
     // Menu Callbacks
-    void toExtensionsMainLayer(Ref* sender);
-    void previousCallback(Ref* sender);
-    void restartCallback(Ref* sender);
-    void nextCallback(Ref* sender);
+    void toExtensionsMainLayer(cocos2d::Ref* sender);
+    void previousCallback(cocos2d::Ref* sender);
+    void restartCallback(cocos2d::Ref* sender);
+    void nextCallback(cocos2d::Ref* sender);
 
     /** Title label of the scene. */
-    CC_SYNTHESIZE_RETAIN(Label*, _sceneTitleLabel, SceneTitleLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label*, _sceneTitleLabel, SceneTitleLabel)
 
     CONTROL_SCENE_CREATE_FUNC(ControlScene);
 };

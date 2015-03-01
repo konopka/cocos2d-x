@@ -24,10 +24,15 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTextFieldTTF.h"
-
-#include "base/CCDirector.h"
+#include <new>                          // for nothrow, operator new
+#include "CCGLView.h"                   // for GLView
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "base/CCDirector.h"            // for Director
+#include "math/CCGeometry.h"            // for Size
 
 NS_CC_BEGIN
+
+class Renderer;
 
 static int _calcCharCount(const char * text)
 {

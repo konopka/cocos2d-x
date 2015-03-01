@@ -25,14 +25,15 @@
 #ifndef __Downloader__
 #define __Downloader__
 
-#include "platform/CCFileUtils.h"
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
-
-#include <unordered_map>
-#include <string>
-#include <functional>
-#include <memory>
+#include <stdio.h>                      // for FILE
+#include <functional>                   // for function
+#include <memory>                       // for enable_shared_from_this, etc
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include <vector>                       // for vector
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
+namespace cocos2d { class FileUtils; }
 
 NS_CC_EXT_BEGIN
 

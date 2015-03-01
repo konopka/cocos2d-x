@@ -1,9 +1,16 @@
 #ifndef _LAYER_TEST_H_
 #define _LAYER_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Event; }
+namespace cocos2d { class LayerColor; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
+namespace cocos2d { class Vec2; }
 
 class LayerTest : public BaseTest
 {
@@ -18,9 +25,9 @@ public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 };
 
 class LayerTestCascadingOpacityA : public LayerTest
@@ -80,11 +87,11 @@ public:
     virtual void onEnter() override;
     virtual std::string subtitle() const override;
 
-    void updateSize(Vec2 &touchLocation);
+    void updateSize(cocos2d::Vec2 &touchLocation);
 
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 };
 
 class LayerTest2 : public LayerTest
@@ -111,7 +118,7 @@ class LayerGradientTest : public LayerTest
 public:
     CREATE_FUNC(LayerGradientTest);
     LayerGradientTest();
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event *event);
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     void toggleItem(cocos2d::Ref *sender);
@@ -140,7 +147,7 @@ class LayerIgnoreAnchorPointPos : public LayerTest
 public:
     CREATE_FUNC(LayerIgnoreAnchorPointPos);
     virtual void onEnter() override;
-    void onToggle(Ref* pObject);
+    void onToggle(cocos2d::Ref* pObject);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 };
@@ -150,7 +157,7 @@ class LayerIgnoreAnchorPointRot : public LayerTest
 public:
     CREATE_FUNC(LayerIgnoreAnchorPointRot);
     virtual void onEnter() override;
-    void onToggle(Ref* pObject);
+    void onToggle(cocos2d::Ref* pObject);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 };
@@ -160,7 +167,7 @@ class LayerIgnoreAnchorPointScale : public LayerTest
 public:
     CREATE_FUNC(LayerIgnoreAnchorPointScale);
     virtual void onEnter() override;
-    void onToggle(Ref* pObject);
+    void onToggle(cocos2d::Ref* pObject);
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 };
@@ -185,7 +192,7 @@ public:
     void step(float dt);
     
 private:
-    LayerColor* _layer[3];
+	cocos2d::LayerColor* _layer[3];
 };
 
 class LayerBug3162B : public LayerTest
@@ -199,7 +206,7 @@ public:
     void step(float dt);
     
 private:
-    LayerColor* _layer[3];
+	cocos2d::LayerColor* _layer[3];
 };
 
 class LayerColorOccludeBug : public LayerTest
@@ -212,7 +219,7 @@ public:
     virtual std::string subtitle() const override;
     
 private:
-    LayerColor* _layer;
+    cocos2d::LayerColor* _layer;
 };
 
 class LayerTestScene : public TestScene

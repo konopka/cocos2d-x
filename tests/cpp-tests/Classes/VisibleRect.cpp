@@ -23,6 +23,9 @@
  ****************************************************************************/
 
 #include "VisibleRect.h"
+#include "CCGLView.h"                   // for GLView
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCDirector.h"            // for Director
 
 USING_NS_CC;
 

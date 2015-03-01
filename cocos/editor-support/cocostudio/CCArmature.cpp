@@ -23,17 +23,24 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCArmature.h"
-#include "cocostudio/CCArmatureDataManager.h"
+//#include <ext/alloc_traits.h>
+#include <new>                          // for nothrow, operator new, etc
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "2d/CCDrawingPrimitives.h"     // for drawPoly
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/ccConfig.h"              // for CC_ENABLE_SCRIPT_BINDING
+#include "base/ccMacros.h"              // for CCASSERT
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
 #include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDataReaderHelper.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CCSkin.h"
-
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGroupCommand.h"
-#include "renderer/CCGLProgramState.h"
-#include "2d/CCDrawingPrimitives.h"
-#include "base/CCDirector.h"
+#include "cocostudio/CCDatas.h"         // for AnimationData, ArmatureData, etc
+#include "cocostudio/CCSkin.h"          // for Skin
+#include "math/CCAffineTransform.h"     // for RectApplyTransform
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCTexture2D.h"       // for Texture2D
+namespace cocos2d { class Renderer; }
 
 #if ENABLE_PHYSICS_BOX2D_DETECT
 #include "Box2D/Box2D.h"

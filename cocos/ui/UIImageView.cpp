@@ -23,11 +23,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIImageView.h"
-#include "ui/UIScale9Sprite.h"
-#include "ui/UIHelper.h"
-#include "2d/CCSprite.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 NS_CC_BEGIN
+
+class Node;
 
 namespace ui {
     

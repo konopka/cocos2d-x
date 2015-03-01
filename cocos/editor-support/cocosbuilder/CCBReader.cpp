@@ -1,22 +1,31 @@
-#include <ctype.h>
-#include <algorithm>
-
-#include "base/CCDirector.h"
-#include "platform/CCFileUtils.h"
-#include "2d/CCScene.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "renderer/CCTextureCache.h"
-
 #include "CCBReader.h"
-#include "CCNodeLoader.h"
-#include "CCNodeLoaderLibrary.h"
-#include "CCNodeLoaderListener.h"
-#include "CCBMemberVariableAssigner.h"
-#include "CCBSelectorResolver.h"
-#include "CCBAnimationManager.h"
-#include "CCBSequenceProperty.h"
-#include "CCBKeyframe.h"
-#include <sstream>
+#include <ctype.h>                      // for tolower
+#include <stdlib.h>                     // for free, malloc
+#include <string.h>                     // for memcpy, strlen
+#include <algorithm>                    // for transform
+#include <sstream>                      // for stringstream, basic_ostream, etc
+#include <unordered_map>                // for _Node_iterator, etc
+#include <utility>                      // for pair
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCBAnimationManager.h"        // for CCBAnimationManager
+#include "CCBKeyframe.h"                // for CCBKeyframe, etc
+#include "CCBMemberVariableAssigner.h"  // for CCBMemberVariableAssigner
+#include "CCBSequenceProperty.h"        // for CCBSequenceProperty
+#include "CCNodeLoader.h"               // for NodeLoader
+#include "CCNodeLoaderLibrary.h"        // for NodeLoaderLibrary
+#include "CCNodeLoaderListener.h"       // for NodeLoaderListener
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "cocosbuilder/CCBSequence.h"   // for CCBSequence
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

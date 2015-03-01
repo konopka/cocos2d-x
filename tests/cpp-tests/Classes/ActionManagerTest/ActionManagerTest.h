@@ -1,13 +1,17 @@
 #ifndef _ACTION_MANAGER_TEST_H_
 #define _ACTION_MANAGER_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class TextureAtlas; }
 
 class ActionManagerTest: public BaseTest
 {
 protected:
-    TextureAtlas* _atlas;
+	cocos2d::TextureAtlas* _atlas;
 
     std::string    _title;
 
@@ -17,9 +21,9 @@ public:
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 };
 
 class CrashTest : public ActionManagerTest
@@ -35,7 +39,7 @@ class LogicTest : public ActionManagerTest
 public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
-    void bugMe(Node* node);
+    void bugMe(cocos2d::Node* node);
 };
 
 class PauseTest : public ActionManagerTest

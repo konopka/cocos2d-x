@@ -22,9 +22,29 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_3d_manual.h"
-#include "lua_cocos2dx_3d_auto.hpp"
-#include "LuaBasicConversions.h"
-#include "CCLuaEngine.h"
+#include "platform/CCGL.h"				// for GLenum
+#include <stddef.h>                     // for size_t
+#include <stdint.h>                     // for int32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include <typeinfo>                     // for type_info
+#include <unordered_map>                // for unordered_map, etc
+#include "CCAABB.h"                     // for AABB
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "CCOBB.h"                      // for OBB
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, CCLOG, etc
+#include "CCRay.h"                      // for Ray
+#include "CCScriptSupport.h"            // for lua_State
+#include "CCSprite3D.h"                 // for Sprite3D
+#include "LuaBasicConversions.h"        // for luaval_to_vec3, etc
+#include "ccTypes.h"                    // for BlendFunc
+#include "lauxlib.h"                    // for luaL_error
+#include "lua_cocos2dx_3d_auto.hpp"     // for register_all_cocos2dx_3d
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec3.h"                  // for Vec3
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 extern int lua_cocos2dx_3d_Sprite3D_setBlendFunc(lua_State* L);
 

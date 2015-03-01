@@ -25,9 +25,15 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include "base/allocator/CCAllocatorStrategyPool.h"
+#include <stdint.h>                     // for uint8_t
+#include <string.h>                     // for memset
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "base/allocator/CCAllocatorMacros.h"
+#include "base/ccConfig.h"              // for CC_ENABLE_ALLOCATOR
+namespace cocos2d { class Ref; }
 
 namespace AllocatorTestNS
 {

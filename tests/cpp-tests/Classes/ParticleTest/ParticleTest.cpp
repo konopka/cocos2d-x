@@ -1,5 +1,39 @@
 #include "ParticleTest.h"
-#include "../testResource.h"
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for rand
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_fire, s_stars1, s_back3, etc
+#include "2d/CCActionInterval.h"        // for MoveBy, RepeatForever, etc
+#include "2d/CCLabelAtlas.h"            // for LabelAtlas
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParallaxNode.h"          // for ParallaxNode
+#include "2d/CCParticleBatchNode.h"     // for ParticleBatchNode
+#include "2d/CCParticleExamples.h"      // for ParticleFire, etc
+#include "2d/CCParticleSystem.h"        // for ParticleSystem, etc
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for CCLOG, CC_SAFE_RELEASE
+#include "ParticleTest/../BaseTest.h"   // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, CCASSERT, etc
+#include "base/ccTypes.h"               // for Color4F, Color3B, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 enum {
     kTagParticleCount = 1,

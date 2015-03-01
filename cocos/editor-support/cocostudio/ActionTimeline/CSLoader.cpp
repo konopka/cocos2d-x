@@ -23,56 +23,78 @@
  ****************************************************************************/
 
 #include "CSLoader.h"
-
-#include "base/ObjectFactory.h"
-
-#include "../../cocos/ui/CocosGUI.h"
-#include "CCActionTimelineCache.h"
-#include "CCActionTimeline.h"
-#include "CCActionTimelineNode.h"
-#include "../CCSGUIReader.h"
-#include "cocostudio/CocoStudio.h"
-#include "cocostudio/CSParseBinary_generated.h"
-
-#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
-#include "cocostudio/WidgetReader/NodeReaderDefine.h"
-
-#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-#include "cocostudio/WidgetReader/SingleNodeReader/SingleNodeReader.h"
-#include "cocostudio/WidgetReader/SpriteReader/SpriteReader.h"
-#include "cocostudio/WidgetReader/ParticleReader/ParticleReader.h"
-#include "cocostudio/WidgetReader/GameMapReader/GameMapReader.h"
-#include "cocostudio/WidgetReader/ProjectNodeReader/ProjectNodeReader.h"
-#include "cocostudio/WidgetReader/ComAudioReader/ComAudioReader.h"
-
+#include "platform/CCGL.h"				// for GLubyte
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for strcmp
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "CCActionTimeline.h"           // for ActionTimeline, etc
+#include "CCActionTimelineCache.h"      // for ActionTimelineCache
+#include "CCFileUtils.h"                // for FileUtils
+#include "base/CCData.h"                // for Data
+#include "base/CCRef.h"                 // for Ref
+#include "base/ObjectFactory.h"         // for ObjectFactory, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader, etc
+#include "cocostudio/CSParseBinary_generated.h"  // for Options, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "cocostudio/FlatBuffersSerialize.h"  // for FlatBuffersSerialize
+#include "cocostudio/WidgetCallBackHandlerProtocol.h"
+#include "cocostudio/WidgetReader/ArmatureNodeReader/ArmatureNodeReader.h"
 #include "cocostudio/WidgetReader/ButtonReader/ButtonReader.h"
 #include "cocostudio/WidgetReader/CheckBoxReader/CheckBoxReader.h"
+#include "cocostudio/WidgetReader/ComAudioReader/ComAudioReader.h"
+#include "cocostudio/WidgetReader/GameMapReader/GameMapReader.h"
 #include "cocostudio/WidgetReader/ImageViewReader/ImageViewReader.h"
-#include "cocostudio/WidgetReader/TextBMFontReader/TextBMFontReader.h"
-#include "cocostudio/WidgetReader/TextReader/TextReader.h"
-#include "cocostudio/WidgetReader/TextFieldReader/TextFieldReader.h"
-#include "cocostudio/WidgetReader/TextAtlasReader/TextAtlasReader.h"
-#include "cocostudio/WidgetReader/LoadingBarReader/LoadingBarReader.h"
-#include "cocostudio/WidgetReader/SliderReader/SliderReader.h"
 #include "cocostudio/WidgetReader/LayoutReader/LayoutReader.h"
-#include "cocostudio/WidgetReader/ScrollViewReader/ScrollViewReader.h"
-#include "cocostudio/WidgetReader/PageViewReader/PageViewReader.h"
 #include "cocostudio/WidgetReader/ListViewReader/ListViewReader.h"
-#include "cocostudio/WidgetReader/ArmatureNodeReader/ArmatureNodeReader.h"
+#include "cocostudio/WidgetReader/LoadingBarReader/LoadingBarReader.h"
 #include "cocostudio/WidgetReader/Node3DReader/Node3DReader.h"
-#include "cocostudio/WidgetReader/Sprite3DReader/Sprite3DReader.h"
-#include "cocostudio/WidgetReader/UserCameraReader/UserCameraReader.h"
+#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+#include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include "cocostudio/WidgetReader/PageViewReader/PageViewReader.h"
 #include "cocostudio/WidgetReader/Particle3DReader/Particle3DReader.h"
+#include "cocostudio/WidgetReader/ParticleReader/ParticleReader.h"
+#include "cocostudio/WidgetReader/ProjectNodeReader/ProjectNodeReader.h"
+#include "cocostudio/WidgetReader/ScrollViewReader/ScrollViewReader.h"
+#include "cocostudio/WidgetReader/SingleNodeReader/SingleNodeReader.h"
+#include "cocostudio/WidgetReader/SliderReader/SliderReader.h"
+#include "cocostudio/WidgetReader/Sprite3DReader/Sprite3DReader.h"
+#include "cocostudio/WidgetReader/SpriteReader/SpriteReader.h"
+#include "cocostudio/WidgetReader/TextAtlasReader/TextAtlasReader.h"
+#include "cocostudio/WidgetReader/TextBMFontReader/TextBMFontReader.h"
+#include "cocostudio/WidgetReader/TextFieldReader/TextFieldReader.h"
+#include "cocostudio/WidgetReader/TextReader/TextReader.h"
+#include "cocostudio/WidgetReader/UserCameraReader/UserCameraReader.h"
+#include "cocostudio/WidgetReader/WidgetReaderProtocol.h"
+#include "deprecated/CCString.h"        // for __String
+#include "flatbuffers/flatbuffers.h"    // for String, Vector, etc
+#include "CCPlatformDefine.h"  // for CC_ASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Point
+#include "ui/UIButton.h"                // for Button
+#include "ui/UICheckBox.h"              // for CheckBox
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIListView.h"              // for ListView
+#include "ui/UILoadingBar.h"            // for LoadingBar
+#include "ui/UIPageView.h"              // for PageView
+#include "ui/UIScrollView.h"            // for ScrollView
+#include "ui/UISlider.h"                // for Slider
+#include "ui/UIText.h"                  // for Text
+#include "ui/UITextAtlas.h"             // for TextAtlas
+#include "ui/UITextBMFont.h"            // for TextBMFont
+#include "ui/UITextField.h"             // for TextField
+#include "ui/UIWidget.h"                // for Widget, etc
 
-#include "flatbuffers/flatbuffers.h"
-#include "flatbuffers/util.h"
-
-#include "cocostudio/FlatBuffersSerialize.h"
-
-#include "cocostudio/WidgetCallBackHandlerProtocol.h"
-
-#include <fstream>
-
+using namespace cocos2d;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 using namespace cocostudio::timeline;

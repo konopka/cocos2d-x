@@ -26,6 +26,7 @@
 
 #include "CocoStudioGUITest.h"
 #include "CocostudioParserTest/CocostudioParserJsonTest.h"
+#include "VisibleRect.h"                // for VisibleRect
 
 enum
 {

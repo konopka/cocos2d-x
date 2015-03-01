@@ -25,23 +25,27 @@
 #ifndef __TestCpp__UIListViewTest_Editor__
 #define __TestCpp__UIListViewTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+#include "ui/UIListView.h"              // for ListView, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { class __Array; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIListViewTest_Vertical_Editor : public UIScene_Editor
 {
 public:
-    static void setupListView(ListView* listView);
+    static void setupListView(cocos2d::ui::ListView* listView);
     UIListViewTest_Vertical_Editor();
     ~UIListViewTest_Vertical_Editor();
     bool init();
-    void selectedItemEvent(Ref* pSender, ListView::EventType type);
-    virtual void switchLoadMethod(Ref* pSender);
+    void selectedItemEvent(cocos2d::Ref* pSender, cocos2d::ui::ListView::EventType type);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIListViewTest_Vertical_Editor)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
     
-    __Array* _array;
+    cocos2d::__Array* _array;
 };
 
 
@@ -51,14 +55,14 @@ public:
     UIListViewTest_Horizontal_Editor();
     ~UIListViewTest_Horizontal_Editor();
     bool init();
-    void selectedItemEvent(Ref* pSender, ListView::EventType type);
-    virtual void switchLoadMethod(Ref* pSender);
+    void selectedItemEvent(cocos2d::Ref* pSender, cocos2d::ui::ListView::EventType type);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIListViewTest_Horizontal_Editor)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
     
-    __Array* _array;
+    cocos2d::__Array* _array;
 };
 
 #endif /* defined(__TestCpp__UIListViewTest_Editor__) */

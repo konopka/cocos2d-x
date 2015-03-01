@@ -1,10 +1,21 @@
 
 #include "TextureCacheTest.h"
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 // enable log
 #define COCOS2D_DEBUG 1
-
-USING_NS_CC;
 
 TextureCacheTest::TextureCacheTest()
 : _numberOfSprites(20)

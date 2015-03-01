@@ -27,15 +27,24 @@
  ****************************************************************************/
 
 #include "CCProtectedNode.h"
-
-#include "base/CCDirector.h"
+#include <sys/types.h>                  // for ssize_t
+#include <algorithm>                    // for sort
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE, etc
 
 #if CC_USE_PHYSICS
 #include "physics/CCPhysicsBody.h"
 #endif
-#include "2d/CCScene.h"
 
 NS_CC_BEGIN
+
+class Renderer;
 
 ProtectedNode::ProtectedNode() : _reorderProtectedChildDirty(false)
 {

@@ -25,18 +25,23 @@ THE SOFTWARE.
 #ifndef __CCBONE_H__
 #define __CCBONE_H__
 
+#include "platform/CCGL.h"				// for GLubyte
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE
+#include "base/ccTypes.h"               // for BlendFunc, etc
 #include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CCTween.h"
-#include "cocostudio/CCDecorativeDisplay.h"
-#include "cocostudio/CCDisplayManager.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "2d/CCNode.h"
-#include "math/CCMath.h"
+#include "cocostudio/CCDatas.h"         // for BoneData (ptr only), etc
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 namespace cocostudio {
 
 class Armature;
+class ColliderDetector;
+class DisplayManager;
+class Tween;
+
 
 class CC_STUDIO_DLL Bone : public cocos2d::Node
 {

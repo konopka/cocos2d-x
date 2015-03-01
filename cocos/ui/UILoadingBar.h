@@ -25,14 +25,20 @@ THE SOFTWARE.
 #ifndef __UILOADINGBAR_H__
 #define __UILOADINGBAR_H__
 
-#include "ui/UIWidget.h"
-#include "ui/GUIExport.h"
+#include <string>                       // for string
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget::TextureResType, etc
 
 NS_CC_BEGIN
 /**
  * @addtogroup ui
  * @{
  */
+
+class Node;
 
 namespace ui {
     class Scale9Sprite;

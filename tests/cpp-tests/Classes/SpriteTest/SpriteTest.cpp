@@ -24,9 +24,45 @@
  ****************************************************************************/
 
 #include "SpriteTest.h"
+#include "platform/CCGL.h"				// for GLint, glGetUniformLocation
+#include <stdint.h>                     // for uint8_t
+#include <stdio.h>                      // for sprintf, snprintf
+#include <sys/types.h>                  // for ssize_t
+#include <algorithm>                    // for swap
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionCamera.h"          // for OrbitCamera
+#include "2d/CCActionInstant.h"         // for FlipY, FlipX
+#include "2d/CCActionInterval.h"        // for RepeatForever, Sequence, etc
+#include "2d/CCAnimation.h"             // for Animation
+#include "2d/CCAnimationCache.h"        // for AnimationCache
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCImage.h"                    // for Image
+#include "SpriteTest/../BaseTest.h"     // for BaseTest
+#include "SpriteTest/../testBasic.h"    // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::RED, etc
+#include "deprecated/CCArray.h"         // for __Array
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
-#include <algorithm>
-#include "../testResource.h"
+using namespace cocos2d;
 
 
 enum 
@@ -682,7 +718,7 @@ std::string SpriteBatchNodeZOrder::subtitle() const
 
 SpriteBatchNodeReorder::SpriteBatchNodeReorder()
 {
-    auto a = Array::createWithCapacity(10);
+    auto a = __Array::createWithCapacity(10);
     auto asmtest = SpriteBatchNode::create("animations/ghosts.png");
     
     for(int i=0; i<10; i++)

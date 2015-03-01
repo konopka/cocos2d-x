@@ -25,41 +25,20 @@
 #ifndef __cocos2d_libs__CSLoader__
 #define __cocos2d_libs__CSLoader__
 
-#include "cocostudio/DictionaryHelper.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocos2d.h"
-#include "base/ObjectFactory.h"
-
-namespace flatbuffers
-{
-    class FlatBufferBuilder;
-    
-    struct NodeTree;
-    
-    struct WidgetOptions;
-    struct SingleNodeOptions;
-    struct SpriteOptions;
-    struct ParticleSystemOptions;
-    struct TMXTiledMapOptions;
-    struct ProjectNodeOptions;
-    
-    struct ComponentOptions;
-    struct ComAudioOptions;
-}
-
-namespace cocostudio
-{
-    class ComAudio;
-}
-
-namespace cocostudio
-{
-    namespace timeline
-    {
-        class ActionTimeline;
-        class ActionTimelineNode;
-    }
-}
+#include <functional>                   // for function
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include <utility>                      // for pair
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCVector.h"
+#include "base/ObjectFactory.h"         // for ObjectFactory, etc
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value
+namespace cocos2d { class Component; }
+namespace cocos2d { class Node; }
+namespace cocos2d { namespace ui { class Widget; } }
+namespace cocostudio { namespace timeline { class ActionTimeline; } }
+namespace flatbuffers { struct NodeTree; }
 
 NS_CC_BEGIN
 
@@ -158,7 +137,7 @@ protected:
     
     std::string _monoCocos2dxVersion;
     
-    Node* _rootNode;
+    cocos2d::Node* _rootNode;
     cocos2d::Vector<cocos2d::Node*> _callbackHandlers;
     
     std::string _csBuildID;

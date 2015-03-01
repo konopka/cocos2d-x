@@ -23,20 +23,29 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIWidget.h"
-#include "ui/UILayout.h"
-#include "ui/UIHelper.h"
-#include "base/CCEventListenerTouch.h"
-#include "base/CCEventListenerKeyboard.h"
-#include "base/CCDirector.h"
-#include "base/CCEventFocus.h"
-#include "base/CCEventDispatcher.h"
-#include "ui/UILayoutComponent.h"
-#include "renderer/CCGLProgram.h"
-#include "renderer/CCGLProgramState.h"
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for _Node_iterator, operator!=, etc
+#include <utility>                      // for pair
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventFocus.h"          // for EventFocus
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCEventListenerKeyboard.h"  // for EventListenerKeyboard
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, CCASSERT
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
 #include "renderer/ccShaders.h"
-#include "ui/shaders/UIShaders.h"
+#include "ui/GUIDefine.h"               // for __LAYOUT_COMPONENT_NAME
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UILayoutComponent.h"       // for LayoutComponent
+#include "ui/shaders/UIShaders.h"       // for ccUIGrayScale_frag
 
 NS_CC_BEGIN
+
+class Event;
+class Renderer;
 
 namespace ui {
     

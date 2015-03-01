@@ -1,5 +1,37 @@
 #include "RenderTextureTest.h"
-#include "../testBasic.h"
+#include "platform/CCGL.h"				// for glStencilFunc, GL_REPLACE, etc
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for rand
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testBasic.h"               // for CL
+#include "2d/CCAction.h"                // for FiniteTimeAction
+#include "2d/CCActionInstant.h"         // for Hide
+#include "2d/CCActionInterval.h"        // for Sequence, RepeatForever, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer, LayerColor
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCRenderTexture.h"         // for RenderTexture
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCImage.h"                    // for Image, Image::Format, etc
+#include "RenderTextureTest/../BaseTest.h"  // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color3B, Color4B, Color4F, etc
+#include "CCStdC.h"						// for cosf, sinf
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"					// for Vec2::operator+
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 // Test #1 by Jason Booth (slipster216)
 // Test #3 by David Deaco (ddeaco)

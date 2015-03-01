@@ -26,15 +26,26 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTMXLayer.h"
-#include "2d/CCTMXTiledMap.h"
-#include "2d/CCSprite.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgram.h"
-#include "deprecated/CCString.h" // For StringUtils::format
+#include "platform/CCGL.h"				// for GLint, glGetUniformLocation
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for abs, bsearch
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator!=, etc
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCTMXTiledMap.h"           // for ::TMXOrientationOrtho, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
 
+class Node;
 
 // TMXLayer - init & alloc & dealloc
 

@@ -1,5 +1,16 @@
 #include "ZwoptexTest.h"
-#include "../testResource.h"
+#include <stdio.h>                      // for sprintf
+#include "2d/CCLayer.h"                 // for Layer, LayerColor
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "ZwoptexTest/../BaseTest.h"    // for BaseTest
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/ccTypes.h"               // for Color4B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 #define MAX_LAYER    1
 

@@ -1,8 +1,21 @@
 #include "ComponentsTestScene.h"
-#include "GameOverScene.h"
-#include "PlayerController.h"
-#include "SceneController.h"
-#include "../ExtensionsTest.h"
+#include <new>                          // for nothrow, operator new
+#include "../ExtensionsTest.h"          // for ExtensionsTestScene
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "PlayerController.h"           // for PlayerController
+#include "SceneController.h"            // for SceneController
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color3B, Color4B
+#include "cocostudio/CCComAttribute.h"  // for ComAttribute
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

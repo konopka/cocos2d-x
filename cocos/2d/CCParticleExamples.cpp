@@ -26,11 +26,21 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCParticleExamples.h"
-#include "base/CCDirector.h"
-#include "base/firePngData.h"
-#include "renderer/CCTextureCache.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCParticleSystem.h"
+#include "CCImage.h"                    // for Image
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color4F
+#include "base/firePngData.h"           // for __firePngData
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
+
+class Texture2D;
+
 //
 // ParticleFire
 //

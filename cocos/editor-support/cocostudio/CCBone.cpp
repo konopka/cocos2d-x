@@ -23,15 +23,23 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCBone.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CCTransformHelp.h"
-#include "cocostudio/CCDisplayManager.h"
+#include <new>                          // for nothrow, operator new
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCDecorativeDisplay.h"  // for DecorativeDisplay
+#include "cocostudio/CCDisplayFactory.h"  // for DisplayFactory
+#include "cocostudio/CCDisplayManager.h"  // for DisplayManager
+#include "cocostudio/CCTransformHelp.h"  // for TransformHelp
+#include "cocostudio/CCTween.h"         // for Tween
+#include "math/CCAffineTransform.h"     // for TransformConcat
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 
 namespace cocostudio {
+
+class ColliderDetector;
 
 Bone *Bone::create()
 {

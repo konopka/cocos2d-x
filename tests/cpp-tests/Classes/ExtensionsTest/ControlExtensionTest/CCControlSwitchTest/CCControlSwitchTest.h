@@ -24,7 +24,10 @@
  *
  */
 
-#include "../CCControlScene.h"
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class ControlSwitchTest : public ControlScene
 {
@@ -32,8 +35,8 @@ public:
     virtual ~ControlSwitchTest();
     bool init();
     /** Callback for the change value. */
-    void valueChanged(Ref* sender, Control::EventType controlEvent);
-    Label *_displayValueLabel;
+    void valueChanged(cocos2d::Ref* sender, cocos2d::extension::Control::EventType controlEvent);
+    cocos2d::Label *_displayValueLabel;
     CONTROL_SCENE_CREATE_FUNC(ControlSwitchTest)
 };
 

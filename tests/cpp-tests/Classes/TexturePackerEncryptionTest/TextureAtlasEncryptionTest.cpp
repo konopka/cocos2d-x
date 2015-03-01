@@ -1,5 +1,14 @@
 #include "TextureAtlasEncryptionTest.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "base/CCDirector.h"            // for Director
+#include "base/ZipUtils.h"              // for ZipUtils
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 std::string TextureAtlasEncryptionDemo::title() const
 {

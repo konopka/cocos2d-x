@@ -32,8 +32,12 @@ extern "C" {
 }
 #endif
 
-#include "2d/CCNode.h"
-#include "renderer/CCCustomCommand.h"
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCScriptSupport.h"            // for lua_State
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+namespace cocos2d { class Renderer; }
 
 /**
  * @addtogroup lua

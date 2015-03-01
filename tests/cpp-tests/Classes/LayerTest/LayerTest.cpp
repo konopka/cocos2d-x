@@ -1,5 +1,30 @@
 #include "LayerTest.h"
-#include "../testResource.h"
+#include "platform/CCGL.h"				// for GL_ZERO, GLenum, etc
+#include <math.h>                       // for fabs
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathSister1, etc
+#include "2d/CCActionInterval.h"        // for Sequence, RepeatForever, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor, LayerGradient, etc
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "LayerTest/../BaseTest.h"      // for BaseTest
+#include "LayerTest/../testBasic.h"     // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
+#include "base/ccTypes.h"               // for Color4B, BlendFunc, Color3B, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 enum 
 {

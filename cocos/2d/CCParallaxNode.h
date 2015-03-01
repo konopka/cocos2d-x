@@ -27,12 +27,18 @@ THE SOFTWARE.
 #ifndef __CCPARALLAX_NODE_H__
 #define __CCPARALLAX_NODE_H__
 
-#include "2d/CCNode.h"
-/*#include "ccArray.h"*/
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 
-struct _ccArray;
+class Renderer;
 
 /**
  * @addtogroup _2d

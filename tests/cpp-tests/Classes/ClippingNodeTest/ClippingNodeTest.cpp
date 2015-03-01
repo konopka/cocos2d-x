@@ -6,8 +6,45 @@
 //
 
 #include "ClippingNodeTest.h"
-#include "../testResource.h"
-#include "renderer/CCRenderer.h"
+#include <stddef.h>                     // for size_t
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini, s_back2, etc
+#include "2d/CCActionInstant.h"         // for Show
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy, etc
+#include "2d/CCClippingNode.h"          // for ClippingNode
+#include "2d/CCClippingRectangleNode.h"  // for ClippingRectangleNode
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCRenderTexture.h"         // for RenderTexture
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "ClippingNodeTest/../BaseTest.h"  // for BaseTest
+#include "ClippingNodeTest/../testBasic.h"  // for CL
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CHECK_GL_ERROR_DEBUG, etc
+#include "base/ccTypes.h"               // for Color4F
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCAffineTransform.h"     // for AffineTransform, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs, etc
+
+using namespace cocos2d;
 
 enum {
 	kTagTitleLabel = 1,
@@ -887,7 +924,7 @@ void RawStencilBufferTest6::setup()
     glClear(GL_STENCIL_BUFFER_BIT);
     glFlush();
     glReadPixels(0, 0, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_BYTE, &bits);
-    auto clearToZeroLabel = Label::createWithTTF(String::createWithFormat("00=%02x", bits[0])->getCString(), "fonts/arial.ttf", 20);
+    auto clearToZeroLabel = Label::createWithTTF(StringUtils::format("00=%02x", bits[0]), "fonts/arial.ttf", 20);
     clearToZeroLabel->setPosition((winPoint.x / 3) * 1, winPoint.y - 10);
     this->addChild(clearToZeroLabel);
     glStencilMask(0x0F);
@@ -895,7 +932,7 @@ void RawStencilBufferTest6::setup()
     glClear(GL_STENCIL_BUFFER_BIT);
     glFlush();
     glReadPixels(0, 0, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_BYTE, &bits);
-    auto clearToMaskLabel = Label::createWithTTF(String::createWithFormat("0a=%02x", bits[0])->getCString(), "fonts/arial.ttf", 20);
+    auto clearToMaskLabel = Label::createWithTTF(StringUtils::format("0a=%02x", bits[0]), "fonts/arial.ttf", 20);
     clearToMaskLabel->setPosition((winPoint.x / 3) * 2, winPoint.y - 10);
     this->addChild(clearToMaskLabel);
 #endif

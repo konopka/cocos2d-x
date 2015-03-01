@@ -1,11 +1,18 @@
 #ifndef _PARTICLE_TEST_H_
 #define _PARTICLE_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-////----#include "cocos2d.h"
-// #include "event_dispatcher/CCTouch.h"
-// #include "CCParticleExample.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class Event; }
+namespace cocos2d { class LayerColor; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class ParticleBatchNode; }
+namespace cocos2d { class ParticleSystemQuad; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 class ParticleTestScene : public TestScene
 {
@@ -16,9 +23,9 @@ public:
 class ParticleDemo : public BaseTest
 {
 protected:
-    ParticleSystemQuad*    _emitter;
-    Sprite*            _background;
-	LayerColor*		 _color;
+    cocos2d::ParticleSystemQuad*    _emitter;
+    cocos2d::Sprite*            _background;
+	cocos2d::LayerColor*		 _color;
 
 public:
     ~ParticleDemo(void);
@@ -28,14 +35,14 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
-    void toggleCallback(Ref* sender);
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
+    void toggleCallback(cocos2d::Ref* sender);
 
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 
     virtual void update(float dt) override;
     void setEmitterPosition();
@@ -218,8 +225,8 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 private:
-    Node* _parent1;
-    Node* _parent2;
+    cocos2d::Node* _parent1;
+    cocos2d::Node* _parent2;
 };
 
 class ParticleBatchMultipleEmitters : public ParticleDemo
@@ -258,7 +265,7 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 private:
-    ParticleBatchNode* _batchNode;
+	cocos2d::ParticleBatchNode* _batchNode;
 };
 
 class AddAndDeleteParticleSystems : public ParticleDemo
@@ -270,7 +277,7 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 private:
-    ParticleBatchNode* _batchNode;
+	cocos2d::ParticleBatchNode* _batchNode;
 };
 
 class ReorderParticleSystems : public ParticleDemo
@@ -282,7 +289,7 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 private:
-    ParticleBatchNode* _batchNode;
+	cocos2d::ParticleBatchNode* _batchNode;
 };
 
 class PremultipliedAlphaTest : public ParticleDemo

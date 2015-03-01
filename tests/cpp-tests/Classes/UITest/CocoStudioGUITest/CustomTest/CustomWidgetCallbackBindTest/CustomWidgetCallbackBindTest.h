@@ -3,8 +3,8 @@
 #ifndef __cocos2d_tests__CustomWidgetCallbackBindTest__
 #define __cocos2d_tests__CustomWidgetCallbackBindTest__
 
-#include "cocos2d.h"
-#include "../../../../testBasic.h"
+#include "../../../../testBasic.h"      // for TestScene
+namespace cocos2d { class Ref; }
 
 class CustomWidgetCallbackBindScene : public TestScene
 {

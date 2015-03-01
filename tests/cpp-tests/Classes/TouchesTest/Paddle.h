@@ -1,7 +1,13 @@
 #ifndef _PADDLE_H_
 #define _PADDLE_H_
 
-#include "cocos2d.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCRef.h"                 // for Clonable
+#include "math/CCGeometry.h"            // for Rect
+namespace cocos2d { class Event; }
+namespace cocos2d { class Texture2D; }
+namespace cocos2d { class Touch; }
 
 USING_NS_CC;
 

@@ -23,10 +23,12 @@
  *
  */
 
-#include "../CCControlScene.h"
-#include "extensions/cocos-ext.h"
-
-USING_NS_CC_EXT;
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class ControlColourPickerTest : public ControlScene
 {
@@ -35,9 +37,9 @@ public:
     virtual ~ControlColourPickerTest();
     bool init();
     /** Callback for the change value. */
-    void colourValueChanged(Ref *sender, Control::EventType controlEvent);
+    void colourValueChanged(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
 
-    CC_SYNTHESIZE_RETAIN(Label*, _colorLabel, ColorLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label*, _colorLabel, ColorLabel)
 
     CONTROL_SCENE_CREATE_FUNC(ControlColourPickerTest)
 };

@@ -4,6 +4,16 @@
 //
 
 #include "Bug-422.h"
+#include <functional>                   // for _Bind
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "base/CCConsole.h"             // for log
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_1
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 bool Bug422Layer::init()
 {

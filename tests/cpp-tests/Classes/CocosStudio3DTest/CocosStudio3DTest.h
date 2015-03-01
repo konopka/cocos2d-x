@@ -25,13 +25,11 @@
 #ifndef _COCOSSTUDIO3D_TEST_H_
 #define _COCOSSTUDIO3D_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include <string>
-
-namespace cocos2d {
-
-}
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Ref; }
 
 class CocosStudio3DTestDemo : public BaseTest
 {
@@ -39,9 +37,9 @@ public:
     CocosStudio3DTestDemo(void);
     virtual ~CocosStudio3DTestDemo(void);
     
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
     
     // overrides
     virtual std::string title() const override;

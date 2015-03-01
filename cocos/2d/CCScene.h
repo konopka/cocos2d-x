@@ -28,16 +28,21 @@ THE SOFTWARE.
 #ifndef __CCSCENE_H__
 #define __CCSCENE_H__
 
-#include <string>
-#include "2d/CCNode.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h"  // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS, etc
+#include "platform/CCPlatformDefine.h"			// for CC_DLL
 
 NS_CC_BEGIN
 
-class Camera;
 class BaseLight;
-class Renderer;
-class EventListenerCustom;
+class Camera;
 class EventCustom;
+class EventListenerCustom;
+class Renderer;
+class Size;
 #if CC_USE_PHYSICS
 class PhysicsWorld;
 #endif

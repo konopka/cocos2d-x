@@ -27,7 +27,10 @@ THE SOFTWARE.
 #ifndef __CCPARTICLE_EXAMPLE_H__
 #define __CCPARTICLE_EXAMPLE_H__
 
-#include "2d/CCParticleSystemQuad.h"
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
 
 NS_CC_BEGIN
 

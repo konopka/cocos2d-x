@@ -3,8 +3,38 @@
 //
 
 #include "PerformanceEventDispatcherTest.h"
+//#include <ext/alloc_traits.h>
+#include <stdio.h>                      // for snprintf, sprintf
+#include <stdlib.h>                     // for rand, srand
+#include <time.h>                       // for time
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, etc
+#include "2d/CCNode.h"                  // for Node
+#include "PerformanceTest/../testBasic.h"  // for CL
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "base/CCEventListenerKeyboard.h"  // for EventListenerKeyboard
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCEventTouch.h"          // for EventTouch, etc
+#include "base/CCProfiling.h"           // for ProfilingBeginTimingBlock, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B
+#include "deprecated/CCString.h"        // for format
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, etc
 
-#include <algorithm>
+using namespace cocos2d;
 
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS

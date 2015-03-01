@@ -31,9 +31,14 @@
 #ifndef SPINE_SKELETONANIMATION_H_
 #define SPINE_SKELETONANIMATION_H_
 
-#include <spine/spine.h>
-#include <spine/SkeletonRenderer.h>
-#include "cocos2d.h"
+#include <spine/SkeletonRenderer.h>     // for SkeletonRenderer
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "spine/AnimationState.h"       // for spTrackEntry (ptr only), etc
+#include "spine/AnimationStateData.h"   // for spAnimationStateData
+#include "spine/SkeletonData.h"         // for spSkeletonData
+struct spAtlas;
+struct spEvent;
 
 namespace spine {
 

@@ -25,11 +25,23 @@
 #ifndef __cocos2d_libs__UIScale9Sprite__
 #define __cocos2d_libs__UIScale9Sprite__
 
-#include "2d/CCNode.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCSpriteBatchNode.h"
-#include "platform/CCPlatformMacros.h"
-#include "ui/GUIExport.h"
+#include "platform/CCGL.h"				// for GLubyte
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCVector.h"              // for Vector
+#include "math/CCGeometry.h"            // for Size, Rect, Rect::ZERO
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+namespace cocos2d { 
+	class Renderer;
+	class Sprite;
+	class SpriteBatchNode;
+	class SpriteFrame;
+	struct Color3B; 
+}
 
 /**
  * @addtogroup ui

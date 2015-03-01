@@ -1,9 +1,24 @@
 
 
 #include "UILoadingBarTest_Editor.h"
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenuItem.h"              // for MenuItemToggle
+#include "2d/CCNode.h"                  // for Node
+#include "UITest/CocoStudioGUITest/UILoadingBarTest/../UIScene_Editor.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UILoadingBar.h"            // for LoadingBar
+#include "ui/UIText.h"                  // for Text
 
-
-// UILoadingBarTest_Editor
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 UILoadingBarTest_Editor::UILoadingBarTest_Editor()
 :_count(0)

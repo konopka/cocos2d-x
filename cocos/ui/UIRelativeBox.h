@@ -25,14 +25,18 @@
 #ifndef __UIRelativeBox_H__
 #define __UIRelativeBox_H__
 
-#include "ui/UILayout.h"
-#include "ui/GUIExport.h"
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UILayout.h"                // for Layout
 
 NS_CC_BEGIN
 /**
  * @addtogroup ui
  * @{
  */
+
+class Size;
 
 namespace ui {
     

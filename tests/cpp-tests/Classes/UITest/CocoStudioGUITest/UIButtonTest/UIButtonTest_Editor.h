@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UIButtonTest_Editor__
 #define __TestCpp__UIButtonTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIButtonTest_Editor : public UIScene_Editor
 {
@@ -34,13 +37,13 @@ public:
     ~UIButtonTest_Editor();
     
     bool init();
-    void touchEvent(Ref* pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
     virtual void switchLoadMethod(Ref* pSender);
     void configureGUIScene();
 
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UIButtonTest_Editor);
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UIButtonTest_Editor__) */

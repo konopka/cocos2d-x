@@ -1,4 +1,25 @@
 #include "PerformanceMathTest.h"
+#include <stdio.h>                      // for sprintf
+#include <algorithm>                    // for max
+#include <functional>                   // for _Bind
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCScene.h"                 // for Scene
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/CCProfiling.h"           // for Profiler, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Mat4.h"                  // for Mat4, Mat4::IDENTITY
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+
+using namespace cocos2d;
 
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS

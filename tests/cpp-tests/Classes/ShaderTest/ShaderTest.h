@@ -1,13 +1,24 @@
 #ifndef _SHADER_TEST_H_
 #define _SHADER_TEST_H_
 
-#include "ui/CocosGUI.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
-#include "../testBasic.h"
-#include "extensions/cocos-ext.h"
-#include "../BaseTest.h"
-
-USING_NS_CC_EXT;
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Renderer; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { namespace extension { class ControlSlider; } }
+namespace cocos2d { namespace ui { class Slider; } }
 
 class ShaderTestDemo : public BaseTest
 {
@@ -17,9 +28,9 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
     CREATE_FUNC(ShaderTestDemo);
 };
@@ -93,13 +104,13 @@ public:
     virtual std::string subtitle() const override;
     virtual bool init() override;
     void createSliderCtls();
-    void onRadiusChanged(Ref* sender, Control::EventType controlEvent);
-    void onSampleNumChanged(Ref* sender, Control::EventType controlEvent);
+    void onRadiusChanged(cocos2d::Ref* sender, cocos2d::extension::Control::EventType controlEvent);
+    void onSampleNumChanged(cocos2d::Ref* sender, cocos2d::extension::Control::EventType controlEvent);
     
 protected:
     SpriteBlur* _blurSprite;
-    ControlSlider* _sliderRadiusCtl;
-    ControlSlider* _sliderNumCtrl;
+	cocos2d::extension::ControlSlider* _sliderRadiusCtl;
+	cocos2d::extension::ControlSlider* _sliderNumCtrl;
 };
 
 class ShaderRetroEffect : public ShaderTestDemo
@@ -111,18 +122,18 @@ public:
     bool init() override;
     void update(float dt) override;
 protected:
-    Label* _label;
+	cocos2d::Label* _label;
     float           _accum;
 };
 
-class ShaderNode : public Node
+class ShaderNode : public cocos2d::Node
 {
 public:
     static ShaderNode* shaderNodeWithVertex(const std::string &vert, const std::string &frag);
 
     virtual void update(float dt) override;
-    virtual void setPosition(const Vec2 &newPosition) override;
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void setPosition(const cocos2d::Vec2 &newPosition) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 
 protected:
     ShaderNode();
@@ -131,14 +142,14 @@ protected:
     bool initWithVertex(const std::string &vert, const std::string &frag);
     void loadShaderVertex(const std::string &vert, const std::string &frag);
 
-    void onDraw(const Mat4 &transform, uint32_t flags);
+    void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
 
-    Vec2 _center;
-    Vec2 _resolution;
+    cocos2d::Vec2 _center;
+    cocos2d::Vec2 _resolution;
     float      _time;
     std::string _vertFileName;
     std::string _fragFileName;
-    CustomCommand _customCommand;
+	cocos2d::CustomCommand _customCommand;
 };
 
 class ShaderTestScene : public TestScene
@@ -172,10 +183,10 @@ class ShaderMultiTexture : public ShaderTestDemo
     static const int rightSpriteTag = 2014;
 public:
     ShaderMultiTexture();
-    ui::Slider* createSliderCtl();
-    void changeTexture(Ref*);
+	cocos2d::ui::Slider* createSliderCtl();
+    void changeTexture(cocos2d::Ref*);
     int _changedTextureId;
-    Sprite *_sprite;
+	cocos2d::Sprite *_sprite;
 
     virtual std::string title() const override;
     virtual std::string subtitle() const override;

@@ -23,8 +23,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ui/UIHelper.h"
-#include "ui/UIWidget.h"
-#include "ui/UILayoutComponent.h"
+#include <sys/types.h>                  // for ssize_t
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCVector.h"              // for Vector
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIDefine.h"               // for __LAYOUT_COMPONENT_NAME
+#include "ui/UILayoutComponent.h"       // for LayoutComponent
+#include "ui/UIWidget.h"                // for Widget
 
 NS_CC_BEGIN
 

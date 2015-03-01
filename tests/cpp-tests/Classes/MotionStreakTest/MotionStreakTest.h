@@ -1,9 +1,17 @@
 #ifndef _MOTION_STREAK_TEST_H_
 #define _MOTION_STREAK_TEST_H_
 
-////----#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class MotionStreak; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
 //USING_NS_CC;
 
@@ -17,19 +25,19 @@ public:
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
-    void modeCallback(Ref* sender);
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
+    void modeCallback(cocos2d::Ref* sender);
 protected:
-    MotionStreak *streak;
+	cocos2d::MotionStreak *streak;
 };
 
 class MotionStreakTest1 : public MotionStreakTest
 {
 protected:
-    Node*        _root;
-    Node*        _target;
+    cocos2d::Node*        _root;
+    cocos2d::Node*        _target;
 
 public:
     CREATE_FUNC(MotionStreakTest1);
@@ -41,13 +49,13 @@ public:
 class MotionStreakTest2 : public MotionStreakTest
 {
 protected:
-    Node*        _root;
-    Node*        _target;
+    cocos2d::Node*        _root;
+    cocos2d::Node*        _target;
 
 public:
     CREATE_FUNC(MotionStreakTest2);
     virtual void onEnter() override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event* event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
     virtual std::string title() const override;
 };
 
@@ -61,7 +69,7 @@ public:
     virtual void onEnter() override;
     virtual void update(float dt) override;
 private:
-    Vec2 _center;
+	cocos2d::Vec2 _center;
     float _radius;
     float _angle;
 };

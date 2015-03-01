@@ -26,8 +26,15 @@ THE SOFTWARE.
 #ifndef __CC_TEXT_FIELD_H__
 #define __CC_TEXT_FIELD_H__
 
-#include "2d/CCLabel.h"
-#include "base/CCIMEDelegate.h"
+#include <stddef.h>                     // for size_t
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCLabel.h"                 // for Label
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCIMEDelegate.h"         // for IMEDelegate
+#include "base/ccTypes.h"               // for Color4B, TextHAlignment, etc
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM, CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 /**
  * @addtogroup ui
@@ -35,6 +42,8 @@ THE SOFTWARE.
  */
 NS_CC_BEGIN
 
+class Renderer;
+class Size;
 class TextFieldTTF;
 
 
@@ -253,7 +262,7 @@ protected:
     bool _secureTextEntry;
 
 private:
-    class LengthStack;
+	class LengthStack;
     LengthStack * _lens;
 };
 

@@ -24,7 +24,21 @@
  ****************************************************************************/
 
 #include "CocosStudio3DTest.h"
-#include "cocostudio/CocoStudio.h"
+#include <functional>                   // for function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCCamera.h"                // for CameraFlag, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "3d/CCSprite3D.h"              // for Sprite3D
+#include "CocosStudio3DTest/../BaseTest.h"  // for BaseTest
+#include "CocosStudio3DTest/../testBasic.h"  // for CL
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE
+#include "cocostudio/ActionTimeline/CSLoader.h"  // for CSLoader
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec3.h"                  // for Vec3
+
+using namespace cocos2d;
 
 enum
 {

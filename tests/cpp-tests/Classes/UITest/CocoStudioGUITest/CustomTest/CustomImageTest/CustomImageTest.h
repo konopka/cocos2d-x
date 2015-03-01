@@ -3,9 +3,9 @@
 #ifndef __TestCpp__CustomImageScene__
 #define __TestCpp__CustomImageScene__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../../../../testBasic.h"
+#include "../../../../testBasic.h"      // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Ref; }
 
 class CustomImageLayer : public cocos2d::Layer
 {

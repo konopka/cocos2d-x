@@ -1,18 +1,25 @@
 
-
 #include "CustomImageTest.h"
-#include "../../CustomGUIScene.h"
-#include "../../CustomWidget/CustomImageView.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../../CustomGUIScene.h"       // for CustomGUITestScene
+#include "../../CustomWidget/CustomImageView.h"  // for CustomImageView
 #include "../../CustomWidget/CustomImageViewReader.h"
-#include "../../CustomWidget/CustomReader.h"
-#include "cocostudio/CCSGUIReader.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader, parseselector
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "ui/UILayout.h"                // for Layout
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-
-
-// CustomImageLayer
-
+using namespace cocos2d;
+using namespace cocos2d::ui;
+using namespace cocostudio;
 
 void CustomImageLayer::onEnter()
 {

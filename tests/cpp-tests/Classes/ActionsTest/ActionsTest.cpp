@@ -24,12 +24,40 @@
  ****************************************************************************/
 
 #include "ActionsTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
-
-#include "renderer/CCRenderer.h"
-#include "renderer/CCCustomCommand.h"
-#include "renderer/CCGroupCommand.h"
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, bind, function
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini, etc
+#include "2d/CCAction.h"                // for Follow
+#include "2d/CCActionCamera.h"          // for OrbitCamera
+#include "2d/CCActionCatmullRom.h"      // for PointArray, etc
+#include "2d/CCActionInstant.h"         // for CallFunc, Place, CallFuncN, etc
+#include "2d/CCActionInterval.h"        // for Sequence, MoveBy, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCAnimation.h"             // for Animation, etc
+#include "2d/CCAnimationCache.h"        // for AnimationCache
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "ActionsTest/../BaseTest.h"    // for BaseTest
+#include "ActionsTest/../testBasic.h"   // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCValue.h"               // for Value
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_0, etc
+#include "base/ccTypes.h"               // for Color4F, Color4B, Color3B, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec3.h"                  // for Vec3
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
 
 static std::function<Layer*()> createFunctions[] = {
 

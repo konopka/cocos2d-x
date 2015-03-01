@@ -1,6 +1,22 @@
 #include "DrawPrimitivesTest.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCCustomCommand.h"
+#include "platform/CCGL.h"				// for glLineWidth
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionCatmullRom.h"      // for PointArray
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCDrawingPrimitives.h"     // for setDrawColor4B, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "DrawPrimitivesTest/../BaseTest.h"  // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, etc
+#include "base/ccTypes.h"               // for Color4F
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+
+using namespace cocos2d;
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

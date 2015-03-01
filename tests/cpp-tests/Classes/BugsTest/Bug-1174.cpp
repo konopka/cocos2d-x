@@ -4,6 +4,13 @@
 //
 
 #include "Bug-1174.h"
+#include <math.h>                       // for fabs
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "base/CCConsole.h"             // for log
+#include "base/ccMacros.h"              // for CCRANDOM_0_1
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 int check_for_error( Vec2 p1, Vec2 p2, Vec2 p3, Vec2 p4, float s, float t );
 

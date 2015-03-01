@@ -1,6 +1,7 @@
 #include "cocos2d.h"
 #include "AppDelegate.h"
 #include "CCLuaEngine.h"
+#include "CCLuaStack.h"
 #include "audio/include/SimpleAudioEngine.h"
 #include "lua_assetsmanager_test_sample.h"
 #include "lua_module_register.h"

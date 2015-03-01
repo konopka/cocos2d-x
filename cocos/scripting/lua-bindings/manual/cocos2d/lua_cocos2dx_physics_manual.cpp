@@ -5,6 +5,7 @@
 #include "LuaBasicConversions.h"
 #include "CCLuaValue.h"
 #include "CCLuaEngine.h"
+#include "CCLuaStack.h"					// for LuaStack
 
 #ifndef CC_SAFE_DELETE_ARRAY
 #define do { if(p) { delete[] (p); (p) = nullptr; } } while(0)

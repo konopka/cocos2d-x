@@ -1,13 +1,28 @@
 
 
 #include "CocoStudioGUITest.h"
-#include "../../ExtensionsTest/ExtensionsTest.h"
-#include "CocosGUIScene.h"
-#include "GUIEditorTest.h"
-#include "CustomGUIScene.h"
-#include "controller.h"
-#include "cocostudio/CocoStudio.h"
-#include "CocostudioParserTest.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
+#include "CocosGUIScene.h"              // for CocosGUITestScene
+#include "CocostudioParserTest.h"       // for CocostudioParserTestScene
+#include "CustomGUIScene.h"             // for CustomGUITestScene
+#include "GUIEditorTest.h"              // for GUIEditorTestScene
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "controller.h"                 // for TestController
+#include "math/CCGeometry.h"            // for Size
+
+using namespace cocos2d;
+
 
 enum
 {

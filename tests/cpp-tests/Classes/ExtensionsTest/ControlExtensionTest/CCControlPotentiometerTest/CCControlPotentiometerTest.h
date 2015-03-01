@@ -25,7 +25,11 @@
 #ifndef __CCCONTROLPOTENTIOMETERTEST_H__
 #define __CCCONTROLPOTENTIOMETERTEST_H__
 
-#include "../CCControlScene.h"
+#include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
+#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class ControlPotentiometerTest : public ControlScene
 {
@@ -33,9 +37,9 @@ public:
     ControlPotentiometerTest();
     virtual ~ControlPotentiometerTest();
     bool init();
-    CC_SYNTHESIZE_RETAIN(Label*, _displayValueLabel, DisplayValueLabel)
+    CC_SYNTHESIZE_RETAIN(cocos2d::Label*, _displayValueLabel, DisplayValueLabel)
 
-    void valueChanged(Ref *sender, Control::EventType controlEvent);
+    void valueChanged(cocos2d::Ref *sender, cocos2d::extension::Control::EventType controlEvent);
 
     CONTROL_SCENE_CREATE_FUNC(ControlPotentiometerTest)
 };

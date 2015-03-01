@@ -1,7 +1,13 @@
 #ifndef __PERFORMANCE_LABEL_TEST_H__
 #define __PERFORMANCE_LABEL_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "PerformanceTest.h"            // for PerformBasicLayer
+namespace cocos2d { class Label; }
+namespace cocos2d { class Layer; }
+namespace cocos2d { class Ref; }
 
 class LabelMenuLayer : public PerformBasicLayer
 {
@@ -11,13 +17,13 @@ public:
     {
     }
 
-    virtual void restartCallback(Ref* sender) override;
-    virtual void nextCallback(Ref* sender) override;
-    virtual void backCallback(Ref* sender) override;
+    virtual void restartCallback(cocos2d::Ref* sender) override;
+    virtual void nextCallback(cocos2d::Ref* sender) override;
+    virtual void backCallback(cocos2d::Ref* sender) override;
     virtual void showCurrentTest() override;
 };
 
-class LabelMainScene : public Scene
+class LabelMainScene : public cocos2d::Scene
 {
 public:
     static const  int AUTO_TEST_NODE_NUM  = 20;
@@ -28,15 +34,15 @@ public:
     void initWithSubTest(int nodes);
     void updateNodes();
 
-    void onIncrease(Ref* sender);
-    void onDecrease(Ref* sender);
+    void onIncrease(cocos2d::Ref* sender);
+    void onDecrease(cocos2d::Ref* sender);
 
     int getSubTestNum() { return 1; }
     int getNodesNum() { return _quantityNodes; }
     
     void  updateAutoTest(float dt);
     void  updateText(float dt);
-    void  onAutoTest(Ref* sender);
+    void  onAutoTest(cocos2d::Ref* sender);
 
     void  autoShowLabelTests(int curCase,int nodes);
 
@@ -57,8 +63,8 @@ private:
     void  nextAutoTest();
     void  finishAutoTest();
     
-    Layer*         _labelContainer;
-    Label*      _title;
+	cocos2d::Layer*         _labelContainer;
+	cocos2d::Label*      _title;
 
     int            _lastRenderedCount;
     int            _quantityNodes;

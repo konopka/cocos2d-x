@@ -3,8 +3,19 @@
 //
 
 #include "PerformanceCallbackTest.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "PerformanceTest/../testBasic.h"  // for CL
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/CCProfiling.h"           // for ProfilingBeginTimingBlock, etc
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
-#include <algorithm>
+using namespace cocos2d;
 
 // Enable profiles for this file
 #undef CC_PROFILER_DISPLAY_TIMERS

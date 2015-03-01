@@ -29,11 +29,19 @@
 #ifndef __CPROTECTEDCNODE_H__
 #define __CPROTECTEDCNODE_H__
 
-
-#include "2d/CCNode.h"
+#include "platform/CCGL.h"				// for GLubyte
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h"  // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
-	
+class Renderer;
+struct Color3B;
+
 /**
  * @addtogroup _2d
  * @{

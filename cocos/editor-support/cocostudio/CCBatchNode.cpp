@@ -23,13 +23,15 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCBatchNode.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCSkin.h"
-
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGroupCommand.h"
-#include "renderer/CCGLProgramState.h"
-#include "base/CCDirector.h"
+#include <new>                          // for nothrow, operator new
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCGroupCommand.h"    // for GroupCommand
+#include "renderer/CCRenderer.h"        // for Renderer
 
 using namespace cocos2d;
 

@@ -6,6 +6,11 @@
 //
 
 #include "Bug-899.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+
+using namespace cocos2d;
 
 bool Bug899Layer::init()
 {

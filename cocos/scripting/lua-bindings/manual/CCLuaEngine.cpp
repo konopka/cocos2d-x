@@ -24,14 +24,33 @@
  ****************************************************************************/
 
 #include "CCLuaEngine.h"
-#include "tolua_fix.h"
-#include "cocos2d.h"
+#include <string.h>                     // for NULL, strlen
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "CCDirector.h"                 // for Director
+#include "CCEvent.h"                    // for Event
+#include "CCEventCustom.h"              // for EventCustom
+#include "CCEventKeyboard.h"            // for EventKeyboard, etc
+#include "CCEventTouch.h"               // for EventTouch, etc
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCMenuItem.h"                 // for MenuItem
+#include "CCNode.h"                     // for Node (ptr only), etc
+#include "CCRef.h"                      // for Ref
+#include "CCScriptSupport.h"            // for BasicScriptData, etc
+#include "CCTouch.h"                    // for Touch
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "ccTypes.h"                    // for Acceleration
+#include "deprecated/CCNotificationCenter.h"  // for __NotificationCenter
 #include "extensions/GUI/CCControlExtension/CCControl.h"
-#include "LuaOpengl.h"
-#include "lua_cocos2dx_manual.hpp"
-#include "lua_cocos2dx_extension_manual.h"
 #include "lua_cocos2dx_coco_studio_manual.hpp"
-#include "lua_cocos2dx_ui_manual.hpp"
+#include "lua_cocos2dx_extension_manual.h"  // for LuaTableViewEventData, etc
+#include "lua_cocos2dx_manual.hpp"      // for LuaEventTouchData, etc
+#include "math/Vec2.h"                  // for Vec2
+#include "tolua_fix.h"
+namespace cocos2d { class CallFunc; }
+namespace cocos2d { class Layer; }
+namespace cocos2d { class __Set; }
 
 NS_CC_BEGIN
 

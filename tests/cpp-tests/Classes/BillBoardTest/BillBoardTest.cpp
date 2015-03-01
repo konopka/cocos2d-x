@@ -24,10 +24,34 @@
  ****************************************************************************/
 
 #include "BillBoardTest.h"
-#include "3d/CCBillBoard.h"
+#include "platform/CCGL.h"				// for GLfloat
+#include <stdio.h>                      // for NULL, sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy, etc
+#include "2d/CCAnimation.h"             // for Animation
+#include "2d/CCCamera.h"                // for Camera, CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "2d/CCSprite.h"                // for Sprite
+#include "3d/CCBillBoard.h"             // for BillBoard, BillBoard::Mode, etc
+#include "3d/CCSprite3D.h"              // for Sprite3D
+#include "BillBoardTest/../testBasic.h"  // for CL
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCRANDOM_0_1, CC_CALLBACK_1, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2, Point, Vec2::ZERO
+#include "math/Vec3.h"                // for Vec3::operator*, etc
 
-#include <algorithm>
-#include "../testResource.h"
+using namespace cocos2d;
 
 enum
 {

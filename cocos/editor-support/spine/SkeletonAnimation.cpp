@@ -29,9 +29,17 @@
  *****************************************************************************/
 
 #include <spine/SkeletonAnimation.h>
-#include <spine/spine-cocos2dx.h>
-#include <spine/extension.h>
-#include <algorithm>
+#include <spine/extension.h>            // for _spAnimationState, etc
+#include <algorithm>                    // for max, min
+#include <vector>                       // for vector
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCConsole.h"             // for log
+#include "base/ccMacros.h"              // for CCASSERT
+#include "spine/Animation.h"            // for spAnimation
+#include "spine/Skeleton.h"             // for spSkeleton, etc
+#include "spine/SkeletonRenderer.h"     // for SkeletonRenderer
+struct spAtlas;
+struct spEvent;
 
 USING_NS_CC;
 using std::min;

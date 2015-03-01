@@ -1,5 +1,20 @@
 #include "SceneTest.h"
-#include "../testResource.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCTransition.h"            // for TransitionFade, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color3B, Color4B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 //------------------------------------------------------------------
 //

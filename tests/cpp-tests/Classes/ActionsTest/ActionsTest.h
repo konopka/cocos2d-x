@@ -26,9 +26,19 @@
 #ifndef _ActionsTest_H_
 #define _ActionsTest_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-////----#include "cocos2d.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC, USING_NS_CC
+#include "base/CCVector.h"              // for Vector
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class EventListenerCustom; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Touch; }
 
 USING_NS_CC;
 

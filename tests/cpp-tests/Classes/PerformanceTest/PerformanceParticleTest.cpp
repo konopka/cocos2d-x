@@ -1,5 +1,26 @@
 #include "PerformanceParticleTest.h"
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLabelAtlas.h"            // for LabelAtlas
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystem.h"        // for ParticleSystem
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "platform/CCPlatformMacros.h" // for CCLOG
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "base/ccTypes.h"               // for Color4F, Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
+using namespace cocos2d;
 
 enum {
     kTagInfoLayer = 1,

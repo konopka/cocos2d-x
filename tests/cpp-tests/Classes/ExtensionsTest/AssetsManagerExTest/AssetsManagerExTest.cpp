@@ -1,6 +1,21 @@
 #include "AssetsManagerExTest.h"
-#include "../../testResource.h"
-#include "cocos2d.h"
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCFileUtils.h"                // for FileUtils
+#include "ExtensionsTest/AssetsManagerExTest/../../BaseTest.h"
+#include "VisibleRect.h"                // for VisibleRect
+#include "assets-manager/AssetsManagerEx.h"  // for AssetsManagerEx, etc
+#include "assets-manager/CCEventAssetsManagerEx.h"
+#include "assets-manager/CCEventListenerAssetsManagerEx.h"
+#include "assets-manager/Manifest.h"    // for Manifest
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/ccTypes.h"               // for TextHAlignment, etc
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Ref; }
 
 const char* sceneManifests[] = {"AMTestScene1/project.manifest", "AMTestScene2/project.manifest", "AMTestScene3/project.manifest"};
 const char* storagePaths[] = {"CppTests/AssetsManagerExTest/scene1/", "CppTests/AssetsManagerExTest/scene2/", "CppTests/AssetsManagerExTest/scene3"};

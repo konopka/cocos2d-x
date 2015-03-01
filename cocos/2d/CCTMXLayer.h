@@ -27,15 +27,22 @@ THE SOFTWARE.
 #ifndef __CCTMX_LAYER_H__
 #define __CCTMX_LAYER_H__
 
-#include "2d/CCSpriteBatchNode.h"
-#include "2d/CCTMXXMLParser.h"
-#include "base/ccCArray.h"
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCTMXXMLParser.h"          // for TMXTilesetInfo (ptr only), etc
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCValue.h"               // for ValueMap, Value
+#include "base/ccCArray.h"              // for ccCArray
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size, Rect (ptr only)
+#include "math/Vec2.h"                  // for Vec2
+
 NS_CC_BEGIN
 
-class TMXMapInfo;
-class TMXLayerInfo;
-class TMXTilesetInfo;
-struct _ccCArray;
+class Node;
+class Sprite;
 
 /**
  * @addtogroup _2d

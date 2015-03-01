@@ -7,6 +7,18 @@
 //
 
 #include "Bug-Child.h"
+#include <functional>                   // for _Bind
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 Scene* BugChild::scene()
 {

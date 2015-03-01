@@ -25,13 +25,18 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCMotionStreak.h"
-#include "math/CCVertex.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCTexture2D.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGLProgramState.h"
+#include <stdlib.h>                     // for malloc
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0, etc
+#include "math/CCVertex.h"              // for ccVertexLineToPolygon
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccGLStateCache.h"    // for bindTexture2D, blendFunc, etc
 
 NS_CC_BEGIN
 

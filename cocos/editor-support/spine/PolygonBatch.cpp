@@ -29,7 +29,16 @@
  *****************************************************************************/
 
 #include <spine/PolygonBatch.h>
-#include <spine/extension.h>
+#include <spine/extension.h>            // for FREE, MALLOC
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "base/CCDirector.h"			// for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/ccTypes.h"               // for V2F_C4B_T2F, Tex2F, Color4B
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCRenderer.h"		// for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/ccGLStateCache.h"    // for bindTexture2D, bindVAO
 
 USING_NS_CC;
 

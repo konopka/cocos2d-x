@@ -1,15 +1,18 @@
 #ifndef __BUG_1159_H__
 #define __BUG_1159_H__
 
-#include "BugsTest.h"
+#include "BugsTest.h"                   // for BugsTestBaseLayer
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Scene; }
 
 class Bug1159Layer : public BugsTestBaseLayer
 {
 public:
     virtual bool init() override;
     virtual void onExit() override;
-    static Scene* scene();
-    void callBack(Ref* sender);
+    static cocos2d::Scene* scene();
+    void callBack(cocos2d::Ref* sender);
 
     CREATE_FUNC(Bug1159Layer);
 };

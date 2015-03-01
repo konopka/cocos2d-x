@@ -24,10 +24,45 @@
 
 
 #include "ShaderTest2.h"
-#include "ShaderTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
-#include <tuple>
+#include "platform/CCGL.h"				// for GLfloat
+#include <stdint.h>                     // for uint32_t
+#include <algorithm>                    // for sort
+#include <functional>                   // for _Bind, function
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <tuple>                        // for tuple, get, make_tuple, etc
+#include "2d/CCActionInterval.h"        // for Spawn, JumpBy, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemImage
+#include "2d/CCNode.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCFileUtils.h"                // for FileUtils
+#include "ShaderTest/../testBasic.h"    // for CL
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h" // for EventListenerCustom
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCEventType.h"			// for EVENT_RENDERER_RECREATED, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccConfig.h"              // for CC_USE_CULLING
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color4F
+#include "math/CCAffineTransform.h"     // for PointApplyAffineTransform
+#include "math/CCGeometry.h"            // for Size
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Point, Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+#include "renderer/CCGLProgram.h"       // for GLProgram
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCQuadCommand.h"     // for QuadCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccShaders.h"
+
+using namespace cocos2d;
 
 namespace ShaderTest2
 {

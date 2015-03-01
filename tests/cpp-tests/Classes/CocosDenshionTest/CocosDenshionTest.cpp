@@ -1,6 +1,27 @@
 #include "CocosDenshionTest.h"
-#include "cocos2d.h"
+#include <math.h>                       // for fabs
+#include <stdio.h>                      // for sprintf
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for ScaleTo
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h" // for CCLOG, USING_NS_CC
+#include "VisibleRect.h"                // for VisibleRect
+#include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
 #include "extensions/GUI/CCControlExtension/CCControlSlider.h"
+#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "math/CCGeometry.h"            // for Size, Rect
+
+using namespace cocos2d;
 
 // android effect only support ogg
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

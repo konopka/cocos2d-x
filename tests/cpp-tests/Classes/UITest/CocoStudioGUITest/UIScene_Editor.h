@@ -25,20 +25,21 @@
 #ifndef __TestCpp__UIScene_Editor__
 #define __TestCpp__UIScene_Editor__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
-
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace ui;
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCScene.h"                 // for Scene
+#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Layout; } }
 
 #define UI_SCENE_EDITOR_CREATE_FUNC(UIScene_Editor) \
 public: \
-static Scene* sceneWithTitle(const char * title) \
+static cocos2d::Scene* sceneWithTitle(const char * title) \
 { \
-    Scene* pScene = Scene::create(); \
+    cocos2d::Scene* pScene = cocos2d::Scene::create(); \
     UIScene_Editor* uiLayer = new (std::nothrow) UIScene_Editor(); \
     if (uiLayer && uiLayer->init()) \
     { \
@@ -53,27 +54,27 @@ static Scene* sceneWithTitle(const char * title) \
     return pScene; \
 }
 
-class UIScene_Editor : public Layer
+class UIScene_Editor : public cocos2d::Layer
 {
 public:
     UIScene_Editor();
     ~UIScene_Editor();
     
     bool init();
-    virtual void previousCallback(Ref* sender, Widget::TouchEventType event);
-    virtual void nextCallback(Ref* sender, Widget::TouchEventType event);
+    virtual void previousCallback(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType event);
+    virtual void nextCallback(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType event);
     
-    void toGUIEditorTestScene(Ref* sender, Widget::TouchEventType event);
+    void toGUIEditorTestScene(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType event);
     
     /** Title label of the scene.*/
-    CC_SYNTHESIZE_READONLY(Text*, _sceneTitle, SceneTitle)
+    CC_SYNTHESIZE_READONLY(cocos2d::ui::Text*, _sceneTitle, SceneTitle)
     
     UI_SCENE_EDITOR_CREATE_FUNC(UIScene_Editor);
-    virtual void switchLoadMethod(Ref* pSender);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
 
 protected:
-    Layer* _touchGroup;
-    Layout* _layout;
+	cocos2d::Layer* _touchGroup;
+	cocos2d::ui::Layout* _layout;
 };
 
 #endif /* defined(__TestCpp__UIScene_Editor__) */

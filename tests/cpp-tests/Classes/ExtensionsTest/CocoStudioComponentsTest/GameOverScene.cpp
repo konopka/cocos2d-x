@@ -24,8 +24,22 @@
  ****************************************************************************/
 
 #include "GameOverScene.h"
-#include "ComponentsTestScene.h"
-#include "../ExtensionsTest.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../ExtensionsTest.h"          // for ExtensionsTestScene
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for DelayTime, Sequence
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "ComponentsTestScene.h"        // for ComponentsTestLayer
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_0
+#include "base/ccTypes.h"               // for Color3B, Color4B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
 

@@ -1,4 +1,18 @@
 #include "MouseTest.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <sstream>                      // for basic_ostream::operator<<, etc
+#include <string>                       // for allocator, string, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerMouse.h"  // for EventListenerMouse
+#include "base/CCEventMouse.h"          // for EventMouse
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 template <typename T> std::string tostr(const T& t) { std::ostringstream os; os<<t; return os.str(); }
 

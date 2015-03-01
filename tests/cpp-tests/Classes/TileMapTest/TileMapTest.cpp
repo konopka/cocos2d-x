@@ -1,5 +1,42 @@
 #include "TileMapTest.h"
-#include "../testResource.h"
+#include <algorithm>                    // for max
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include <utility>                      // for pair
+#include "../testResource.h"            // for s_LevelMapTga, s_TilesPng, etc
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "2d/CCActionInterval.h"        // for Sequence, ScaleBy, MoveBy, etc
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCLayer.h"                 // for LayerColor, Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCTMXLayer.h"              // for TMXLayer
+#include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "2d/CCTMXXMLParser.h"          // for TMXTileFlags, etc
+#include "2d/CCTileMapAtlas.h"          // for TileMapAtlas
+#include "CCFileUtils.h"                // for FileUtils
+#include "platform/CCPlatformMacros.h" // for CCLOG, CC_UNUSED
+#include "TileMapTest/../BaseTest.h"    // for BaseTest
+#include "TileMapTest/../testBasic.h"   // for CLN
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCValue.h"               // for ValueMap, Value
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_POINT_POINTS_TO_PIXELS, etc
+#include "base/ccTypes.h"               // for Color3B, Color4B, Color4F
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D
+
+using namespace cocos2d;
 
 enum 
 {
@@ -1374,7 +1411,7 @@ TMXOrthoFromXMLTest::TMXOrthoFromXMLTest()
     std::string resources = "TileMaps";        // partial paths are OK as resource paths.
     std::string file = resources + "/orthogonal-test1.tmx";
 
-    auto str = String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename(file.c_str()).c_str());
+    auto str = __String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename(file.c_str()).c_str());
     CCASSERT(str != nullptr, "Unable to open file");
 
     auto map = TMXTiledMap::createWithXML(str->getCString() ,resources.c_str());

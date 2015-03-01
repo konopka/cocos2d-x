@@ -26,8 +26,17 @@
 #ifndef __TEXTURE2D_TEST_H__
 #define __TEXTURE2D_TEST_H__
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Renderer; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Texture2D; }
 
 
 class TextureDemo : public BaseTest
@@ -466,12 +475,12 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 protected:
-    void onDraw(const Mat4 &transform, uint32_t flags);
+    void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
 
-    CustomCommand _renderCmd;
-    Texture2D* _tex1, *_Tex2F;
+	cocos2d::CustomCommand _renderCmd;
+	cocos2d::Texture2D* _tex1, *_Tex2F;
 };
 
 class TextureDrawInRect : public TextureDemo
@@ -482,12 +491,12 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     virtual void onEnter() override;
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
 protected:
-    void onDraw(const Mat4 &transform, uint32_t flags);
+    void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
 
-    CustomCommand _renderCmd;
-    Texture2D* _tex1, *_Tex2F;
+	cocos2d::CustomCommand _renderCmd;
+	cocos2d::Texture2D* _tex1, *_Tex2F;
 };
 
 class TextureTestScene : public TestScene
@@ -504,10 +513,10 @@ public:
     virtual void onEnter() override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
-    void updateImage(Ref *sender);
-    void changeBackgroundVisible(Ref *sender);
+    void updateImage(cocos2d::Ref *sender);
+    void changeBackgroundVisible(cocos2d::Ref *sender);
 private:
-    Sprite *_background;
+	cocos2d::Sprite *_background;
 };
 
 class TexturePVRv3Premult : public TextureDemo

@@ -25,25 +25,27 @@
 #ifndef __TestCpp__CocosGUIScene__
 #define __TestCpp__CocosGUIScene__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../../testBasic.h"
-#include "ui/CocosGUI.h"
+#include <vector>                       // for vector
+#include "../../testBasic.h"            // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace cocos2d::ui;
-
-class CocosGUITestMainLayer : public Layer
+class CocosGUITestMainLayer : public cocos2d::Layer
 {
 public:
     virtual void onEnter() override;
     
-	void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
+	void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
     
-	Vec2 _beginPos;
-    Menu* _itemMenu;
+	cocos2d::Vec2 _beginPos;
+	cocos2d::Menu* _itemMenu;
     
 	int _testcount;
 };
@@ -53,7 +55,7 @@ class CocosGUITestScene : public TestScene
 public:
     virtual void onEnter() override;
     virtual void runThisTest();
-    void BackCallback(Ref* pSender);
+    void BackCallback(cocos2d::Ref* pSender);
 };
 
 

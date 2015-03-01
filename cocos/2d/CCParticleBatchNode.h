@@ -30,15 +30,24 @@
 #ifndef __CCPARTICLEBATCHNODE_H__
 #define __CCPARTICLEBATCHNODE_H__
 
-#include "2d/CCNode.h"
-#include "base/CCProtocols.h"
-#include "renderer/CCBatchCommand.h"
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCProtocols.h"           // for TextureProtocol
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for BlendFunc
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCBatchCommand.h"    // for BatchCommand
 
 NS_CC_BEGIN
 
+class ParticleSystem;
+class Renderer;
 class Texture2D;
 class TextureAtlas;
-class ParticleSystem;
 
 /**
  * @addtogroup _2d

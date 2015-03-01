@@ -29,12 +29,13 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include "tolua++.h"
+#include "tolua++.h"                    // for TOLUA_API
 #ifdef __cplusplus
 }
 #endif
 
-#include "network/WebSocket.h"
+#include "lua.h"                        // for lua_State
+#include "network/WebSocket.h"          // for WebSocket, etc
 
 ///@cond
 class LuaWebSocket: public cocos2d::network::WebSocket,public cocos2d::network::WebSocket::Delegate

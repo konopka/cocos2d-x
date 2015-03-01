@@ -23,8 +23,14 @@
  ****************************************************************************/
 
 #include "2d/CCNodeGrid.h"
-#include "2d/CCGrid.h"
-#include "renderer/CCRenderer.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCGrid.h"                  // for GridBase
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_0, CCASSERT
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN
 

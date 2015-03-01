@@ -1,9 +1,11 @@
 #ifndef _FONT_TEST_H_
 #define _FONT_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Ref; }
 
 class FontTestScene : public TestScene
 {
@@ -17,9 +19,9 @@ public:
     FontTest();
     void showFont(const char *pFont);
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
     virtual std::string title() const override;
 
     CREATE_FUNC(FontTest);

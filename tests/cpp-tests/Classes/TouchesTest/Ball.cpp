@@ -1,6 +1,11 @@
 #include "Ball.h"
-#include "Paddle.h"
-#include "../VisibleRect.h"
+#include <math.h>                       // for M_PI
+#include <new>                          // for nothrow, operator new
+#include "../VisibleRect.h"             // for VisibleRect
+#include "Paddle.h"                     // for Paddle
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 Ball::Ball(void)
 {

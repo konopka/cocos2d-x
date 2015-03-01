@@ -25,7 +25,9 @@
 #ifndef __TestCpp__BaseTest__
 #define __TestCpp__BaseTest__
 
-#include "cocos2d.h"
+#include <string>                       // for string
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Ref; }
 
 class BaseTest : public cocos2d::Layer
 {
@@ -33,9 +35,9 @@ public:
     virtual std::string title() const;
     virtual std::string subtitle() const;
 
-	virtual void restartCallback(Ref* sender);
-	virtual void nextCallback(Ref* sender);
-	virtual void backCallback(Ref* sender);
+	virtual void restartCallback(cocos2d::Ref* sender);
+	virtual void nextCallback(cocos2d::Ref* sender);
+	virtual void backCallback(cocos2d::Ref* sender);
 
     virtual void onEnter() override;
     virtual void onExit() override;

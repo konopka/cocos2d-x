@@ -26,6 +26,8 @@
 #include "LuaBasicConversions.h"
 #include "CCLuaValue.h"
 #include "CCLuaEngine.h"
+#include "CCLuaStack.h"					// for LuaStack
+
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <WS2tcpip.h>
 #else

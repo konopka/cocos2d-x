@@ -22,17 +22,31 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "lua_cocos2dx_coco_studio_manual.hpp"
-#include "lua_cocos2dx_studio_auto.hpp"
+#include <stddef.h>                     // for NULL
+#include <new>                          // for nothrow, operator new
+#include <typeinfo>                     // for type_info
+#include <unordered_map>                // for unordered_map, etc
+#include "CCActionTimeline.h"           // for ActionTimeline
+#include "CCActionTimelineCache.h"      // for ActionTimelineCache
+#include "CCArmature.h"                 // for Armature
+#include "CCArmatureAnimation.h"        // for ArmatureAnimation, etc
+#include "CCArmatureDataManager.h"      // for ArmatureDataManager
+#include "CCBone.h"                     // for Bone
+#include "CCFrame.h"                    // for Frame
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCLuaValue.h"                 // for LUA_FUNCTION
+#include "CCRef.h"                      // for schedule_selector, Ref
+#include "CCScriptSupport.h"            // for lua_State, BasicScriptData
+#include "CCVector.h"                   // for Vector
+#include "CustomGUIReader.h"            // for CustomGUIReader
+#include "LuaBasicConversions.h"        // for getLuaTypeName, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "lauxlib.h"                    // for luaL_error
 #include "lua_cocos2dx_csloader_auto.hpp"
 #include "lua_cocos2dx_csloader_manual.hpp"
-#include "cocos2d.h"
-#include "tolua_fix.h"
-#include "LuaBasicConversions.h"
-#include "LuaScriptHandlerMgr.h"
-#include "CCLuaValue.h"
-#include "CocoStudio.h"
-#include "CCLuaEngine.h"
-#include "CustomGUIReader.h"
+#include "lua_cocos2dx_studio_auto.hpp"
+#include "tolua_fix.h"                  // for toluafix_isfunction, etc
 
 using namespace cocostudio;
 

@@ -26,8 +26,10 @@
 #ifndef _ACTIONS__PROGRESS_TEST_H_
 #define _ACTIONS__PROGRESS_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+namespace cocos2d { class Ref; }
 
 class SpriteDemo : public BaseTest
 {

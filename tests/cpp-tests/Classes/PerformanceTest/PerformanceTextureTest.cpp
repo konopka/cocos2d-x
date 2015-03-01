@@ -1,4 +1,17 @@
 #include "PerformanceTextureTest.h"
+//#include <sys/time.h>                   // for gettimeofday, timeval
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCScene.h"                 // for Scene
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+
+using namespace cocos2d;
 
 enum
 {

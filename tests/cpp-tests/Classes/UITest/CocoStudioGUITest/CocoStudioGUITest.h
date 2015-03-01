@@ -3,18 +3,25 @@
 #ifndef __TestCpp__CocoStudioGUITest__
 #define __TestCpp__CocoStudioGUITest__
 
-#include "../../testBasic.h"
+#include <vector>                       // for vector
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/../../ExtensionsTest/../testBasic.h"
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Event; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
-class CocoStudioGUIMainLayer : public Layer
+class CocoStudioGUIMainLayer : public cocos2d::Layer
 {
 public:
     virtual void onEnter() override;
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 //    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;
     
 private:
-    Vec2 _beginPos;
-    Menu* _itemMenu;
+	cocos2d::Vec2 _beginPos;
+	cocos2d::Menu* _itemMenu;
 };
 
 class CocoStudioGUITestScene : public TestScene
@@ -22,7 +29,7 @@ class CocoStudioGUITestScene : public TestScene
 public:
     virtual void onEnter() override;
     virtual void runThisTest();
-    void BackCallback(Ref* pSender);
+    void BackCallback(cocos2d::Ref* pSender);
 };
 
 #endif /* defined(__TestCpp__CocoStudioGUITest__) */

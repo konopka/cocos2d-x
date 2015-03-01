@@ -25,12 +25,15 @@ THE SOFTWARE.
 #ifndef __CCBATCHNODE_H__
 #define __CCBATCHNODE_H__
 
-#include "2d/CCNode.h"
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 namespace cocos2d {
     class GroupCommand;
+	class Renderer;
 }
 
 namespace cocostudio {

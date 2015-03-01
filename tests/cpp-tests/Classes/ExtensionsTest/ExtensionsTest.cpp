@@ -1,24 +1,37 @@
 #include "ExtensionsTest.h"
-#include "../testResource.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
 #include "AssetsManagerExTest/AssetsManagerExTest.h"
-#include "NotificationCenterTest/NotificationCenterTest.h"
-#include "ControlExtensionTest/CCControlSceneManager.h"
-#include "CocosBuilderTest/CocosBuilderTest.h"
-#if (CC_TARGET_PLATFORM != CC_PLATFORM_EMSCRIPTEN) && (CC_TARGET_PLATFORM != CC_PLATFORM_NACL)
-#include "NetworkTest/HttpClientTest.h"
-#endif
-#include "TableViewTest/TableViewTestScene.h"
-
-#include "CocoStudioArmatureTest/ArmatureScene.h"
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
 #include "CocoStudioActionTimelineTest/ActionTimelineTestScene.h"
+#include "CocoStudioArmatureTest/ArmatureScene.h"
 #include "CocoStudioComponentsTest/ComponentsTestScene.h"
 #include "CocoStudioSceneTest/SceneEditorTest.h"
+#include "CocosBuilderTest/CocosBuilderTest.h"
+#include "ControlExtensionTest/CCControlSceneManager.h"
+#include "ExtensionsTest/CocoStudioActionTimelineTest/../../VisibleRect.h"
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_EMSCRIPTEN) && (CC_TARGET_PLATFORM != CC_PLATFORM_NACL)
+#include "NetworkTest/HttpClientTest.h"  // for runHttpClientTest
+#endif
+#include "NotificationCenterTest/NotificationCenterTest.h"
+#include "TableViewTest/TableViewTestScene.h"  // for runTableViewTest
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerMouse.h"  // for EventListenerMouse
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCEventMouse.h"          // for EventMouse
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #include "NetworkTest/WebSocketTest.h"
 #include "NetworkTest/SocketIOTest.h"
 #endif
-
 
 enum
 {

@@ -25,13 +25,23 @@
 #ifndef __CCBILLBOARD_H__
 #define __CCBILLBOARD_H__
 
-#include "2d/CCSprite.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
 /**
  * @addtogroup _3d
  * @{
  */
+
+class Rect;
+class Renderer;
+class Texture2D;
 
 /**
  * @brief Inherit from Sprite, achieve BillBoard.

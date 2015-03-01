@@ -3,8 +3,9 @@
 #include "extensions/cocos-ext.h"
 #include "renderer/CCRenderer.h"
 #include "renderer/CCCustomCommand.h"
+#include "VisibleRect.h"				// for VisibleRect
 
-USING_NS_CC_EXT;
+using namespace cocos2d;
 
 #define PTM_RATIO 32
 

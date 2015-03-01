@@ -1,10 +1,10 @@
 #ifndef _USERDEFAULT_TEST_H_
 #define _USERDEFAULT_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
+#include "../testBasic.h"               // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
 
-class UserDefaultTest : public Layer
+class UserDefaultTest : public cocos2d::Layer
 {
 public:
     UserDefaultTest();

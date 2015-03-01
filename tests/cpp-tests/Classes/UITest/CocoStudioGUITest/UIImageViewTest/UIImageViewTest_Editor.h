@@ -25,7 +25,8 @@
 #ifndef __TestCpp__UIImageViewTest_Editor__
 #define __TestCpp__UIImageViewTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+namespace cocos2d { class Ref; }
 
 class UIImageViewTest_Editor : public UIScene_Editor
 {

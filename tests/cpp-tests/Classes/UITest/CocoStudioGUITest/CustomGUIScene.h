@@ -3,27 +3,30 @@
 #ifndef __TestCpp__CutomGUIScene__
 #define __TestCpp__CutomGUIScene__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../../testBasic.h"
-#include "ui/CocosGUI.h"
+#include <vector>                       // for vector
+#include "2d/CCLayer.h"                 // for Layer
+#include "platform/CCPlatformMacros.h" // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "UITest/CocoStudioGUITest/CustomTest/CustomWidgetCallbackBindTest/../../../../testBasic.h"
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Event; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace cocos2d::ui;
-
-class CustomGUITestMainLayer : public Layer
+class CustomGUITestMainLayer : public cocos2d::Layer
 {
 public:
     virtual void onEnter() override;
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 //    void onTouchesMoved(const std::vector<Touch*>& touches, Event  *event) override;    
     
-    void touchEvent(Ref* pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref* pSender, cocos2d::ui::Widget::TouchEventType type);
     
 private:
-    Vec2 _beginPos;
-    Menu* _itemMenu;
+	cocos2d::Vec2 _beginPos;
+	cocos2d::Menu* _itemMenu;
 };
 
 class CustomGUITestScene : public TestScene
@@ -31,7 +34,7 @@ class CustomGUITestScene : public TestScene
 public:
     virtual void onEnter() override;
     virtual void runThisTest();
-    void BackCallback(Ref* pSender);
+    void BackCallback(cocos2d::Ref* pSender);
 };
 
 #endif /* defined(__TestCpp__CutomGUIScene__) */

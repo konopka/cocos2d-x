@@ -25,9 +25,25 @@ THE SOFTWARE.
 #ifndef __UITEXTFIELD_H__
 #define __UITEXTFIELD_H__
 
-#include "ui/UIWidget.h"
-#include "2d/CCTextFieldTTF.h"
-#include "ui/GUIExport.h"
+#include <stddef.h>                     // for size_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCTextFieldTTF.h"          // for TextFieldDelegate, etc
+#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color4B (ptr only), etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/GUIDefine.h"               // for DECLARE_CLASS_GUI_INFO
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget
+
+namespace cocos2d { 
+	class Event;
+	class Node;
+	class Touch; 
+}
 
 NS_CC_BEGIN
 /**

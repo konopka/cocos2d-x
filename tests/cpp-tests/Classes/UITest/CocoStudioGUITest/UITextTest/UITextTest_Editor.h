@@ -25,13 +25,14 @@
 #ifndef __TestCpp__UITextTest_Editor__
 #define __TestCpp__UITextTest_Editor__
 
-#include "../UIScene_Editor.h"
+#include "../UIScene_Editor.h"          // for UIScene_Editor, etc
+namespace cocos2d { class Ref; }
 
 class UITextTest_Editor : public UIScene_Editor
 {
 public:
     bool init();
-    virtual void switchLoadMethod(Ref* pSender);
+    virtual void switchLoadMethod(cocos2d::Ref* pSender);
     void configureGUIScene();
 protected:
     UI_SCENE_EDITOR_CREATE_FUNC(UITextTest_Editor)

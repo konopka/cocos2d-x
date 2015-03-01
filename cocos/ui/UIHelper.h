@@ -25,12 +25,14 @@ THE SOFTWARE.
 #ifndef __UIHELPER_H__
 #define __UIHELPER_H__
 
-#include <string>
-#include "platform/CCPlatformMacros.h"
-#include "ui/GUIExport.h"
-#include "2d/CCNode.h"
+#include <string>                       // for string
+#include "math/CCGeometry.h"            // for Rect, Size (ptr only)
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
 
 NS_CC_BEGIN
+
+class Node;
 
 /**
  * @addtogroup ui

@@ -24,7 +24,20 @@
  ****************************************************************************/
 
 #include "ActionsEaseTest.h"
-#include "../testResource.h"
+#include <new>                          // for nothrow, operator new
+#include "../testResource.h"            // for s_pathGrossini, etc
+#include "2d/CCAction.h"                // for Speed, Action
+#include "2d/CCActionEase.h"            // for EaseBezierAction, etc
+#include "2d/CCActionInterval.h"        // for MoveBy, Sequence, etc
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCSprite.h"                // for Sprite
+#include "ActionsEaseTest/../BaseTest.h"  // for BaseTest
+#include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/ccMacros.h"              // for CCRANDOM_MINUS1_1
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
 
 enum {
     kTagAction1 = 1,

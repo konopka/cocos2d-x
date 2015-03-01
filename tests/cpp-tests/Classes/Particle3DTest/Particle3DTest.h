@@ -25,10 +25,17 @@
 #ifndef _PARTICLE3D_TEST_H_
 #define _PARTICLE3D_TEST_H_
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include "Particle3D/CCParticleSystem3D.h"
-#include <string>
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+namespace cocos2d { class Camera; }
+namespace cocos2d { class Event; }
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
+
 class Particle3DTestDemo : public BaseTest
 {
 public:
@@ -36,9 +43,9 @@ public:
     Particle3DTestDemo(void);
     virtual ~Particle3DTestDemo(void);
     
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
     
     // overrides
     virtual bool init() override;
@@ -46,9 +53,9 @@ public:
     virtual std::string subtitle() const override;
     virtual void update(float delta) override;
     
-    void onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
-    void onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
-    void onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event) override;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesMoved(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event) override;
 
 protected:
     std::string    _title;

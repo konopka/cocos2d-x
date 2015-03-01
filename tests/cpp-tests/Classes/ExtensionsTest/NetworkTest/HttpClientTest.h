@@ -1,9 +1,11 @@
 #ifndef __HTTP_CLIENT_H__
 #define __HTTP_CLIENT_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "network/HttpClient.h"
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace network { class HttpClient; } }
+namespace cocos2d { namespace network { class HttpResponse; } }
 
 class HttpClientTest : public cocos2d::Layer
 {

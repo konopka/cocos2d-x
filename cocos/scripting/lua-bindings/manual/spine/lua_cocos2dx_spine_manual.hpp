@@ -32,6 +32,8 @@ extern "C" {
 }
 #endif
 
+#include "lua.h"                        // for lua_State
+
 /// @cond
 TOLUA_API int register_all_cocos2dx_spine_manual(lua_State* L);
 /// @endcond

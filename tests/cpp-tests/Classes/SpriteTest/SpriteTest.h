@@ -25,10 +25,20 @@
 #ifndef _SPRITE_TEST_H_
 #define _SPRITE_TEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include <string>
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+namespace cocos2d { class Event; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class SpriteBatchNode; }
+namespace cocos2d { class Texture2D; }
+namespace cocos2d { class Touch; }
 
 class SpriteTestDemo : public BaseTest
 {
@@ -39,9 +49,9 @@ public:
     SpriteTestDemo(void);
     virtual ~SpriteTestDemo(void);
 
-    void restartCallback(Ref* sender) override;
-    void nextCallback(Ref* sender) override;
-    void backCallback(Ref* sender) override;
+    void restartCallback(cocos2d::Ref* sender) override;
+    void nextCallback(cocos2d::Ref* sender) override;
+    void backCallback(cocos2d::Ref* sender) override;
 
     // overrides
     virtual std::string title() const override;
@@ -57,8 +67,8 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
-    void addNewSpriteWithCoords(Vec2 p);
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void addNewSpriteWithCoords(cocos2d::Vec2 p);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
 };
 
 class SpriteBatchNode1: public SpriteTestDemo
@@ -66,8 +76,8 @@ class SpriteBatchNode1: public SpriteTestDemo
 public:
     CREATE_FUNC(SpriteBatchNode1);
     SpriteBatchNode1();
-    void addNewSpriteWithCoords(Vec2 p);
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void addNewSpriteWithCoords(cocos2d::Vec2 p);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 };
@@ -151,13 +161,13 @@ public:
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
     void reorderSprite(float dt);
-    Sprite* makeSpriteZ(int aZ);
+	cocos2d::Sprite* makeSpriteZ(int aZ);
 
 private:
-    SpriteBatchNode *batchNode;
-    Sprite *sprite1;
-    Sprite *sprite2;
-    Sprite *sprite3;    
+    cocos2d::SpriteBatchNode *batchNode;
+    cocos2d::Sprite *sprite1;
+    cocos2d::Sprite *sprite2;
+    cocos2d::Sprite *sprite3;    
 };
 
 class SpriteBatchNodeReorderIssue767 : public SpriteTestDemo
@@ -282,14 +292,14 @@ public:
     SpriteNewTexture();
     virtual ~SpriteNewTexture();
     void addNewSprite();
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
 protected:
     bool _usingTexture1;
-    Texture2D *_texture1;
-    Texture2D *_texture2;
+    cocos2d::Texture2D *_texture1;
+    cocos2d::Texture2D *_texture2;
 };
 
 class SpriteBatchNodeNewTexture : public SpriteTestDemo
@@ -299,13 +309,13 @@ public:
     SpriteBatchNodeNewTexture();
     virtual ~SpriteBatchNodeNewTexture();
     void addNewSprite();
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event* event) override;
+    void onTouchesEnded(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event) override;
     virtual std::string title() const override;
     virtual std::string subtitle() const override;
 
 protected:
-    Texture2D*    _texture1;
-    Texture2D*    _texture2;
+    cocos2d::Texture2D*    _texture1;
+    cocos2d::Texture2D*    _texture2;
 };
 
 class SpriteFrameTest: public SpriteTestDemo
@@ -321,8 +331,8 @@ public:
     void flipSprites(float dt);
 private:
     
-    Sprite *_sprite1;
-    Sprite *_sprite2;
+    cocos2d::Sprite *_sprite1;
+    cocos2d::Sprite *_sprite2;
     int      _counter;
 };
 
@@ -635,12 +645,12 @@ public:
     void reorderSprite(float dt);
 
 private:
-    Node *_node;
-    Sprite *_sprite1;
-    Sprite *_sprite2;
-    Sprite *_sprite3;
-    Sprite *_sprite4;
-    Sprite *_sprite5;
+    cocos2d::Node *_node;
+    cocos2d::Sprite *_sprite1;
+    cocos2d::Sprite *_sprite2;
+    cocos2d::Sprite *_sprite3;
+    cocos2d::Sprite *_sprite4;
+    cocos2d::Sprite *_sprite5;
 };
 
 class SpriteBatchNodeReorderSameIndex : public SpriteTestDemo
@@ -654,12 +664,12 @@ public:
     void reorderSprite(float dt);
 
 private:
-    SpriteBatchNode *_batchNode;
-    Sprite *_sprite1;
-    Sprite *_sprite2;
-    Sprite *_sprite3;
-    Sprite *_sprite4;
-    Sprite *_sprite5;
+    cocos2d::SpriteBatchNode *_batchNode;
+    cocos2d::Sprite *_sprite1;
+    cocos2d::Sprite *_sprite2;
+    cocos2d::Sprite *_sprite3;
+    cocos2d::Sprite *_sprite4;
+    cocos2d::Sprite *_sprite5;
 };
 
 class SpriteBatchNodeReorderOneChild : public SpriteTestDemo
@@ -670,8 +680,8 @@ public:
     void reorderSprite(float dt);
     virtual std::string title() const override;
 private:
-    SpriteBatchNode *_batchNode;
-    Sprite *_reorderSprite;
+    cocos2d::SpriteBatchNode *_batchNode;
+    cocos2d::Sprite *_reorderSprite;
 };
 
 class SpriteBatchNodeSkewNegativeScaleChildren : public SpriteTestDemo
@@ -769,10 +779,10 @@ public:
     virtual std::string subtitle() const override { return "Rotation should based on the anchor point"; };
     
 protected:
-    Sprite* sprite1;
-    Sprite* sprite2;
+    cocos2d::Sprite* sprite1;
+    cocos2d::Sprite* sprite2;
     
-    Vec3 rotation;
+	cocos2d::Vec3 rotation;
 };
 
 class SpriteTestScene : public TestScene

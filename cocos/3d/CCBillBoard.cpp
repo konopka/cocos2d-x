@@ -23,13 +23,26 @@
  ****************************************************************************/
 
 #include "3d/CCBillBoard.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "base/CCDirector.h"
-#include "2d/CCCamera.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGLProgramCache.h"
+#include <string.h>                     // for memcmp
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCNode.h"                  // for Node, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT
+#include "CCStdC.h"				        // for sqrtf
+#include "math/CCMathBase.h"            // for MATH_TOLERANCE
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCQuadCommand.h"     // for QuadCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 NS_CC_BEGIN
+
+class Rect;
 
 BillBoard::BillBoard()
 : _mode(Mode::VIEW_POINT_ORIENTED)

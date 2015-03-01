@@ -1,4 +1,13 @@
 #include "Paddle.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, CCASSERT
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D
+namespace cocos2d { class Event; }
 
 Paddle::Paddle(void)
 {

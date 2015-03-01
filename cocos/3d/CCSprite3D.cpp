@@ -23,28 +23,40 @@
  ****************************************************************************/
 
 #include "3d/CCSprite3D.h"
-#include "3d/CCObjLoader.h"
-#include "3d/CCMeshSkin.h"
-#include "3d/CCBundle3D.h"
-#include "3d/CCSprite3DMaterial.h"
-#include "3d/CCAttachNode.h"
-#include "3d/CCMesh.h"
-
-#include "base/CCDirector.h"
-#include "base/CCAsyncTaskPool.h"
-#include "2d/CCLight.h"
-#include "2d/CCCamera.h"
-#include "base/ccMacros.h"
-#include "platform/CCPlatformMacros.h"
-#include "platform/CCFileUtils.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-
-#include "deprecated/CCString.h" // For StringUtils::format
+#include <ctype.h>                      // for tolower
+//#include <ext/alloc_traits.h>
+#include <string.h>                     // for memcmp
+#include <algorithm>                    // for transform
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCLight.h"                 // for BaseLight
+#include "2d/CCScene.h"                 // for Scene
+#include "3d/CCAttachNode.h"            // for AttachNode
+#include "3d/CCBundle3D.h"              // for Bundle3D
+#include "3d/CCMesh.h"                  // for Mesh
+#include "3d/CCMeshSkin.h"              // for MeshSkin
+#include "3d/CCSkeleton3D.h"            // for Skeleton3D
+#include "CCImage.h"                    // for Image
+#include "base/CCAsyncTaskPool.h"       // for AsyncTaskPool, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_1
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE_NULL, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCMeshCommand.h"     // for MeshCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D::TexParams, etc
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/CCVertexIndexBuffer.h"  // for VertexBuffer
 
 NS_CC_BEGIN
+
+class Action;
 
 std::string s_attributeNames[] = {GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::ATTRIBUTE_NAME_TEX_COORD1, GLProgram::ATTRIBUTE_NAME_TEX_COORD2,GLProgram::ATTRIBUTE_NAME_TEX_COORD3,GLProgram::ATTRIBUTE_NAME_NORMAL, GLProgram::ATTRIBUTE_NAME_BLEND_WEIGHT, GLProgram::ATTRIBUTE_NAME_BLEND_INDEX};
 

@@ -24,19 +24,31 @@
  ****************************************************************************/
 
 #include "2d/CCLabel.h"
-#include "2d/CCFontAtlasCache.h"
-#include "2d/CCSprite.h"
-#include "2d/CCLabelTextFormatter.h"
-#include "base/ccUTF8.h"
-#include "platform/CCFileUtils.h"
-#include "2d/CCFont.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/ccGLStateCache.h"
-#include "base/CCDirector.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventCustom.h"
-#include "deprecated/CCString.h"
+//#include <ext/alloc_traits.h>
+#include <cstddef>                      // for size_t
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for unordered_map
+#include "2d/CCFont.h"                  // for Font
+#include "2d/CCFontAtlasCache.h"        // for FontAtlasCache
+#include "2d/CCLabelTextFormatter.h"    // for LabelTextFormatter
+#include "2d/CCNode.h"                  // for Node, Node::INVALID_TAG, etc
+#include "2d/CCSprite.h"                // for Sprite
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/ccUTF8.h"                // for UTF8ToUTF16, UTF16ToUTF8
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/ccGLStateCache.h"    // for blendFunc
 
 NS_CC_BEGIN
 

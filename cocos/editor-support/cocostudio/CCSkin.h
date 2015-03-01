@@ -25,14 +25,19 @@ THE SOFTWARE.
 #ifndef __CCSKIN_H__
 #define __CCSKIN_H__
 
-#include "2d/CCSprite.h"
-#include "renderer/CCQuadCommand.h"
-
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCSprite.h"                // for Sprite
+#include "cocostudio/CCDatas.h"         // for BaseData
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCQuadCommand.h"     // for QuadCommand
+namespace cocos2d { class Renderer; }
 
 namespace cocostudio {
+
+class Armature;
+class Bone;
 
 class CC_STUDIO_DLL Skin : public cocos2d::Sprite
 {
