@@ -104,7 +104,7 @@ void UILayoutTest_Editor::switchLoadMethod(cocos2d::Ref *pSender)
 
 void UILayoutTest_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -242,7 +242,7 @@ void UILayoutTest_Color_Editor::switchLoadMethod(cocos2d::Ref *pSender)
 
 void UILayoutTest_Color_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -378,7 +378,7 @@ void UILayoutTest_Gradient_Editor::switchLoadMethod(cocos2d::Ref *pSender)
 
 void UILayoutTest_Gradient_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -515,7 +515,7 @@ void UILayoutTest_BackGroundImage_Editor::switchLoadMethod(cocos2d::Ref *pSender
 
 void UILayoutTest_BackGroundImage_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -652,7 +652,7 @@ void UILayoutTest_BackGroundImage_Scale9_Editor::switchLoadMethod(cocos2d::Ref *
 
 void UILayoutTest_BackGroundImage_Scale9_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -789,7 +789,7 @@ void UILayoutTest_Layout_Linear_Vertical_Editor::switchLoadMethod(cocos2d::Ref *
 
 void UILayoutTest_Layout_Linear_Vertical_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -922,7 +922,7 @@ void UILayoutTest_Layout_Linear_Horizontal_Editor::switchLoadMethod(cocos2d::Ref
 
 void UILayoutTest_Layout_Linear_Horizontal_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -1054,7 +1054,7 @@ void UILayoutTest_Layout_Relative_Align_Parent_Editor::switchLoadMethod(cocos2d:
 
 void UILayoutTest_Layout_Relative_Align_Parent_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -1185,7 +1185,7 @@ void UILayoutTest_Layout_Relative_Location_Editor::switchLoadMethod(cocos2d::Ref
 
 void UILayoutTest_Layout_Relative_Location_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -1429,7 +1429,7 @@ void UILayoutComponentTest_Editor::onChangeLayoutComponent(Ref* sender)
         }
     }
 
-    statusPin = String::createWithFormat("Pin:%s%s", hPinStatus.c_str(), vPinStatus.c_str())->getCString();
+    statusPin = __String::createWithFormat("Pin:%s%s", hPinStatus.c_str(), vPinStatus.c_str())->getCString();
     _textPin->setString(statusPin);
 
     auto layoutComponent = ui::LayoutComponent::bindLayoutComponent(_widget);

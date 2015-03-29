@@ -23,14 +23,21 @@
  ****************************************************************************/
 
 #include "GameMapReader.h"
-
-#include "2d/CCTMXXMLParser.h"
-
-#include "cocostudio/CSParseBinary_generated.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string, operator==, etc
+#include <vector>                       // for vector
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "2d/CCTMXXMLParser.h"          // for TMXLayerInfo, TMXMapInfo, etc
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CSParseBinary_generated.h"  // for GameMapOptions, etc
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include "deprecated/CCString.h"        // for __String
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), etc
+#include "math/CCGeometry.h"            // for Size
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
 
 USING_NS_CC;
 using namespace flatbuffers;

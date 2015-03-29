@@ -25,8 +25,13 @@
 #ifndef __cocos2d_libs__NodeReader__
 #define __cocos2d_libs__NodeReader__
 
-#include "cocos2d.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <stdlib.h>                     // for atof, atoi, atol
+#include <string>                       // for operator==, string, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "base/ccTypes.h"               // for Color4B, Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO, Point
 #include "cocostudio/WidgetReader/NodeReaderProtocol.h"
 #include "cocostudio/WidgetReader/NodeReaderDefine.h"
 

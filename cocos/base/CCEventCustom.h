@@ -38,7 +38,7 @@ NS_CC_BEGIN
 /** @class EventCustom
  * @brief Custom event.
  */
-class CC_DLL EventCustom : public Event
+class CC_DLL EventCustom : public cocos2d::Event
 {
 public:
     /** Constructor.

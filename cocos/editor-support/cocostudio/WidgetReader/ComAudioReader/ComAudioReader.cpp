@@ -23,13 +23,16 @@
  ****************************************************************************/
 
 #include "ComAudioReader.h"
-
-#include "cocostudio/CCComAudio.h"
-#include "cocostudio/CSParseBinary_generated.h"
+#include <stdlib.h>                     // for atof
+#include <string>                       // for string, operator==, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "cocostudio/CSParseBinary_generated.h"  // for ComAudioOptions, etc
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), etc
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
+namespace cocos2d { class Component; }
+namespace cocos2d { class Node; }
 
 USING_NS_CC;
 using namespace flatbuffers;

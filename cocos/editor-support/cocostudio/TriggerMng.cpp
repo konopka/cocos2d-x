@@ -23,6 +23,10 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "TriggerMng.h"
+#include "base/CCDirector.h"
+#include "base/CCEventDispatcher.h"
+#include "base/CCEventCustom.h"
+#include "base/ccUtils.h"
 #include "json/filestream.h"
 #include "json/prettywriter.h"
 #include "json/stringbuffer.h"

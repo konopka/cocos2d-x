@@ -7,7 +7,8 @@
 #include "../ActionTimeline/CCActionTimeline.h"
 #include "cocostudio/CCObjectExtensionData.h"
 #include "cocostudio/CSParseBinary_generated.h"
-
+#include "base/CCDirector.h"
+#include "base/ccUtils.h"
 #include "tinyxml2.h"
 #include "flatbuffers/flatbuffers.h"
 #include "ui/UILayoutComponent.h"
@@ -158,7 +159,7 @@ namespace cocostudio
         bool adaptScrenn = DICTOOL->getBooleanValue_json(options, P_AdaptScreen);
         if (adaptScrenn)
         {
-            Size screenSize = CCDirector::getInstance()->getWinSize();
+            Size screenSize = Director::getInstance()->getWinSize();
             w = screenSize.width;
             h = screenSize.height;
         }

@@ -1,6 +1,8 @@
 #include "CustomRootNodeReader.h"
-
-#include "CustomRootNode.h"
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CustomRootNode::create, etc
+#include "CustomRootNode.h"             // for CustomRootNode
+namespace flatbuffers { class Table; }
 
 USING_NS_CC;
 

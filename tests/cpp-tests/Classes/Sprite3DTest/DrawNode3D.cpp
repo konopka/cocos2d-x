@@ -23,6 +23,18 @@
  ****************************************************************************/
 
 #include "DrawNode3D.h"
+#include <stddef.h>                     // for offsetof
+#include <stdlib.h>                     // for free, realloc
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CHECK_GL_ERROR_DEBUG, etc
+#include "CCStdC.h"                     // for MAX
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for bindVAO, blendFunc, etc
 
 NS_CC_BEGIN
 
@@ -168,7 +180,7 @@ void DrawNode3D::onDraw(const Mat4 &transform, uint32_t flags)
     glDrawArrays(GL_LINES, 0, _bufferCount);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-    CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1,_bufferCount);
+    CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1, _bufferCount);
 	glDisable(GL_DEPTH_TEST);
     CHECK_GL_ERROR_DEBUG();
 }

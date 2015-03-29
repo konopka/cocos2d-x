@@ -1,8 +1,13 @@
 #ifndef __TestCpp__CustomRootNode__
 #define __TestCpp__CustomRootNode__
 
-#include "cocos2d.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CREATE_FUNC
 #include "cocostudio/WidgetCallBackHandlerProtocol.h"
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
 
 class CustomRootNode : public cocos2d::Node, public cocostudio::WidgetCallBackHandlerProtocol
 {

@@ -25,7 +25,16 @@
 #ifndef __DRAW_NODE_3D_H__
 #define __DRAW_NODE_3D_H__
 
-#include "cocos2d.h"
+#include "platform/CCGL.h"                    // for GLuint, GLsizei
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color4B, Color4F (ptr only), etc
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+namespace cocos2d { class Renderer; }
 
 NS_CC_BEGIN
 

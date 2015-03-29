@@ -23,14 +23,20 @@
  ****************************************************************************/
 
 #include "NodeReader.h"
-
-#include "cocostudio/CSParseBinary_generated.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <stdlib.h>                     // for atof, atoi, atol
+#include <string>                       // for operator==, string, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "base/ccTypes.h"               // for Color4B, Color3B
 #include "cocostudio/ActionTimeline/CCActionTimeline.h"
+#include "cocostudio/CSParseBinary_generated.h"  // for WidgetOptions, etc
 #include "cocostudio/CCObjectExtensionData.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
-#include "ui/UILayoutComponent.h"
+#include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "flatbuffers/flatbuffers.h"    // for FlatBufferBuilder, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO, Point
+#include "tinyxml2.h"                   // for XMLAttribute, XMLElement
+#include "ui/UILayoutComponent.h"       // for LayoutComponent, etc
 
 USING_NS_CC;
 using namespace flatbuffers;

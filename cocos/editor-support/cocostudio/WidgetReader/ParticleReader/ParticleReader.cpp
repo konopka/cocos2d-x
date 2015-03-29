@@ -23,12 +23,17 @@
  ****************************************************************************/
 
 #include "ParticleReader.h"
-
+#include <string>                       // for string, operator==, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCParticleSystem.h"        // for ParticleSystem, etc
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
 #include "cocostudio/CSParseBinary_generated.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include "deprecated/CCString.h"        // for __String
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), etc
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
 
 USING_NS_CC;
 using namespace flatbuffers;

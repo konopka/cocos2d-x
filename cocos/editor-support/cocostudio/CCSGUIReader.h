@@ -30,6 +30,7 @@ THE SOFTWARE.
 #include "WidgetReader/WidgetReaderProtocol.h"
 #include "base/ObjectFactory.h"
 #include "cocostudio/CocosStudioExport.h"
+#include "base/CCValue.h"
 
 namespace protocolbuffers
 {

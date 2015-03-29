@@ -6,7 +6,9 @@
 #include "cocostudio/CocoLoader.h"
 #include "cocostudio/CSParseBinary_generated.h"
 #include "cocostudio/FlatBuffersSerialize.h"
-
+#include "2d/CCLabel.h"
+#include "deprecated/CCString.h"
+#include "platform/CCFileUtils.h"
 #include "tinyxml2.h"
 #include "flatbuffers/flatbuffers.h"
 

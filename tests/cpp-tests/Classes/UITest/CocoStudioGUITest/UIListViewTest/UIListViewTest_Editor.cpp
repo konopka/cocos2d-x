@@ -102,7 +102,7 @@ void UIListViewTest_Vertical_Editor::switchLoadMethod(cocos2d::Ref *pSender)
 
 void UIListViewTest_Vertical_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));
@@ -169,7 +169,7 @@ void UIListViewTest_Vertical_Editor::setupListView(ListView* listView)
     float itemMargin = listView->getItemsMargin();
 
     auto item0 = Text::create();
-    item0->setString(String::createWithFormat("Item margin: %d", static_cast<int>(itemMargin))->getCString());
+    item0->setString(__String::createWithFormat("Item margin: %d", static_cast<int>(itemMargin))->getCString());
     listView->addChild(item0);
 
     auto item1 = Layout::create();
@@ -293,7 +293,7 @@ void UIListViewTest_Horizontal_Editor::switchLoadMethod(cocos2d::Ref *pSender)
 
 void UIListViewTest_Horizontal_Editor::configureGUIScene()
 {
-    Size screenSize = CCDirector::getInstance()->getWinSize();
+    Size screenSize = Director::getInstance()->getWinSize();
     Size rootSize = _layout->getContentSize();
     _touchGroup->setPosition(Vec2((screenSize.width - rootSize.width) / 2,
                                   (screenSize.height - rootSize.height) / 2));

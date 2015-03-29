@@ -1,13 +1,25 @@
 
 
 #include "TextReader.h"
-
-#include "ui/UIText.h"
-#include "cocostudio/CocoLoader.h"
-#include "cocostudio/CSParseBinary_generated.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include <stdlib.h>                     // for atoi
+#include <functional>                   // for function
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for basic_string, operator==, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "base/ccTypes.h"               // for TextVAlignment, etc
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "cocostudio/CSParseBinary_generated.h"  // for TextOptions, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "deprecated/CCString.h"        // for __String
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), etc
+#include "math/CCGeometry.h"            // for Size, Size::ZERO
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
+#include "ui/UIText.h"                  // for Text
+namespace cocos2d { namespace ui { class Widget; } }
 
 USING_NS_CC;
 using namespace ui;

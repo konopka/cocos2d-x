@@ -59,7 +59,6 @@ THE SOFTWARE.
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
 #include "base/ccTypes.h"               // for Color3B, Color4F, etc
-#include "deprecated/CCDeprecated.h"    // for CCParticleSystemQuad
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
 #include "math/Quaternion.h"            // for Quaternion
@@ -199,7 +198,7 @@ CameraRotationTest::CameraRotationTest()
     l1->setScale(3);
     bill1->addChild(l1);
 
-    auto p1 = CCParticleSystemQuad::create("Particles/SmallSun.plist");
+    auto p1 = ParticleSystemQuad::create("Particles/SmallSun.plist");
     p1->setPosition(30,80);
     bill1->addChild(p1);
     
@@ -215,7 +214,7 @@ CameraRotationTest::CameraRotationTest()
     l2->setScale(3);
     bill2->addChild(l2);
     
-    auto p2 = CCParticleSystemQuad::create("Particles/SmallSun.plist");
+    auto p2 = ParticleSystemQuad::create("Particles/SmallSun.plist");
     p2->setPosition(30,80);
     bill2->addChild(p2);
 

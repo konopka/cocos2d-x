@@ -23,6 +23,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "TriggerBase.h"
+#include "base/CCEventCustom.h"
 
 using namespace cocos2d;
 using namespace cocostudio;

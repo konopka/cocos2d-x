@@ -25,7 +25,10 @@ THE SOFTWARE.
 #include "CCNodeReader.h"
 #include "CCActionTimelineCache.h"
 #include "CCActionTimeline.h"
-
+#include "2d/CCParticleSystemQuad.h"
+#include "2d/CCSprite.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "platform/CCFileUtils.h"
 #include "cocostudio/CCSGUIReader.h"
 
 using namespace cocos2d;
@@ -378,7 +381,7 @@ Node* NodeReader::loadSprite(const rapidjson::Value& json)
 
         if(!sprite)
         {
-            sprite = CCSprite::create();
+            sprite = Sprite::create();
             CCLOG("filePath is empty. Create a sprite with no texture");
         }
     }

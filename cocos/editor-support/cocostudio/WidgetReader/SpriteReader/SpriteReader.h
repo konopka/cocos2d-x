@@ -25,10 +25,14 @@
 #ifndef __cocos2d_libs__SpriteReader__
 #define __cocos2d_libs__SpriteReader__
 
-#include "cocos2d.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCRef.h"                 // for Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 #include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+namespace tinyxml2 { class XMLElement; }
 
 
 namespace cocostudio

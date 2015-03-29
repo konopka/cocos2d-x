@@ -5,7 +5,8 @@
 #include "ui/UITextField.h"
 #include "cocostudio/CocoLoader.h"
 #include "cocostudio/CSParseBinary_generated.h"
-
+#include "deprecated/CCString.h"
+#include "platform/CCFileUtils.h"
 #include "tinyxml2.h"
 #include "flatbuffers/flatbuffers.h"
 

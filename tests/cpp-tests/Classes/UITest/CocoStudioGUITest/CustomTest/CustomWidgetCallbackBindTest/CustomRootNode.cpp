@@ -1,6 +1,7 @@
 #include "CustomRootNode.h"
-
-#include "ui/UIText.h"
+#include <functional>                   // for _Bind
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "ui/UIText.h"                  // for Text
 
 USING_NS_CC;
 using namespace std;

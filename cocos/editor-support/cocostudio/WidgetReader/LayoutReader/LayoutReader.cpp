@@ -9,7 +9,12 @@
 #include "ui/UIListView.h"
 #include "cocostudio/CSParseBinary_generated.h"
 #include "cocostudio/FlatBuffersSerialize.h"
-
+#include "base/CCDirector.h"
+#include "2d/CCSpriteFrame.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "2d/CCLabel.h"
+#include "deprecated/CCString.h"
+#include "platform/CCFileUtils.h"
 #include "tinyxml2.h"
 #include "flatbuffers/flatbuffers.h"
 
@@ -188,7 +193,7 @@ namespace cocostudio
         bool adaptScrenn = DICTOOL->getBooleanValue_json(options, P_AdaptScreen);
         if (adaptScrenn)
         {
-            Size screenSize = CCDirector::getInstance()->getWinSize();
+            Size screenSize = Director::getInstance()->getWinSize();
             w = screenSize.width;
             h = screenSize.height;
         }

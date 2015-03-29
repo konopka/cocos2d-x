@@ -25,9 +25,13 @@
 #ifndef __cocos2d_libs__ComAudioReader__
 #define __cocos2d_libs__ComAudioReader__
 
-#include "cocos2d.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "base/CCRef.h"                 // for Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 #include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+namespace cocos2d { class Component; }
+namespace cocos2d { class Node; }
+namespace tinyxml2 { class XMLElement; }
 
 
 namespace cocostudio

@@ -23,12 +23,13 @@
  ****************************************************************************/
 
 #include "ProjectNodeReader.h"
-
+#include <stddef.h>                     // for size_t
+#include <string>                       // for string, operator==, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
 #include "cocostudio/CSParseBinary_generated.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
 
 USING_NS_CC;
 using namespace flatbuffers;

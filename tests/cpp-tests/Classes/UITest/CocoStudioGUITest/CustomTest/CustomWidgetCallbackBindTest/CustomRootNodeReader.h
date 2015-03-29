@@ -1,10 +1,9 @@
 #ifndef __cocos2d_libs__CustomRootNodeReader__
 #define __cocos2d_libs__CustomRootNodeReader__
 
-#include "cocos2d.h"
-#include "cocostudio/CocosStudioExport.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
+namespace cocos2d { class Node; }
+namespace flatbuffers { class Table; }
 
 class CustomRootNodeReader : public cocostudio::NodeReader
 {        

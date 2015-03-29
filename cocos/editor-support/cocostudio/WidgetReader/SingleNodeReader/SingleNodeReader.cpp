@@ -23,14 +23,11 @@
  ****************************************************************************/
 
 #include "SingleNodeReader.h"
-
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
 #include "cocostudio/CSParseBinary_generated.h"
-#include "cocostudio/ActionTimeline/CCActionTimeline.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
-
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+namespace tinyxml2 { class XMLElement; }
 
 
 USING_NS_CC;

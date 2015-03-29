@@ -36,7 +36,7 @@ using namespace cocostudio;
 
 void CustomParticleWidgetLayer::onEnter()
 {
-    CCLayer::onEnter();
+    Layer::onEnter();
     
     GUIReader* guiReader = GUIReader::getInstance();
     guiReader->registerTypeAndCallBack("CustomParticleWidget",
@@ -56,7 +56,7 @@ void CustomParticleWidgetLayer::onEnter()
 
 void CustomParticleWidgetScene::onEnter()
 {
-    CCScene::onEnter();
+    Scene::onEnter();
     
     Layer* pLayer = new (std::nothrow) CustomParticleWidgetLayer();
     addChild(pLayer);
@@ -80,7 +80,7 @@ void CustomParticleWidgetScene::runThisTest()
     addChild(pLayer);
     pLayer->release();
     
-    CCDirector::getInstance()->replaceScene(this);
+    Director::getInstance()->replaceScene(this);
 }
 
 void CustomParticleWidgetScene::BackCallback(Ref* pSender)

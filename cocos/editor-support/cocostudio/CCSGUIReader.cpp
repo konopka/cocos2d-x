@@ -42,6 +42,10 @@ THE SOFTWARE.
 #include "cocostudio/CocoLoader.h"
 #include "ui/CocosGUI.h"
 #include "tinyxml2.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "base/CCDirector.h"
+#include "base/ccUtils.h"
+#include "platform/CCFileUtils.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -493,7 +497,7 @@ Widget* WidgetPropertiesReader0250::createWidget(const rapidjson::Value& data, c
         const char* file = DICTOOL->getStringValueFromArray_json(data, "textures", i);
         std::string tp = fullPath;
         tp.append(file);
-        CCSpriteFrameCache::getInstance()->addSpriteFramesWithFile(tp.c_str());
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(tp.c_str());
     }
     float fileDesignWidth = DICTOOL->getFloatValue_json(data, "designWidth");
     float fileDesignHeight = DICTOOL->getFloatValue_json(data, "designHeight");

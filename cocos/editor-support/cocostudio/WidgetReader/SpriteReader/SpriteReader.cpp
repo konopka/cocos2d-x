@@ -23,13 +23,22 @@
  ****************************************************************************/
 
 #include "SpriteReader.h"
-
-#include "cocostudio/CSParseBinary_generated.h"
-#include "cocostudio/FlatBuffersSerialize.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <unordered_map>
+#include <vector>                       // for vector
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ccTypes.h"               // for Color3B
+#include "cocostudio/CSParseBinary_generated.h"  // for WidgetOptions, etc
+#include "cocostudio/FlatBuffersSerialize.h"  // for FlatBuffersSerialize
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
+#include "deprecated/CCString.h"        // for __String
+#include "flatbuffers/flatbuffers.h"    // for Offset, Table (ptr only), etc
+#include "tinyxml2.h"                   // for XMLElement, XMLAttribute
 
 USING_NS_CC;
 using namespace flatbuffers;

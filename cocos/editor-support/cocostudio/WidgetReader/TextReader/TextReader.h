@@ -25,8 +25,16 @@
 #ifndef __TestCpp__TextReader__
 #define __TestCpp__TextReader__
 
-#include "cocostudio/WidgetReader/WidgetReader.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "cocostudio/WidgetReader/WidgetReader.h"  // for WidgetReader
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+#include "json/document.h"              // for Value
+namespace cocos2d { class Node; }
+namespace cocos2d { namespace ui { class Widget; } }
+namespace cocostudio { class CocoLoader; }
+namespace cocostudio { struct stExpCocoNode; }
+namespace tinyxml2 { class XMLElement; }
 
 namespace cocostudio
 {
