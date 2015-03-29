@@ -29,7 +29,7 @@
 //#include "cpSpace.h"                    // for cpSpace, cpSpaceAddBody, etc
 //#include "cpVect.h"                     // for cpv, cpvzero
 #include "math/CCGeometry.h"            // for Rect
-#include "math/Vec2.h"					// for Vec2::operator*
+#include "math/Vec2.h"                  // for Vec2
 #include "physics-nodes/CCPhysicsDebugNode.h"  // for PhysicsDebugNode
 #include "physics-nodes/CCPhysicsSprite.h"  // for PhysicsSprite
 

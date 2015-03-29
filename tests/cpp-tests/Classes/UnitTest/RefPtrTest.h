@@ -1,7 +1,9 @@
 #ifndef __REF_PTR_TEST_H__
 #define __REF_PTR_TEST_H__
 
-#include "UnitTest.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CREATE_FUNC
+#include "UnitTest.h"                   // for UnitTestDemo
 
 class RefPtrTest : public UnitTestDemo
 {

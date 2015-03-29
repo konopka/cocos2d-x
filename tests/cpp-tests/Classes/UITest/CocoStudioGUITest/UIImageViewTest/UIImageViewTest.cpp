@@ -1,7 +1,11 @@
 
 
 #include "UIImageViewTest.h"
-
+#include "ui/UILayout.h"
+#include "ui/UIImageView.h"
+#include "ui/UIButton.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "deprecated/CCString.h"
 
 // UIImageViewTest
 

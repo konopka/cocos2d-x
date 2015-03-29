@@ -26,13 +26,14 @@
 #include "CCControlColourPickerTest.h"
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE
 #include "ExtensionDeprecated.h"        // for Scale9Sprite
-#include "ExtensionsTest/ControlExtensionTest/CCControlColourPicker/../CCControlScene.h"
+#include "../CCControlScene.h"
 #include "GUI/CCControlExtension/CCControlColourPicker.h"
 #include "GUI/CCControlExtension/CCInvocation.h"
 #include "base/CCDirector.h"            // for Director
 #include "base/ccTypes.h"               // for Color3B
-#include "deprecated/CCString.h"        // for __String
+#include "deprecated/CCString.h"        // for format
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite

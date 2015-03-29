@@ -1,5 +1,5 @@
 #include "ShaderTest.h"
-#include "platform/CCGL.h"				// for GLchar, glDrawArrays, etc
+#include "platform/CCGL.h"              // for GLchar, glDrawArrays, etc
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for Label, TTFConfig
@@ -8,18 +8,16 @@
 #include "2d/CCMenuItem.h"              // for MenuItemLabel
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCFileUtils.h"                // for FileUtils
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"
 #include "GUI/CCControlExtension/CCControlSlider.h"  // for ControlSlider
 #include "GUI/CCControlExtension/CCInvocation.h"
 #include "base/CCDirector.h"            // for Director
-#include "base/CCEventDispatcher.h"     // for EventDispatcher
-#include "base/CCEventListenerCustom.h" // for EventListenerCustom
-#include "base/CCEventType.h"			// for EVENT_RENDERER_RECREATED, etc
 #include "base/CCRef.h"                 // for Ref
 #include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
 #include "deprecated/CCString.h"        // for __String
-#include "CCStdC.h"         // for sinf
+#include "CCStdC.h"                     // for sinf
 #include "math/CCGeometry.h"            // for Size, Rect (ptr only)
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
 #include "renderer/CCGLProgram.h"       // for GLProgram
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
 #include "renderer/CCRenderer.h"        // for Renderer

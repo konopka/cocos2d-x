@@ -5,7 +5,7 @@
 
 #include <vector>                       // for vector
 #include "2d/CCLayer.h"                 // for Layer
-#include "UITest/CocoStudioGUITest/../../ExtensionsTest/../testBasic.h"
+#include "../../testBasic.h"
 #include "math/Vec2.h"                  // for Vec2
 namespace cocos2d { class Event; }
 namespace cocos2d { class Menu; }

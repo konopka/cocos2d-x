@@ -26,10 +26,12 @@
 #ifndef _SPINETEST_H_
 #define _SPINETEST_H_
 
-#include "cocos2d.h"
-#include "../testBasic.h"
-#include "../BaseTest.h"
-#include <spine/spine-cocos2dx.h>
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "CCPlatformMacros.h"           // for CREATE_FUNC
+namespace cocos2d { class Ref; }
+namespace spine { class SkeletonAnimation; }
 
 class SpineTestScene : public TestScene
 {

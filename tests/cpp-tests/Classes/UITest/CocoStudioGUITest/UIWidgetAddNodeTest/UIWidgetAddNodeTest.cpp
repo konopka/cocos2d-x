@@ -1,7 +1,8 @@
 
 
 #include "UIWidgetAddNodeTest.h"
-
+#include "2d/CCSprite.h"
+#include "ui/UILayout.h"
 
 // UIWidgetAddNodeTest
 

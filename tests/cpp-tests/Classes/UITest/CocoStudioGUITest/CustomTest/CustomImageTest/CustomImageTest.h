@@ -3,8 +3,8 @@
 #ifndef __TestCpp__CustomImageScene__
 #define __TestCpp__CustomImageScene__
 
-#include "../../../../testBasic.h"      // for TestScene
 #include "2d/CCLayer.h"                 // for Layer
+#include "../../../../testBasic.h"
 namespace cocos2d { class Ref; }
 
 class CustomImageLayer : public cocos2d::Layer

@@ -30,9 +30,9 @@
 #include <string>                       // for string
 #include "../BaseTest.h"                // for BaseTest
 #include "../testBasic.h"               // for TestScene
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
 #include "base/allocator/CCAllocatorMacros.h"
 #include "base/ccConfig.h"              // for CC_ENABLE_ALLOCATOR
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC
 namespace cocos2d { class Ref; }
 
 namespace AllocatorTestNS
@@ -44,8 +44,6 @@ namespace AllocatorTestNS
     
 #define kNumberOfInstances 100000
 #define kObjectSize 952 // sizeof(Sprite)
-    
-    class Test1;
     
     class Test1
     {

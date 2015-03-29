@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UILayoutTest__
 #define __TestCpp__UILayoutTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UI_SCENE_CREATE_FUNC, etc
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class LayerColor; }
+namespace cocos2d { class Ref; }
 
 class UILayoutTest : public UIScene
 {

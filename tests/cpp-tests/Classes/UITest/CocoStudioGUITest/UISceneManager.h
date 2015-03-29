@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UISceneManager__
 #define __TestCpp__UISceneManager__
 
-#include "cocos2d.h"
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE, USING_NS_CC
+#include "base/CCRef.h"                 // for Ref
+namespace cocos2d { class Scene; }
 
 USING_NS_CC;
 

@@ -1,7 +1,8 @@
 
 
 #include "UITextBMFontTest.h"
-
+#include "ui/UILayout.h"
+#include "ui/UITextBMFont.h"
 
 // UITextBMFontTest
 

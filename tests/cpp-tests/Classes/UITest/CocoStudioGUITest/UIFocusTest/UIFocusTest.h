@@ -9,9 +9,14 @@
 #ifndef __cocos2d_tests__UIFocusTest__
 #define __cocos2d_tests__UIFocusTest__
 
-#include "../UIScene.h"
-
-
+#include "../UIScene.h"                 // for UI_SCENE_CREATE_FUNC, etc
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class EventListenerFocus; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Layout; } }
+namespace cocos2d { namespace ui { class ListView; } }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIFocusTestBase : public UIScene
 {

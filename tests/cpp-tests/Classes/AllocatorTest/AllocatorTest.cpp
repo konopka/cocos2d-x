@@ -31,8 +31,9 @@
 #include <vector>                       // for vector
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCLayer.h"                 // for Layer
-#include "AllocatorTest/../BaseTest.h"  // for BaseTest
-#include "AllocatorTest/../testBasic.h"  // for CL
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for CL
+#include "CCPlatformMacros.h"           // for AllocatorTest::create
 #include "base/CCDirector.h"            // for Director
 
 using namespace cocos2d;

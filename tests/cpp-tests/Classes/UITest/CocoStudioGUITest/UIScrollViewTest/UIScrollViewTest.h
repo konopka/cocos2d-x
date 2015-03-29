@@ -25,7 +25,8 @@
 #ifndef __TestCpp__UIScrollViewTest__
 #define __TestCpp__UIScrollViewTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIScrollViewTest_Vertical : public UIScene
 {

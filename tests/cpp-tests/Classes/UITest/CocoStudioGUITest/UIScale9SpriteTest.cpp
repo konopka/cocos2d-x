@@ -23,7 +23,30 @@
  ****************************************************************************/
 
 #include "UIScale9SpriteTest.h"
-#include "testResource.h"
+#include <stddef.h>                     // for NULL
+#include "2d/CCAction.h"                // for FiniteTimeAction
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for Sequence, MoveBy, FadeIn, etc
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "UITest/CocoStudioGUITest/UIScene.h"  // for UIScene
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEvent.h"               // for Event
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccTypes.h"               // for Color3B, Color3B::GREEN, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, etc
+#include "testResource.h"               // for s_s9s_blocks9_plist, etc
+#include "ui/UIButton.h"                // for Button
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+#include "ui/UIWidget.h"                // for Widget, etc
 
 // UIScale9SpriteTest
 UIScale9SpriteTest::UIScale9SpriteTest()

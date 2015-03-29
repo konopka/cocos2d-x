@@ -1,7 +1,16 @@
 
 
 #include "UICheckBoxTest.h"
-
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UICheckBoxTest/../UIScene.h"
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
 
 // UICheckBoxTest
 UICheckBoxTest::UICheckBoxTest()
@@ -53,11 +62,11 @@ void UICheckBoxTest::selectedEvent(Ref* pSender,CheckBox::EventType type)
     switch (type)
     {
         case CheckBox::EventType::SELECTED:
-            _displayValueLabel->setString(String::createWithFormat("Selected")->getCString());
+            _displayValueLabel->setString(__String::createWithFormat("Selected")->getCString());
             break;
             
         case CheckBox::EventType::UNSELECTED:
-            _displayValueLabel->setString(String::createWithFormat("Unselected")->getCString());
+            _displayValueLabel->setString(__String::createWithFormat("Unselected")->getCString());
             break;
             
         default:

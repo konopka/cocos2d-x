@@ -7,7 +7,6 @@
 #include <vector>                       // for vector
 #include "../testBasic.h"               // for TestScene
 #include "2d/CCLayer.h"                 // for Layer
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "math/Vec2.h"                  // for Vec2
 namespace cocos2d { class Acceleration; }
 namespace cocos2d { class Event; }

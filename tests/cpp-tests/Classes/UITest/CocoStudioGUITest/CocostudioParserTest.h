@@ -25,13 +25,19 @@
 #ifndef __cocos2d_tests__CocostudioParserTest__
 #define __cocos2d_tests__CocostudioParserTest__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "../../testBasic.h"
-#include "ui/CocosGUI.h"
+#include <vector>                       // for vector
+#include "2d/CCLayer.h"                 // for Layer
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "UITest/CocoStudioGUITest/CocostudioParserTest/../../../testBasic.h"
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Event; }
+namespace cocos2d { class Menu; }
+namespace cocos2d { class Ref; }
+namespace cocos2d { class Touch; }
 
 USING_NS_CC;
-USING_NS_CC_EXT;
 using namespace cocos2d::ui;
 
 class CocostudioParserTestMainLayer : public Layer

@@ -7,6 +7,31 @@
 //
 
 #include "UIFocusTest.h"
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind, function
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "UITest/CocoStudioGUITest/UIFocusTest/../UIScene.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCEventListenerFocus.h"  // for EventListenerFocus
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::RED, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIHBox.h"                  // for HBox
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UILayoutParameter.h"       // for LinearLayoutParameter, etc
+#include "ui/UIListView.h"              // for ListView
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIVBox.h"                  // for VBox
 
 UIFocusTestBase::UIFocusTestBase()
 {

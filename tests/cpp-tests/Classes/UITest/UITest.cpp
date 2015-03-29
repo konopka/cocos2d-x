@@ -1,4 +1,5 @@
 #include "UITest.h"
+#include <new>                          // for nothrow, operator new
 #include "CocoStudioGUITest/CocoStudioGUITest.h"
 
 void UITestScene::runThisTest()

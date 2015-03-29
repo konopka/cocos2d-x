@@ -6,11 +6,10 @@
 #include "../BaseTest.h"                // for BaseTest
 #include "../testBasic.h"               // for TestScene
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC
 #include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 namespace cocos2d { class Label; }

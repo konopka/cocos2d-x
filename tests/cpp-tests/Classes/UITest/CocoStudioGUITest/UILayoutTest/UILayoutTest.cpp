@@ -1,7 +1,24 @@
 
 
 #include "UILayoutTest.h"
-
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer, LayerColor
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "UITest/CocoStudioGUITest/UILayoutTest/../UIScene.h"
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B, Color3B::GREEN
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIDeprecated.h"            // for LayoutType
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout, etc
+#include "ui/UILayoutComponent.h"       // for LayoutComponent, etc
+#include "ui/UILayoutParameter.h"       // for RelativeLayoutParameter, etc
+#include "ui/UIText.h"                  // for Text
 
 // UILayoutTest
 
@@ -345,7 +362,7 @@ bool UILayoutTest_Layout_Linear_Vertical::init()
         
         // Create the layout
         Layout* layout = Layout::create();
-        layout->setLayoutType(LayoutType::VERTICAL);
+        layout->setLayoutType(Layout::Type::VERTICAL);
         layout->setContentSize(Size(280, 150));
         Size backgroundSize = background->getContentSize();
         layout->setPosition(Vec2((widgetSize.width - backgroundSize.width) / 2.0f +
@@ -419,7 +436,7 @@ bool UILayoutTest_Layout_Linear_Horizontal::init()
         
         // Create the layout
         Layout* layout = Layout::create();
-        layout->setLayoutType(LayoutType::HORIZONTAL);
+        layout->setLayoutType(Layout::Type::HORIZONTAL);
         layout->setClippingEnabled(true);
         layout->setContentSize(Size(280, 150));
         Size backgroundSize = background->getContentSize();
@@ -493,7 +510,7 @@ bool UILayoutTest_Layout_Relative_Align_Parent::init()
         
         // Create the layout
         Layout* layout = Layout::create();
-        layout->setLayoutType(LayoutType::RELATIVE);
+        layout->setLayoutType(Layout::Type::RELATIVE);
         layout->setContentSize(Size(280, 150));
         layout->setBackGroundColorType(Layout::BackGroundColorType::SOLID);
         layout->setBackGroundColor(Color3B::GREEN);
@@ -628,7 +645,7 @@ bool UILayoutTest_Layout_Relative_Location::init()
         
         // Create the layout
         Layout* layout = Layout::create();
-        layout->setLayoutType(LayoutType::RELATIVE);
+        layout->setLayoutType(Layout::Type::RELATIVE);
         layout->setContentSize(Size(280, 150));
         Size backgroundSize = background->getContentSize();
         layout->setPosition(Vec2((widgetSize.width - backgroundSize.width) / 2.0f +

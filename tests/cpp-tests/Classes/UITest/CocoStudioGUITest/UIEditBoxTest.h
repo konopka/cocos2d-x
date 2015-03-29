@@ -26,6 +26,7 @@
 #define __cocos2d_tests__UIEditBoxTest__
 
 #include "UIScene.h"
+#include "ui/UIEditBox/UIEditBox.h"
 
 class UIEditBoxTest : public UIScene, public cocos2d::ui::EditBoxDelegate
 {

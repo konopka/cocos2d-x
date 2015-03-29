@@ -26,8 +26,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCActionCamera.h"
-#include "2d/CCNode.h"
-#include "platform/CCStdC.h"
+#include <float.h>                      // for FLT_EPSILON
+#include <math.h>                       // for powf, isnan, asinf, acosf, etc
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "base/ccMacros.h"              // for CC_DEGREES_TO_RADIANS, etc
+#include "CCStdC.h"                     // for sinf, cosf, sqrtf
+#include "math/Mat4.h"                  // for Mat4, Mat4::IDENTITY
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
 NS_CC_BEGIN
 //

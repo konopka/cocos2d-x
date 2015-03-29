@@ -24,11 +24,23 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-
-#include "cocos2d.h"
-#include "controller.h"
-#include "cocostudio/CocoStudio.h"
-#include "extensions/cocos-ext.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string, allocator
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCGLView.h"                   // for GLView, GLContextAttrs, etc
+#include "CCPlatformConfig.h"           // for CC_PLATFORM_WP8, etc
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCConsole.h"             // for Console
+#include "base/CCDirector.h"            // for Director
+#include "base/CCValue.h"               // for Value
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "controller.h"                 // for TestController
+#include "desktop/CCGLViewImpl-desktop.h"  // for GLViewImpl
+#include "math/CCGeometry.h"            // for Size
+class BaseTest;
 
 USING_NS_CC;
 

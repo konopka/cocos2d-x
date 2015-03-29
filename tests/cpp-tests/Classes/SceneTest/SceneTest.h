@@ -3,9 +3,8 @@
 
 #include "../testBasic.h"               // for TestScene
 #include "2d/CCLayer.h"                 // for Layer, LayerColor
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
-
-using namespace cocos2d;
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC
+namespace cocos2d { class Ref; }
 
 class SceneTestLayer1 : public cocos2d::Layer
 {
@@ -38,7 +37,7 @@ public:
     //CREATE_NODE(SceneTestLayer2);
 } ;
 
-class SceneTestLayer3 : public LayerColor
+class SceneTestLayer3 : public cocos2d::LayerColor
 {
 public:
     SceneTestLayer3();

@@ -25,7 +25,12 @@
 #ifndef __TestCpp__UIPageViewTest__
 #define __TestCpp__UIPageViewTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UIPageView.h"              // for PageView, etc
+#include "ui/UISlider.h"                // for Slider, Slider::EventType
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIPageViewTest : public UIScene
 {

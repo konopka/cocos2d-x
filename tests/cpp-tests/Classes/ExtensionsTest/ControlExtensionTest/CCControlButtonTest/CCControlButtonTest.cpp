@@ -29,14 +29,15 @@
 #include <vector>                       // for vector
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE_NULL
 #include "ExtensionDeprecated.h"        // for Scale9Sprite
-#include "ExtensionsTest/ControlExtensionTest/CCControlButtonTest/../CCControlScene.h"
+#include "../CCControlScene.h"
 #include "GUI/CCControlExtension/CCControlButton.h"  // for ControlButton
 #include "GUI/CCControlExtension/CCInvocation.h"
 #include "base/CCDirector.h"            // for Director
 #include "base/ccTypes.h"               // for Color3B, Color3B::WHITE
-#include "deprecated/CCString.h"        // for __String
-#include "CCStdC.h"         // for MAX
+#include "deprecated/CCString.h"        // for format
+#include "CCStdC.h"                     // for MAX
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite

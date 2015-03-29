@@ -24,10 +24,24 @@
  ******************************************************************************/
 
 #include "SpineTest.h"
-#include <iostream>
-#include <fstream>
-#include <string.h>
-#include "spine/spine.h"
+#include <functional>                   // for function
+#include "2d/CCLayer.h"                 // for Layer
+#include "SpineTest/../BaseTest.h"      // for BaseTest
+#include "SpineTest/../testBasic.h"     // for CL
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "spine/Animation.h"            // for spAnimation
+#include "spine/AnimationState.h"       // for spAnimationState_getCurrent, etc
+#include "spine/Event.h"                // for spEvent
+#include "spine/EventData.h"            // for spEventData
+#include "spine/SkeletonAnimation.h"    // for SkeletonAnimation
+namespace cocos2d { class Event; }
+namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
 using namespace std;

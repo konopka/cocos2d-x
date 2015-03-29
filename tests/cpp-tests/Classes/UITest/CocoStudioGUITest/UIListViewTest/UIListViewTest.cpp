@@ -1,6 +1,24 @@
 
 
 #include "UIListViewTest.h"
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "UITest/CocoStudioGUITest/UIListViewTest/../UIScene.h"
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B
+#include "deprecated/CCString.h"        // for format
+#include "CCPlatformDefine.h"           // for CC_UNUSED_PARAM
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget
 
 const char* font_UIListViewTest = "fonts/Marker Felt.ttf";
 

@@ -23,10 +23,21 @@
  ****************************************************************************/
 
 #include "CocostudioParserTest.h"
-
-#include "CocoStudioGUITest.h"
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "CocoStudioGUITest.h"          // for CocoStudioGUITestScene
 #include "CocostudioParserTest/CocostudioParserJsonTest.h"
 #include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "math/CCGeometry.h"            // for Size
 
 enum
 {
@@ -125,7 +136,7 @@ void CocostudioParserTestMainLayer::onTouchesBegan(const std::vector<Touch *> &t
 
 void CocostudioParserTestScene::onEnter()
 {
-    CCScene::onEnter();
+    Scene::onEnter();
     
     auto label = Label::createWithTTF("Back", "fonts/arial.ttf", 20);
     //#endif
@@ -145,7 +156,7 @@ void CocostudioParserTestScene::runThisTest()
     addChild(pLayer);
     pLayer->release();
     
-    CCDirector::getInstance()->replaceScene(this);
+    Director::getInstance()->replaceScene(this);
 }
 
 void CocostudioParserTestScene::BackCallback(Ref* pSender)

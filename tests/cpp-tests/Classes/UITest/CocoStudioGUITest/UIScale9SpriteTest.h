@@ -24,7 +24,8 @@
 
 #ifndef __cocos2d_tests__UIScale9SpriteTest__
 #define __cocos2d_tests__UIScale9SpriteTest__
-#include "UIScene.h"
+#include "CCPlatformMacros.h"           // for CREATE_FUNC
+#include "UIScene.h"                    // for UIScene, etc
 
 class UIScale9SpriteTest : public UIScene
 {

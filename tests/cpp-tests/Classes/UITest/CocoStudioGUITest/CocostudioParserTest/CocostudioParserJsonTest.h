@@ -25,8 +25,10 @@
 #ifndef __cocos2d_tests__CocostudioParserJsonTest__
 #define __cocos2d_tests__CocostudioParserJsonTest__
 
-#include "cocos2d.h"
-#include "../../../testBasic.h"
+#include <string>                       // for string
+#include "../../../testBasic.h"         // for TestScene
+#include "2d/CCLayer.h"                 // for Layer
+namespace cocos2d { class Ref; }
 
 class CocostudioParserJsonLayer : public cocos2d::Layer
 {

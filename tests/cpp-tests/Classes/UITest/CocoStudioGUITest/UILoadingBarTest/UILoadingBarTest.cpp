@@ -1,7 +1,16 @@
 
 
 #include "UILoadingBarTest.h"
-
+#include <string>                       // for operator==, basic_string
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UILoadingBarTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UILoadingBar.h"            // for LoadingBar, etc
+#include "ui/UIText.h"                  // for Text
 
 // UILoadingBarTest_Left
 

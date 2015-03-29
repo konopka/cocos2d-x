@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UISliderTest__
 #define __TestCpp__UISliderTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UISlider.h"                // for Slider, Slider::EventType
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UISliderTest : public UIScene
 {
@@ -33,11 +36,11 @@ public:
     UISliderTest();
     ~UISliderTest();
     bool init();
-    void sliderEvent(Ref* pSender, Slider::EventType type);
+    void sliderEvent(cocos2d::Ref* pSender, cocos2d::ui::Slider::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UISliderTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UISliderTest_Scale9 : public UIScene
@@ -46,11 +49,11 @@ public:
     UISliderTest_Scale9();
     ~UISliderTest_Scale9();
     bool init();
-    void sliderEvent(Ref* pSender, Slider::EventType type);
+    void sliderEvent(cocos2d::Ref* pSender, cocos2d::ui::Slider::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UISliderTest_Scale9)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UISliderTest_Scale9_State_Change : public UIScene
@@ -59,11 +62,11 @@ public:
     UISliderTest_Scale9_State_Change();
     ~UISliderTest_Scale9_State_Change();
     bool init();
-    void sliderEvent(Ref* pSender, Slider::EventType type);
+    void sliderEvent(cocos2d::Ref* pSender, cocos2d::ui::Slider::EventType type);
 
 protected:
     UI_SCENE_CREATE_FUNC(UISliderTest_Scale9_State_Change)
-        Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 
@@ -76,7 +79,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UISliderNormalDefaultTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UISliderDisabledDefaultTest : public UIScene
@@ -88,7 +91,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UISliderDisabledDefaultTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UISliderTest__) */

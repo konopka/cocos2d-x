@@ -1,7 +1,15 @@
 
 #include "ConfigurationTest.h"
-#include "../testResource.h"
-#include "cocos2d.h"
+#include <functional>                   // for function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLayer.h"                 // for Layer
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for CL
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCValue.h"               // for Value
+namespace cocos2d { class Ref; }
 
 static std::function<Layer*()> createFunctions[] = {
     CL(ConfigurationLoadConfig),

@@ -25,7 +25,11 @@
 #ifndef __TestCpp__UIButtonTest__
 #define __TestCpp__UIButtonTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UISlider.h"                // for Slider, Slider::EventType
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIButtonTest : public UIScene
 {

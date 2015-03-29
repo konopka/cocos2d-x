@@ -29,16 +29,15 @@ THE SOFTWARE.
 #include <vector>                       // for vector
 #include "../BaseTest.h"                // for BaseTest
 #include "../testBasic.h"               // for TestScene
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
 #include "math/Quaternion.h"            // for Quaternion
 #include "math/Vec3.h"                  // for Vec3
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC
 namespace cocos2d { class BillBoard; }
 namespace cocos2d { class Camera; }
 namespace cocos2d { class DrawNode3D; }
 namespace cocos2d { class Event; }
 namespace cocos2d { class EventListenerTouchOneByOne; }
-namespace cocos2d { class EventListenerCustom; }
 namespace cocos2d { class GLProgram; }
 namespace cocos2d { class GLProgramState; }
 namespace cocos2d { class Label; }

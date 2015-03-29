@@ -28,11 +28,15 @@ THE SOFTWARE.
 #ifndef __CCCAMERA_ACTION_H__
 #define __CCCAMERA_ACTION_H__
 
-#include "2d/CCActionInterval.h"
-#include "math/CCMath.h"
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "CCPlatformDefine.h"           // for CC_DLL
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
+class Node;
 class Camera;
 
 /**

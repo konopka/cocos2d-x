@@ -1,9 +1,17 @@
 
-#include "extensions/cocos-ext.h"
 #include "UIScene.h"
-#include "UISceneManager.h"
-#include "editor-support/cocostudio/CCSGUIReader.h"
-#include "CocosGUIScene.h"
+#include <functional>                   // for _Bind
+#include "2d/CCNode.h"                  // for Node
+#include "CocosGUIScene.h"              // for CocosGUITestScene
+#include "UISceneManager.h"             // for UISceneManager
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "editor-support/cocostudio/CCSGUIReader.h"  // for GUIReader
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UILayout.h"                // for Layout
+namespace cocos2d { class Ref; }
 
 using namespace ui;
 

@@ -26,8 +26,8 @@
 #ifndef  _APP_DELEGATE_H_
 #define  _APP_DELEGATE_H_
 
-#include "cocos2d.h"
-#include "BaseTest.h"
+#include "CCApplication.h"  // for Application
+class BaseTest;
 /**
 @brief    The cocos2d Application.
 

@@ -1,8 +1,25 @@
 
 
 #include "UIRichTextTest.h"
-#include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CCArmature.h"
+#include <functional>                   // for _Bind
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "UITest/CocoStudioGUITest/UIRichTextTest/../UIScene.h"
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCValue.h"               // for Value
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE, etc
+#include "base/ccUTF8.h"
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCArmatureAnimation.h"  // for ArmatureAnimation
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIRichText.h"              // for RichText, RichElementText, etc
+#include "ui/UIText.h"                  // for Text
 
 UIRichTextTest::UIRichTextTest()
 {

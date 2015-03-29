@@ -8,6 +8,7 @@
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
 #include "2d/CCTransition.h"            // for TransitionFade, etc
+#include "CCPlatformMacros.h"           // for SceneTestLayer3::create, etc
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director
 #include "base/CCRef.h"                 // for Ref (ptr only), etc
@@ -15,6 +16,8 @@
 #include "base/ccTypes.h"               // for Color3B, Color4B
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
+
+using namespace cocos2d;
 
 //------------------------------------------------------------------
 //

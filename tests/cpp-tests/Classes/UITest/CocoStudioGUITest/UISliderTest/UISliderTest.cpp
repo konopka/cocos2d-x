@@ -1,7 +1,18 @@
 
 
 #include "UISliderTest.h"
-
+#include <functional>                   // for _Bind
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UISliderTest/../UIScene.h"
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "base/ccTypes.h"               // for Color3B
+#include "deprecated/CCString.h"        // for __String
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget, etc
 
 // UISliderTest
 
@@ -54,7 +65,7 @@ void UISliderTest::sliderEvent(Ref *pSender, Slider::EventType type)
     {
         Slider* slider = dynamic_cast<Slider*>(pSender);
         int percent = slider->getPercent();
-        _displayValueLabel->setString(String::createWithFormat("Percent %d", percent)->getCString());
+        _displayValueLabel->setString(__String::createWithFormat("Percent %d", percent)->getCString());
     }
 }
 
@@ -112,7 +123,7 @@ void UISliderTest_Scale9::sliderEvent(Ref *pSender, Slider::EventType type)
     {
         Slider* slider = dynamic_cast<Slider*>(pSender);
         int percent = slider->getPercent();
-        _displayValueLabel->setString(String::createWithFormat("Percent %d", percent)->getCString());
+        _displayValueLabel->setString(__String::createWithFormat("Percent %d", percent)->getCString());
     }
 }
 
@@ -180,7 +191,7 @@ void UISliderTest_Scale9_State_Change::sliderEvent(Ref *pSender, Slider::EventTy
     {
         Slider* slider = dynamic_cast<Slider*>(pSender);
         int percent = slider->getPercent();
-        _displayValueLabel->setString(String::createWithFormat("Percent %d", percent)->getCString());
+        _displayValueLabel->setString(__String::createWithFormat("Percent %d", percent)->getCString());
     }
 }
 

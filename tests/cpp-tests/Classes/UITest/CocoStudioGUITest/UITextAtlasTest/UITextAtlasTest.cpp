@@ -1,7 +1,8 @@
 
 
 #include "UITextAtlasTest.h"
-
+#include "ui/UILayout.h"
+#include "ui/UITextAtlas.h"
 
 // UITextAtlasTest
 

@@ -1,8 +1,11 @@
 #ifndef __CONFIGURATIONTEST_H__
 #define __CONFIGURATIONTEST_H__
 
-#include "../testBasic.h"
-#include "../BaseTest.h"
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
+#include "../testBasic.h"               // for TestScene
+#include "CCPlatformMacros.h"           // for CREATE_FUNC, USING_NS_CC
+namespace cocos2d { class Ref; }
 
 USING_NS_CC;
 

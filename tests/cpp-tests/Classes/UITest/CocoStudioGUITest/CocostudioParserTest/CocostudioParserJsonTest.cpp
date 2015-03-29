@@ -23,14 +23,23 @@
  ****************************************************************************/
 
 #include "CocostudioParserJsonTest.h"
-#include "cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"
-#include "../CocostudioParserTest.h"
-#include "../CustomWidget/CustomImageView.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "../CocostudioParserTest.h"    // for CocostudioParserTestScene
+#include "../CustomWidget/CustomImageView.h"  // for CustomImageView
 #include "../CustomWidget/CustomImageViewReader.h"
-#include "../CustomWidget/CustomParticleWidgetReader.h"
 #include "../CustomWidget/CustomParticleWidget.h"
+#include "../CustomWidget/CustomParticleWidgetReader.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemLabel
+#include "CCPlatformMacros.h"           // for USING_NS_CC
 #include "VisibleRect.h"                // for VisibleRect
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader, parseselector
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "ui/UILayout.h"                // for Layout
 
 USING_NS_CC;
 using namespace cocostudio;

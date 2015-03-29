@@ -24,9 +24,8 @@
  */
 
 #include "../CCControlScene.h"          // for CONTROL_SCENE_CREATE_FUNC, etc
-#include "platform/CCPlatformMacros.h" // for CC_SYNTHESIZE_RETAIN
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "platform/CCPlatformMacros.h"  // for CC_SYNTHESIZE_RETAIN
 namespace cocos2d { class Label; }
 namespace cocos2d { class Ref; }
 

@@ -24,6 +24,10 @@
 
 #include "UIEditBoxTest.h"
 #include "testResource.h"
+#include "base/CCDirector.h"
+#include "2d/CCSprite.h"
+#include "2d/CCLabel.h"
+#include "ui/UIScale9Sprite.h"
 
 // UIEditBoxTest
 UIEditBoxTest::UIEditBoxTest()

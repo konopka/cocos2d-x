@@ -35,12 +35,12 @@
 #include "../testBasic.h"               // for TestScene
 #include "3d/CCOBB.h"                   // for OBB
 #include "3d/CCSprite3D.h"              // for Sprite3D
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC, etc
 #include "base/CCRef.h"                 // for Ref
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
 #include "math/Vec3.h"                  // for Vec3
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC, etc
 #include "renderer/CCCustomCommand.h"   // for CustomCommand
 class EffectSprite3D;
 namespace cocos2d { class Action; }
@@ -48,7 +48,6 @@ namespace cocos2d { class Animate3D; }
 namespace cocos2d { class Camera; }
 namespace cocos2d { class DrawNode3D; }
 namespace cocos2d { class Event; }
-namespace cocos2d { class EventListenerCustom; }
 namespace cocos2d { class GLProgram; }
 namespace cocos2d { class GLProgramState; }
 namespace cocos2d { class Label; }

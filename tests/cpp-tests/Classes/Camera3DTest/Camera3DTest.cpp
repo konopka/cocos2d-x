@@ -24,7 +24,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "Camera3DTest.h"
-#include "platform/CCGL.h"				// for GLfloat, GL_FALSE, GLvoid
+#include "platform/CCGL.h"                    // for GLfloat, GL_FALSE, GLvoid
 #include <stdio.h>                      // for sprintf, NULL
 #include <cmath>                        // for sqrt, asin, fabs
 #include <functional>                   // for _Bind, function
@@ -45,27 +45,30 @@ THE SOFTWARE.
 #include "3d/CCBundle3DData.h"          // for MeshVertexAttrib
 #include "3d/CCMesh.h"                  // for Mesh
 #include "3d/CCSprite3D.h"              // for Sprite3D, s_attributeNames
-#include "Camera3DTest/../BaseTest.h"   // for BaseTest
-#include "Camera3DTest/../Sprite3DTest/DrawNode3D.h"  // for DrawNode3D
-#include "Camera3DTest/../testBasic.h"  // for CL
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for Camera3DTestDemo::create, etc
+#include "../BaseTest.h"                // for BaseTest
+#include "../Sprite3DTest/DrawNode3D.h" // for DrawNode3D
+#include "../testBasic.h"               // for CL
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEvent.h"               // for Event
-#include "base/CCEventListenerCustom.h" // for EventListenerCustom
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
 #include "base/CCRef.h"                 // for Ref (ptr only), etc
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
 #include "base/ccTypes.h"               // for Color3B, Color4F, etc
+#include "deprecated/CCDeprecated.h"    // for CCParticleSystemQuad
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
-#include "math/Quaternion.h"			// for Quaternion::operator*
+#include "math/Quaternion.h"            // for Quaternion
 #include "math/Vec2.h"                  // for Vec2, Point, Vec2::ZERO
-#include "math/Vec3.h"					// for Vec3::operator*, etc
+#include "math/Vec3.h"                  // for Vec3
 #include "math/Vec4.h"                  // for Vec4
 #include "renderer/CCGLProgram.h"       // for GLProgram
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
+namespace cocos2d { template <class T> class Vector; }
 
 using namespace cocos2d;
 

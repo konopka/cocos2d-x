@@ -1,7 +1,17 @@
 
 
 #include "UIScrollViewTest.h"
-
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "UITest/CocoStudioGUITest/UIScrollViewTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B, Color3B::GREEN
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout, etc
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+#include "ui/UIText.h"                  // for Text
 
 // UIScrollViewTest_Vertical
 

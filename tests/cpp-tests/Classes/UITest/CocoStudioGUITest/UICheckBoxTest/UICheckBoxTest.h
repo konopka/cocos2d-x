@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UICheckBoxTest__
 #define __TestCpp__UICheckBoxTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UICheckBox.h"              // for CheckBox, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UICheckBoxTest : public UIScene
 {

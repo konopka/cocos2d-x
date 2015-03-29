@@ -25,7 +25,9 @@
 #ifndef __TestCpp__UILoadingBarTest__
 #define __TestCpp__UILoadingBarTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UIWidget.h"                // for Widget, etc
+namespace cocos2d { class Ref; }
 
 class UILoadingBarTest_Left : public UIScene
 {

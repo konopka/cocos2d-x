@@ -25,7 +25,10 @@
 #ifndef __TestCpp__UITextFieldTest__
 #define __TestCpp__UITextFieldTest__
 
-#include "../UIScene.h"
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UITextField.h"             // for TextField, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UITextFieldTest : public UIScene
 {

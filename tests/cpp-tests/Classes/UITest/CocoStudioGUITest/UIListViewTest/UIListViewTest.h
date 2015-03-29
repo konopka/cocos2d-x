@@ -25,8 +25,13 @@
 #ifndef __TestCpp__UIListViewTest__
 #define __TestCpp__UIListViewTest__
 
-#include "../UIScene.h"
-#include "ui/UIScrollView.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "../UIScene.h"                 // for UIScene, etc
+#include "ui/UIListView.h"              // for ListView, etc
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+namespace cocos2d { class Ref; }
+namespace cocos2d { namespace ui { class Text; } }
 
 class UIListViewTest_Vertical : public UIScene
 {

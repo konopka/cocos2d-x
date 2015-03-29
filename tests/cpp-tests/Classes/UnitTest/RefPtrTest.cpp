@@ -1,4 +1,6 @@
 #include "RefPtrTest.h"
+#include "UnitTest/UnitTest.h"          // for UnitTestDemo
+#include "base/CCConsole.h"             // for log
 
 using namespace cocos2d;
 
