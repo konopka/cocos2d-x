@@ -26,7 +26,7 @@ namespace cocos2d { class Ref; }
 
 
 USING_NS_CC;
-USING_NS_CC_EXT;
+
 using namespace ui;
 using namespace cocostudio;
 

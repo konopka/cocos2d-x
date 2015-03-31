@@ -24,12 +24,51 @@
 #ifndef __COCOS2DX_SCRIPTING_LUA_COCOS2DXSUPPORT_LUABAISCCONVERSIONS_H__
 #define __COCOS2DX_SCRIPTING_LUA_COCOS2DXSUPPORT_LUABAISCCONVERSIONS_H__
 
-extern "C" {
-#include "lua.h"
-#include "tolua++.h"
-}
+#include <stddef.h>                     // for NULL, size_t
+#include <stdint.h>                     // for uint16_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string, basic_string
+#include <type_traits>                  // for is_base_of
+#include <typeinfo>                     // for type_info
+#include <unordered_map>                // for unordered_map, etc
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "base/CCConsole.h"                  // for log
+#include "2d/CCLabel.h"                    // for TTFConfig
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCRef.h"                      // for Ref
+#include "base/CCScriptSupport.h"            // for lua_State
+#include "base/CCValue.h"                    // for ValueVector, etc
+#include "base/ccConfig.h"                   // for CC_USE_PHYSICS
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+#include "physics/CCPhysicsContact.h"   // for PhysicsContactData
+#include "physics/CCPhysicsShape.h"     // for PhysicsMaterial
+#include "physics/CCPhysicsWorld.h"     // for PhysicsRayCastInfo
 #include "tolua_fix.h"
-#include "cocos2d.h"
+extern "C" {
+#include "lua.h"                        // for lua_isuserdata, lua_pop, etc
+#include "tolua++.h"                    // for tolua_tousertype, etc
+}
+
+namespace cocos2d { class Rect; }
+namespace cocos2d { class Size; }
+namespace cocos2d { class __Array; }
+namespace cocos2d { class __Dictionary; }
+namespace cocos2d { struct AffineTransform; }
+namespace cocos2d { struct BlendFunc; }
+namespace cocos2d { struct Color3B; }
+namespace cocos2d { struct Color4B; }
+namespace cocos2d { struct Color4F; }
+namespace cocos2d { struct FontDefinition; }
+namespace cocos2d { struct MeshVertexAttrib; }
+namespace cocos2d { struct Uniform; }
+namespace cocos2d { struct VertexAttrib; }
+namespace cocos2d { template <class K, class V> class Map; }
+namespace cocos2d { template <class T> class Vector; }
 
 using namespace cocos2d;
 

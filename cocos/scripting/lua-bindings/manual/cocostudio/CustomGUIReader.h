@@ -1,7 +1,10 @@
 #ifndef COCOS_SCRIPTING_LUA_BINDINGS_LUA_COCOS2DX_CUSTOM_GUI_READER_H
 #define COCOS_SCRIPTING_LUA_BINDINGS_LUA_COCOS2DX_CUSTOM_GUI_READER_H
 
-#include "cocostudio/WidgetReader/WidgetReader.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "CCRef.h"                      // for Ref
+#include "json/document.h"              // for Value
 
 USING_NS_CC;
 

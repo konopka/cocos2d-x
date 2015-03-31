@@ -1,8 +1,17 @@
 #include "CustomGUIReader.h"
-#include "CCLuaEngine.h"
-#include "CCLuaStack.h"					// for LuaStack
-#include "json/writer.h"
-#include "json/stringbuffer.h"
+#include <functional>                   // for _Bind
+#include <map>                          // for map
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCSGUIReader.h"               // for GUIReader, parseselector
+#include "ObjectFactory.h"              // for ObjectFactory, etc
+#include "ccMacros.h"                   // for CC_CALLBACK_0
+#include "json/stringbuffer.h"          // for StringBuffer
+#include "json/writer.h"                // for Writer
+extern "C" {
+#include "lua.h"                        // for lua_State, lua_pop
+#include "tolua++.h"                    // for tolua_tousertype
+}
 
 USING_NS_CC;
 

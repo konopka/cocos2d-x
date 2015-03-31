@@ -1,11 +1,12 @@
 #ifndef __CCBPROXY_H_
 #define __CCBPROXY_H_
 
-#include "cocos2d.h"
-#include "CCLuaEngine.h"
-#include "audio/include/SimpleAudioEngine.h"
-#include "extensions/cocos-ext.h"
-#include "cocosbuilder/CocosBuilder.h"
+#include "CCBReader.h"                  // for CCBReader (ptr only), etc
+#include "CCLayer.h"                    // for Layer
+#include "CCLayerLoader.h"              // for LayerLoader
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+namespace cocos2d { class Node; }
 
 USING_NS_CC;
 USING_NS_CC_EXT;

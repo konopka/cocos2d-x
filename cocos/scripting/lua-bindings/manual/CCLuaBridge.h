@@ -25,15 +25,10 @@
 #ifndef __LUA_BRIDGE_H_
 #define __LUA_BRIDGE_H_
 
-#include <string>
-#include <map>
-#include "CCLuaEngine.h"
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "CCScriptSupport.h"            // for lua_State
+namespace cocos2d { class LuaStack; }
 
-extern "C" {
-#include "lua.h"
-}
-
-using namespace std;
 /**
  * @addtogroup lua
  * @{

@@ -23,11 +23,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "Cocos2dxLuaLoader.h"
-#include <string>
-#include <algorithm>
-
-#include "CCLuaStack.h"
-#include "CCLuaEngine.h"
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for free
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string, allocator, etc
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCLuaEngine.h"                // for LuaEngine
+#include "CCLuaStack.h"                 // for LuaStack
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "lauxlib.h"                    // for luaL_checkstring
 
 using namespace cocos2d;
 

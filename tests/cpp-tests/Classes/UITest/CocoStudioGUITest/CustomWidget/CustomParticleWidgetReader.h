@@ -9,9 +9,10 @@
 #ifndef __CustomUI__CustomParticleWidgetReader__
 #define __CustomUI__CustomParticleWidgetReader__
 
-#include "extensions/cocos-ext.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "ui/CocosGUI.h"
+#include <string>                       // for string
+#include "base/CCRef.h"                 // for Ref
+#include "json/document.h"              // for Value
+namespace cocos2d { namespace ui { class Widget; } }
 
 class CustomParticleWidgetReader : public cocos2d::Ref
 {

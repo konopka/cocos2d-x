@@ -24,7 +24,8 @@
  ****************************************************************************/
 
 #include "CCLuaValue.h"
-
+#include <new>                          // for nothrow, operator new
+#include "CCRef.h"                      // for Ref
 
 NS_CC_BEGIN
 

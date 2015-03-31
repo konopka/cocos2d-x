@@ -8,8 +8,6 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemLabel
-#include "platform/CCPlatformMacros.h" // for USING_NS_CC
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1

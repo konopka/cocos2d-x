@@ -23,7 +23,20 @@
  ****************************************************************************/
 
 #include "CCBProxy.h"
-#include "LuaScriptHandlerMgr.h"
+#include <string.h>                     // for NULL, strlen
+#include <new>                          // for nothrow, operator new
+#include "GUI/CCControlExtension/CCControlButton.h"  // for ControlButton
+#include "CCLabel.h"                    // for Label
+#include "CCMenu.h"                     // for Menu
+#include "CCMenuItem.h"                 // for MenuItem, MenuItemAtlasFont, etc
+#include "CCNode.h"                     // for Node
+#include "CCNodeLoaderLibrary.h"        // for NodeLoaderLibrary
+#include "CCParticleSystemQuad.h"       // for ParticleSystemQuad
+#include "CCSprite.h"                   // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "LuaScriptHandlerMgr.h"        // for ScriptHandlerMgr, etc
+#include "UIScale9Sprite.h"             // for Scale9Sprite
+#include "deprecated/CCString.h"        // for __String
 
 CCBReader* CCBProxy::createCCBReader()
 {

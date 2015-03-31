@@ -23,6 +23,11 @@
  ****************************************************************************/
 
 #include "CCLuaBridge.h"
+#include <stddef.h>                     // for NULL
+#include "CCLuaEngine.h"                // for LuaEngine
+extern "C" {
+#include "lua.h"                        // for lua_pushinteger, lua_pop, etc
+}
 
 NS_CC_BEGIN
 

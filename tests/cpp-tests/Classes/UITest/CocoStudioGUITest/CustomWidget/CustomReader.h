@@ -3,16 +3,14 @@
 #ifndef __TestCpp__CustomReader__
 #define __TestCpp__CustomReader__
 
-#include "extensions/cocos-ext.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "ui/CocosGUI.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCRef.h"                 // for Ref
+#include "json/document.h"              // for Value
+namespace cocos2d { namespace ui { class Widget; } }
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace cocos2d::ui;
-using namespace cocostudio;
-
-class CustomReader : public Ref
+class CustomReader : public cocos2d::Ref
 {
 public:
     CustomReader();
@@ -21,7 +19,7 @@ public:
     static CustomReader* getInstance();
     static void purge();
     
-    virtual void setProperties(const std::string& classType, Widget* widget, const rapidjson::Value& customOptions);
+    virtual void setProperties(const std::string& classType, cocos2d::ui::Widget* widget, const rapidjson::Value& customOptions);
 };
 
 #endif /* defined(__TestCpp__CustomReader__) */

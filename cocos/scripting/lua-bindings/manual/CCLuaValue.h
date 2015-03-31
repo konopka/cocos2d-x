@@ -26,16 +26,14 @@
 #ifndef __CC_LUA_VALUE_H_
 #define __CC_LUA_VALUE_H_
 
-#include <string>
-#include <map>
-#include <list>
-
-extern "C" {
-#include "lua.h"
-}
-
-#include "base/ccTypes.h"
-#include "base/CCRef.h"
+#include <string.h>                     // for memset
+#include <list>                         // for list
+#include <map>                          // for map, map<>::value_compare
+#include <string>                       // for string
+#include "CCPlatformConfig.h"           // for CC_PLATFORM_BLACKBERRY, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+namespace cocos2d { class LuaValue; }
+namespace cocos2d { class Ref; }
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_BLACKBERRY
 using std::memset;

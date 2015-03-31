@@ -26,12 +26,15 @@
 #ifndef __CC_LUA_STACK_H_
 #define __CC_LUA_STACK_H_
 
+#include <functional>                   // for function
+#include "CCLuaValue.h"                 // for LuaValue (ptr only), etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCScriptSupport.h"            // for lua_State
 extern "C" {
-#include "lua.h"
+#include "lua.h"                        // for lua_CFunction
 }
-
-#include "cocos2d.h"
-#include "CCLuaValue.h"
+namespace cocos2d { class __Array; }
 
 /**
  * @addtogroup lua

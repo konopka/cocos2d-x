@@ -3,6 +3,7 @@
 #include "LuaBasicConversions.h"
 #include "CCLuaValue.h"
 #include "CCLuaEngine.h"
+#include "2d/CCFastTMXLayer.h"
 
 static int lua_cocos2dx_experimental_TMXLayer_getTileGIDAt(lua_State* tolua_S)
 {

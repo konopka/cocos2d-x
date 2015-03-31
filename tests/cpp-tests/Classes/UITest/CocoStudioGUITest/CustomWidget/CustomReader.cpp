@@ -1,7 +1,13 @@
 
 
 #include "CustomReader.h"
-#include "CustomImageView.h"
+#include <new>                          // for nothrow, operator new
+#include "CustomImageView.h"            // for CustomImageView
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
+using namespace cocostudio;
 
 static CustomReader* _instanceCustomReader = nullptr;
 

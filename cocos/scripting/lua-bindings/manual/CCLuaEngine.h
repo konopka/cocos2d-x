@@ -33,9 +33,15 @@ extern "C" {
 #include <stddef.h>                     // for NULL
 #include <functional>                   // for function
 #include <string>                       // for string
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCScriptSupport.h"       // for lua_State, etc
 #include "cocos2d/LuaScriptHandlerMgr.h"  // for ScriptHandlerMgr, etc
+// following includes are here because 
+// LuaventNode.cpp and lua_cocos2dx_quick_manual.cpp
+// cannot be compiled
+#include "CCLuaStack.h"
+#include "base/CCDirector.h"
+
 namespace cocos2d { class Acceleration; }
 namespace cocos2d { class CallFunc; }
 namespace cocos2d { class Layer; }

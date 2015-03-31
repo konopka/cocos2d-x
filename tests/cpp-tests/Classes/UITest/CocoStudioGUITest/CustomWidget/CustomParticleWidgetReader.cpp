@@ -7,11 +7,14 @@
 //
 
 #include "CustomParticleWidgetReader.h"
-#include "CustomParticleWidget.h"
-#include "cocostudio/CCSGUIReader.h"
+#include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "CustomParticleWidget.h"       // for CustomParticleWidget
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
 
 USING_NS_CC;
-USING_NS_CC_EXT;
 using namespace ui;
 using namespace cocostudio;
 
