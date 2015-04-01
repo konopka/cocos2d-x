@@ -25,10 +25,9 @@
 #ifndef __CCCONTROLSCENEMANAGER_H__
 #define __CCCONTROLSCENEMANAGER_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-
-USING_NS_CC;
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE, USING_NS_CC
+#include "base/CCRef.h"                 // for Ref
+namespace cocos2d { class Scene; }
 
 class ControlSceneManager : public cocos2d::Ref
 {

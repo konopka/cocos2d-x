@@ -24,7 +24,7 @@
  ****************************************************************************/
 
 #include "NodeTest.h"
-#include "platform/CCGL.h"				// for glVertexAttribPointer, etc
+#include "platform/CCGL.h"                    // for glVertexAttribPointer, etc
 #include <stddef.h>                     // for offsetof, size_t
 #include <stdint.h>                     // for uint32_t
 #include <stdio.h>                      // for sprintf
@@ -41,6 +41,7 @@
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCParticleExamples.h"      // for ParticleFire, ParticleSun
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CameraCenterTest::create, etc
 #include "NodeTest/../BaseTest.h"       // for BaseTest
 #include "NodeTest/../testBasic.h"      // for CL
 #include "base/CCConsole.h"             // for log
@@ -50,7 +51,7 @@
 #include "base/ccMacros.h"              // for CCAssert, CC_CALLBACK_1, etc
 #include "base/ccTypes.h"               // for V3F_C4B_T2F, Color3B, etc
 #include "base/ccUtils.h"               // for findChildren
-#include "CCStdC.h"         // for sinf
+#include "platform/CCStdC.h"         // for sinf
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2, Vec2::ZERO, clampf
 #include "math/Vec3.h"                  // for Vec3

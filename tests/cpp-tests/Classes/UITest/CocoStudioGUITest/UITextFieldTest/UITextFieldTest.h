@@ -36,11 +36,11 @@ public:
     UITextFieldTest();
     ~UITextFieldTest();
     bool init();
-    void textFieldEvent(Ref* pSender, ui::TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UITextFieldTest_MaxLength : public UIScene
@@ -49,11 +49,11 @@ public:
     UITextFieldTest_MaxLength();
     ~UITextFieldTest_MaxLength();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_MaxLength)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UITextFieldTest_Password : public UIScene
@@ -62,11 +62,11 @@ public:
     UITextFieldTest_Password();
     ~UITextFieldTest_Password();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_Password)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UITextFieldTest_LineWrap : public UIScene
@@ -75,11 +75,11 @@ public:
     UITextFieldTest_LineWrap();
     ~UITextFieldTest_LineWrap();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_LineWrap)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UITextFieldTest_TrueTypeFont : public UIScene
@@ -88,11 +88,11 @@ public:
     UITextFieldTest_TrueTypeFont();
     ~UITextFieldTest_TrueTypeFont();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_TrueTypeFont)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UITextFieldTest_PlaceHolderColor : public UIScene
@@ -101,10 +101,10 @@ public:
     UITextFieldTest_PlaceHolderColor();
     ~UITextFieldTest_PlaceHolderColor();
     bool init();
-    void textFieldEvent(Ref* pSender, TextField::EventType type);
+    void textFieldEvent(Ref* pSender, cocos2d::ui::TextField::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_PlaceHolderColor)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 #endif /* defined(__TestCpp__UITextFieldTest__) */

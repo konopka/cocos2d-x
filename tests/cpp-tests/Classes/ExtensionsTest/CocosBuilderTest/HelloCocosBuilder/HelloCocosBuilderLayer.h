@@ -1,9 +1,20 @@
 #ifndef _HELLOCOCOSBUILDERLAYER_H_
 #define _HELLOCOCOSBUILDERLAYER_H_
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocosbuilder/CocosBuilder.h"
+#include <stddef.h>                     // for NULL
+#include <string>                       // for string
+#include "2d/CCLayer.h"                 // for Layer
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "cocosbuilder/CCBMemberVariableAssigner.h"
+#include "cocosbuilder/CCBReader.h"
+#include "cocosbuilder/CCBSelectorResolver.h"  // for CCBSelectorResolver
+#include "cocosbuilder/CCNodeLoaderListener.h"  // for NodeLoaderListener
+namespace cocos2d { class Label; }
+namespace cocos2d { class Node; }
+namespace cocos2d { class Sprite; }
+namespace cocos2d { class Value; }
+namespace cocosbuilder { class NodeLoader; }
 
 /*
  * Note: for some pretty hard fucked up reason, the order of inheritance is important!

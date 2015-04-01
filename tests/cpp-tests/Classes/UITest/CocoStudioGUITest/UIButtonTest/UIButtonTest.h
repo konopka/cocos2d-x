@@ -37,11 +37,11 @@ public:
     UIButtonTest();
     ~UIButtonTest();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTest_Scale9 : public UIScene
@@ -50,11 +50,11 @@ public:
     UIButtonTest_Scale9();
     ~UIButtonTest_Scale9();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_Scale9)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTest_Scale9_State_Change : public UIScene
@@ -63,11 +63,11 @@ public:
     UIButtonTest_Scale9_State_Change();
     ~UIButtonTest_Scale9_State_Change();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_Scale9_State_Change)
-        Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTest_PressedAction : public UIScene
@@ -76,11 +76,11 @@ public:
     UIButtonTest_PressedAction();
     ~UIButtonTest_PressedAction();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_PressedAction)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTest_Title : public UIScene
@@ -89,11 +89,11 @@ public:
     UIButtonTest_Title();
     ~UIButtonTest_Title();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_Title)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTestRemoveSelf : public UIScene
@@ -102,11 +102,11 @@ public:
     UIButtonTestRemoveSelf();
     ~UIButtonTestRemoveSelf();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTestRemoveSelf)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTestSwitchScale9 : public UIScene
@@ -115,11 +115,11 @@ public:
     UIButtonTestSwitchScale9();
     ~UIButtonTestSwitchScale9();
     bool init();
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTestSwitchScale9)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTestZoomScale : public UIScene
@@ -128,11 +128,11 @@ public:
     UIButtonTestZoomScale();
     ~UIButtonTestZoomScale();
     bool init();
-    void sliderEvent(Ref* pSender, Slider::EventType type);
+    void sliderEvent(cocos2d::Ref* pSender, cocos2d::ui::Slider::EventType type);
 
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTestZoomScale)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTextOnly : public UIScene
@@ -144,7 +144,7 @@ public:
 
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTextOnly)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonIgnoreContentSizeTest : public UIScene
@@ -156,7 +156,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonIgnoreContentSizeTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonTitleEffectTest : public UIScene
@@ -168,7 +168,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTitleEffectTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonFlipTest : public UIScene
@@ -180,7 +180,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonFlipTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonNormalDefaultTest : public UIScene
@@ -192,7 +192,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonNormalDefaultTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIButtonDisableDefaultTest : public UIScene
@@ -204,6 +204,6 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonDisableDefaultTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 #endif /* defined(__TestCpp__UIButtonTest__) */

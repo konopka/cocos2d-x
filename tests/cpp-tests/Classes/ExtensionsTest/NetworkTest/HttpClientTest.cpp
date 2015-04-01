@@ -10,8 +10,6 @@
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemLabel, MenuItemFont
 #include "2d/CCScene.h"                 // for Scene
-#include "platform/CCPlatformMacros.h" // for USING_NS_CC
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director

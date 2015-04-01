@@ -29,8 +29,7 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCLayer.h"                 // for Layer
 #include "2d/CCScene.h"                 // for Scene
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, etc
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_DELETE, etc
 class ControlScene;
 namespace cocos2d { class Ref; }
 

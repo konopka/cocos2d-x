@@ -2,7 +2,10 @@
 #ifndef __TestCpp__CustomImageView__
 #define __TestCpp__CustomImageView__
 
-#include "ui/CocosGUI.h"
+#include <string>                       // for string
+#include "ui/UIImageView.h"             // for ImageView
+namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class CustomImageView : public cocos2d::ui::ImageView
 {

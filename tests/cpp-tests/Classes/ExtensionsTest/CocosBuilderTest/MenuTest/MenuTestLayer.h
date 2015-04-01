@@ -1,9 +1,14 @@
 #ifndef _MENUTESTLAYER_H_
 #define _MENUTESTLAYER_H_
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocosbuilder/CocosBuilder.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "cocosbuilder/CCBMemberVariableAssigner.h"
+#include "cocosbuilder/CCBReader.h"
+#include "cocosbuilder/CCBSelectorResolver.h"  // for CCBSelectorResolver
+namespace cocos2d { class Label; }
+namespace cocos2d { class Node; }
 
 class MenuTestLayer
     : public cocos2d::Layer

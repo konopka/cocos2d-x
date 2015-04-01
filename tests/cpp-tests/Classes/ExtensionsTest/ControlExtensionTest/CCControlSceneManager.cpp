@@ -24,15 +24,16 @@
  */
 
 #include "CCControlSceneManager.h"
-#include "CCControlScene.h"
+#include <new>                          // for nothrow, operator new
 #include "CCControlButtonTest/CCControlButtonTest.h"
 #include "CCControlColourPicker/CCControlColourPickerTest.h"
-#include "CCControlSliderTest/CCControlSliderTest.h"
-#include "CCControlSwitchTest/CCControlSwitchTest.h"
 #include "CCControlPotentiometerTest/CCControlPotentiometerTest.h"
+#include "CCControlSliderTest/CCControlSliderTest.h"
 #include "CCControlStepperTest/CCControlStepperTest.h"
+#include "CCControlSwitchTest/CCControlSwitchTest.h"
+#include "ExtensionsTest/ControlExtensionTest/CCControlStepperTest/../CCControlScene.h"
 
-USING_NS_CC;
+using namespace cocos2d;
 
 enum
 {

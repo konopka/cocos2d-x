@@ -39,12 +39,12 @@ public:
     UIListViewTest_Vertical();
     ~UIListViewTest_Vertical();
     bool init();
-    void selectedItemEvent(Ref* pSender, ListView::EventType type);
-    void selectedItemEventScrollView(Ref* pSender, ui::ScrollView::EventType type);
+    void selectedItemEvent(cocos2d::Ref* pSender, cocos2d::ui::ListView::EventType type);
+    void selectedItemEventScrollView(cocos2d::Ref* pSender, cocos2d::ui::ScrollView::EventType type);
 
 protected:
     UI_SCENE_CREATE_FUNC(UIListViewTest_Vertical)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
     
     std::vector<std::string> _array;
 };
@@ -55,12 +55,12 @@ public:
     UIListViewTest_Horizontal();
     ~UIListViewTest_Horizontal();
     bool init();
-    void selectedItemEvent(Ref* pSender, ListView::EventType type);
+    void selectedItemEvent(cocos2d::Ref* pSender, cocos2d::ui::ListView::EventType type);
 
     
 protected:
     UI_SCENE_CREATE_FUNC(UIListViewTest_Horizontal)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
     
     std::vector<std::string> _array;
 };

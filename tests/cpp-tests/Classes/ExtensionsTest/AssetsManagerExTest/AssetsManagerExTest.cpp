@@ -4,6 +4,7 @@
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CCLOG
 #include "ExtensionsTest/AssetsManagerExTest/../../BaseTest.h"
 #include "VisibleRect.h"                // for VisibleRect
 #include "assets-manager/AssetsManagerEx.h"  // for AssetsManagerEx, etc
@@ -15,7 +16,8 @@
 #include "base/ccTypes.h"               // for TextHAlignment, etc
 #include "deprecated/CCString.h"        // for format
 #include "math/Vec2.h"                  // for Vec2
-namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 const char* sceneManifests[] = {"AMTestScene1/project.manifest", "AMTestScene2/project.manifest", "AMTestScene3/project.manifest"};
 const char* storagePaths[] = {"CppTests/AssetsManagerExTest/scene1/", "CppTests/AssetsManagerExTest/scene2/", "CppTests/AssetsManagerExTest/scene3"};

@@ -1,7 +1,11 @@
 #include "ButtonTestLayer.h"
+#include <assert.h>                     // for assert
+#include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 ButtonTestLayer::ButtonTestLayer()

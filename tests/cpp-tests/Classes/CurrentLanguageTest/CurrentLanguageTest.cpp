@@ -5,7 +5,7 @@
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CCASSERT
-#include "CCApplication.h"			    // for Application
+#include "platform/CCApplication.h"     // for Application
 #include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;

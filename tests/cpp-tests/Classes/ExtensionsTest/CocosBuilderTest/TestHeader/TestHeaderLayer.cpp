@@ -1,7 +1,10 @@
 #include "TestHeaderLayer.h"
+#include "CCPlatformMacros.h"           // for CCLOG, USING_NS_CC
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCDirector.h"            // for Director
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 SEL_MenuHandler TestHeaderLayer::onResolveCCBCCMenuItemSelector(Ref * pTarget, const char * pSelectorName) {

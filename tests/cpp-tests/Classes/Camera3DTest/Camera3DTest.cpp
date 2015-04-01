@@ -24,7 +24,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "Camera3DTest.h"
-#include "platform/CCGL.h"                    // for GLfloat, GL_FALSE, GLvoid
+#include "platform/CCGL.h"              // for GLfloat, GL_FALSE, GLvoid
 #include <stdio.h>                      // for sprintf, NULL
 #include <cmath>                        // for sqrt, asin, fabs
 #include <functional>                   // for _Bind, function
@@ -67,7 +67,6 @@ THE SOFTWARE.
 #include "math/Vec4.h"                  // for Vec4
 #include "renderer/CCGLProgram.h"       // for GLProgram
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
-namespace cocos2d { template <class T> class Vector; }
 
 using namespace cocos2d;
 

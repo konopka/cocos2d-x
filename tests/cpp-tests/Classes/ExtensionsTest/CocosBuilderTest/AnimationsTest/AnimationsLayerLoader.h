@@ -2,6 +2,7 @@
 #define _ANIMATIONSTESTLAYERLOADER_H_
 
 #include "AnimationsTestLayer.h"
+#include "cocosbuilder/CCLayerLoader.h"
 
 /* Forward declaration. */
 class CCBReader;

@@ -8,6 +8,7 @@
 #include "2d/CCLayer.h"                 // for Layer
 #include "2d/CCParticleExamples.h"      // for ParticleFireworks
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CCLOG, etc
 #include "GUI/CCControlExtension/CCControlSlider.h"  // for ControlSlider
 #include "GUI/CCControlExtension/CCInvocation.h"
 #include "SchedulerTest/../BaseTest.h"  // for BaseTest
@@ -20,7 +21,7 @@
 #include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
 #include "base/CCScheduler.h"           // for Scheduler, etc
 #include "base/ccMacros.h"              // for CCASSERT, CCRANDOM_0_1, etc
-#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
 #include "renderer/CCTextureCache.h"    // for TextureCache

@@ -37,7 +37,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_Vertical)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewTest_Horizontal : public UIScene
@@ -49,7 +49,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_Horizontal)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewTest_Both : public UIScene
@@ -61,7 +61,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_Both)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewTest_ScrollToPercentBothDirection : public UIScene
@@ -73,7 +73,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewTest_ScrollToPercentBothDirection_Bounce : public UIScene
@@ -85,7 +85,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection_Bounce)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewNestTest : public UIScene
@@ -97,7 +97,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewNestTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UIScrollViewRotated : public UIScene
@@ -109,7 +109,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewRotated)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UIScrollViewTest__) */

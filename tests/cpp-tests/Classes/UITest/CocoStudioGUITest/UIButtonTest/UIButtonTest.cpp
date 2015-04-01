@@ -22,6 +22,9 @@
 #include "ui/UIText.h"                  // for Text
 #include "ui/UITextBMFont.h"            // for TextBMFont
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UIButtonTest
 UIButtonTest::UIButtonTest()
 : _displayValueLabel(nullptr)

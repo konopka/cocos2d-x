@@ -31,7 +31,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemImage, MenuItemFont
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCControlSceneManager.h"      // for ControlSceneManager
-#include "ExtensionDeprecated.h"        // for Scale9Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE_NULL
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1

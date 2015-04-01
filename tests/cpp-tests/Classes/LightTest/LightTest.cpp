@@ -18,7 +18,7 @@
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
 #include "base/ccTypes.h"               // for Color3B
-#include "CCStdC.h"         // for cosf, sinf
+#include "CCStdC.h"                     // for cosf, sinf
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_TOP_LEFT, etc
 #include "math/Vec3.h"                  // for Vec3

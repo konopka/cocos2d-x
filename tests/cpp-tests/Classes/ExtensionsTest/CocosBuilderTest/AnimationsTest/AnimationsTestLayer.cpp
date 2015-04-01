@@ -1,7 +1,10 @@
 #include "AnimationsTestLayer.h"
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE_NULL, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "cocosbuilder/CCBAnimationManager.h"  // for CCBAnimationManager
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 AnimationsTestLayer::AnimationsTestLayer()

@@ -13,6 +13,9 @@
 #include "ui/UIScrollView.h"            // for ScrollView, etc
 #include "ui/UIText.h"                  // for Text
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UIScrollViewTest_Vertical
 
 UIScrollViewTest_Vertical::UIScrollViewTest_Vertical()

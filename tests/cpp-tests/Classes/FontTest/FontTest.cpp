@@ -1,6 +1,7 @@
 #include "FontTest.h"
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCLayer.h"                 // for LayerColor
+#include "CCPlatformMacros.h"           // for FontTest::create
 #include "FontTest/../BaseTest.h"       // for BaseTest
 #include "base/CCDirector.h"            // for Director
 #include "base/ccTypes.h"               // for TextVAlignment, Color4B, etc

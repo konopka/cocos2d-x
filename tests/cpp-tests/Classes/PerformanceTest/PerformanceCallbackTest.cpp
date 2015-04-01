@@ -6,6 +6,7 @@
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"
 #include "PerformanceTest/../testBasic.h"  // for CL
 #include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
 #include "base/CCDirector.h"            // for Director

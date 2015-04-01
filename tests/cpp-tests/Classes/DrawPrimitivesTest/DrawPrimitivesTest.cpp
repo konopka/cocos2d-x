@@ -1,5 +1,5 @@
 #include "DrawPrimitivesTest.h"
-#include "platform/CCGL.h"				// for glLineWidth
+#include "platform/CCGL.h"                    // for glLineWidth
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
 #include "2d/CCActionCatmullRom.h"      // for PointArray

@@ -2,6 +2,9 @@
 #define _CCB_CCBMEMBERVARIABLEASSIGNER_H_
 
 
+namespace cocos2d { class Node; }
+namespace cocos2d { class Value; }
+
 namespace cocosbuilder {
 
 #define CCB_MEMBERVARIABLEASSIGNER_GLUE(TARGET, MEMBERVARIABLENAME, MEMBERVARIABLETYPE, MEMBERVARIABLE) \

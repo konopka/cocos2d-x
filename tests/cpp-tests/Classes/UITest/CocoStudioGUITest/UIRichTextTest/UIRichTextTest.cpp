@@ -21,6 +21,9 @@
 #include "ui/UIRichText.h"              // for RichText, RichElementText, etc
 #include "ui/UIText.h"                  // for Text
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 UIRichTextTest::UIRichTextTest()
 {
     

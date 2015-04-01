@@ -6,6 +6,7 @@
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, etc
 #include "PlayerController.h"           // for PlayerController
 #include "SceneController.h"            // for SceneController
 #include "VisibleRect.h"                // for VisibleRect
@@ -15,10 +16,8 @@
 #include "cocostudio/CCComAudio.h"      // for ComAudio
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
-namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
-using namespace cocos2d::extension;
 using namespace cocostudio;
 
 ComponentsTestLayer::~ComponentsTestLayer()

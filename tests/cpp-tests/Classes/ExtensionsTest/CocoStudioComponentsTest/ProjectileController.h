@@ -1,9 +1,7 @@
 #ifndef __CC_PROJECTILECONTROLLER_H__
 #define __CC_PROJECTILECONTROLLER_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
+#include "cocostudio/CCComController.h"  // for ComController
 
 class ProjectileController : public cocostudio::ComController
 {

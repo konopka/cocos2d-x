@@ -1,7 +1,14 @@
 #include "PlayerController.h"
-#include "ComponentsTestScene.h"
-#include "SceneController.h"
-#include "ProjectileController.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "ProjectileController.h"       // for ProjectileController
+#include "base/CCTouch.h"               // for Touch
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 using namespace cocostudio;

@@ -1,8 +1,17 @@
 
 
 #include "UITextBMFontTest.h"
-#include "ui/UILayout.h"
-#include "ui/UITextBMFont.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UITextBMFontTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UITextBMFont.h"            // for TextBMFont
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UITextBMFontTest
 

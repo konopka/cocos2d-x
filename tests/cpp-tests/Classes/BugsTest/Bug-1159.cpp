@@ -17,12 +17,12 @@
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCTransitionPageTurn.h"    // for TransitionPageTurn
 #include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "CCPlatformMacros.h"           // for Bug1159Layer::create
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1
 #include "base/ccTypes.h"               // for Color4B
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
-namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
 

@@ -1,11 +1,18 @@
 #include "SceneController.h"
-#include "ComponentsTestScene.h"
-#include "PlayerController.h"
-#include "GameOverScene.h"
-#include "EnemyController.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for GameOverScene::create, etc
+#include "EnemyController.h"            // for EnemyController
+#include "GameOverScene.h"              // for GameOverScene, etc
+#include "base/CCDirector.h"            // for Director
+#include "cocostudio/CCComAttribute.h"  // for ComAttribute
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "math/CCGeometry.h"            // for Rect
 
 using namespace cocos2d;
-using namespace cocos2d::extension;
 using namespace cocostudio;
 
 SceneController::SceneController(void)

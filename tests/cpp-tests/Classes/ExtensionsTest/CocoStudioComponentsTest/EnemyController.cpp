@@ -1,5 +1,18 @@
 #include "EnemyController.h"
-#include "SceneController.h"
+#include <stdlib.h>                     // for rand
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "2d/CCActionInterval.h"        // for MoveTo, Sequence
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "SceneController.h"            // for SceneController
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_1
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 using namespace cocostudio;

@@ -1,8 +1,18 @@
 
 
 #include "UIWidgetAddNodeTest.h"
-#include "2d/CCSprite.h"
-#include "ui/UILayout.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCSprite.h"                // for Sprite
+#include "UITest/CocoStudioGUITest/UIWidgetAddNodeTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UIWidgetAddNodeTest
 

@@ -36,11 +36,11 @@ public:
     UICheckBoxTest();
     ~UICheckBoxTest();
     bool init();
-    void selectedEvent(Ref* pSender,CheckBox::EventType type);
+    void selectedEvent(cocos2d::Ref* pSender, cocos2d::ui::CheckBox::EventType type);
     
 protected:
     UI_SCENE_CREATE_FUNC(UICheckBoxTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 class UICheckBoxDefaultBehaviorTest : public UIScene
@@ -52,7 +52,7 @@ public:
     
 protected:
     UI_SCENE_CREATE_FUNC(UICheckBoxDefaultBehaviorTest)
-    Text* _displayValueLabel;
+    cocos2d::ui::Text* _displayValueLabel;
 };
 
 #endif /* defined(__TestCpp__UICheckBoxTest__) */

@@ -7,8 +7,6 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for CCLOG, USING_NS_CC
 #include "VisibleRect.h"                // for VisibleRect
 #include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
 #include "base/CCDirector.h"            // for Director
@@ -18,8 +16,10 @@
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_2
 #include "extensions/GUI/CCControlExtension/CCControlSlider.h"
-#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
 #include "math/CCGeometry.h"            // for Size, Rect
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h"  // for CCLOG, USING_NS_CC
 
 using namespace cocos2d;
 

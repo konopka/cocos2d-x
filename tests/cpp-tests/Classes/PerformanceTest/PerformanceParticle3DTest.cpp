@@ -1,10 +1,21 @@
 #include "PerformanceParticle3DTest.h"
-#include "Particle3D/PU/CCPUParticleSystem3D.h"
-#include "base/CCDirector.h"
-#include "2d/CCMenuItem.h"
-#include "2d/CCLabel.h"
-#include "2d/CCMenu.h"
-#include "2d/CCCamera.h"
+#include <stdio.h>                      // for sprintf
+#include <new>                          // for nothrow, operator new
+#include "2d/CCCamera.h"                // for Camera, CameraFlag, etc
+#include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "2d/CCMenu.h"                  // for Menu
+#include "2d/CCMenuItem.h"              // for MenuItemFont
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticleSystem3D
+#include "Particle3D/PU/CCPUParticleSystem3D.h"  // for PUParticleSystem3D
+#include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccMacros.h"              // for CCRANDOM_MINUS1_1
+#include "base/ccTypes.h"               // for Color3B, TextHAlignment, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 using namespace cocos2d;
 

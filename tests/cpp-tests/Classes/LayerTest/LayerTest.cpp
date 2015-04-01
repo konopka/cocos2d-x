@@ -1,5 +1,5 @@
 #include "LayerTest.h"
-#include "platform/CCGL.h"				// for GL_ZERO, GLenum, etc
+#include "platform/CCGL.h"              // for GL_ZERO, GLenum, etc
 #include <math.h>                       // for fabs
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
@@ -11,6 +11,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel, etc
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for LayerBug3162A::create, etc
 #include "LayerTest/../BaseTest.h"      // for BaseTest
 #include "LayerTest/../testBasic.h"     // for CL
 #include "VisibleRect.h"                // for VisibleRect

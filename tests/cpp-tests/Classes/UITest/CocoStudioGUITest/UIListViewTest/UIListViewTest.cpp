@@ -12,13 +12,16 @@
 #include "base/ccMacros.h"              // for CC_CALLBACK_2
 #include "base/ccTypes.h"               // for Color3B
 #include "deprecated/CCString.h"        // for format
-#include "CCPlatformDefine.h"           // for CC_UNUSED_PARAM
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIButton.h"                // for Button
 #include "ui/UILayout.h"                // for Layout
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIWidget.h"                // for Widget
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 const char* font_UIListViewTest = "fonts/Marker Felt.ttf";
 

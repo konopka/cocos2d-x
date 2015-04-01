@@ -21,6 +21,7 @@
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCDevice.h"                   // for Device
+#include "CCPlatformMacros.h"           // for CustomEventTest::create, etc
 #include "NewEventDispatcherTest/../BaseTest.h"  // for BaseTest
 #include "NewEventDispatcherTest/../testBasic.h"  // for CL
 #include "VisibleRect.h"                // for VisibleRect
@@ -41,9 +42,9 @@
 #include "base/ccConfig.h"
 #include "base/ccMacros.h"              // for CCASSERT
 #include "base/ccTypes.h"               // for Acceleration, Color3B, etc
-#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
 #include "math/CCGeometry.h"            // for Size, Rect
-#include "math/Vec2.h"					// for Vec2::operator+
+#include "math/Vec2.h"                  // for Vec2, etc
 #include "testResource.h"               // for s_Ball
 
 using namespace cocos2d;

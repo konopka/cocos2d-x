@@ -8,7 +8,6 @@
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemLabel
 #include "2d/CCScene.h"                 // for Scene
-#include "platform/CCPlatformMacros.h" // for USING_NS_CC
 #include "CustomRootNodeReader.h"       // for CustomRootNodeReader
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director

@@ -2,6 +2,7 @@
 #define _HELLOCOCOSBUILDERLAYERLOADER_H_
 
 #include "HelloCocosBuilderLayer.h"
+#include "cocosbuilder/CCLayerLoader.h"
 
 /* Forward declaration. */
 class CCBReader;

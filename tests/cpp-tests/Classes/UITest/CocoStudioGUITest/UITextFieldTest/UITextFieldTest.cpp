@@ -17,6 +17,9 @@
 #include "ui/UILayout.h"                // for Layout
 #include "ui/UIText.h"                  // for Text
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UITextFieldTest
 UITextFieldTest::UITextFieldTest()
 : _displayValueLabel(nullptr)

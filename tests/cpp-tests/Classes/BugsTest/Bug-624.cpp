@@ -10,6 +10,7 @@
 #include "2d/CCTransition.h"            // for TransitionFade
 #include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
 #include "CCDevice.h"                   // for Device
+#include "CCPlatformMacros.h"           // for Bug624Layer2::create, etc
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher

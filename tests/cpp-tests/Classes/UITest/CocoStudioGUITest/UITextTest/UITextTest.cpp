@@ -1,8 +1,18 @@
 
 
 #include "UITextTest.h"
-#include "ui/UIButton.h"
-#include "ui/UILayout.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UITextTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B, TextHAlignment, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIButton.h"                // for Button
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget, etc
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UITextTest
 

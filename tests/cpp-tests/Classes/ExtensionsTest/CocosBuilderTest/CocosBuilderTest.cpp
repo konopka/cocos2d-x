@@ -23,11 +23,14 @@
  ****************************************************************************/
 
 #include "CocosBuilderTest.h"
-#include "../../testResource.h"
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "HelloCocosBuilder/HelloCocosBuilderLayerLoader.h"
+#include "base/CCDirector.h"            // for Director
+#include "cocosbuilder/CCBReader.h"     // for CCBReader
+#include "cocosbuilder/CCNodeLoaderLibrary.h"  // for NodeLoaderLibrary
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 void CocosBuilderTestScene::runThisTest() {

@@ -15,6 +15,7 @@
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CCLOG, etc
 #include "LabelTest/../BaseTest.h"      // for BaseTest
 #include "LabelTest/../testBasic.h"     // for CL
 #include "VisibleRect.h"                // for VisibleRect
@@ -24,8 +25,8 @@
 #include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
-#include "deprecated/CCString.h"        // for __String
-#include "CCStdC.h"						// for MAX, MIN
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCStdC.h"            // for MAX, MIN
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Vec2.h"                  // for Vec2, etc
 

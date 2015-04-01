@@ -1,8 +1,17 @@
 #ifndef __CONS_H__
 #define __CONS_H__
 
-#include "cocos2d.h"
-#include "cocostudio/TriggerBase.h"
+#include <string>                       // for string
+#include "cocostudio/CCArmatureAnimation.h"  // for MovementEventType
+#include "cocostudio/TriggerBase.h"     // for DECLARE_CLASS_INFO
+#include "cocostudio/TriggerObj.h"      // for BaseTriggerCondition
+#include "json/document.h"              // for Value
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Scheduler; }
+namespace cocostudio { class Armature; }
+namespace cocostudio { class CocoLoader; }
+namespace cocostudio { struct stExpCocoNode; }
 
 
 class TimeElapsed : public cocostudio::BaseTriggerCondition

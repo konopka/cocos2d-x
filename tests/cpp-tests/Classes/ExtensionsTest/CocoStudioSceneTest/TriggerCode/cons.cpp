@@ -1,5 +1,19 @@
 
 #include "cons.h"
+#include <stdlib.h>                     // for atoi, abs
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CCLOG, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CC_REPEAT_FOREVER
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCComRender.h"     // for ComRender
+#include "cocostudio/CCSSceneReader.h"  // for SceneReader
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "cocostudio/TriggerMng.h"      // for TriggerMng
 
 using namespace cocos2d;
 using namespace cocostudio;

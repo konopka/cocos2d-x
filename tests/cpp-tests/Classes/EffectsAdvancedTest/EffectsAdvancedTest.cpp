@@ -1,5 +1,5 @@
 #include "EffectsAdvancedTest.h"
-#include "platform/CCGL.h"				// for GL_ONE_MINUS_SRC_ALPHA, etc
+#include "platform/CCGL.h"              // for GL_ONE_MINUS_SRC_ALPHA, etc
 #include <new>                          // for nothrow, operator new
 #include "2d/CCActionGrid.h"            // for ReuseGrid, StopGrid
 #include "2d/CCActionGrid3D.h"          // for Lens3D, Shaky3D, Liquid, etc

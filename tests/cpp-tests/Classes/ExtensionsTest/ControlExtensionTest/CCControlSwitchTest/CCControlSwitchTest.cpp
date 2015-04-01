@@ -28,14 +28,13 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE
-#include "ExtensionDeprecated.h"        // for Scale9Sprite
 #include "ExtensionsTest/ControlExtensionTest/CCControlSwitchTest/../CCControlScene.h"
 #include "GUI/CCControlExtension/CCControlSwitch.h"  // for ControlSwitch
 #include "GUI/CCControlExtension/CCInvocation.h"
 #include "base/CCDirector.h"            // for Director
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 using namespace cocos2d;

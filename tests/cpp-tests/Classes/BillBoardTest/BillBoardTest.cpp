@@ -38,7 +38,8 @@
 #include "2d/CCSprite.h"                // for Sprite
 #include "3d/CCBillBoard.h"             // for BillBoard, BillBoard::Mode, etc
 #include "3d/CCSprite3D.h"              // for Sprite3D
-#include "BillBoardTest/../testBasic.h"  // for CL
+#include "BillBoardTest/../testBasic.h" // for CL
+#include "CCPlatformMacros.h"
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
@@ -49,7 +50,7 @@
 #include "math/CCGeometry.h"            // for Size
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2, Point, Vec2::ZERO
-#include "math/Vec3.h"                // for Vec3::operator*, etc
+#include "math/Vec3.h"                  // for Vec3::operator*, etc
 
 using namespace cocos2d;
 

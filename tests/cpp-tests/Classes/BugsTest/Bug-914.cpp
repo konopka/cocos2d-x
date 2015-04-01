@@ -15,6 +15,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont
 #include "2d/CCScene.h"                 // for Scene
 #include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "CCPlatformMacros.h"           // for Bug914Layer::create
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher

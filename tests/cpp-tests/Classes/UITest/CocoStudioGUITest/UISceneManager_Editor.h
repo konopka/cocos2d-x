@@ -25,9 +25,9 @@
 #ifndef __TestCpp__UISceneManager_Editor__
 #define __TestCpp__UISceneManager_Editor__
 
-#include "cocos2d.h"
-
-USING_NS_CC;
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE, USING_NS_CC
+#include "base/CCRef.h"                 // for Ref
+namespace cocos2d { class Scene; }
 
 enum
 {
@@ -64,7 +64,7 @@ enum
     kUITestMax_Editor,
 };
 
-class UISceneManager_Editor : public Ref
+class UISceneManager_Editor : public cocos2d::Ref
 {
 public:
     UISceneManager_Editor();
@@ -75,13 +75,13 @@ public:
 	static void purge();
     
     /** Returns the next ui scene. */
-    virtual Scene* nextUIScene();
+    virtual cocos2d::Scene* nextUIScene();
     
     /** Returns the previous ui scene. */
-    virtual Scene* previousUIScene();
+    virtual cocos2d::Scene* previousUIScene();
     
     /** Returns the current control scene. */
-    virtual Scene* currentUIScene();
+    virtual cocos2d::Scene* currentUIScene();
     
     /** UI scene id. */
     CC_SYNTHESIZE(int, _currentUISceneId, CurrentUISceneId)

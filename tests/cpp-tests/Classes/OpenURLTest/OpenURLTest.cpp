@@ -7,7 +7,7 @@
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
 #include "base/ccMacros.h"              // for CC_CALLBACK_2
-#include "CCApplication.h"				// for Application
+#include "platform/CCApplication.h"		// for Application
 #include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;

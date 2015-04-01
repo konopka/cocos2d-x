@@ -12,6 +12,9 @@
 #include "ui/UILoadingBar.h"            // for LoadingBar, etc
 #include "ui/UIText.h"                  // for Text
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UILoadingBarTest_Left
 
 UILoadingBarTest_Left::UILoadingBarTest_Left()

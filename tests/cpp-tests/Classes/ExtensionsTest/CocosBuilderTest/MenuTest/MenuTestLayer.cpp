@@ -1,7 +1,10 @@
 #include "MenuTestLayer.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 MenuTestLayer::MenuTestLayer()
@@ -31,14 +34,14 @@ bool MenuTestLayer::onAssignCCBMemberVariable(Ref * pTarget, const char * pMembe
     return false;
 }
 
-void MenuTestLayer::onMenuItemAClicked(cocos2d::Ref *pSender) {
+void MenuTestLayer::onMenuItemAClicked(Ref *pSender) {
     this->mMenuItemStatusLabelBMFont->setString("Menu Item A clicked.");
 }
 
-void MenuTestLayer::onMenuItemBClicked(cocos2d::Ref *pSender) {
+void MenuTestLayer::onMenuItemBClicked(Ref *pSender) {
     this->mMenuItemStatusLabelBMFont->setString("Menu Item B clicked.");
 }
 
-void MenuTestLayer::onMenuItemCClicked(cocos2d::Ref *pSender) {
+void MenuTestLayer::onMenuItemCClicked(Ref *pSender) {
     this->mMenuItemStatusLabelBMFont->setString("Menu Item C clicked.");
 }

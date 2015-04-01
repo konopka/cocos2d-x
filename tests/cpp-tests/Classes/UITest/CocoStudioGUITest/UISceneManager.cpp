@@ -1,23 +1,25 @@
 
 
 #include "UISceneManager.h"
-#include "UIScene.h"
-#include "UIButtonTest/UIButtonTest.h"
+#include <new>                          // for nothrow, operator new
+#include "UIButtonTest/UIButtonTest.h"  // for UIButtonDisableDefaultTest, etc
 #include "UICheckBoxTest/UICheckBoxTest.h"
-#include "UISliderTest/UISliderTest.h"
-#include "UIImageViewTest/UIImageViewTest.h"
-#include "UILoadingBarTest/UILoadingBarTest.h"
-#include "UITextAtlasTest/UITextAtlasTest.h"
-#include "UITextTest/UITextTest.h"
-#include "UITextBMFontTest/UITextBMFontTest.h"
-#include "UITextFieldTest/UITextFieldTest.h"
+#include "UIFocusTest/UIFocusTest.h"    // for UIFocusTestHorizontal, etc
+#include "UIImageViewTest/UIImageViewTest.h"  // for UIImageViewFlipTest, etc
 #include "UILayoutTest/UILayoutTest.h"
-#include "UIScrollViewTest/UIScrollViewTest.h"
-#include "UIPageViewTest/UIPageViewTest.h"
 #include "UIListViewTest/UIListViewTest.h"
+#include "UILoadingBarTest/UILoadingBarTest.h"
+#include "UIPageViewTest/UIPageViewTest.h"  // for UIPageViewButtonTest, etc
+#include "UIRichTextTest/UIRichTextTest.h"  // for UIRichTextTest
+#include "UIScale9SpriteTest.h"         // for UIS9BatchNodeBasic, etc
+#include "UIScrollViewTest/UIScrollViewTest.h"
+#include "UISliderTest/UISliderTest.h"  // for UISliderDisabledDefaultTest, etc
+#include "UITest/CocoStudioGUITest/UIFocusTest/../UIScene.h"
+#include "UITextAtlasTest/UITextAtlasTest.h"  // for UITextAtlasTest
+#include "UITextBMFontTest/UITextBMFontTest.h"  // for UITextBMFontTest
+#include "UITextFieldTest/UITextFieldTest.h"  // for UITextFieldTest, etc
+#include "UITextTest/UITextTest.h"      // for UILabelTest_Effect, etc
 #include "UIWidgetAddNodeTest/UIWidgetAddNodeTest.h"
-#include "UIRichTextTest/UIRichTextTest.h"
-#include "UIFocusTest/UIFocusTest.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "UIVideoPlayerTest/UIVideoPlayerTest.h"
 #endif

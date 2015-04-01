@@ -33,7 +33,7 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemLabel
-#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "2d/CCScene.h"                 // for Scene
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1
@@ -41,7 +41,7 @@
 #include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 #include "ui/UILayout.h"                // for Layout
 
-USING_NS_CC;
+using namespace cocos2d;
 using namespace cocostudio;
 using namespace cocos2d::ui;
 

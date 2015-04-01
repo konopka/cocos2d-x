@@ -16,8 +16,8 @@
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
 #include "math/CCGeometry.h"            // for Size, Rect
-namespace cocos2d { class Event; }
-namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 
 enum

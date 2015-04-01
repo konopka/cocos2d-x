@@ -1,9 +1,13 @@
 #ifndef __ACTIONS_H__
 #define __ACTIONS_H__
 
-#include "cocos2d.h"
-#include "cocostudio/TriggerBase.h"
-
+#include <string>                       // for string
+#include "cocostudio/TriggerBase.h"     // for DECLARE_CLASS_INFO
+#include "cocostudio/TriggerObj.h"      // for BaseTriggerAction
+#include "json/document.h"              // for Value
+#include "math/Vec2.h"                  // for Vec2
+namespace cocostudio { class CocoLoader; }
+namespace cocostudio { struct stExpCocoNode; }
 
 class  PlayMusic: public cocostudio::BaseTriggerAction
 {

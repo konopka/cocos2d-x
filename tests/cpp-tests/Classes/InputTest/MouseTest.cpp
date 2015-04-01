@@ -1,9 +1,13 @@
 #include "MouseTest.h"
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
-#include <sstream>                      // for basic_ostream::operator<<, etc
+#include <sstream>                      // for ostringstream, etc
 #include <string>                       // for allocator, string, etc
 #include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLayer.h"                 // for Layer
+#include "CCGLView.h"                   // for GLView
+#include "InputTest/../BaseTest.h"      // for BaseTest
+#include "InputTest/../testBasic.h"     // for CL
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCEventListenerMouse.h"  // for EventListenerMouse

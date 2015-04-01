@@ -1,10 +1,10 @@
 #ifndef __CC_PLAYERCONTROLLER_H__
 #define __CC_PLAYERCONTROLLER_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
-
+#include <vector>                       // for vector
+#include "cocostudio/CCComController.h"  // for ComController
+namespace cocos2d { class Event; }
+namespace cocos2d { class Touch; }
 
 class PlayerController : public cocostudio::ComController
 {

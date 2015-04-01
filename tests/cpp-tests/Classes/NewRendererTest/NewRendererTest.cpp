@@ -38,6 +38,7 @@
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
 #include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "CCPlatformMacros.h"           // for CaptureScreenTest::create, etc
 #include "NewRendererTest/../BaseTest.h"  // for BaseTest
 #include "NewRendererTest/../testBasic.h"  // for CL
 #include "base/CCConsole.h"             // for log

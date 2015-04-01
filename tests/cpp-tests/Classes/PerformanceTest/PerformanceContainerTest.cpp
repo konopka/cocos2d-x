@@ -13,6 +13,7 @@
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemFont, etc
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_FREE, etc
 #include "PerformanceTest/../testBasic.h"  // for CL
 #include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
 #include "VisibleRect.h"                // for VisibleRect

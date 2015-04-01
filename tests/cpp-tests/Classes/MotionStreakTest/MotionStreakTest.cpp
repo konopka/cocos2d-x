@@ -10,6 +10,7 @@
 #include "2d/CCMotionStreak.h"          // for MotionStreak
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for Issue1358::create, etc
 #include "MotionStreakTest/../BaseTest.h"  // for BaseTest
 #include "MotionStreakTest/../testBasic.h"  // for CL
 #include "base/CCDirector.h"            // for Director
@@ -19,7 +20,7 @@
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
 #include "base/ccTypes.h"               // for Color3B, Color3B::GREEN, etc
-#include "CCStdC.h"         // for cosf, sinf
+#include "CCStdC.h"                     // for cosf, sinf
 #include "math/CCGeometry.h"            // for Size
 
 using namespace cocos2d;

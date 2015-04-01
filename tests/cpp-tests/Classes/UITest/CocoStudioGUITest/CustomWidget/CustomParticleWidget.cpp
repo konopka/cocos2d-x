@@ -7,11 +7,12 @@
 //
 
 #include "CustomParticleWidget.h"
-#include "2d/CCParticleSystem.h"
-#include "2d/CCParticleSystemQuad.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCParticleSystem.h"        // for ParticleSystem
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
 
-USING_NS_CC;
-using namespace ui;
+using namespace cocos2d;
 
 CustomParticleWidget::CustomParticleWidget()
 : _emitter(nullptr)

@@ -1,10 +1,12 @@
 
 
 #include "CustomImageViewReader.h"
-#include "CustomImageView.h"
+#include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for USING_NS_CC
+#include "CustomImageView.h"            // for CustomImageView
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
 
-USING_NS_CC;
-USING_NS_CC_EXT;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 

@@ -1,7 +1,12 @@
 #include "TimelineCallbackTestLayer.h"
+#include "2d/CCActionInterval.h"        // for RotateBy
+#include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 TimelineCallbackTestLayer::TimelineCallbackTestLayer()

@@ -9,11 +9,10 @@
 #ifndef __CustomUI__CustomParticleWidget__
 #define __CustomUI__CustomParticleWidget__
 
-#include "ui/CocosGUI.h"
-
-namespace cocos2d {
-    class ParticleSystem;
-}
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIWidget.h"                // for Widget
+namespace cocos2d { class ParticleSystem; }
+namespace cocos2d { class Ref; }
 
 class CustomParticleWidget : public cocos2d::ui::Widget
 {

@@ -1,5 +1,19 @@
 
 #include "acts.h"
+#include <stdlib.h>                     // for atoi
+#include "2d/CCActionInterval.h"        // for ActionInterval, Sequence, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CCLOG
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCArmatureAnimation.h"  // for ArmatureAnimation
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "cocostudio/CCComRender.h"     // for ComRender
+#include "cocostudio/CCSSceneReader.h"  // for SceneReader
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "cocostudio/TriggerMng.h"      // for TriggerMng
 
 using namespace cocos2d;
 using namespace cocostudio;
@@ -243,7 +257,7 @@ void TMoveBy::done()
 		if (_reverse == true)
 		{
 			ActionInterval*  actionByBack = actionBy->reverse();
-			node->runAction( CCSequence::create(actionBy, actionByBack, nullptr));
+			node->runAction( Sequence::create(actionBy, actionByBack, nullptr));
 		}
 		else
 		{

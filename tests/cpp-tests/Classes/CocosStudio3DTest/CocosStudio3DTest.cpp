@@ -30,6 +30,7 @@
 #include "2d/CCLayer.h"                 // for Layer
 #include "2d/CCNode.h"                  // for Node
 #include "3d/CCSprite3D.h"              // for Sprite3D
+#include "CCPlatformMacros.h"           // for CSNode3DTest::create, etc
 #include "CocosStudio3DTest/../BaseTest.h"  // for BaseTest
 #include "CocosStudio3DTest/../testBasic.h"  // for CL
 #include "base/CCDirector.h"            // for Director

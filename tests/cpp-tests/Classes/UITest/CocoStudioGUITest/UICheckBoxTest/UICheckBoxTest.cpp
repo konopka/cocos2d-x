@@ -12,6 +12,9 @@
 #include "ui/UILayout.h"                // for Layout
 #include "ui/UIText.h"                  // for Text
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UICheckBoxTest
 UICheckBoxTest::UICheckBoxTest()
 : _displayValueLabel(nullptr)

@@ -1,8 +1,11 @@
 #ifndef __PERFORMANCE_PARTICLE_3D_TEST_H__
 #define __PERFORMANCE_PARTICLE_3D_TEST_H__
 
-#include "PerformanceTest.h"
+#include <string>                       // for string
+#include "2d/CCScene.h"                 // for Scene
+#include "PerformanceTest.h"            // for PerformBasicLayer
 namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class Particle3DMenuLayer : public PerformBasicLayer
 {

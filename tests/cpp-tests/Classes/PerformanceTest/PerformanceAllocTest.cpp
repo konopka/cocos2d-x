@@ -11,6 +11,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for NodeCreateTest::create, etc
 #include "PerformanceTest/../testBasic.h"  // for CL
 #include "PerformanceTest/PerformanceTest.h"  // for PerformBasicLayer
 #include "base/CCConsole.h"             // for log

@@ -1,23 +1,25 @@
 
 
 #include "UISceneManager_Editor.h"
-#include "UIButtonTest/UIButtonTest_Editor.h"
+#include <new>                          // for nothrow, operator new
+#include "UIButtonTest/UIButtonTest_Editor.h"  // for UIButtonTest_Editor
 #include "UICheckBoxTest/UICheckBoxTest_Editor.h"
 #include "UIImageViewTest/UIImageViewTest_Editor.h"
-#include "UITextAtlasTest/UITextAtlasTest_Editor.h"
-#include "UITextBMFontTest/UITextBMFontTest_Editor.h"
-#include "UITextTest/UITextTest_Editor.h"
-#include "UILoadingBarTest/UILoadingBarTest_Editor.h"
-#include "UISliderTest/UISliderTest_Editor.h"
-#include "UITextFieldTest/UITextFieldTest_Editor.h"
-#include "UIWidgetAddNodeTest/UIWidgetAddNodeTest_Editor.h"
 #include "UILayoutTest/UILayoutTest_Editor.h"
 #include "UIListViewTest/UIListViewTest_Editor.h"
+#include "UILoadingBarTest/UILoadingBarTest_Editor.h"
 #include "UIPageViewTest/UIPageViewTest_Editor.h"
 #include "UIScrollViewTest/UIScrollViewTest_Editor.h"
+#include "UISliderTest/UISliderTest_Editor.h"  // for UISliderTest_Editor
+#include "UITest/CocoStudioGUITest/UIScrollViewTest/../UIScene_Editor.h"
+#include "UITextAtlasTest/UITextAtlasTest_Editor.h"
+#include "UITextBMFontTest/UITextBMFontTest_Editor.h"
+#include "UITextFieldTest/UITextFieldTest_Editor.h"
+#include "UITextTest/UITextTest_Editor.h"  // for UITextTest_Editor
+#include "UIWidgetAddNodeTest/UIWidgetAddNodeTest_Editor.h"
 
 
-USING_NS_CC;
+using namespace cocos2d;
 
 static const char* s_testArray[] =
 {

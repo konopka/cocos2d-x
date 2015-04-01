@@ -28,10 +28,10 @@
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLayer.h"                 // for Layer
 #include "2d/CCScene.h"                 // for Scene
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_DELETE, etc
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_DELETE, etc
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIWidget.h"                // for Widget, etc
+class UIScene_Editor;
 namespace cocos2d { class Ref; }
 namespace cocos2d { namespace ui { class Layout; } }
 

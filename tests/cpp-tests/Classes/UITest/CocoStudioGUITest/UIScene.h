@@ -29,15 +29,11 @@
 #include "2d/CCLayer.h"                 // for Layer
 #include "2d/CCScene.h"                 // for Scene
 #include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIWidget.h"                // for Widget, etc
 class UIScene;
 namespace cocos2d { class Ref; }
 namespace cocos2d { namespace ui { class Layout; } }
-
-USING_NS_CC;
-using namespace cocos2d::ui;
 
 #define UI_SCENE_CREATE_FUNC(UIScene) \
 public: \

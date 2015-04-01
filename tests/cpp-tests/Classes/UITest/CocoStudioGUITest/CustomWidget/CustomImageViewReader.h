@@ -3,9 +3,10 @@
 #ifndef __TestCpp__CustomImageViewReader__
 #define __TestCpp__CustomImageViewReader__
 
-#include "extensions/cocos-ext.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "ui/CocosGUI.h"
+#include <string>                       // for string
+#include "base/CCRef.h"                 // for Ref
+#include "json/document.h"              // for Value
+namespace cocos2d { namespace ui { class Widget; } }
 
 class CustomImageViewReader : public cocos2d::Ref
 {

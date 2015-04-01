@@ -1,17 +1,29 @@
 #include "HelloCocosBuilderLayer.h"
-
-#include "../TestHeader/TestHeaderLayerLoader.h"
-#include "../LabelTest/LabelTestLayerLoader.h"
+#include <string.h>                     // for strcmp
+#include "../AnimationsTest/AnimationsLayerLoader.h"
 #include "../ButtonTest/ButtonTestLayerLoader.h"
-#include "../SpriteTest/SpriteTestLayerLoader.h"
-#include "../MenuTest/MenuTestLayerLoader.h"
+#include "../MenuTest/MenuTestLayerLoader.h"  // for MenuTestLayerLoader
 #include "../ParticleSystemTest/ParticleSystemTestLayerLoader.h"
 #include "../ScrollViewTest/ScrollViewTestLayerLoader.h"
-#include "../AnimationsTest/AnimationsLayerLoader.h"
+#include "../SpriteTest/SpriteTestLayerLoader.h"
+#include "../TestHeader/TestHeaderLayerLoader.h"
 #include "../TimelineCallbackTest/TimelineCallbackLayerLoader.h"
+#include "2d/CCActionInterval.h"        // for RepeatForever, RotateBy
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCTransition.h"            // for TransitionFade
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "ExtensionsTest/CocosBuilderTest/HelloCocosBuilder/../AnimationsTest/AnimationsTestLayer.h"
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCValue.h"               // for Value
+#include "base/ccTypes.h"               // for Color3B
+#include "cocosbuilder/CCNodeLoaderLibrary.h"  // for NodeLoaderLibrary
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 using namespace cocosbuilder;
 
 HelloCocosBuilderLayer::HelloCocosBuilderLayer()

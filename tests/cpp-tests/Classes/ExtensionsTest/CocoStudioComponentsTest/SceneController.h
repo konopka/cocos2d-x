@@ -1,9 +1,9 @@
 #ifndef __CC_SceneController_H__
 #define __CC_SceneController_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCComController.h"  // for ComController
+namespace cocos2d { class Node; }
 
 class SceneController : public cocostudio::ComController
 {

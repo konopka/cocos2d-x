@@ -1,10 +1,7 @@
 #ifndef __CC_ENEMYCONTROLLER_H__
 #define __CC_ENEMYCONTROLLER_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
-#include "cocostudio/CocoStudio.h"
-
+#include "cocostudio/CCComController.h"  // for ComController
 
 class EnemyController : public cocostudio::ComController
 {

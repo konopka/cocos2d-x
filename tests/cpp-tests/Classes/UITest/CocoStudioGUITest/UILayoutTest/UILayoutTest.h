@@ -133,9 +133,9 @@ class UILayoutComponentTest : public UIScene
 {
 public:
     virtual bool init() override;
-    void touchEvent(Ref *pSender, Widget::TouchEventType type);
+    void touchEvent(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 protected:
-    LayerColor* _baseLayer;
+    cocos2d::LayerColor* _baseLayer;
     UI_SCENE_CREATE_FUNC(UILayoutComponentTest)
 };
 

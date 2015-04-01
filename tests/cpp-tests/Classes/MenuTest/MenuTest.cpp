@@ -24,7 +24,7 @@
  ****************************************************************************/
 
 #include "MenuTest.h"
-#include "platform/CCGL.h"				// for GLubyte
+#include "platform/CCGL.h"              // for GLubyte
 #include <stddef.h>                     // for NULL
 #include <functional>                   // for _Bind
 #include <new>                          // for nothrow, operator new
@@ -37,7 +37,6 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItem, etc
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
@@ -47,7 +46,8 @@
 #include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
 #include "base/ccTypes.h"               // for Color3B
 #include "math/CCGeometry.h"            // for Size, Rect
-#include "math/Vec2.h"					// for Vec2::operator+, etc
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE
 
 using namespace cocos2d;
 

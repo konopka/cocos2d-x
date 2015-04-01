@@ -29,6 +29,7 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCMenu.h"                  // for Menu
 #include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemLabel
+#include "2d/CCScene.h"                 // for Scene
 #include "CocoStudioGUITest.h"          // for CocoStudioGUITestScene
 #include "CocostudioParserTest/CocostudioParserJsonTest.h"
 #include "VisibleRect.h"                // for VisibleRect

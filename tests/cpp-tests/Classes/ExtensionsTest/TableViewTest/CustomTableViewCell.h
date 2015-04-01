@@ -1,8 +1,10 @@
 #ifndef __CUSTOMTABELVIEWCELL_H__
 #define __CUSTOMTABELVIEWCELL_H__
 
-#include "cocos2d.h"
-#include "extensions/cocos-ext.h"
+#include <stdint.h>                     // for uint32_t
+#include "GUI/CCScrollView/CCTableViewCell.h"  // for TableViewCell
+#include "math/Mat4.h"                  // for Mat4
+namespace cocos2d { class Renderer; }
 
 class CustomTableViewCell : public cocos2d::extension::TableViewCell
 {

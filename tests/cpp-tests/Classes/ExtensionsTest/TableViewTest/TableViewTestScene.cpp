@@ -7,6 +7,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for TableViewTestLayer::create, etc
 #include "CustomTableViewCell.h"        // for CustomTableViewCell
 #include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "GUI/CCScrollView/CCScrollView.h"  // for ScrollView, etc
@@ -15,10 +16,9 @@
 #include "base/ccMacros.h"              // for CC_CALLBACK_1
 #include "deprecated/CCString.h"        // for __String
 #include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
-namespace cocos2d { class Ref; }
 
-USING_NS_CC;
-USING_NS_CC_EXT;
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 void runTableViewTest()
 {
@@ -85,7 +85,7 @@ Size TableViewTestLayer::tableCellSizeForIndex(TableView *table, ssize_t idx)
 
 TableViewCell* TableViewTestLayer::tableCellAtIndex(TableView *table, ssize_t idx)
 {
-    auto string = String::createWithFormat("%ld", idx);
+    auto string = __String::createWithFormat("%ld", idx);
     TableViewCell *cell = table->dequeueCell();
     if (!cell) {
         cell = new (std::nothrow) CustomTableViewCell();

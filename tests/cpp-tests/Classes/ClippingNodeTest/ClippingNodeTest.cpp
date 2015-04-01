@@ -23,7 +23,7 @@
 #include "2d/CCRenderTexture.h"         // for RenderTexture
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"
 #include "ClippingNodeTest/../BaseTest.h"  // for BaseTest
 #include "ClippingNodeTest/../testBasic.h"  // for CL
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
@@ -32,10 +32,11 @@
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CHECK_GL_ERROR_DEBUG, etc
 #include "base/ccTypes.h"               // for Color4F
-#include "deprecated/CCString.h"        // for __String
+#include "deprecated/CCString.h"        // for format
 #include "math/CCAffineTransform.h"     // for AffineTransform, etc
 #include "math/CCGeometry.h"            // for Size, Rect
-#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "math/Vec2.h"                  // for Vec2, Point, Vec2::ZERO
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramCache.h"  // for GLProgramCache
 #include "renderer/CCGLProgramState.h"  // for GLProgramState

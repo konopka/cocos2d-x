@@ -16,6 +16,7 @@
 #include "2d/CCMenuItem.h"              // for MenuItemFont, MenuItemImage
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for Atlas1::create, etc
 #include "LabelTest/../BaseTest.h"      // for BaseTest
 #include "LabelTest/../testBasic.h"     // for CL
 #include "VisibleRect.h"                // for VisibleRect
@@ -24,8 +25,8 @@
 #include "base/CCEventListenerTouch.h"  // for EventListenerTouchAllAtOnce, etc
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CC_CALLBACK_1, etc
-#include "deprecated/CCString.h"        // for __String
-#include "CCStdC.h"						// for MAX, MIN
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCStdC.h"         // for MAX, MIN
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_MIDDLE, etc
 #include "math/Vec3.h"                  // for Vec3

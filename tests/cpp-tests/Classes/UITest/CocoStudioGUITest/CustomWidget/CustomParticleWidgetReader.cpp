@@ -8,14 +8,12 @@
 
 #include "CustomParticleWidgetReader.h"
 #include <new>                          // for nothrow, operator new
-#include "CCPlatformMacros.h"           // for USING_NS_CC
 #include "CustomParticleWidget.h"       // for CustomParticleWidget
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "cocostudio/CCSGUIReader.h"    // for GUIReader
 #include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
 
-USING_NS_CC;
-using namespace ui;
+using namespace cocos2d;
+using namespace cocos2d::ui;
 using namespace cocostudio;
 
 CustomParticleWidgetReader::CustomParticleWidgetReader()

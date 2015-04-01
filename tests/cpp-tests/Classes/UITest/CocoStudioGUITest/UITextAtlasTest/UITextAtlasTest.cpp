@@ -1,8 +1,17 @@
 
 
 #include "UITextAtlasTest.h"
-#include "ui/UILayout.h"
-#include "ui/UITextAtlas.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "UITest/CocoStudioGUITest/UITextAtlasTest/../UIScene.h"
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UITextAtlas.h"             // for TextAtlas
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UITextAtlasTest
 

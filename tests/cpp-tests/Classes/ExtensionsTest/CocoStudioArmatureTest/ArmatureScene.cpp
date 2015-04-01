@@ -7,7 +7,7 @@
 #include "../../testResource.h"         // for s_pathB1, s_pathB2, etc
 #include "2d/CCAction.h"                // for Action
 #include "2d/CCActionInstant.h"         // for CallFunc
-#include "2d/CCActionInterval.h"        // for ActionInterval, Sequence, etc
+#include "2d/CCActionInterval.h"        // for ActionInterval, MoveTo, etc
 #include "2d/CCActionTiledGrid.h"       // for ShatteredTiles3D
 #include "2d/CCDrawNode.h"              // for DrawNode
 #include "2d/CCLabel.h"                 // for Label
@@ -19,6 +19,7 @@
 #include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE
 #include "ExtensionsTest/CocoStudioArmatureTest/../../testBasic.h"
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director

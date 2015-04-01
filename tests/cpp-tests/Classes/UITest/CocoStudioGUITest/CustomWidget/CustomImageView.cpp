@@ -1,10 +1,12 @@
 
 
 #include "CustomImageView.h"
-#include "2d/CCNode.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
 
-USING_NS_CC;
-using namespace ui;
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 CustomImageView::CustomImageView()
 : _label(nullptr)

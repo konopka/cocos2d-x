@@ -13,10 +13,10 @@
 #include "2d/CCScene.h"                 // for Scene
 #include "2d/CCSprite.h"                // for Sprite
 #include "BugsTest/BugsTest.h"          // for BugsTestBaseLayer
+#include "CCPlatformMacros.h"           // for BugChild::create, CCLOG
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CALLBACK_1
 #include "math/CCGeometry.h"            // for Size
-namespace cocos2d { class Ref; }
 
 using namespace cocos2d;
 

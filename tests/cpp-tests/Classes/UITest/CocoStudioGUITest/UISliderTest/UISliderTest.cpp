@@ -14,6 +14,9 @@
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIWidget.h"                // for Widget, etc
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UISliderTest
 
 UISliderTest::UISliderTest()

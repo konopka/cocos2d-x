@@ -1,13 +1,14 @@
 #ifndef __MOUSE_TEST_H_
 #define __MOUSE_TEST_H_
 
+#include <string>                       // for string
+#include "../BaseTest.h"                // for BaseTest
 #include "../testBasic.h"               // for TestScene
-#include "2d/CCLayer.h"                 // for Layer
-#include "../BaseTest.h"
-
+#include "CCPlatformMacros.h"           // for CREATE_FUNC
 namespace cocos2d { class Event; }
 namespace cocos2d { class EventListenerMouse; }
 namespace cocos2d { class Label; }
+namespace cocos2d { class Ref; }
 
 class BaseMouseTest : public BaseTest
 {

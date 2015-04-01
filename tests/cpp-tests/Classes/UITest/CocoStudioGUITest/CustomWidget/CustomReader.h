@@ -4,8 +4,6 @@
 #define __TestCpp__CustomReader__
 
 #include <string>                       // for string
-#include "CCPlatformMacros.h"           // for USING_NS_CC
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
 #include "base/CCRef.h"                 // for Ref
 #include "json/document.h"              // for Value
 namespace cocos2d { namespace ui { class Widget; } }

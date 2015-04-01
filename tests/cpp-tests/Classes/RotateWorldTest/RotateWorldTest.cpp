@@ -3,6 +3,7 @@
 #include "2d/CCActionInterval.h"        // for RotateBy, Repeat, Sequence, etc
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"
 #include "base/CCDirector.h"            // for Director
 #include "base/ccTypes.h"               // for Color4B
 #include "math/CCGeometry.h"            // for Size

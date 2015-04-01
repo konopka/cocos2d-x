@@ -33,6 +33,9 @@
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIVBox.h"                  // for VBox
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 UIFocusTestBase::UIFocusTestBase()
 {
     

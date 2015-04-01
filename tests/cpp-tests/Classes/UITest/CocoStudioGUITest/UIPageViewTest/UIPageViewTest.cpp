@@ -14,7 +14,7 @@
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CC_CALLBACK_2
 #include "base/ccTypes.h"               // for Color3B, Color3B::RED, etc
-#include "deprecated/CCString.h"        // for format, __String
+#include "deprecated/CCString.h"        // for __String, format
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIButton.h"                // for Button
@@ -25,6 +25,9 @@
 #include "ui/UILayoutParameter.h"       // for LinearLayoutParameter, etc
 #include "ui/UIText.h"                  // for Text
 #include "ui/UIVBox.h"                  // for VBox
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UIPageViewTest
 UIPageViewTest::UIPageViewTest()

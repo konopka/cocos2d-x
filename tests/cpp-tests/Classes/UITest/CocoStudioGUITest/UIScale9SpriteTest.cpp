@@ -48,6 +48,9 @@
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 #include "ui/UIWidget.h"                // for Widget, etc
 
+using namespace cocos2d;
+using namespace cocos2d::ui;
+
 // UIScale9SpriteTest
 UIScale9SpriteTest::UIScale9SpriteTest()
 {

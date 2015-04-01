@@ -43,6 +43,7 @@
 #include "2d/CCSprite.h"                // for Sprite
 #include "ActionsTest/../BaseTest.h"    // for BaseTest
 #include "ActionsTest/../testBasic.h"   // for CL
+#include "CCPlatformMacros.h"           // for ActionAnimate::create, etc
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCConsole.h"             // for log
 #include "base/CCDirector.h"            // for Director, etc
@@ -56,8 +57,8 @@
 #include "base/ccTypes.h"               // for Color4F, Color4B, Color3B, etc
 #include "math/CCGeometry.h"            // for Size, Rect
 #include "math/Vec3.h"                  // for Vec3
-namespace cocos2d { class Event; }
-namespace cocos2d { class Ref; }
+
+using namespace cocos2d;
 
 static std::function<Layer*()> createFunctions[] = {
 

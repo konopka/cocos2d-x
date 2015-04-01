@@ -2,7 +2,6 @@
 #define _TEST_BASIC_H_
 
 #include "2d/CCScene.h"                 // for Scene
-#include "platform/CCPlatformMacros.h" // for USING_NS_CC
 
 class TestScene : public cocos2d::Scene
 {

@@ -12,13 +12,15 @@
 #include "math/CCGeometry.h"            // for Size
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIButton.h"                // for Button
-#include "ui/UIDeprecated.h"            // for LayoutType
 #include "ui/UIHelper.h"                // for Helper
 #include "ui/UIImageView.h"             // for ImageView
-#include "ui/UILayout.h"                // for Layout, etc
+#include "ui/UILayout.h"                // for Layout, Layout::Type, etc
 #include "ui/UILayoutComponent.h"       // for LayoutComponent, etc
 #include "ui/UILayoutParameter.h"       // for RelativeLayoutParameter, etc
 #include "ui/UIText.h"                  // for Text
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UILayoutTest
 

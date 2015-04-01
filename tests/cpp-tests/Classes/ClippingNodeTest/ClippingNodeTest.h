@@ -1,17 +1,17 @@
 #ifndef __CLIPPINGNODETEST_H__
 #define __CLIPPINGNODETEST_H__
 
-#include "platform/CCGL.h"				// for GLint
+#include "platform/CCGL.h"              // for GLint
 #include <stdint.h>                     // for uint32_t
 #include <list>                         // for list
 #include <string>                       // for string
 #include <vector>                       // for vector
 #include "../BaseTest.h"                // for BaseTest
 #include "../testBasic.h"               // for TestScene
-#include "platform/CCPlatformMacros.h" // for CREATE_FUNC
 #include "base/CCVector.h"              // for Vector
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CREATE_FUNC
 #include "renderer/CCCustomCommand.h"   // for CustomCommand
 namespace cocos2d { class Action; }
 namespace cocos2d { class ClippingNode; }

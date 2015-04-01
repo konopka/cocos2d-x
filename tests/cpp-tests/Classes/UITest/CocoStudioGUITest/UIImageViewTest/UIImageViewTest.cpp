@@ -1,11 +1,22 @@
 
 
 #include "UIImageViewTest.h"
-#include "ui/UILayout.h"
-#include "ui/UIImageView.h"
-#include "ui/UIButton.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "deprecated/CCString.h"
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "UITest/CocoStudioGUITest/UIImageViewTest/../UIScene.h"
+#include "base/ccMacros.h"              // for CCRANDOM_0_1
+#include "base/ccTypes.h"               // for Color3B, Color3B::RED
+#include "deprecated/CCString.h"        // for format
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ANCHOR_MIDDLE
+#include "ui/UIButton.h"                // for Button
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout
+#include "ui/UIText.h"                  // for Text
+#include "ui/UIWidget.h"                // for Widget, etc
+
+using namespace cocos2d;
+using namespace cocos2d::ui;
 
 // UIImageViewTest
 

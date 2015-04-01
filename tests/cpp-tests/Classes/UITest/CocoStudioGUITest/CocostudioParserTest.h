@@ -28,8 +28,7 @@
 #include <vector>                       // for vector
 #include "2d/CCLayer.h"                 // for Layer
 #include "CCPlatformMacros.h"           // for USING_NS_CC
-#include "GUI/CCControlExtension/../../ExtensionMacros.h"
-#include "UITest/CocoStudioGUITest/CocostudioParserTest/../../../testBasic.h"
+#include "UITest/CocoStudioGUITest/../../testBasic.h"  // for TestScene
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIWidget.h"                // for Widget, etc
 namespace cocos2d { class Event; }

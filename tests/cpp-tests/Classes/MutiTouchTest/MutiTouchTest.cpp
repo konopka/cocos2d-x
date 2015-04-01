@@ -4,6 +4,7 @@
 #include "2d/CCDrawNode.h"              // for DrawNode
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for MutiTouchTestLayer::create
 #include "VisibleRect.h"                // for VisibleRect
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
