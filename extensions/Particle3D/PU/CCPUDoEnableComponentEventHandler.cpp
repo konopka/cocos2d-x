@@ -24,9 +24,13 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUDoEnableComponentEventHandler.h"
-#include "extensions/Particle3D/PU/CCPUAffector.h"
-#include "extensions/Particle3D/PU/CCPUEmitter.h"
-#include "extensions/Particle3D/PU/CCPUObserver.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
+#include "Particle3D/PU/CCPUParticleSystem3D.h"  // for PUParticleSystem3D, etc
+#include "extensions/Particle3D/PU/CCPUAffector.h"  // for PUAffector
+#include "extensions/Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "extensions/Particle3D/PU/CCPUObserver.h"  // for PUObserver
 
 NS_CC_BEGIN
 //-----------------------------------------------------------------------

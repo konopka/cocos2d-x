@@ -24,8 +24,14 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUDoPlacementParticleEventHandler.h"
-#include "extensions/Particle3D/PU/CCPUAffector.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
+#include "Particle3D/PU/CCPUListener.h"  // for PUListener
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
 

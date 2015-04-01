@@ -24,7 +24,9 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUOnRandomObserver.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUObserver.h"  // for PUObserver
+#include "base/ccMacros.h"              // for CCRANDOM_0_1
 
 NS_CC_BEGIN
 

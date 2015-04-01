@@ -24,9 +24,13 @@
  ****************************************************************************/
 
 #include "CCPUDoEnableComponentEventHandlerTranslator.h"
+#include <list>                         // for _List_const_iterator, etc
+#include <string>                       // for operator==, string, etc
+#include "Particle3D/PU/CCPUDoEnableComponentEventHandler.h"
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
+#include "Particle3D/PU/CCPUScriptCompiler.h"
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for token, etc
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
 
 NS_CC_BEGIN
 

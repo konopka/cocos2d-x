@@ -27,8 +27,7 @@
 #ifndef __CC_PU_PARTICLE_3D_VERTEX_EMITTER_H__
 #define __CC_PU_PARTICLE_3D_VERTEX_EMITTER_H__
 
-#include "extensions/Particle3D/PU/CCPUEmitter.h"
-#include <list>
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 
 //Particle3DVertexEmitter NOT SUPPORT YET
 NS_CC_BEGIN

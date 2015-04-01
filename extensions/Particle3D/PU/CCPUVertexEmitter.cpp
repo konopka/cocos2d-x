@@ -24,7 +24,6 @@
  ****************************************************************************/
 
 #include "CCPUVertexEmitter.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN
 //// Constants

@@ -24,6 +24,10 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUOnVelocityObserver.h"
+#include <math.h>                       // for fabs
+#include <limits>                       // for numeric_limits
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUObserver.h"
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN

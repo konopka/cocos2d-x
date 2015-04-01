@@ -26,17 +26,14 @@
 #ifndef __CC_PU_PARTICLE_3D_SLAVE_BEHAVIOUR_H__
 #define __CC_PU_PARTICLE_3D_SLAVE_BEHAVIOUR_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUBehaviour.h"
-#include <vector>
-#include <string>
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/Particle3D/PU/CCPUBehaviour.h"  // for PUBehaviour
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 struct PUParticle3D;
-class PUParticleSystem3D;
 
 class CC_DLL PUSlaveBehaviour : public PUBehaviour
 {

@@ -24,6 +24,7 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUOnExpireObserver.h"
+#include <new>                          // for nothrow, operator new
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN

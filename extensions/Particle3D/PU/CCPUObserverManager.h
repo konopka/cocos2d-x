@@ -26,9 +26,9 @@
 #ifndef __CC_PU_PARTICLE_3D_OBSERVER_MANAGER_H__
 #define __CC_PU_PARTICLE_3D_OBSERVER_MANAGER_H__
 
-#include "base/CCRef.h"
-#include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUObserver.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "extensions/Particle3D/PU/CCPUOnClearObserverTranslator.h"
 #include "extensions/Particle3D/PU/CCPUOnCollisionObserverTranslator.h"
 #include "extensions/Particle3D/PU/CCPUOnCountObserverTranslator.h"
@@ -41,8 +41,11 @@
 #include "extensions/Particle3D/PU/CCPUOnTimeObserverTranslator.h"
 #include "extensions/Particle3D/PU/CCPUOnVelocityObserverTranslator.h"
 
-
 NS_CC_BEGIN
+
+class PUScriptTranslator;
+class PUObserver;
+
 class PUObserverManager
 {
 public:

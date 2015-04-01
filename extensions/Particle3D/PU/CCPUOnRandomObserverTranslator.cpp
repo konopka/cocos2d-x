@@ -24,9 +24,11 @@
  ****************************************************************************/
 
 #include "CCPUOnRandomObserverTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
+#include <string>                       // for operator==, string, etc
+#include "Particle3D/PU/CCPUObserver.h"  // for PUObserver
+#include "Particle3D/PU/CCPUOnRandomObserver.h"  // for PUOnRandomObserver
+#include "Particle3D/PU/CCPUScriptCompiler.h"
+#include "Particle3D/PU/CCPUScriptTranslator.h"
 
 NS_CC_BEGIN
 

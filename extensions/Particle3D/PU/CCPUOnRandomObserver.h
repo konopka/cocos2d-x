@@ -26,16 +26,15 @@
 #ifndef __CC_PU_PARTICLE_3D_ON_RANDOM_OBSERVER_H__
 #define __CC_PU_PARTICLE_3D_ON_RANDOM_OBSERVER_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
-#include "extensions/Particle3D/PU/CCPUObserver.h"
-#include <vector>
-#include <string>
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/Particle3D/PU/CCPUObserver.h"  // for PUObserver
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 struct PUParticle3D;
-class PUParticleSystem3D;
+
 class CC_DLL PUOnRandomObserver : public PUObserver
 {
 public:

@@ -24,9 +24,6 @@
  ****************************************************************************/
 
 #include "CCPUDoFreezeEventHandlerTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
 
 NS_CC_BEGIN
 

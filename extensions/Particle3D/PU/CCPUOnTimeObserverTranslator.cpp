@@ -24,9 +24,12 @@
  ****************************************************************************/
 
 #include "CCPUOnTimeObserverTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
+#include <list>                         // for _List_const_iterator, etc
+#include <string>                       // for operator==, string, etc
+#include "Particle3D/PU/CCPUObserver.h"
+#include "Particle3D/PU/CCPUOnTimeObserver.h"  // for PUOnTimeObserver
+#include "Particle3D/PU/CCPUScriptCompiler.h"
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for token, etc
 
 NS_CC_BEGIN
 

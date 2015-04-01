@@ -26,9 +26,11 @@
 #ifndef __CC_PU_PARTICLE_3D_BEHAVIOUR_TRANSLATOR_H__
 #define __CC_PU_PARTICLE_3D_BEHAVIOUR_TRANSLATOR_H__
 
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUScriptCompiler.h"
-#include "extensions/Particle3D/PU/CCPUBehaviour.h"
+namespace cocos2d { class PUAbstractNode; }
+namespace cocos2d { class PUBehaviour; }
+namespace cocos2d { class PUScriptCompiler; }
 
 NS_CC_BEGIN
 

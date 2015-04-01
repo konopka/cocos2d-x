@@ -26,11 +26,13 @@
 #ifndef __CC_PU_PARTICLE_3D_DO_STOP_EVENT_HANDLER_TRANSLATOR_H__
 #define __CC_PU_PARTICLE_3D_DO_STOP_EVENT_HANDLER_TRANSLATOR_H__
 
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUScriptCompiler.h"
-#include "extensions/Particle3D/PU/CCPUDoStopSystemEventHandler.h"
 
 NS_CC_BEGIN
+
+class PUAbstractNode;
+class PUScriptCompiler;
 
 class  PUDoStopSystemEventHandlerTranslator : public PUScriptTranslator
 {

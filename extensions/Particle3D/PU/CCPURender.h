@@ -26,14 +26,27 @@
 #ifndef __CC_PU_PARTICLE_3D_RENDER_H__
 #define __CC_PU_PARTICLE_3D_RENDER_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "extensions/Particle3D/CCParticle3DRender.h"
-#include <vector>
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
 
-// particle render for quad
+class GLProgramState;
+class IndexBuffer;
+class MeshCommand;
+class ParticleSystem3D;
+class Renderer;
+class Sprite3D;
+class Texture2D;
+class VertexBuffer;
 struct PUParticle3D;
 
 class CC_DLL PURender : public Particle3DRender

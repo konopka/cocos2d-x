@@ -24,8 +24,13 @@
  ****************************************************************************/
 
 #include "CCPUBehaviourTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include <list>                         // for _List_iterator, etc
+#include <string>                       // for string
+#include "Particle3D/PU/CCPUBehaviour.h"  // for PUBehaviour
+#include "Particle3D/PU/CCPUScriptCompiler.h"  // for PUObjectAbstractNode, etc
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for PUScriptTranslator
 #include "extensions/Particle3D/PU/CCPUBehaviourManager.h"
+#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN
 

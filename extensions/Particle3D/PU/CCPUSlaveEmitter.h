@@ -27,10 +27,19 @@
 #ifndef __CC_PU_PARTICLE_3D_SLAVE_EMITTER_H__
 #define __CC_PU_PARTICLE_3D_SLAVE_EMITTER_H__
 
-#include "extensions/Particle3D/PU/CCPUEmitter.h"
-#include "extensions/Particle3D/PU/CCPUListener.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "extensions/Particle3D/PU/CCPUListener.h"  // for PUListener
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
+
+class PUParticleSystem3D;
+struct PUParticle3D;
+
 //FIXME
 class  CC_DLL PUSlaveEmitter : public PUEmitter, public PUListener
 {

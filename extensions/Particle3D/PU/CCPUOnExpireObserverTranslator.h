@@ -26,9 +26,8 @@
 #ifndef __CC_PU_PARTICLE_3D_ON_EXPIRE_OBSERVER_TRANSLATOR_H__
 #define __CC_PU_PARTICLE_3D_ON_EXPIRE_OBSERVER_TRANSLATOR_H__
 
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUScriptCompiler.h"
-#include "extensions/Particle3D/PU/CCPUOnExpireObserver.h"
 
 NS_CC_BEGIN
 

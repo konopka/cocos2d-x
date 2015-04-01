@@ -24,6 +24,7 @@
  ****************************************************************************/
 
 #include "CCPUBehaviourManager.h"
+#include "Particle3D/PU/CCPUSlaveBehaviourTranslator.h"
 #include "extensions/Particle3D/PU/CCPUSlaveBehaviour.h"
 
 NS_CC_BEGIN

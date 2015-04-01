@@ -26,16 +26,27 @@
 #ifndef __CC_PU_PARTICLE_3D_RIBBON_TRAIL_RENDER_H__
 #define __CC_PU_PARTICLE_3D_RIBBON_TRAIL_RENDER_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
-#include "extensions/Particle3D/CCParticle3DRender.h"
-#include "extensions/Particle3D/PU/CCPUListener.h"
-#include "extensions/Particle3D/PU/CCPURender.h"
+#include <stddef.h>                     // for size_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticlePool, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/Particle3D/PU/CCPUListener.h"  // for PUListener
+#include "extensions/Particle3D/PU/CCPURender.h"  // for PURender
 #include "extensions/Particle3D/PU/CCPURibbonTrail.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include <vector>
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
+
+class Node;
+class PUParticleSystem3D;
+class Renderer;
+struct PUParticle3D;
 
 class PURibbonTrailVisualData : public Ref
 {

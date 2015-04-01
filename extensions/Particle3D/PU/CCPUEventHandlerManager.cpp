@@ -24,6 +24,13 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUEventHandlerManager.h"
+#include "Particle3D/PU/CCPUDoAffectorEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoEnableComponentEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoExpireEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoFreezeEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoPlacementParticleEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoScaleEventHandlerTranslator.h"
+#include "Particle3D/PU/CCPUDoStopSystemEventHandlerTranslator.h"
 #include "extensions/Particle3D/PU/CCPUDoAffectorEventHandler.h"
 #include "extensions/Particle3D/PU/CCPUDoEnableComponentEventHandler.h"
 #include "extensions/Particle3D/PU/CCPUDoExpireEventHandler.h"

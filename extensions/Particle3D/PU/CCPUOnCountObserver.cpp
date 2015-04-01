@@ -24,6 +24,8 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUOnCountObserver.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUObserver.h"  // for PUObserver, etc
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN

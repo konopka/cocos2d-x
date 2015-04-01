@@ -24,7 +24,9 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUSlaveBehaviour.h"
-#include "base/ccMacros.h"
+#include "Particle3D/PU/CCPUBehaviour.h"  // for PUBehaviour
+#include "Particle3D/PU/CCPUParticleSystem3D.h"  // for PUParticle3D, etc
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

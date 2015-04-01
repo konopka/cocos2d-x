@@ -26,17 +26,15 @@
 #ifndef __CC_PU_PARTICLE_3D_DO_STOP_SYSTEM_EVENT_HANDLER_H__
 #define __CC_PU_PARTICLE_3D_DO_STOP_SYSTEM_EVENT_HANDLER_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "extensions/Particle3D/PU/CCPUEventHandler.h"
-#include <vector>
-#include <string>
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
-struct PUParticle3D;
-class PUObserver;
 class PUParticleSystem3D;
+struct PUParticle3D;
 
 class CC_DLL PUDoStopSystemEventHandler : public PUEventHandler
 {

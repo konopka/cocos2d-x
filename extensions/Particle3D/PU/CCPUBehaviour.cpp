@@ -24,7 +24,7 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUBehaviour.h"
-#include "base/ccMacros.h"
+#include <new>                          // for nothrow, operator new
 
 NS_CC_BEGIN
 

@@ -24,9 +24,11 @@
  ****************************************************************************/
 
 #include "CCPUSphereSurfaceEmitterTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
+#include <string>                       // for operator==, string, etc
+#include "Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "Particle3D/PU/CCPUScriptCompiler.h"
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for token, etc
+#include "Particle3D/PU/CCPUSphereSurfaceEmitter.h"
 
 NS_CC_BEGIN
 

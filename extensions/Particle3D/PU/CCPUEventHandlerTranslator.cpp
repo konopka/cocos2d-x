@@ -24,9 +24,13 @@
  ****************************************************************************/
 
 #include "CCPUEventHandlerTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include <list>                         // for _List_iterator, etc
+#include <string>                       // for string
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
+#include "Particle3D/PU/CCPUScriptCompiler.h"  // for PUObjectAbstractNode, etc
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for PUScriptTranslator
 #include "extensions/Particle3D/PU/CCPUEventHandlerManager.h"
-#include "extensions/Particle3D/PU/CCPUObserver.h"
+#include "extensions/Particle3D/PU/CCPUObserver.h"  // for PUObserver
 
 NS_CC_BEGIN
 

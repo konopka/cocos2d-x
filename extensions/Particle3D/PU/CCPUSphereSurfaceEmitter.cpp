@@ -24,8 +24,13 @@
  ****************************************************************************/
 
 #include "CCPUSphereSurfaceEmitter.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "base/ccMacros.h"              // for CCRANDOM_MINUS1_1
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUUtil.h"
+#include "extensions/Particle3D/PU/CCPUUtil.h"  // for PUUtil
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec3.h"                  // for Vec3::operator*, etc
 
 NS_CC_BEGIN
 // Constants

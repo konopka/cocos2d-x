@@ -27,8 +27,6 @@
 #define __CC_PU_PARTICLE_3D_SLAVE_BEHAVIOUR_TRANSLATOR_H__
 
 #include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUScriptCompiler.h"
-#include "extensions/Particle3D/PU/CCPUSlaveBehaviour.h"
 
 NS_CC_BEGIN
 

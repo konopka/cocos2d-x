@@ -24,9 +24,13 @@
  ****************************************************************************/
 
 #include "CCPUObserverTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include <list>                         // for _List_iterator, etc
+#include <string>                       // for operator==, string, etc
+#include "Particle3D/PU/CCPUScriptCompiler.h"  // for PUObjectAbstractNode, etc
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for token, etc
+#include "extensions/Particle3D/PU/CCPUObserver.h"  // for PUObserver
 #include "extensions/Particle3D/PU/CCPUObserverManager.h"
-#include "extensions/Particle3D/PU/CCPUObserver.h"
+#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN
 

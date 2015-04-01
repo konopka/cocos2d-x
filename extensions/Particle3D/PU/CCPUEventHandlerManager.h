@@ -25,9 +25,9 @@
 #ifndef __CC_PU_PARTICLE_3D_EVENT_HANDLER_MANAGER_H__
 #define __CC_PU_PARTICLE_3D_EVENT_HANDLER_MANAGER_H__
 
-#include "base/CCRef.h"
-#include "extensions/Particle3D/PU/CCPUScriptTranslator.h"
-#include "extensions/Particle3D/PU/CCPUEventHandler.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "extensions/Particle3D/PU/CCPUDoAffectorEventHandlerTranslator.h"
 #include "extensions/Particle3D/PU/CCPUDoEnableComponentEventHandlerTranslator.h"
 #include "extensions/Particle3D/PU/CCPUDoExpireEventHandlerTranslator.h"
@@ -36,8 +36,11 @@
 #include "extensions/Particle3D/PU/CCPUDoScaleEventHandlerTranslator.h"
 #include "extensions/Particle3D/PU/CCPUDoStopSystemEventHandlerTranslator.h"
 
-
 NS_CC_BEGIN
+
+class PUEventHandler;
+class PUScriptTranslator;
+
 class PUEventHandlerManager
 {
 public:

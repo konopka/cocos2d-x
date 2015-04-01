@@ -23,20 +23,34 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "extensions/Particle3D/CCParticleSystem3D.h"
 #include "extensions/Particle3D/PU/CCPURender.h"
+#include "platform/CCGL.h"              // for GLsizei, GL_FALSE, GL_FLOAT, etc
+//#include <ext/alloc_traits.h>
+#include <math.h>                       // for M_PI
+#include <stddef.h>                     // for offsetof
+#include <new>                          // for nothrow, operator new
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCNode.h"                  // for Node, etc
+#include "3d/CCAABB.h"                  // for AABB
+#include "3d/CCSprite3D.h"              // for Sprite3D, s_attributeNames
+#include "Particle3D/CCParticle3DRender.h"  // for Particle3DRender
+#include "base/CCDirector.h"            // for Director
+#include "base/ccTypes.h"               // for Color3B
+#include "extensions/Particle3D/CCParticleSystem3D.h"
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUUtil.h"
-#include "renderer/CCMeshCommand.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "base/CCDirector.h"
-#include "3d/CCSprite3D.h"
-#include "3d/CCMesh.h"
-#include "2d/CCCamera.h"
+#include "platform/CCStdC.h"            // for cosf, sinf
+#include "math/Mat4.h"                  // for operator*, Mat4::operator*
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"                  // for Vec2::operator+, etc
+#include "math/Vec3.h"                  // for Vec3::operator+, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCMeshCommand.h"     // for MeshCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/CCVertexIndexBuffer.h"  // for IndexBuffer, etc
 
 NS_CC_BEGIN
 

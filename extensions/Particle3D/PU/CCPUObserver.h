@@ -26,11 +26,15 @@
 #ifndef __CC_PU_PARTICLE_3D_OBSERVER_H__
 #define __CC_PU_PARTICLE_3D_OBSERVER_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
+#include <stddef.h>                     // for size_t
+#include <string>                       // for string, allocator
+#include <vector>                       // for vector, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include <vector>
-#include <string>
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

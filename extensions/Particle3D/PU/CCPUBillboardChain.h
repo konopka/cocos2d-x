@@ -26,19 +26,25 @@
 #ifndef __CC_PU_PARTICLE_3D_BILLBOARD_CHAIN_H__
 #define __CC_PU_PARTICLE_3D_BILLBOARD_CHAIN_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
-#include <vector>
+#include <stddef.h>                     // for size_t
+#include <string>                       // for string
+#include <vector>                       // for allocator, vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3, Vec3::UNIT_X
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
 
-class MeshCommand;
 class GLProgramState;
 class IndexBuffer;
-class VertexBuffer;
-class Texture2D;
+class MeshCommand; 
 class ParticleSystem3D;
 class Renderer;
+class Texture2D;
+class VertexBuffer;
 
 class PUBillboardChain
 {

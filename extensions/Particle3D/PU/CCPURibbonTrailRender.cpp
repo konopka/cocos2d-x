@@ -23,21 +23,16 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "extensions/Particle3D/CCParticleSystem3D.h"
 #include "extensions/Particle3D/PU/CCPURibbonTrailRender.h"
-#include "extensions/Particle3D/PU/CCPUUtil.h"
-#include "extensions/Particle3D/PU/CCPUSimpleSpline.h"
-#include "renderer/CCMeshCommand.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "base/CCDirector.h"
-#include "3d/CCSprite3D.h"
-#include "3d/CCMesh.h"
-#include "2d/CCCamera.h"
-#include <sstream>
+#include <new>                          // for nothrow, operator new
+#include <sstream>                      // for stringstream, basic_ostream, etc
+#include <utility>                      // for pair
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/PU/CCPUParticleSystem3D.h"  // for PUParticleSystem3D, etc
+#include "Particle3D/PU/CCPURender.h"   // for PURender
+#include "Particle3D/PU/CCPURibbonTrail.h"  // for PURibbonTrail
+#include "base/ccMacros.h"              // for CCRANDOM_0_1
+#include "extensions/Particle3D/CCParticleSystem3D.h"  // for ParticlePool, etc
 
 NS_CC_BEGIN
 

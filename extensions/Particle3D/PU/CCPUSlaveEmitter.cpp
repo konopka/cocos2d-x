@@ -24,6 +24,12 @@
  ****************************************************************************/
 
 #include "CCPUSlaveEmitter.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticleSystem3D
+#include "Particle3D/PU/CCPUBehaviour.h"  // for PUBehaviour
+#include "Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "Particle3D/PU/CCPUListener.h"  // for PUListener
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 #include "extensions/Particle3D/PU/CCPUSlaveBehaviour.h"
 

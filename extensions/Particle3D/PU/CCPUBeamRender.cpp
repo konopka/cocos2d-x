@@ -23,22 +23,18 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "extensions/Particle3D/CCParticleSystem3D.h"
 #include "extensions/Particle3D/PU/CCPUBeamRender.h"
+#include <new>                          // for nothrow, operator new
+#include <sstream>                      // for stringstream, basic_ostream, etc
+#include "Particle3D/PU/CCPUBillboardChain.h"  // for PUBillboardChain, etc
+#include "Particle3D/PU/CCPURender.h"   // for PURender
+#include "base/ccMacros.h"              // for CCRANDOM_MINUS1_1
+#include "extensions/Particle3D/CCParticleSystem3D.h"  // for ParticlePool, etc
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUUtil.h"
 #include "extensions/Particle3D/PU/CCPUSimpleSpline.h"
-#include "renderer/CCMeshCommand.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "base/CCDirector.h"
-#include "3d/CCSprite3D.h"
-#include "3d/CCMesh.h"
-#include "2d/CCCamera.h"
-#include <sstream>
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec3.h"                  // for Vec3::operator-, etc
+#include "math/Vec4.h"                  // for Vec4, Vec4::ONE
 
 NS_CC_BEGIN
 

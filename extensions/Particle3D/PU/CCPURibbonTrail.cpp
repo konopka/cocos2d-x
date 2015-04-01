@@ -24,16 +24,17 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPURibbonTrail.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "base/CCDirector.h"
-#include "renderer/CCMeshCommand.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "2d/CCCamera.h"
-#include "3d/CCSprite3D.h"
+#include <assert.h>                     // for assert
+//#include <ext/alloc_traits.h>
+#include <algorithm>                    // for find
+#include <iterator>                     // for distance, advance
+#include <utility>                      // for pair
+#include "2d/CCNode.h"                  // for Node
+#include "Particle3D/PU/CCPUBillboardChain.h"
+#include "base/ccMacros.h"              // for CCAssert
+#include "platform/CCStdC.h"            // for sqrtf
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

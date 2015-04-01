@@ -24,9 +24,10 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUObserver.h"
+#include "Particle3D/PU/CCPUParticleSystem3D.h"  // for PUParticle3D, etc
+#include "base/ccMacros.h"              // for CCASSERT
 #include "extensions/Particle3D/PU/CCPUEventHandler.h"
 #include "extensions/Particle3D/PU/CCPUEventHandlerManager.h"
-#include "base/ccMacros.h"
 
 NS_CC_BEGIN
 

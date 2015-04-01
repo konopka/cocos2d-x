@@ -24,6 +24,8 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUDoStopSystemEventHandler.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticleSystem3D
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN

@@ -24,16 +24,25 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUBillboardChain.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "base/CCDirector.h"
-#include "renderer/CCMeshCommand.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "2d/CCCamera.h"
-#include "3d/CCSprite3D.h"
+#include "platform/CCGL.h"              // for GL_FALSE, GL_FLOAT, GLvoid, etc
+//#include <ext/alloc_traits.h>
+#include <limits>                       // for numeric_limits
+#include <new>                          // for nothrow, operator new
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCNode.h"                  // for Node, etc
+#include "3d/CCSprite3D.h"              // for s_attributeNames
+#include "Particle3D/CCParticleSystem3D.h"  // for ParticleSystem3D
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/Vec3.h"                  // for Vec3::operator-, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCMeshCommand.h"     // for MeshCommand
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/CCVertexIndexBuffer.h"  // for IndexBuffer, etc
 
 NS_CC_BEGIN
 

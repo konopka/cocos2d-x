@@ -24,7 +24,6 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUEventHandler.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 NS_CC_BEGIN
 

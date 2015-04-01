@@ -24,7 +24,10 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUOnPositionObserver.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUObserver.h"
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

@@ -24,9 +24,11 @@
  ****************************************************************************/
 
 #include "CCPUDoAffectorEventHandlerTranslator.h"
-#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttribute.h"
-#include "extensions/Particle3D/PU/CCPUDynamicAttributeTranslator.h"
+#include <string>                       // for string, operator==, etc
+#include "Particle3D/PU/CCPUDoAffectorEventHandler.h"
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
+#include "Particle3D/PU/CCPUScriptCompiler.h"
+#include "Particle3D/PU/CCPUScriptTranslator.h"  // for token, etc
 
 NS_CC_BEGIN
 

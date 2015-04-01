@@ -27,9 +27,15 @@
 #ifndef __CC_PU_PARTICLE_3D_SPHERE_SURFACE_EMITTER_H__
 #define __CC_PU_PARTICLE_3D_SPHERE_SURFACE_EMITTER_H__
 
-#include "extensions/Particle3D/PU/CCPUEmitter.h"
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/Particle3D/PU/CCPUEmitter.h"  // for PUEmitter
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
+
+struct PUParticle3D;
 
 class  CC_DLL PUSphereSurfaceEmitter : public PUEmitter
 {

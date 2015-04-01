@@ -24,6 +24,17 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUObserverManager.h"
+#include "Particle3D/PU/CCPUOnClearObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnCollisionObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnCountObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnEmissionObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnEventFlagObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnExpireObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnPositionObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnQuotaObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnRandomObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnTimeObserverTranslator.h"
+#include "Particle3D/PU/CCPUOnVelocityObserverTranslator.h"
 #include "extensions/Particle3D/PU/CCPUOnClearObserver.h"
 #include "extensions/Particle3D/PU/CCPUOnCollisionObserver.h"
 #include "extensions/Particle3D/PU/CCPUOnCountObserver.h"

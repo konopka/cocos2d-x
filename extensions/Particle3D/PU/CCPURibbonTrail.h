@@ -26,12 +26,17 @@
 #ifndef __CC_PU_PARTICLE_3D_RIBBON_TRAIL_H__
 #define __CC_PU_PARTICLE_3D_RIBBON_TRAIL_H__
 
-#include "base/CCRef.h"
-#include "math/CCMath.h"
+#include <stddef.h>                     // for size_t
+#include <map>                          // for map, map<>::value_compare
+#include <string>                       // for string
+#include <vector>                       // for allocator, vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #include "extensions/Particle3D/PU/CCPUBillboardChain.h"
-#include <vector>
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
+
+class Node;
 
 class PURibbonTrail : public PUBillboardChain
 {

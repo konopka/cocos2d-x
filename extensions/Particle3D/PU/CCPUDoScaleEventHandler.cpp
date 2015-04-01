@@ -24,7 +24,10 @@
  ****************************************************************************/
 
 #include "extensions/Particle3D/PU/CCPUDoScaleEventHandler.h"
+#include <new>                          // for nothrow, operator new
+#include "Particle3D/PU/CCPUEventHandler.h"  // for PUEventHandler
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
