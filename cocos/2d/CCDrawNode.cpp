@@ -22,17 +22,23 @@
  */
 
 #include "2d/CCDrawNode.h"
-#include "base/CCEventType.h"
-#include "base/CCConfiguration.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "renderer/CCGLProgramCache.h"
-#include "base/CCDirector.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "2d/CCActionCatmullRom.h"
-#include "platform/CCGL.h"
+#include <math.h>                       // for powf, M_PI
+#include <stddef.h>                     // for offsetof
+#include <stdlib.h>                     // for free, realloc, malloc
+#include <string.h>                     // for memset
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new[], etc
+#include "2d/CCActionCatmullRom.h"      // for PointArray, etc
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "platform/CCStdC.h"            // for MAX, cosf, sinf
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for bindVAO, etc
 
 NS_CC_BEGIN
 

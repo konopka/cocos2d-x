@@ -36,13 +36,25 @@ Use any of these editors to generate BMFonts:
 
 /// @cond DO_NOT_SHOW
 
-#include "2d/CCLabel.h"
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCProtocols.h"           // for BlendProtocol, etc
+#include "base/ccConfig.h"              // for CC_LABELBMFONT_DEBUG_DRAW
+#include "base/ccTypes.h"               // for TextHAlignment, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Rect, Size (ptr only)
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+
 #if CC_LABELBMFONT_DEBUG_DRAW
 #include "renderer/CCCustomCommand.h"
 #include "2d/CCDrawNode.h"
 #endif
 
 NS_CC_BEGIN
+
+class Label;
+class Sprite;
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

@@ -27,17 +27,16 @@ THE SOFTWARE.
 #ifndef __CC_ANIMATION_CACHE_H__
 #define __CC_ANIMATION_CACHE_H__
 
-#include "base/CCRef.h"
-#include "base/CCMap.h"
-#include "base/CCValue.h"
-#include "2d/CCAnimation.h"
-
-#include <string>
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "2d/CCAnimation.h"             // for Animation
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCValue.h"               // for ValueMap
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
-
-class Animation;
 
 /**
  * @addtogroup _2d

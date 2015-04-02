@@ -24,10 +24,16 @@
  ****************************************************************************/
 
 #include "2d/CCFontCharMap.h"
-#include "2d/CCFontAtlas.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include "2d/CCFontAtlas.h"             // for FontLetterDefinition, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
+#include "math/CCGeometry.h"            // for Size
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
 

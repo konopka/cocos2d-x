@@ -25,12 +25,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCLabelAtlas.h"
-#include "renderer/CCTextureAtlas.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-
-#include "deprecated/CCString.h"
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include "2d/CCAtlasNode.h"             // for AtlasNode
+#include "base/CCDirector.h"            // for Director
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
+#include "base/ccTypes.h"               // for V3F_C4B_T2F_Quad, etc
+#include "deprecated/CCString.h"        // for format
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec3.h"                  // for Vec3
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 #if CC_LABELATLAS_DEBUG_DRAW
 #include "renderer/CCRenderer.h"

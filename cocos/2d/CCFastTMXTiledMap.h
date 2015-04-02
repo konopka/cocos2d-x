@@ -27,14 +27,20 @@ THE SOFTWARE.
 #ifndef __CC_FAST_TMX_TILEMAP_H__
 #define __CC_FAST_TMX_TILEMAP_H__
 
-#include "CCNode.h"
-#include "CCTMXObjectGroup.h"
+#include <string>                       // for string
+#include "CCNode.h"                     // for Node
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "CCTMXObjectGroup.h"           // for TMXObjectGroup
+#include "base/CCValue.h"               // for ValueMap, Value, etc
+#include "base/CCVector.h"              // for Vector
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
 
 NS_CC_BEGIN
 
 class TMXLayerInfo;
-class TMXTilesetInfo;
 class TMXMapInfo;
+class TMXTilesetInfo;
 
 namespace experimental {
     

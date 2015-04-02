@@ -28,9 +28,13 @@
 #ifndef __MISCNODE_CCCLIPPING_RECTANGLE_NODE_H__
 #define __MISCNODE_CCCLIPPING_RECTANGLE_NODE_H__
 
-#include "2d/CCNode.h"
-#include "renderer/CCCustomCommand.h"
-#include "platform/CCGL.h"
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 NS_CC_BEGIN
 

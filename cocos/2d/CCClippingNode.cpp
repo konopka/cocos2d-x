@@ -26,12 +26,20 @@
  */
 
 #include "2d/CCClippingNode.h"
-#include "2d/CCDrawingPrimitives.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCRenderer.h"
-#include "base/CCDirector.h"
-
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_0, etc
+#include "base/ccTypes.h"               // for Color4F
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs, etc
 
 NS_CC_BEGIN
 

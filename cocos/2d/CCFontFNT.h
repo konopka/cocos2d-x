@@ -28,11 +28,16 @@
 
 /// @cond DO_NOT_SHOW
 
-#include "CCFont.h"
+#include <string>                       // for string, u16string
+#include "CCFont.h"                     // for Font
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
 NS_CC_BEGIN
 
 class BMFontConfiguration;
+class FontAtlas;
 
 class CC_DLL FontFNT : public Font
 {

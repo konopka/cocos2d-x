@@ -28,12 +28,20 @@
 #ifndef __MISCNODE_CCCLIPPING_NODE_H__
 #define __MISCNODE_CCCLIPPING_NODE_H__
 
-#include "2d/CCNode.h"
-#include "platform/CCGL.h"
-#include "renderer/CCGroupCommand.h"
-#include "renderer/CCCustomCommand.h"
+#include "platform/CCGL.h"                    // for GLenum, GLboolean, GLfloat, etc
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+#include "renderer/CCGroupCommand.h"    // for GroupCommand
 
 NS_CC_BEGIN
+
+class Renderer;
+
 /**
  *  @addtogroup _2d
  *  @{

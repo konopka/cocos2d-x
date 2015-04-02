@@ -34,7 +34,7 @@
 #include "2d/CCLabelTextFormatter.h"    // for LabelTextFormatter
 #include "2d/CCNode.h"                  // for Node, Node::INVALID_TAG, etc
 #include "2d/CCSprite.h"                // for Sprite
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CCLOGERROR, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCEventCustom.h"         // for EventCustom
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
@@ -43,6 +43,7 @@
 #include "base/ccUTF8.h"                // for UTF8ToUTF16, UTF16ToUTF8
 #include "deprecated/CCString.h"        // for format
 #include "platform/CCFileUtils.h"       // for FileUtils
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
 #include "renderer/CCRenderer.h"        // for Renderer

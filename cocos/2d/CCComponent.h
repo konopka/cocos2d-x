@@ -27,9 +27,12 @@ THE SOFTWARE.
 
 /// @cond DO_NOT_SHOW
 
-#include "base/CCRef.h"
-#include "base/CCScriptSupport.h"
-#include <string>
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCScriptSupport.h"       // for ccScriptType
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 

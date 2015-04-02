@@ -28,13 +28,17 @@
 
 /// @cond DO_NOT_SHOW
 
-#include <unordered_map>
-
-#include "2d/CCLabel.h"
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "2d/CCLabel.h"                 // for GlyphCollection, TTFConfig
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
 NS_CC_BEGIN
 
 class FontAtlas;
+class Texture2D;
 
 class CC_DLL FontAtlasCache
 {  

@@ -27,13 +27,15 @@ THE SOFTWARE.
 
 /// @cond DO_NOT_SHOW
 
-#include "base/CCMap.h"
-#include <string>
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 class Component;
 class Node;
+template <class K, class V> class Map;
 
 class CC_DLL ComponentContainer
 {

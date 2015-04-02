@@ -24,16 +24,25 @@
  ****************************************************************************/
 
 #include "2d/CCFontFNT.h"
-#include <set>
-#include "base/uthash.h"
-#include "2d/CCFontAtlas.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCConfiguration.h"
-#include "base/CCDirector.h"
-#include "base/CCMap.h"
-#include "renderer/CCTextureCache.h"
-
-#include "deprecated/CCString.h"
+#include <stddef.h>                     // for size_t
+#include <stdint.h>                     // for uint16_t, int16_t, uint32_t
+#include <stdio.h>                      // for sscanf
+#include <stdlib.h>                     // for calloc, free, malloc
+#include <string.h>                     // for memcpy, strstr, memcmp, etc
+#include <new>                          // for nothrow, operator new
+#include <set>                          // for set
+#include "2d/CCFontAtlas.h"             // for FontLetterDefinition, etc
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/uthash.h"                // for UT_hash_handle, etc
+#include "deprecated/CCString.h"        // for format
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 using namespace std;
 NS_CC_BEGIN

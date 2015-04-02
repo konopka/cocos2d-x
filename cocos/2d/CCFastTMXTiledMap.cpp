@@ -25,8 +25,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCFastTMXTiledMap.h"
-#include "2d/CCFastTMXLayer.h"
-#include "deprecated/CCString.h"
+#include <stdint.h>                     // for uint32_t
+#include <algorithm>                    // for max
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator!=, etc
+#include <vector>                       // for vector
+#include "2d/CCFastTMXLayer.h"          // for TMXLayer
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
+#include "2d/CCTMXXMLParser.h"          // for TMXMapInfo, TMXLayerInfo, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "deprecated/CCString.h"        // for format
 
 NS_CC_BEGIN
 namespace experimental {

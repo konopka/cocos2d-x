@@ -28,19 +28,19 @@
 
 /// @cond DO_NOT_SHOW
 
-#include <string>
-#include <unordered_map>
-
-#include "platform/CCPlatformMacros.h"
-#include "base/CCRef.h"
-#include "platform/CCStdC.h" // ssize_t on windows
+#include <string>                       // for u16string
+#include <unordered_map>                // for unordered_map
+#include "base/CCRef.h"                 // for Ref
+#include <base/CCConsole.h>             // for ssize_t
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
 
-class Font;
-class Texture2D;
 class EventCustom;
 class EventListenerCustom;
+class Font;
+class Texture2D;
 
 struct FontLetterDefinition
 {

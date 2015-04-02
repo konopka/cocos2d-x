@@ -23,15 +23,16 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "2d/CCFontAtlasCache.h"
-
-#include <iostream>
-#include <sstream>
-
-#include "2d/CCFontFNT.h"
-#include "2d/CCFontFreeType.h"
-#include "2d/CCFontAtlas.h"
-#include "2d/CCFontCharMap.h"
-#include "base/CCDirector.h"
+#include <stdio.h>                      // for snprintf, sprintf
+#include <sstream>                      // for stringstream, etc
+#include <utility>                      // for pair
+#include "2d/CCFontAtlas.h"             // for FontAtlas
+#include "2d/CCFontCharMap.h"           // for FontCharMap
+#include "2d/CCFontFNT.h"               // for FontFNT
+#include "2d/CCFontFreeType.h"          // for FontFreeType
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR
+#include "base/CCDirector.h"            // for Director
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 NS_CC_BEGIN
 

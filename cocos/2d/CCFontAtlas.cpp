@@ -24,12 +24,19 @@
  ****************************************************************************/
 
 #include "2d/CCFontAtlas.h"
-#include "2d/CCFontFreeType.h"
-#include "base/ccUTF8.h"
-#include "base/CCDirector.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventType.h"
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for memset
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "2d/CCFont.h"                  // for Font
+#include "2d/CCFontFreeType.h"          // for FontFreeType, etc
+#include "CCPlatformMacros.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 
 NS_CC_BEGIN

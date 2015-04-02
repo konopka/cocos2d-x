@@ -22,9 +22,20 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "2d/CCCamera.h"
-#include "base/CCDirector.h"
-#include "platform/CCGLView.h"
-#include "2d/CCScene.h"
+#include "platform/CCGL.h"                    // for GLfloat
+#include <math.h>                       // for asin, atan2, atan2f
+#include <string.h>                     // for memcmp
+#include <algorithm>                    // for find
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector, allocator
+#include "2d/CCScene.h"                 // for Scene
+#include "CCPlatformConfig.h"           // for CC_PLATFORM_WP8, etc
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/ccMacros.h"              // for CC_RADIANS_TO_DEGREES, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Mat4.h"                  // for Mat4::operator*
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec4.h"                  // for Vec4, etc
 
 NS_CC_BEGIN
 

@@ -37,16 +37,19 @@ THE SOFTWARE.
  */
 
 #include "2d/CCDrawingPrimitives.h"
-
-#include <string.h>
-#include <cmath>
-
-#include "2d/CCActionCatmullRom.h"
-#include "base/CCDirector.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/CCRenderer.h"
-#include "platform/CCGL.h"
+#include <stdlib.h>                     // for calloc, free
+#include <sys/types.h>                  // for ssize_t
+#include <cmath>                        // for powf, M_PI
+#include <new>                          // for nothrow, operator new[]
+#include "2d/CCActionCatmullRom.h"      // for PointArray, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"
+#include "base/ccTypes.h"               // for Color4F
+#include "platform/CCStdC.h"            // for cosf, sinf
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs, etc
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN
 

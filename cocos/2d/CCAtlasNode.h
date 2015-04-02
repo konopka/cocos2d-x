@@ -28,10 +28,18 @@ THE SOFTWARE.
 #ifndef __CCATLAS_NODE_H__
 #define __CCATLAS_NODE_H__
 
-#include "2d/CCNode.h"
-#include "base/CCProtocols.h"
-#include "base/ccTypes.h"
-#include "renderer/CCQuadCommand.h"
+#include "platform/CCGL.h"                    // for GLint, GLubyte
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/CCProtocols.h"           // for TextureProtocol
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for BlendFunc, Color3B
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCQuadCommand.h"     // for QuadCommand
 
 NS_CC_BEGIN
 
@@ -40,6 +48,8 @@ NS_CC_BEGIN
  * @{
  */
 
+class Renderer;
+class Texture2D;
 class TextureAtlas;
 
 /** @brief AtlasNode is a subclass of Node that implements the RGBAProtocol and TextureProtocol protocol.

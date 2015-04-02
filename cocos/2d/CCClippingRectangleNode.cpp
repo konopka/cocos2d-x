@@ -1,9 +1,12 @@
 
 #include "CCClippingRectangleNode.h"
-#include "base/CCDirector.h"
-#include "renderer/CCRenderer.h"
-#include "math/Vec2.h"
-#include "CCGLView.h"
+#include "platform/CCGL.h"              // for GL_SCISSOR_TEST, glDisable, etc
+#include <functional>                   // for _Bind, function
+#include "CCGLView.h"                   // for GLView
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_0
+#include "math/Vec2.h"                  // for Point, Vec2
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN
 

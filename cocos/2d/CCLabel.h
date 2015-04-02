@@ -26,13 +26,12 @@
 #ifndef _COCOS2D_CCLABEL_H_
 #define _COCOS2D_CCLABEL_H_
 
-#include "platform/CCGL.h"				// for GLubyte, etc
+#include "platform/CCGL.h"                    // for GLuint, GLubyte
 #include <stdint.h>                     // for uint32_t
 #include <string>                       // for string, u16string, etc
 #include <vector>                       // for vector
 #include "2d/CCFontAtlas.h"             // for FontAtlas (ptr only), etc
 #include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCProtocols.h"           // for LabelProtocol
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for TextHAlignment, etc
@@ -40,6 +39,7 @@
 #include "math/CCGeometry.h"            // for Size, Size::ZERO, Rect
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 NS_CC_BEGIN

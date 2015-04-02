@@ -25,8 +25,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCAnimationCache.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "platform/CCFileUtils.h"
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for _Node_const_iterator, etc
+#include <utility>                      // for pair
+#include "2d/CCAnimation.h"             // for Animation, AnimationFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 using namespace std;
 

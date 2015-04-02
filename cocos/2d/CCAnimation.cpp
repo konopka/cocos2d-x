@@ -25,9 +25,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCAnimation.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCTexture2D.h"
-#include "base/CCDirector.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "base/CCDirector.h"            // for Director
+#include "math/CCGeometry.h"            // for Rect, Rect::ZERO, Size
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
 

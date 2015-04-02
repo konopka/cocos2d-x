@@ -28,10 +28,13 @@
 
 /// @cond DO_NOT_SHOW
 
-#include "CCFont.h"
-
-#include <string>
-#include <ft2build.h>
+#include <ft2build.h>                   // for FT_Library, FT_Face
+#include <string>                       // for string, u16string
+#include "2d/CCLabel.h"                 // for GlyphCollection
+#include "CCFont.h"                     // for Font
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #define generic GenericFromFreeTypeLibrary
@@ -47,6 +50,9 @@
 #endif
 
 NS_CC_BEGIN
+
+class FontAtlas;
+class Rect;
 
 class CC_DLL FontFreeType : public Font
 {

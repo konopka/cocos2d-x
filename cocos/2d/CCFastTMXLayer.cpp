@@ -35,15 +35,27 @@ THE SOFTWARE.
 
  */
 #include "2d/CCFastTMXLayer.h"
-#include "2d/CCFastTMXTiledMap.h"
-#include "2d/CCSprite.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCVertexIndexBuffer.h"
-#include "base/CCDirector.h"
-#include "deprecated/CCString.h"
+#include <math.h>                       // for ceil, floor
+#include <stddef.h>                     // for offsetof, size_t
+#include <algorithm>                    // for max, swap, min
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCStdC.h"            // for sqrtf
+#include "math/CCAffineTransform.h"     // for RectApplyTransform, etc
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCPrimitive.h"       // for Primitive
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/CCVertexIndexBuffer.h"  // for IndexBuffer, etc
+#include "renderer/CCVertexIndexData.h"  // for VertexData, etc
+#include "renderer/ccGLStateCache.h"    // for bindVAO, bindTexture2D
 
 NS_CC_BEGIN
 namespace experimental {

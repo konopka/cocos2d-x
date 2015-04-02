@@ -28,8 +28,11 @@
 
 /// @cond DO_NOT_SHOW
 
-#include <string>
-#include "2d/CCLabel.h"
+#include <string>                       // for u16string
+#include "2d/CCLabel.h"                 // for GlyphCollection
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 

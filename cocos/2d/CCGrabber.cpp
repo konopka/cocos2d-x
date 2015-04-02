@@ -24,8 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "CCGrabber.h"
-#include "base/ccMacros.h"
-#include "renderer/CCTexture2D.h"
+#include <string.h>                     // for memset
+#include "base/ccMacros.h"              // for CCASSERT
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 NS_CC_BEGIN
 

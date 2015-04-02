@@ -24,11 +24,20 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCFontFreeType.h"
-
-#include "base/CCDirector.h"
-#include "base/ccUTF8.h"
-#include "platform/CCFileUtils.h"
-#include "edtaa3func.h"
+#include <stdlib.h>                     // for free, calloc, malloc
+#include <string.h>                     // for memset, memcpy
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for unordered_map, etc
+#include <utility>                      // for pair
+#include "2d/CCFontAtlas.h"             // for FontAtlas, etc
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR
+#include "base/ccUTF8.h"                // for UTF8ToUTF16
+#include "edtaa3func.h"                 // for computegradient, edtaa3
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCFileUtils.h"       // for FileUtils
 #include FT_BBOX_H
 
 NS_CC_BEGIN

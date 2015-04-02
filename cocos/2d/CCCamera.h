@@ -24,12 +24,20 @@ THE SOFTWARE.
 #ifndef _CCCAMERA_H__
 #define _CCCAMERA_H__
 
-#include "2d/CCNode.h"
-#include "3d/CCFrustum.h"
+#include "2d/CCNode.h"                  // for Node
+#include "3d/CCFrustum.h"               // for Frustum
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3, Vec3::UNIT_Y
 
 NS_CC_BEGIN
 
+class AABB;
 class Scene;
+class Size;
 
 /**
  * Note: 

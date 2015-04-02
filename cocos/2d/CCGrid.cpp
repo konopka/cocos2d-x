@@ -25,16 +25,20 @@ THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCGrid.h"
 
-#include "base/ccMacros.h"
-#include "base/ccUtils.h"
-#include "2d/CCNode.h"
-#include "2d/CCGrabber.h"
-#include "renderer/CCGLProgram.h"
-#include "renderer/CCGLProgramCache.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCTexture2D.h"
-#include "platform/CCGL.h"
+#include "2d/CCGrid.h"
+#include <stdlib.h>                     // for malloc, calloc, free
+#include <string.h>                     // for memcpy
+#include <new>                          // for nothrow, operator new
+#include "2d/CCGrabber.h"               // for Grabber
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/ccUtils.h"               // for ccNextPOT
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/ccGLStateCache.h"    // for enableVertexAttribs, etc
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN
 // implementation of GridBase

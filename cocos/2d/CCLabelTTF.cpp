@@ -24,8 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCLabelTTF.h"
-#include "2d/CCLabel.h"
-#include "deprecated/CCString.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2, etc
 
 NS_CC_BEGIN
 

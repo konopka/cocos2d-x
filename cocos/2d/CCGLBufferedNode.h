@@ -25,7 +25,7 @@ THE SOFTWARE.
 #ifndef __CC_GL_BUFFERED_NODE__
 #define __CC_GL_BUFFERED_NODE__
 
-#include "platform/CCGL.h"
+#include "platform/CCGL.h"                    // for GLuint
 
 /**
 * @js NA

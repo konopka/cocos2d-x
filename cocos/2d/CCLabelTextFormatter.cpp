@@ -24,12 +24,19 @@
  ****************************************************************************/
 
 #include "2d/CCLabelTextFormatter.h"
-
-#include <vector>
-
-#include "base/ccUTF8.h"
-#include "base/CCDirector.h"
-#include "2d/CCLabel.h"
+//#include <ext/alloc_traits.h>
+#include <string>                       // for basic_string, u16string
+#include <vector>                       // for vector, allocator
+#include "2d/CCFontAtlas.h"             // for FontLetterDefinition, etc
+#include "2d/CCLabel.h"                 // for Label, Label::LetterInfo, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/ccTypes.h"               // for TextVAlignment, etc
+#include "base/ccUTF8.h"                // for trimUTF16Vector, etc
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 

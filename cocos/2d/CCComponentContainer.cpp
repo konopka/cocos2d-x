@@ -24,8 +24,13 @@ THE SOFTWARE.
 
 
 #include "2d/CCComponentContainer.h"
-#include "2d/CCComponent.h"
-#include "2d/CCNode.h"
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for _Node_iterator, operator!=, etc
+#include <utility>                      // for pair
+#include "2d/CCComponent.h"             // for Component
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCMap.h"                 // for Map
+#include "base/ccMacros.h"              // for CCASSERT
 
 NS_CC_BEGIN
 

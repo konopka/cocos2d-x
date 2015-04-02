@@ -26,8 +26,9 @@ THE SOFTWARE.
 #ifndef __EFFECTS_CCGRABBER_H__
 #define __EFFECTS_CCGRABBER_H__
 
-#include "base/CCRef.h"
-#include "platform/CCGL.h"
+#include "platform/CCGL.h"              // for GLfloat, GLint, GLuint
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
 
 NS_CC_BEGIN
 

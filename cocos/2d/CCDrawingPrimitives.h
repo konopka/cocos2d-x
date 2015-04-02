@@ -41,9 +41,10 @@ THE SOFTWARE.
 #define __CCDRAWING_PRIMITIVES__
     
 
-#include "base/ccTypes.h"
-#include "base/ccMacros.h"
-#include "math/CCMath.h"
+#include "platform/CCGL.h"                    // for GLfloat, GLubyte
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 /**
  @file
@@ -75,6 +76,7 @@ NS_CC_BEGIN
  */
 
 class PointArray;
+struct Color4F;
 
 /**
 * @js cc.DrawingPrimitiveCanvas/cc.DrawingPrimitiveWebGL

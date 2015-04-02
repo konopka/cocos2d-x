@@ -31,14 +31,22 @@
 #ifndef __CCDRAWNODES_CCDRAW_NODE_H__
 #define __CCDRAWNODES_CCDRAW_NODE_H__
 
-#include "2d/CCNode.h"
-#include "base/ccTypes.h"
-#include "renderer/CCCustomCommand.h"
-#include "math/CCMath.h"
+#include "platform/CCGL.h"                    // for GLuint, GLsizei
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for V2F_C4B_T2F (ptr only), etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 NS_CC_BEGIN
 
 class PointArray;
+class Renderer;
+
 /**
  * @addtogroup _2d
  * @{

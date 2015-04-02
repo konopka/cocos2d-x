@@ -26,16 +26,22 @@ THE SOFTWARE.
 #ifndef __EFFECTS_CCGRID_H__
 #define __EFFECTS_CCGRID_H__
 
-#include "base/CCRef.h"
-#include "base/ccTypes.h"
-#include "base/CCDirector.h"
+#include "platform/CCGL.h"                    // for GLvoid, GLushort
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccTypes.h"               // for Quad3
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
-class Texture2D;
-class Grabber;
 class GLProgram;
+class Grabber;
 class Node;
+class Texture2D;
 
 /**
  * @addtogroup _2d

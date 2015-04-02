@@ -23,7 +23,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCComponent.h"
-
+#include <new>                          // for nothrow, operator new
 
 NS_CC_BEGIN
 

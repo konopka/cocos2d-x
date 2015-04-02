@@ -26,12 +26,16 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "CCAtlasNode.h"
-#include "renderer/CCTextureAtlas.h"
-#include "base/CCDirector.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/CCGLProgram.h"
+#include <new>                          // for nothrow, operator new
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
 

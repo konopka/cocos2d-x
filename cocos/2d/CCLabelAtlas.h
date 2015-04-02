@@ -27,12 +27,20 @@ THE SOFTWARE.
 #ifndef __CCLABEL_ATLAS_H__
 #define __CCLABEL_ATLAS_H__
 
-#include "CCAtlasNode.h"
+#include <string>                       // for string
+#include "CCAtlasNode.h"                // for AtlasNode
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCProtocols.h"           // for LabelProtocol
+#include "base/ccConfig.h"              // for CC_LABELATLAS_DEBUG_DRAW, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+
 #if CC_LABELATLAS_DEBUG_DRAW
 #include "renderer/CCCustomCommand.h"
 #include "2d/CCDrawNode.h"
 #endif
 NS_CC_BEGIN
+
+class Texture2D;
 
 /**
  * @addtogroup _2d

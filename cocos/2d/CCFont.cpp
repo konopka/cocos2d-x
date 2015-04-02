@@ -24,7 +24,8 @@
  ****************************************************************************/
 
 #include "2d/CCFont.h"
-#include "base/ccUTF8.h"
+#include <stddef.h>                     // for size_t
+#include <string.h>                     // for memcpy, strlen
 
 NS_CC_BEGIN
 

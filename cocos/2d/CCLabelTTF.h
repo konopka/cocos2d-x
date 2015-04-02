@@ -29,7 +29,15 @@ THE SOFTWARE.
 
 /// @cond DO_NOT_SHOW
 
-#include "2d/CCNode.h"
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCProtocols.h"           // for BlendProtocol, etc
+#include "base/ccTypes.h"               // for TextHAlignment, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size, Size::ZERO, Rect
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
 
@@ -43,6 +51,7 @@ NS_CC_BEGIN
 /// @cond
 
 class Label;
+class Renderer;
 
 /**
  * @addtogroup _2d

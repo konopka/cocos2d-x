@@ -27,21 +27,34 @@ THE SOFTWARE.
 #ifndef __CC_FAST_TMX_LAYER_H__
 #define __CC_FAST_TMX_LAYER_H__
 
-#include <map>
-#include <unordered_map>
-#include "2d/CCNode.h"
-#include "2d/CCTMXXMLParser.h"
-#include "renderer/CCPrimitiveCommand.h"
-#include "base/CCMap.h"
+#include "platform/CCGL.h"              // for GLushort
+#include <stdint.h>                     // for uint32_t
+#include <map>                          // for map
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCTMXXMLParser.h"          // for TMXTilesetInfo (ptr only), etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "base/CCMap.h"                 // for Map
+#include "base/CCValue.h"               // for ValueMap, Value
+#include "base/ccTypes.h"               // for V3F_C4B_T2F_Quad
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCPrimitiveCommand.h"  // for PrimitiveCommand
 
 NS_CC_BEGIN
 
-class TMXMapInfo;
-class TMXLayerInfo;
-class TMXTilesetInfo;
-class Texture2D;
+class IndexBuffer;
+class Primitive;
+class Renderer;
 class Sprite;
-struct _ccCArray;
+class Texture2D;
+class VertexBuffer;
+class VertexData;
 
 namespace experimental{
 

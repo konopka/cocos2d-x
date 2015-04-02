@@ -27,18 +27,20 @@ THE SOFTWARE.
 #ifndef __CC_ANIMATION_H__
 #define __CC_ANIMATION_H__
 
-#include "platform/CCPlatformConfig.h"
-#include "base/CCRef.h"
-#include "base/CCValue.h"
-#include "base/CCVector.h"
-#include "2d/CCSpriteFrame.h"
-
-#include <string>
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "base/CCRef.h"                 // for Clonable, Ref
+#include "base/CCValue.h"               // for ValueMap
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
+class Node;
+class Rect;
 class Texture2D;
-class SpriteFrame;
 
 /**
  * @addtogroup _2d

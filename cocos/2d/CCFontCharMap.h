@@ -28,9 +28,14 @@
 
 /// @cond DO_NOT_SHOW
 
-#include "2d/CCFont.h"
+#include <string>                       // for string, u16string
+#include "2d/CCFont.h"                  // for Font
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
+
+class FontAtlas;
+class Texture2D;
 
 class FontCharMap : public Font
 {  
