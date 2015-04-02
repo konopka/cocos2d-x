@@ -29,14 +29,16 @@ THE SOFTWARE.
 #ifndef __ACTION_CCACTION_MANAGER_H__
 #define __ACTION_CCACTION_MANAGER_H__
 
-#include "2d/CCAction.h"
-#include "base/CCVector.h"
-#include "base/CCRef.h"
+#include <sys/types.h>                  // for ssize_t
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 class Action;
-
+class Node;
 struct _hashElement;
 
 /**

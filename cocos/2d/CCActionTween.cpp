@@ -25,6 +25,9 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCActionTween.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "base/ccMacros.h"              // for CCASSERT
 
 NS_CC_BEGIN
 

@@ -27,12 +27,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCActionManager.h"
-#include "2d/CCNode.h"
-#include "2d/CCAction.h"
-#include "base/CCScheduler.h"
-#include "base/ccMacros.h"
-#include "base/ccCArray.h"
-#include "base/uthash.h"
+#include <stdlib.h>                     // for calloc, free
+#include "2d/CCAction.h"                // for Action, Action::INVALID_TAG
+#include "2d/CCNode.h"                  // for Node
+#include "base/ccCArray.h"              // for _ccArray, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for CC_INVALID_INDEX
+#include "base/uthash.h"                // for UT_hash_handle, etc
 
 NS_CC_BEGIN
 //

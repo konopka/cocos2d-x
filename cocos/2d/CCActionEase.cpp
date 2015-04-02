@@ -32,7 +32,10 @@ THE SOFTWARE.
  */
 
 #include "2d/CCActionEase.h"
-#include "2d/CCTweenFunction.h"
+#include <math.h>                       // for M_PI
+#include <new>                          // for nothrow, operator new
+#include "2d/CCTweenFunction.h"         // for backEaseIn, backEaseInOut, etc
+#include "base/ccMacros.h"              // for CCASSERT
 
 NS_CC_BEGIN
 

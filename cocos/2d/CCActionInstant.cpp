@@ -26,8 +26,9 @@
  ****************************************************************************/
 
 #include "2d/CCActionInstant.h"
-#include "2d/CCNode.h"
-#include "2d/CCSprite.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

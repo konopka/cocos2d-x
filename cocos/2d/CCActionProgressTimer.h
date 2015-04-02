@@ -26,9 +26,14 @@ THE SOFTWARE.
 #ifndef __ACTION_CCPROGRESS_TIMER_H__
 #define __ACTION_CCPROGRESS_TIMER_H__
 
-#include "2d/CCActionInterval.h"
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
+
+class Node;
 
 /**
  * @addtogroup actions

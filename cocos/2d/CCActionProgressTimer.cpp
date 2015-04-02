@@ -24,7 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCActionProgressTimer.h"
-#include "2d/CCProgressTimer.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCProgressTimer.h"         // for ProgressTimer
+#include "base/ccMacros.h"              // for CCASSERT
 
 NS_CC_BEGIN
 

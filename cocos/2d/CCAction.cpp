@@ -26,10 +26,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCAction.h"
-#include "2d/CCActionInterval.h"
-#include "2d/CCNode.h"
-#include "base/CCDirector.h"
-#include "deprecated/CCString.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2::operator-, etc
 
 NS_CC_BEGIN
 //

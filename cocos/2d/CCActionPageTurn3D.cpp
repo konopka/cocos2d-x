@@ -24,7 +24,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCActionPageTurn3D.h"
-#include "2d/CCGrid.h"
+#include <math.h>                       // for M_PI_2, asinf, M_PI
+#include <new>                          // for nothrow, operator new
+#include "2d/CCGrid.h"                  // for Grid3D, GridBase (ptr only)
+#include "platform/CCStdC.h"         // for cosf, sinf, sqrtf, MAX
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

@@ -28,8 +28,13 @@ THE SOFTWARE.
 #ifndef __ACTIONS_CCACTION_H__
 #define __ACTIONS_CCACTION_H__
 
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/CCRef.h"                 // for Clonable, Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_ASSERT, CC_DLL
+#include "math/CCGeometry.h"            // for Rect, Rect::ZERO
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 

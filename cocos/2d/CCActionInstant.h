@@ -28,10 +28,17 @@ THE SOFTWARE.
 #ifndef __CCINSTANT_ACTION_H__
 #define __CCINSTANT_ACTION_H__
 
-#include <functional>
-#include "2d/CCAction.h"
+#include <functional>                   // for function
+#include "2d/CCAction.h"                // for FiniteTimeAction
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_ASSERT
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
+
+class Node;
 
 /**
  * @addtogroup actions

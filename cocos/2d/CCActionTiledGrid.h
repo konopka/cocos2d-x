@@ -26,9 +26,17 @@ THE SOFTWARE.
 #ifndef __ACTION_CCTILEDGRID_ACTION_H__
 #define __ACTION_CCTILEDGRID_ACTION_H__
 
-#include "2d/CCActionGrid.h"
+#include "2d/CCActionGrid.h"            // for TiledGrid3DAction
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
+
+class Node;
+struct Tile;
 
 /**
  * @addtogroup actions

@@ -26,17 +26,23 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCActionInterval.h"
-
-#include <stdarg.h>
-
-#include "2d/CCSprite.h"
-#include "2d/CCNode.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCActionInstant.h"
-#include "base/CCDirector.h"
-#include "base/CCEventCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "platform/CCStdC.h"
+#include <float.h>                      // for FLT_EPSILON
+#include <math.h>                       // for fmodf, powf
+#include <stdarg.h>                     // for va_list, va_arg, va_end, etc
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInstant.h"         // for ActionInstant
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCValue.h"               // for ValueMap
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "platform/CCStdC.h"            // for MAX, MIN
+#include "math/Vec2.h"                  // for Vec2::operator-, etc
+#include "math/Vec3.h"                  // for Vec3::operator-, etc
 
 NS_CC_BEGIN
 

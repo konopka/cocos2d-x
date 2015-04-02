@@ -26,9 +26,15 @@ THE SOFTWARE.
 #ifndef __ACTION_CCGRID3D_ACTION_H__
 #define __ACTION_CCGRID3D_ACTION_H__
 
-#include "2d/CCActionGrid.h"
+#include "2d/CCActionGrid.h"            // for Grid3DAction
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
+
+class Size;
 
 /**
  * @addtogroup actions

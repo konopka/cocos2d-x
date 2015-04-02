@@ -26,12 +26,21 @@ THE SOFTWARE.
 #ifndef __ACTION_CCGRID_ACTION_H__
 #define __ACTION_CCGRID_ACTION_H__
 
-#include "2d/CCActionInterval.h"
-#include "2d/CCActionInstant.h"
+#include "2d/CCActionInstant.h"         // for ActionInstant
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Quad3
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_ASSERT
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
+class Action;
 class GridBase;
+class Node;
 class NodeGrid;
 
 /**

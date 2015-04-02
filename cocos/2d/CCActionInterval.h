@@ -28,18 +28,25 @@ THE SOFTWARE.
 #ifndef __ACTION_CCINTERVAL_ACTION_H__
 #define __ACTION_CCINTERVAL_ACTION_H__
 
-#include <vector>
-
-#include "2d/CCAction.h"
-#include "2d/CCAnimation.h"
-#include "base/CCProtocols.h"
-#include "base/CCVector.h"
+#include "platform/CCGL.h"                    // for GLshort, GLubyte
+#include <stdarg.h>                     // for va_list
+#include <vector>                       // for vector
+#include "2d/CCAction.h"                // for FiniteTimeAction
+#include "2d/CCAnimation.h"             // for Animation (ptr only), etc
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_ASSERT
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
+class EventCustom;
 class Node;
 class SpriteFrame;
-class EventCustom;
+template <class T> class Vector;
 
 /**
  * @addtogroup actions

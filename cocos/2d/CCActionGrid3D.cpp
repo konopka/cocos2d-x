@@ -24,7 +24,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCActionGrid3D.h"
-#include "base/CCDirector.h"
+#include <math.h>                       // for M_PI, fabsf, floorf, expf, etc
+#include <stdlib.h>                     // for rand
+#include <new>                          // for nothrow, operator new
+#include "base/ccMacros.h"              // for CCASSERT
+#include "platform/CCStdC.h"            // for sinf, cosf
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2::operator-, etc
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 // implementation of Waves3D

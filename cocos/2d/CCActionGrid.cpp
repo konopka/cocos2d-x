@@ -25,10 +25,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCActionGrid.h"
-
-#include "2d/CCGrid.h"
-#include "2d/CCNodeGrid.h"
-#include "base/CCDirector.h"
+#include <math.h>                       // for powf
+#include <new>                          // for nothrow, operator new
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCGrid.h"                  // for GridBase, Grid3D, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "base/ccMacros.h"              // for CCASSERT
 
 NS_CC_BEGIN
 // implementation of GridAction

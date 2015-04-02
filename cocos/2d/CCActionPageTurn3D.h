@@ -26,9 +26,14 @@ THE SOFTWARE.
 #ifndef __ACTION_CCPAGETURN3D_ACTION_H__
 #define __ACTION_CCPAGETURN3D_ACTION_H__
 
-#include "2d/CCActionGrid3D.h"
+#include "2d/CCActionGrid.h"            // for Grid3DAction
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
+
+class GridBase;
+class Size;
 
 /**
  * @addtogroup actions

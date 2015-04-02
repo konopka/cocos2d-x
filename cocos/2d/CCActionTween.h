@@ -26,9 +26,15 @@ THE SOFTWARE.
 #ifndef __CCACTIONTWEEN_H__
 #define __CCACTIONTWEEN_H__
 
-#include "2d/CCActionInterval.h"
+#include <string>                       // for string
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
+
+class Node;
 
 /**
  * @addtogroup actions
