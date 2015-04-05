@@ -23,8 +23,9 @@
  ****************************************************************************/
 
 #include "3d/CCSprite3DMaterial.h"
-
-#include "renderer/CCTexture2D.h"
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 NS_CC_BEGIN
 

@@ -23,6 +23,8 @@
  ****************************************************************************/
 
 #include "3d/CCAABB.h"
+#include <assert.h>                     // for assert
+#include <algorithm>                    // for max, min
 
 NS_CC_BEGIN
 

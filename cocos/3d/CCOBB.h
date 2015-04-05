@@ -25,9 +25,14 @@
 #ifndef __CC_OBB_H__
 #define __CC_OBB_H__
 
-#include "CCAABB.h"
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
+
+class AABB;
 
 /**
  * @addtogroup _3d

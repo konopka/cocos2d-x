@@ -23,10 +23,18 @@
  ****************************************************************************/
 
 #include "3d/CCAnimate3D.h"
-#include "3d/CCSprite3D.h"
-#include "3d/CCSkeleton3D.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCConfiguration.h"
+#include <math.h>                       // for fabsf
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string, operator==, etc
+#include <utility>                      // for pair
+#include "2d/CCNode.h"                  // for Node
+#include "3d/CCAnimationCurve.h"        // for AnimationCurve::evaluate
+#include "3d/CCSkeleton3D.h"            // for Bone3D, Skeleton3D
+#include "3d/CCSprite3D.h"              // for Sprite3D
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Quaternion.h"            // for Quaternion
 
 NS_CC_BEGIN
 

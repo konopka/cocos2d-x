@@ -41,10 +41,11 @@
 #include "base/CCAsyncTaskPool.h"       // for AsyncTaskPool, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_1
+#include "math/Quaternion.h"            // for Quaternion
 #include "math/Vec3.h"                  // for Vec3
 #include "math/Vec4.h"                  // for Vec4
 #include "platform/CCFileUtils.h"       // for FileUtils
-#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE_NULL, etc
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_DELETE, etc
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramCache.h"  // for GLProgramCache
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
@@ -55,8 +56,6 @@
 #include "renderer/CCVertexIndexBuffer.h"  // for VertexBuffer
 
 NS_CC_BEGIN
-
-class Action;
 
 std::string s_attributeNames[] = {GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::ATTRIBUTE_NAME_TEX_COORD1, GLProgram::ATTRIBUTE_NAME_TEX_COORD2,GLProgram::ATTRIBUTE_NAME_TEX_COORD3,GLProgram::ATTRIBUTE_NAME_NORMAL, GLProgram::ATTRIBUTE_NAME_BLEND_WEIGHT, GLProgram::ATTRIBUTE_NAME_BLEND_INDEX};
 

@@ -25,15 +25,19 @@
 #ifndef __CCANIMATION3D_H__
 #define __CCANIMATION3D_H__
 
-#include <unordered_map>
-
-#include "3d/CCAnimationCurve.h"
-
-#include "base/ccMacros.h"
-#include "base/CCRef.h"
-#include "3d/CCBundle3DData.h"
+#include <new>                          // for operator new
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "3d/CCAnimationCurve.h"        // for AnimationCurve
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
+
+struct Animation3DData;
+
 /**
  * @addtogroup _3d
  * @{

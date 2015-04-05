@@ -23,7 +23,12 @@
  ****************************************************************************/
 
 #include "3d/CCSkeleton3D.h"
-
+//#include <ext/alloc_traits.h>
+#include <new>                          // for nothrow, operator new
+#include "3d/CCBundle3DData.h"          // for NodeData
+#include "math/Mat4.h"                  // for Mat4::operator*
+#include "math/Vec3.h"                  // for Vec3::operator*, etc
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
 

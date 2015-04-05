@@ -25,9 +25,16 @@
 #ifndef __CCBUNDLE3D_H__
 #define __CCBUNDLE3D_H__
 
-#include "3d/CCBundle3DData.h"
-#include "3d/CCBundleReader.h"
-#include "json/document.h"
+#include "platform/CCGL.h"              // for GLenum
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "3d/CCAABB.h"                  // for AABB
+#include "3d/CCBundle3DData.h"          // for MaterialDatas (ptr only), etc
+#include "3d/CCBundleReader.h"          // for BundleReader
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "json/document.h"              // for Document, Value
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
@@ -36,7 +43,6 @@ NS_CC_BEGIN
  * @{
  */
 
-class Animation3D;
 class Data;
 
 /**

@@ -25,18 +25,18 @@
 #ifndef __CCANIMATE3D_H__
 #define __CCANIMATE3D_H__
 
-#include <map>
-#include <unordered_map>
-
-#include "3d/CCAnimation3D.h"
-#include "base/ccMacros.h"
-#include "base/CCRef.h"
-#include "2d/CCActionInterval.h"
+#include <unordered_map>                // for unordered_map
+#include "2d/CCActionInterval.h"        // for ActionInterval
+#include "3d/CCAnimation3D.h"           // for Animation3D
+#include "3d/CCAnimationCurve.h"        // for EvaluateType
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 class Bone3D;
-class Sprite3D;
+class Node;
 
 /**
  * @addtogroup _3d

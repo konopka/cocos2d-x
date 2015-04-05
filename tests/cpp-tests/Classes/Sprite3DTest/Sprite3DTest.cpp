@@ -56,6 +56,7 @@
 #include "3d/CCRay.h"                   // for Ray
 #include "3d/CCSprite3D.h"              // for Sprite3D, s_attributeNames, etc
 #include "3d/CCSkybox.h"                // for Skybox
+#include "3d/CCTextureCube.h"           // for TextureCude
 #include "DrawNode3D.h"                 // for DrawNode3D
 #include "Sprite3DTest/../BaseTest.h"   // for BaseTest
 #include "Sprite3DTest/../testBasic.h"  // for CL

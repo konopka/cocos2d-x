@@ -23,7 +23,9 @@
  ****************************************************************************/
 
 #include "3d/CCAttachNode.h"
-#include "3d/CCSkeleton3D.h"
+#include <new>                          // for nothrow, operator new
+#include "3d/CCSkeleton3D.h"            // for Bone3D
+#include "math/Mat4.h"                  // for Mat4::operator*
 
 NS_CC_BEGIN
 

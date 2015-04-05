@@ -23,7 +23,19 @@
  ****************************************************************************/
 
 #include "3d/CCSkybox.h"
-#include "3d/CCTextureCube.h"
+#include <functional>                   // for _Bind, function
+#include "3d/CCTextureCube.h"           // for TextureCube
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CHECK_GL_ERROR_DEBUG, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for bindVAO, etc
 
 NS_CC_BEGIN
 

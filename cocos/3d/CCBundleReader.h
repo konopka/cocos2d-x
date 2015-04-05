@@ -25,12 +25,11 @@
 #ifndef __CC_BUNDLE_READER_H__
 #define __CC_BUNDLE_READER_H__
 
-#include <string>
-#include <vector>
-
-#include "base/CCRef.h"
-#include "platform/CCPlatformMacros.h"
-#include "base/CCConsole.h"
+#include <string>                       // for string, allocator
+#include <vector>                       // for vector
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCConsole.h"             // for ssize_t
+#include "platform/CCPlatformMacros.h"  // for CCLOG, NS_CC_BEGIN, etc
 
 NS_CC_BEGIN
 

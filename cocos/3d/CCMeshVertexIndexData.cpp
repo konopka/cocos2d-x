@@ -22,24 +22,13 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include <list>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-
 #include "3d/CCMeshVertexIndexData.h"
-#include "3d/CCObjLoader.h"
-#include "3d/CCSprite3DMaterial.h"
-#include "3d/CCMesh.h"
-#include "3d/CCBundle3D.h"
-
-#include "base/ccMacros.h"
-#include "base/CCEventCustom.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventType.h"
-#include "base/CCDirector.h"
-#include "renderer/ccGLStateCache.h"
+//#include <ext/alloc_traits.h>
+#include <stddef.h>                     // for size_t
+#include <new>                          // for nothrow, operator new
+#include "3d/CCBundle3D.h"              // for Bundle3D
+#include "renderer/CCVertexIndexBuffer.h"  // for IndexBuffer, etc
+#include "renderer/CCVertexIndexData.h"  // for VertexData, etc
 
 
 using namespace std;

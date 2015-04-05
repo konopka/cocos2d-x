@@ -25,8 +25,12 @@
 #ifndef __CCATTACHNODE_H__
 #define __CCATTACHNODE_H__
 
-#include "math/CCMath.h"
-#include "2d/CCNode.h"
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
 /**
@@ -34,6 +38,7 @@ NS_CC_BEGIN
  * @{
  */
 class Bone3D;
+class Renderer;
 
 /** 
  * @brief attach a node to a bone

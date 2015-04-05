@@ -23,7 +23,10 @@
  ****************************************************************************/
 
 #include "CCBundleReader.h"
-#include "platform/CCFileUtils.h"
+#include <stdio.h>                      // for SEEK_CUR, SEEK_END, etc
+#include <string.h>                     // for memcpy
+#include "CCPlatformMacros.h"           // for CCLOG, NS_CC_BEGIN, etc
+#include "platform/CCFileUtils.h"            
 
 NS_CC_BEGIN
 

@@ -23,10 +23,14 @@
  ****************************************************************************/
 
 #include "3d/CCTextureCube.h"
-#include "platform/CCImage.h"
-#include "platform/CCFileUtils.h"
-
-#include "renderer/ccGLStateCache.h"
+#include "platform/CCGL.h"                    // for glTexParameteri, etc
+//#include <ext/alloc_traits.h>
+#include <stddef.h>                     // for size_t
+#include <new>                          // for nothrow, operator new
+#include "base/ccMacros.h"              // for CCASSERT
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "platform/CCImage.h"           // for Image
+#include "renderer/ccGLStateCache.h"    // for bindTextureN
 
 NS_CC_BEGIN
 

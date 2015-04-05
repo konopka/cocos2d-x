@@ -23,13 +23,20 @@
  ****************************************************************************/
 
 #include "3d/CCMesh.h"
-#include "3d/CCMeshSkin.h"
-#include "3d/CCSkeleton3D.h"
-#include "3d/CCMeshVertexIndexData.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTextureCache.h"
-#include "renderer/CCGLProgramState.h"
+#include <stddef.h>                     // for size_t
+#include <new>                          // for nothrow, operator new
+#include "3d/CCBundle3DData.h"          // for MeshData::IndexArray, etc
+#include "3d/CCMeshSkin.h"              // for MeshSkin
+#include "3d/CCMeshVertexIndexData.h"   // for MeshIndexData, etc
+#include "3d/CCSkeleton3D.h"            // for Bone3D
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "math/Mat4.h"                  // for Mat4
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/CCVertexIndexBuffer.h"  // for IndexBuffer, etc
 
 using namespace std;
 

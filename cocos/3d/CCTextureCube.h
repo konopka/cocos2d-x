@@ -25,11 +25,12 @@
 #ifndef __CCTEXTURECUBE_H__
 #define __CCTEXTURECUBE_H__
 
-#include "renderer/CCTexture2D.h"
-
-#include <string>
-#include <unordered_map>
-#include "base/ccTypes.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 NS_CC_BEGIN
 

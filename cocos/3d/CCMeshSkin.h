@@ -25,10 +25,15 @@
 #ifndef __CCMESHSKIN_H__
 #define __CCMESHSKIN_H__
 
-#include "3d/CCBundle3DData.h"
-#include "base/CCRef.h"
-#include "base/CCVector.h"
-#include "math/CCMath.h"
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 
 NS_CC_BEGIN
@@ -40,6 +45,7 @@ NS_CC_BEGIN
 
 class Bone3D;
 class Skeleton3D;
+class Vec4;
 
 /**
  * @brief MeshSkin, A class maintain a collection of bones that affect Mesh vertex.

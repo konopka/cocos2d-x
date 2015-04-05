@@ -23,8 +23,13 @@
  ****************************************************************************/
 
 #include "3d/CCAnimation3D.h"
-#include "3d/CCBundle3D.h"
-#include "platform/CCFileUtils.h"
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "3d/CCBundle3D.h"              // for Bundle3D
+#include "3d/CCBundle3DData.h"          // for Animation3DData::Vec3Key, etc
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec3.h"                  // for Vec3
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 NS_CC_BEGIN
 

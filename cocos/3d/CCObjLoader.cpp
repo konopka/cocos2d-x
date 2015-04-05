@@ -17,12 +17,15 @@
 //
 
 #include "CCObjLoader.h"
-
-#include <fstream>
-#include <sstream>
-
-#include "platform/CCFileUtils.h"
-#include "base/ccUtils.h"
+#include <assert.h>                     // for assert
+#include <stdio.h>                      // for sscanf
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for strncmp, strspn, strcspn, etc
+#include <sys/types.h>                  // for ssize_t
+#include <sstream>                      // for istringstream, operator<<, etc
+#include <utility>                      // for pair
+#include "base/ccUtils.h"               // for atof
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 NS_CC_BEGIN
 

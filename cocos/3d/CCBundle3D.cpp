@@ -23,14 +23,27 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "3d/CCBundle3D.h"
-#include "3d/CCObjLoader.h"
-
-#include "base/ccMacros.h"
-#include "platform/CCFileUtils.h"
-#include "renderer/CCGLProgram.h"
-#include "CCBundleReader.h"
-#include "base/CCData.h"
-#include "json/document.h"
+#include <ctype.h>                      // for tolower
+//#include <ext/alloc_traits.h>
+#include <stddef.h>                     // for size_t
+#include <stdio.h>                      // for sprintf, SEEK_SET
+#include <string.h>                     // for memcmp, memcpy
+#include <sys/types.h>                  // for ssize_t
+#include <algorithm>                    // for transform
+#include <map>                          // for map, map<>::mapped_type
+#include <new>                          // for nothrow, operator new, etc
+#include <utility>                      // for pair
+#include "3d/CCObjLoader.h"             // for ObjLoader::shapes_t, etc
+#include "CCBundleReader.h"             // for BundleReader
+#include "base/CCData.h"                // for Data
+#include "base/ccMacros.h"              // for CCASSERT
+#include "json/document.h"              // for Value, GenericValue, etc
+#include "json/rapidjson.h"             // for SizeType
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous), etc
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec3.h"                  // for Vec3
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
 
 #define BUNDLE_TYPE_SCENE               1
 #define BUNDLE_TYPE_NODE                2

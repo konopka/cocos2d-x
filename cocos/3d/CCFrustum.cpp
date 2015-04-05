@@ -23,7 +23,10 @@
  ****************************************************************************/
 
 #include "3d/CCFrustum.h"
-#include "2d/CCCamera.h"
+#include "2d/CCCamera.h"                // for Camera
+#include "3d/CCAABB.h"                  // for AABB
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 

@@ -28,10 +28,11 @@
 #include <vector>                       // for vector
 #include "2d/CCCamera.h"                // for Camera
 #include "2d/CCNode.h"                  // for Node, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT
-#include "CCStdC.h"				        // for sqrtf
+#include "platform/CCStdC.h"            // for sqrtf
 #include "math/CCMathBase.h"            // for MATH_TOLERANCE
 #include "math/Quaternion.h"            // for Quaternion
 #include "math/Vec2.h"                  // for Vec2
@@ -42,7 +43,6 @@
 
 NS_CC_BEGIN
 
-class Rect;
 
 BillBoard::BillBoard()
 : _mode(Mode::VIEW_POINT_ORIENTED)

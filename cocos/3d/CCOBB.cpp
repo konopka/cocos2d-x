@@ -23,6 +23,15 @@
  ****************************************************************************/
 
 #include "3d/CCOBB.h"
+#include <float.h>                      // for FLT_EPSILON
+#include <math.h>                       // for fabs, sqrt
+#include <string.h>                     // for memset
+#include "3d/CCAABB.h"                  // for AABB
+#include "base/ccMacros.h"              // for CCASSERT
+#include "platform/CCStdC.h"            // for MAX, MIN
+#include "math/Mat4.h"                  // for operator*, operator*=
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec4.h"                  // for Vec4, etc
 
 NS_CC_BEGIN
 

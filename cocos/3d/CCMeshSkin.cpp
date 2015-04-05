@@ -23,9 +23,10 @@
  ****************************************************************************/
 
 #include "3d/CCMeshSkin.h"
-#include "3d/CCSkeleton3D.h"
-#include "3d/CCBundle3D.h"
-#include "3d/CCSkeleton3D.h"
+#include <new>                          // for nothrow, operator new, etc
+#include "3d/CCSkeleton3D.h"            // for Bone3D, Skeleton3D
+#include "base/ccMacros.h"              // for CCASSERT
+#include "math/Vec4.h"                  // for Vec4
 
 NS_CC_BEGIN
 

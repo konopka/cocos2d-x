@@ -21,6 +21,9 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "3d/CCRay.h"
+#include "3d/CCAABB.h"                  // for AABB
+#include "3d/CCPlane.h"                 // for Plane
+#include "math/Vec3.h"                  // for Vec3::operator+, etc
 
 NS_CC_BEGIN
 

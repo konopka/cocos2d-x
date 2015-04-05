@@ -25,9 +25,10 @@
 #ifndef __CCSPRIT3DMATERIAL_H__
 #define __CCSPRIT3DMATERIAL_H__
 
-#include <string>
-#include <unordered_map>
-#include "base/ccTypes.h"
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 
 NS_CC_BEGIN
 

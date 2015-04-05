@@ -25,14 +25,18 @@
 #ifndef __CCMESH_H__
 #define __CCMESH_H__
 
-#include <string>
-
-#include "3d/CCBundle3DData.h"
-#include "3d/CCAABB.h"
-
-#include "base/CCRef.h"
-#include "math/CCMath.h"
-#include "renderer/CCMeshCommand.h"
+#include "platform/CCGL.h"                    // for GLenum, GLuint
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "3d/CCAABB.h"                  // for AABB
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for BlendFunc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "renderer/CCMeshCommand.h"     // for MeshCommand
 
 NS_CC_BEGIN
 
@@ -41,12 +45,14 @@ NS_CC_BEGIN
  * @{
  */
 
-class Texture2D;
-class MeshSkin;
-class MeshIndexData;
-class GLProgramState;
 class GLProgram;
-/** 
+class GLProgramState;
+class MeshIndexData;
+class MeshSkin;
+class Texture2D;
+struct MeshVertexAttrib;
+
+/**
  * @brief Mesh: contains ref to index buffer, GLProgramState, texture, skin, blend function, aabb and so on
  */
 class CC_DLL Mesh : public Ref

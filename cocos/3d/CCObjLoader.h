@@ -9,10 +9,11 @@
 #ifndef __CCOBJLOADER_H__
 #define __CCOBJLOADER_H__
 
-#include <string>
-#include <vector>
-#include <map>
-#include "base/ccTypes.h"
+#include <stddef.h>                     // for NULL
+#include <map>                          // for map
+#include <string>                       // for string, basic_string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
 

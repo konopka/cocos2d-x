@@ -25,14 +25,14 @@
 #ifndef __CC_FRUSTUM_H_
 #define __CC_FRUSTUM_H_
 
-#include "base/ccMacros.h"
-#include "math/CCMath.h"
-#include "3d/CCAABB.h"
-#include "3d/CCOBB.h"
-#include "3d/CCPlane.h"
+#include "3d/CCOBB.h"                   // for OBB
+#include "3d/CCPlane.h"                 // for Plane
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
+class AABB;
 class Camera;
 
 /**

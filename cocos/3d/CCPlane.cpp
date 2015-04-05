@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "CCPlane.h"
+#include "math/Vec3.h"                  // for Vec3::operator-, etc
 
 NS_CC_BEGIN
 

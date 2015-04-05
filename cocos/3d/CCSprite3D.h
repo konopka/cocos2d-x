@@ -25,7 +25,7 @@
 #ifndef __CCSPRITE3D_H__
 #define __CCSPRITE3D_H__
 
-#include "platform/CCGL.h"				// for GLenum
+#include "platform/CCGL.h"              // for GLenum
 #include <stdint.h>                     // for uint32_t
 #include <sys/types.h>                  // for ssize_t
 #include <functional>                   // for function
@@ -36,14 +36,14 @@
 #include "3d/CCAABB.h"                  // for AABB
 #include "3d/CCBundle3DData.h"          // for MeshDatas (ptr only), etc
 #include "3d/CCMeshVertexIndexData.h"   // for MeshVertexData, etc
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCProtocols.h"           // for BlendProtocol
 #include "base/CCVector.h"              // for Vector
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for BlendFunc
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/CCGeometry.h"            // for Rect
 #include "math/Mat4.h"                  // for Mat4
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "renderer/CCGLProgramState.h"  // for GLProgramState
 
 NS_CC_BEGIN
@@ -56,8 +56,6 @@ class MeshSkin;
 class Renderer;
 class Skeleton3D;
 class Texture2D;
-class AttachNode;
-struct NodeData;
 
 /**
 * @addtogroup _3d
