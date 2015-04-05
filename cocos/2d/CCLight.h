@@ -25,9 +25,15 @@
 #ifndef __CCLIGHT_H__
 #define __CCLIGHT_H__
 
-#include "2d/CCNode.h"
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
+
+struct Color3B;
 
 enum class LightType
 {

@@ -28,12 +28,16 @@ THE SOFTWARE.
 #ifndef __CCTRANSITIONPROGRESS_H__
 #define __CCTRANSITIONPROGRESS_H__
 
-#include "2d/CCTransition.h"
+#include "2d/CCTransition.h"            // for TransitionScene
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 
 class ProgressTimer;
 class RenderTexture;
+class Scene;
 
 /**
  * @addtogroup _2d

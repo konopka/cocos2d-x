@@ -31,10 +31,11 @@
 #include "2d/CCParticleBatchNode.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCParticleSystem.h"        // for ParticleSystem
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CCLOG, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT, CC_BLEND_DST, etc
-#include "deprecated/CCString.h"		// for CCLOGWARN
+#include "deprecated/CCString.h"		// for StringUtils
 #include "math/Vec3.h"                  // for Vec3
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramState.h"  // for GLProgramState

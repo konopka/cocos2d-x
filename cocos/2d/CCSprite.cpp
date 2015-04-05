@@ -38,11 +38,12 @@ THE SOFTWARE.
 #include "2d/CCSpriteFrame.h"           // for SpriteFrame
 #include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
 #include "CCImage.h"                    // for Image
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT, etc
 #include "deprecated/CCString.h"        // for format
-#include "math/Mat4.h"                  // for Mat4::operator*
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous), etc
 #include "math/Vec3.h"                  // for Vec3
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramState.h"  // for GLProgramState

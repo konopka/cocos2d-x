@@ -35,15 +35,13 @@ THE SOFTWARE.
 #include <new>                          // for nothrow, operator new
 #include "2d/CCParticleBatchNode.h"     // for ParticleBatchNode
 #include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "CCPlatformMacros.h"           // for CC_SAFE_FREE, etc
 #include "base/CCConfiguration.h"       // for Configuration
-#include "base/CCDirector.h"			// for CC_CONTENT_SCALE_FACTOR
-#include "base/CCEventDispatcher.h"     // for EventDispatcher
-#include "base/CCEventListenerCustom.h" // for EventListenerCustom
-#include "base/CCEventType.h"			// for EventType
+#include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
 #include "base/ccTypes.h"               // for V3F_C4B_T2F_Quad, etc
 #include "deprecated/CCString.h"        // for format
-#include "CCStdC.h"						// for cosf, sinf
+#include "platform/CCStdC.h"            // for cosf, sinf
 #include "math/CCGeometry.h"            // for Rect, Size
 #include "math/Vec3.h"                  // for Vec3
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc

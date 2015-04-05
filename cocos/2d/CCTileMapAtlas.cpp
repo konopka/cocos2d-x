@@ -25,11 +25,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCTileMapAtlas.h"
-#include "platform/CCFileUtils.h"
-#include "renderer/CCTextureAtlas.h"
-#include "base/TGAlib.h"
-#include "base/CCDirector.h"
-#include "deprecated/CCString.h"
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include "base/TGAlib.h"                // for sImageTGA, tgaDestroy, etc
+#include "base/ccConfig.h"
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/CCDirector.h"            // for Director
+#include "deprecated/CCString.h"        // for toString
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec3.h"                  // for Vec3
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
 
 
 NS_CC_BEGIN

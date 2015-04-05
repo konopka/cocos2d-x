@@ -27,6 +27,7 @@
 #include <new>                          // for nothrow, operator new
 #include <vector>                       // for vector
 #include "2d/CCGrid.h"                  // for GridBase
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CC_CALLBACK_0, CCASSERT

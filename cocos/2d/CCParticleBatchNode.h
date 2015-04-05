@@ -34,12 +34,12 @@
 #include <sys/types.h>                  // for ssize_t
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
 #include "base/CCProtocols.h"           // for TextureProtocol
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for BlendFunc
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/Mat4.h"                  // for Mat4
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 #include "renderer/CCBatchCommand.h"    // for BatchCommand
 
 NS_CC_BEGIN

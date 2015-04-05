@@ -28,6 +28,7 @@ THE SOFTWARE.
 #include <stdlib.h>                     // for malloc
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for CC_SAFE_FREE, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0, etc
 #include "math/CCVertex.h"              // for ccVertexLineToPolygon

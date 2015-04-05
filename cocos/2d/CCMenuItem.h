@@ -28,20 +28,23 @@ THE SOFTWARE.
 #ifndef __CCMENU_ITEM_H__
 #define __CCMENU_ITEM_H__
 
-// C++ includes
-#include <functional>
-
-// cocos2d includes
-#include "2d/CCNode.h"
-#include "base/CCProtocols.h"
+#include <stdarg.h>                     // for va_list
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref (ptr only), etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Rect
 
 NS_CC_BEGIN
 
 typedef std::function<void(Ref*)> ccMenuCallback;
 
-class Label;
-class LabelAtlas;
-class Sprite;
 class SpriteFrame;
 #define kItemSize 32
     

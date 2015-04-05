@@ -31,6 +31,7 @@ THE SOFTWARE.
 #include <iterator>                     // for next, begin, end
 #include <new>                          // for nothrow, operator new
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CCLOG, CCLOGWARN, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT, etc
@@ -44,7 +45,6 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
-class Ref;
 
 /*
 * creation with Texture2D

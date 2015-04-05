@@ -32,6 +32,7 @@ THE SOFTWARE.
 #include <vector>                       // for vector
 #include "2d/CCTMXLayer.h"              // for TMXLayer
 #include "2d/CCTMXXMLParser.h"          // for TMXMapInfo, TMXLayerInfo, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CCLOG, etc
 #include "base/ccMacros.h"              // for CCASSERT
 #include "deprecated/CCString.h"        // for format
 

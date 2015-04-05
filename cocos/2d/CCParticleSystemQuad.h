@@ -28,16 +28,16 @@ THE SOFTWARE.
 #ifndef __CC_PARTICLE_SYSTEM_QUAD_H__
 #define __CC_PARTICLE_SYSTEM_QUAD_H__
 
-#include "platform/CCGL.h"				// for GLuint, GLushort
+#include "platform/CCGL.h"              // for GLuint, GLushort
 #include <stdint.h>                     // for uint32_t
 #include <string>                       // for string
 #include "2d/CCParticleSystem.h"        // for ParticleSystem, tParticle
-#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 #include "base/CCValue.h"               // for ValueMap
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 #include "renderer/CCQuadCommand.h"     // for QuadCommand
 
 NS_CC_BEGIN

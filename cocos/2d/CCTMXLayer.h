@@ -32,12 +32,12 @@ THE SOFTWARE.
 #include <string>                       // for string
 #include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
 #include "2d/CCTMXXMLParser.h"          // for TMXTilesetInfo (ptr only), etc
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCValue.h"               // for ValueMap, Value
 #include "base/ccCArray.h"              // for ccCArray
 #include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/CCGeometry.h"            // for Size, Rect (ptr only)
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 
 NS_CC_BEGIN
 

@@ -27,14 +27,18 @@ THE SOFTWARE.
 #ifndef __CCTILE_MAP_ATLAS__
 #define __CCTILE_MAP_ATLAS__
 
-#include "2d/CCAtlasNode.h"
-#include "base/CCValue.h"
+#include <string>                       // for string
+#include "2d/CCAtlasNode.h"             // for AtlasNode
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ccTypes.h"               // for Color3B
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 
 /// @cond DO_NOT_SHOW
 
-struct sImageTGA;
 
 /** @brief TileMapAtlas is a subclass of AtlasNode.
 

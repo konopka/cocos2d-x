@@ -26,12 +26,19 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCMenuItem.h"
-#include "2d/CCActionInterval.h"
-#include "2d/CCSprite.h"
-#include "2d/CCLabelAtlas.h"
-#include "2d/CCLabel.h"
-#include "deprecated/CCString.h"
-#include <stdarg.h>
+#include <limits.h>                     // for UINT_MAX
+#include <stdarg.h>                     // for va_list, va_end, va_start, etc
+#include <new>                          // for nothrow, operator new
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCActionInterval.h"        // for ScaleTo
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCLabelAtlas.h"            // for LabelAtlas
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCProtocols.h"           // for LabelProtocol
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "deprecated/CCString.h"        // for format
+#include "math/Vec2.h"                  // for Vec2, etc
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

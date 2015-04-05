@@ -30,6 +30,7 @@ THE SOFTWARE.
 #include <string>                       // for string
 #include "2d/CCParticleSystem.h"
 #include "CCImage.h"                    // for Image
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CC_BREAK_IF, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/ccTypes.h"               // for Color4F
 #include "base/firePngData.h"           // for __firePngData

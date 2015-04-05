@@ -32,15 +32,13 @@ THE SOFTWARE.
 #include <new>                          // for nothrow, operator new, etc
 #include "2d/CCSprite.h"                // for Sprite
 #include "CCImage.h"                    // for Image, Image::Format, etc
-#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_WP8, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CCLOG, etc
 #include "base/CCConfiguration.h"       // for Configuration
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
-#include "base/CCEventDispatcher.h"     // for EventDispatcher
-#include "base/CCEventListenerCustom.h" // for EventListenerCustom
-#include "base/CCEventType.h"			// for EventType
 #include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0, etc
 #include "base/ccUtils.h"               // for ccNextPOT
 #include "platform/CCFileUtils.h"       // for FileUtils
+#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_WP8, etc
 #include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_BEGIN

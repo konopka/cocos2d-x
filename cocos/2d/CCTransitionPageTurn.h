@@ -27,12 +27,20 @@ THE SOFTWARE.
 #ifndef __CCPAGE_TURN_TRANSITION_H__
 #define __CCPAGE_TURN_TRANSITION_H__
 
-#include "2d/CCTransition.h"
-#include "renderer/CCCustomCommand.h"
+#include <stdint.h>                     // for uint32_t
+#include "2d/CCTransition.h"            // for TransitionScene
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Mat4.h"                  // for Mat4
 
 NS_CC_BEGIN
 
+class ActionInterval;
 class NodeGrid;
+class Renderer;
+class Scene;
+class Size;
 
 /**
  * @addtogroup _2d

@@ -33,13 +33,14 @@
 #include <new>                          // for nothrow, operator new
 #include <vector>                       // for vector
 #include "2d/CCScene.h"                 // for Scene
+#include "CCPlatformMacros.h"           // for CCLOG, CCLOGINFO, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
 #include "base/ccMacros.h"              // for CCASSERT
 #include "base/ccTypes.h"               // for Color3B, Color3B::WHITE, etc
 
 #if CC_USE_PHYSICS
-#include "physics/CCPhysicsBody.h"
+#include "physics/CCPhysicsBody.h"      // for PhysicsBody
 #endif
 
 NS_CC_BEGIN

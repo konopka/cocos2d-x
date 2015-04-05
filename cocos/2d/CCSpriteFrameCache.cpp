@@ -28,21 +28,21 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCSpriteFrameCache.h"
-
-#include <vector>
-
-
-#include "2d/CCSprite.h"
-#include "platform/CCFileUtils.h"
-#include "base/CCNS.h"
-#include "base/ccMacros.h"
-#include "base/CCDirector.h"
-#include "renderer/CCTexture2D.h"
-#include "renderer/CCTextureCache.h"
-
-
-#include "deprecated/CCString.h"
-
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for abs
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "base/CCDirector.h"            // for Director
+#include "base/CCNS.h"                  // for SizeFromString, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "deprecated/CCString.h"        // for StringUtils
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 using namespace std;
 

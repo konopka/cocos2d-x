@@ -28,9 +28,12 @@ THE SOFTWARE.
 #ifndef __CCTMX_OBJECT_GROUP_H__
 #define __CCTMX_OBJECT_GROUP_H__
 
-#include "math/CCGeometry.h"
-#include "base/CCValue.h"
-#include "base/CCRef.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCValue.h"               // for ValueMap, ValueVector, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 

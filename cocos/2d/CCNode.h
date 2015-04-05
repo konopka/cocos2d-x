@@ -29,29 +29,42 @@
 #ifndef __CCNODE_H__
 #define __CCNODE_H__
 
-#include "base/ccMacros.h"
-#include "base/CCVector.h"
-#include "base/CCProtocols.h"
-#include "base/CCScriptSupport.h"
-#include "math/CCAffineTransform.h"
-#include "math/CCMath.h"
+#include "platform/CCGL.h"                    // for GLubyte
+#include <stddef.h>                     // for size_t
+#include <stdint.h>                     // for uint32_t
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCProtocols.h"           // for __RGBAProtocol
+#include "base/CCRef.h"                 // for SEL_SCHEDULE, Ref
+#include "base/CCScriptSupport.h"       // for ccScriptType
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_UNUSED_PARAM
+#include "math/CCAffineTransform.h"     // for AffineTransform
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Quaternion.h"            // for Quaternion
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
 
 NS_CC_BEGIN
 
-class GridBase;
-class Touch;
 class Action;
-class LabelProtocol;
-class Scheduler;
 class ActionManager;
 class Component;
 class ComponentContainer;
-class EventDispatcher;
-class Scene;
-class Renderer;
 class Director;
+class EventDispatcher;
 class GLProgram;
 class GLProgramState;
+class Node;
+class Renderer;
+class Scene;
+class Scheduler;
+class Touch;
 #if CC_USE_PHYSICS
 class PhysicsBody;
 #endif

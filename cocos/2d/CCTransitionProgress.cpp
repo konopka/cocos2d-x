@@ -27,11 +27,21 @@ THE SOFTWARE.
 
 
 #include "2d/CCTransitionProgress.h"
-#include "base/CCDirector.h"
-#include "2d/CCRenderTexture.h"
-#include "2d/CCProgressTimer.h"
-#include "2d/CCActionInstant.h"
-#include "2d/CCActionProgressTimer.h"
+#include "platform/CCGL.h"              // for GL_DEPTH24_STENCIL8
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "2d/CCActionInterval.h"        // for Sequence, ActionInterval
+#include "2d/CCActionProgressTimer.h"   // for ProgressFromTo
+#include "2d/CCProgressTimer.h"         // for ProgressTimer, etc
+#include "2d/CCRenderTexture.h"         // for RenderTexture
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 NS_CC_BEGIN
 

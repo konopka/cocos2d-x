@@ -27,13 +27,22 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTMXXMLParser.h"
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi, free, malloc
+#include <string.h>                     // for memset
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <sstream>                      // for basic_istream, stringstream
 #include <unordered_map>
-#include <sstream>
-#include "2d/CCTMXTiledMap.h"
-#include "base/ZipUtils.h"
-#include "base/base64.h"
-#include "base/CCDirector.h"
-#include "platform/CCFileUtils.h"
+#include <utility>                      // for pair, make_pair
+#include <vector>                       // for vector
+#include "2d/CCTMXTiledMap.h"           // for ::TMXOrientationHex, etc
+#include "CCSAXParser.h"                // for SAXParser
+#include "base/ZipUtils.h"              // for ZipUtils
+#include "base/base64.h"                // for base64Decode
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "base/CCDirector.h"            // for Director
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 using namespace std;
 

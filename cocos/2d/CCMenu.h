@@ -26,12 +26,22 @@ THE SOFTWARE.
 #ifndef __CCMENU_H_
 #define __CCMENU_H_
 
-#include "2d/CCMenuItem.h"
-#include "2d/CCLayer.h"
-#include "base/CCValue.h"
+#include <stdarg.h>                     // for va_list
+#include <string>                       // for string
+#include "2d/CCLayer.h"                 // for Layer
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"
+#include "base/CCValue.h"               // for ValueVector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_UNUSED_PARAM
 
 NS_CC_BEGIN
+
+class Event;
+class MenuItem;
+class Node;
 class Touch;
+template <class T> class Vector;
 
 /**
  * @addtogroup _2d

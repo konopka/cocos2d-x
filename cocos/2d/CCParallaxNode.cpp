@@ -26,14 +26,13 @@ THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCParallaxNode.h"
 #include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #include "base/CCRef.h"                 // for Ref
 #include "base/ccCArray.h"              // for _ccArray, etc
 #include "base/ccMacros.h"              // for CCASSERT
-#include "math/Vec2.h"					// for Vec2::operator+
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
-
-class Renderer;
 
 class PointObject : public Ref
 {

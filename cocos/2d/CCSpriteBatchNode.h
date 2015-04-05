@@ -34,14 +34,14 @@ THE SOFTWARE.
 #include <string>                       // for string
 #include <vector>                       // for vector
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE, etc
 #include "base/CCProtocols.h"           // for TextureProtocol
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for BlendFunc
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/Mat4.h"                  // for Mat4
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE, etc
 #include "renderer/CCBatchCommand.h"    // for BatchCommand
-#include "renderer/CCTextureAtlas.h"	// for TextureAtlas
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas	
 
 NS_CC_BEGIN
 

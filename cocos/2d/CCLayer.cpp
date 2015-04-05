@@ -25,24 +25,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include <stdarg.h>
 #include "2d/CCLayer.h"
-#include "base/CCScriptSupport.h"
-#include "platform/CCDevice.h"
-#include "renderer/CCRenderer.h"
-#include "renderer/ccGLStateCache.h"
-#include "renderer/CCGLProgramState.h"
-#include "base/CCDirector.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventListenerTouch.h"
-#include "base/CCEventTouch.h"
-#include "base/CCEventKeyboard.h"
-#include "base/CCEventListenerKeyboard.h"
-#include "base/CCEventAcceleration.h"
+#include <math.h>                       // for fabsf
+#include <stdarg.h>                     // for va_arg, va_end, va_list, etc
+#include <stddef.h>                     // for size_t
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
 #include "base/CCEventListenerAcceleration.h"
-
-
-#include "deprecated/CCString.h"
+#include "base/CCEventListenerKeyboard.h"  // for EventListenerKeyboard
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventTouch.h"          // for EventTouch, etc
+#include "base/CCScriptSupport.h"
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCStdC.h"            // for sqrtf
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2::operator*
+#include "math/Vec3.h"                  // for Vec3::operator/
+#include "math/Vec4.h"                  // for Vec4, etc
+#include "platform/CCDevice.h"          // for Device
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
+#include "renderer/CCRenderer.h"        // for Renderer
+#include "renderer/ccGLStateCache.h"    // for blendFunc, etc
 
 #if CC_USE_PHYSICS
 #include "physics/CCPhysicsBody.h"

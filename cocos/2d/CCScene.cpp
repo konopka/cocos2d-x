@@ -30,6 +30,7 @@ THE SOFTWARE.
 #include <functional>                   // for _Bind, function, bind, _1
 #include <new>                          // for nothrow, operator new
 #include "2d/CCCamera.h"                // for Camera, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CC_BREAK_IF, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCEventListenerCustom.h"  // for EventListenerCustom
@@ -37,8 +38,9 @@ THE SOFTWARE.
 #include "math/Vec2.h"                  // for Vec2
 #include "renderer/CCRenderer.h"        // for Renderer
 
+
 #if CC_USE_PHYSICS
-#include "physics/CCPhysicsWorld.h"
+#include "physics/CCPhysicsWorld.h"     // for PhysicsWorld
 #endif
 
 NS_CC_BEGIN

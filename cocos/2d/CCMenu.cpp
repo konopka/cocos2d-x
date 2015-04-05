@@ -24,14 +24,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "2d/CCMenu.h"
-#include "base/CCDirector.h"
-#include "base/CCTouch.h"
-#include "base/CCEventListenerTouch.h"
-#include "base/CCEventDispatcher.h"
-#include "platform/CCStdC.h"
-#include "deprecated/CCString.h"
-
-#include <vector>
+//#include <ext/alloc_traits.h>
+#include <stddef.h>                     // for size_t
+#include <cmath>                        // for isnan
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector, allocator
+#include "2d/CCMenuItem.h"              // for MenuItem
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_2
+#include "deprecated/CCString.h"        // for format
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
 using namespace std;
 

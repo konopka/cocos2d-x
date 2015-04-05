@@ -31,9 +31,10 @@ THE SOFTWARE.
 #include <functional>                   // for _Bind, function
 #include <new>                          // for nothrow, operator new
 #include "2d/CCSprite.h"                // for Sprite
-#include "base/CCDirector.h"			// for CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES
+#include "CCPlatformMacros.h"           // for CC_SAFE_FREE, etc
 #include "base/ccMacros.h"              // for CCASSERT, etc
-#include "math/Vec2.h"					// for Vec2::operator*, etc
+#include "base/CCDirector.h"            // for Director
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO, clampf
 #include "math/Vec3.h"                  // for Vec3
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramState.h"  // for GLProgramState

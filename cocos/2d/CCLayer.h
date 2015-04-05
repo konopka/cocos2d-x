@@ -28,9 +28,26 @@ THE SOFTWARE.
 #ifndef __CCLAYER_H__
 #define __CCLAYER_H__
 
-#include "2d/CCNode.h"
-#include "base/CCProtocols.h"
-#include "renderer/CCCustomCommand.h"
+#include "platform/CCGL.h"                    // for GLubyte, GLfloat
+#include <stdarg.h>                     // for va_list
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCEventTouch.h"          // for EventTouch, etc
+#include "base/CCProtocols.h"           // for BlendProtocol, etc
+#include "base/CCTouch.h"               // for Touch, Touch::DispatchMode
+#include "base/CCVector.h"              // for Vector
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color4B (ptr only), etc
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM, CC_DLL
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
 
 
 NS_CC_BEGIN
@@ -40,14 +57,14 @@ NS_CC_BEGIN
  * @{
  */
 
-class __Set;
-class TouchScriptHandlerEntry;
-
-class EventListenerTouch;
-class EventListenerKeyboard;
+class Event;
+class EventListener;
 class EventListenerAcceleration;
+class EventListenerKeyboard;
+class Renderer;
+class Size;
+class __Set;
 
-class Touch;
 
 //
 // Layer

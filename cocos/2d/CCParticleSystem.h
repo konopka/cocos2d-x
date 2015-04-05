@@ -29,14 +29,14 @@ THE SOFTWARE.
 
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCProtocols.h"           // for TextureProtocol
 #include "base/CCValue.h"               // for ValueMap
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for Color4F, BlendFunc
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 
 NS_CC_BEGIN
 
@@ -46,6 +46,7 @@ NS_CC_BEGIN
  */
 
 class ParticleBatchNode;
+class Texture2D;
 
 /** @struct sParticle
 Structure that contains the values of each particle.

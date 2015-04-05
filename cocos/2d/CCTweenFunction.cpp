@@ -23,9 +23,9 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTweenFunction.h"
-
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 #define _USE_MATH_DEFINES // needed for M_PI and M_PI2
-#include <math.h> // M_PI
+#include <math.h>                       // for powf, sinf, sqrt, M_PI, etc
 #undef _USE_MATH_DEFINES
 
 NS_CC_BEGIN

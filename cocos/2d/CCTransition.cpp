@@ -26,7 +26,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTransition.h"
-#include "platform/CCGL.h"				// for GL_DEPTH24_STENCIL8, GL_ONE, etc
+#include "platform/CCGL.h"                    // for GL_DEPTH24_STENCIL8, GL_ONE, etc
 #include <functional>                   // for _Bind
 #include <new>                          // for nothrow, operator new
 #include "2d/CCActionCamera.h"          // for OrbitCamera
@@ -40,6 +40,7 @@ THE SOFTWARE.
 #include "2d/CCNodeGrid.h"              // for NodeGrid
 #include "2d/CCRenderTexture.h"         // for RenderTexture
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
@@ -49,9 +50,6 @@ THE SOFTWARE.
 #include "renderer/CCTexture2D.h"       // for Texture2D, etc
 
 NS_CC_BEGIN
-
-class Action;
-class Renderer;
 
 const unsigned int kSceneFade = 0xFADEFADE;
 

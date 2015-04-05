@@ -1,5 +1,12 @@
 #include "2d/CCLight.h"
-#include "2d/CCScene.h"
+#include <math.h>                       // for atan2f, sqrt
+#include <algorithm>                    // for find
+#include <new>                          // for nothrow, operator new
+#include <vector>                       // for vector
+#include "2d/CCScene.h"                 // for Scene
+#include "base/ccMacros.h"              // for CC_RADIANS_TO_DEGREES
+#include "platform/CCStdC.h"            // for cosf
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
 
 NS_CC_BEGIN
 

@@ -28,9 +28,9 @@ THE SOFTWARE.
 #define __CCPARTICLE_EXAMPLE_H__
 
 #include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
-#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 
 NS_CC_BEGIN
 

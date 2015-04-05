@@ -30,11 +30,11 @@ THE SOFTWARE.
 #include <stdint.h>                     // for uint32_t
 #include <string>                       // for string
 #include "2d/CCLabel.h"                 // for Label
-#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
 #include "base/CCIMEDelegate.h"         // for IMEDelegate
 #include "base/ccTypes.h"               // for Color4B, TextHAlignment, etc
-#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM, CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM, CC_DLL
 #include "math/Mat4.h"                  // for Mat4
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 
 /**
  * @addtogroup ui

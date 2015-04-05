@@ -28,9 +28,13 @@ THE SOFTWARE.
 #ifndef __SPRITE_CCSPRITE_FRAME_H__
 #define __SPRITE_CCSPRITE_FRAME_H__
 
-#include "2d/CCNode.h"
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Clonable, Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 

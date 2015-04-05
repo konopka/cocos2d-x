@@ -29,29 +29,34 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCNode.h"
-
-#include <algorithm>
-#include <string>
-#include <regex>
-
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-#include "base/CCEventDispatcher.h"
-#include "2d/CCCamera.h"
-#include "2d/CCAction.h"
-#include "2d/CCActionManager.h"
-#include "2d/CCScene.h"
-#include "2d/CCComponent.h"
-#include "2d/CCComponentContainer.h"
-#include "renderer/CCGLProgram.h"
-#include "renderer/CCGLProgramState.h"
-#include "math/TransformUtils.h"
-
-#include "deprecated/CCString.h"
+#include <math.h>                       // for asinf, atan2f, atanf
+#include <algorithm>                    // for sort
+#include <iterator>                     // for begin, end
+#include <new>                          // for nothrow, operator new
+#include <regex>                        // for regex_traits, regex_match, etc
+#include <sstream>                      // for basic_stringbuf<>::int_type, etc
+#include <string>                       // for allocator, string, etc
+#include <vector>                       // for vector
+#include "2d/CCAction.h"                // for Action, Action::INVALID_TAG
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCComponentContainer.h"    // for ComponentContainer
+#include "2d/CCScene.h"                 // for Scene
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCASSERT, etc
+#include "deprecated/CCString.h"        // for format
+#include "platform/CCStdC.h"            // for cosf, sinf, tanf
+#include "math/Mat4.h"                  // for Mat4::operator*
+#include "math/TransformUtils.h"        // for GLToCGAffine, CGAffineToGL
+#include "math/Vec2.h"                  // for Vec2::operator+, etc
+#include "renderer/CCGLProgramState.h"  // for GLProgramState
 
 #if CC_USE_PHYSICS
-#include "physics/CCPhysicsBody.h"
-#include "physics/CCPhysicsWorld.h"
+#include "physics/CCPhysicsBody.h"      // for PhysicsBody
+#include "physics/CCPhysicsWorld.h"     // for PhysicsWorld
 #endif
 
 

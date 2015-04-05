@@ -32,14 +32,14 @@ THE SOFTWARE.
 #include <sys/types.h>                  // for ssize_t
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCProtocols.h"           // for TextureProtocol
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS, etc
 #include "base/ccTypes.h"               // for BlendFunc, V3F_C4B_T2F_Quad
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/CCGeometry.h"            // for Rect, Size (ptr only)
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "renderer/CCQuadCommand.h"     // for QuadCommand
 
 NS_CC_BEGIN

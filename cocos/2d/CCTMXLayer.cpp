@@ -26,13 +26,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTMXLayer.h"
-#include "platform/CCGL.h"				// for GLint, glGetUniformLocation
+#include "platform/CCGL.h"              // for GLint, glGetUniformLocation
 #include <stddef.h>                     // for size_t
 #include <stdlib.h>                     // for abs, bsearch
 #include <new>                          // for nothrow, operator new
 #include <unordered_map>                // for operator!=, etc
 #include "2d/CCSprite.h"                // for Sprite
 #include "2d/CCTMXTiledMap.h"           // for ::TMXOrientationOrtho, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT, etc
@@ -44,8 +45,6 @@ THE SOFTWARE.
 #include "renderer/CCTextureCache.h"    // for TextureCache
 
 NS_CC_BEGIN
-
-class Node;
 
 // TMXLayer - init & alloc & dealloc
 

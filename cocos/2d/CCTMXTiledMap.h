@@ -30,12 +30,12 @@ THE SOFTWARE.
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCValue.h"               // for Value, ValueMap, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/CCGeometry.h"            // for Size
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 
 NS_CC_BEGIN
 

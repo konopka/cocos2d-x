@@ -25,10 +25,17 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "2d/CCTransitionPageTurn.h"
-#include "base/CCDirector.h"
-#include "2d/CCActionPageTurn3D.h"
-#include "2d/CCNodeGrid.h"
-#include "renderer/CCRenderer.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionGrid.h"            // for StopGrid
+#include "2d/CCActionInstant.h"         // for CallFunc, Show
+#include "2d/CCActionInterval.h"        // for Sequence, ReverseTime, etc
+#include "2d/CCActionPageTurn3D.h"      // for PageTurn3D
+#include "2d/CCNodeGrid.h"              // for NodeGrid
+#include "2d/CCScene.h"                 // for Scene
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CALLBACK_0
+#include "math/CCGeometry.h"            // for Size
 
 NS_CC_BEGIN
 

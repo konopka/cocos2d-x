@@ -31,18 +31,19 @@ THE SOFTWARE.
 
 /// @cond DO_NOT_SHOW
 
-#include "math/CCGeometry.h"
-#include "platform/CCSAXParser.h"
-#include "base/CCVector.h"
-#include "base/CCValue.h"
-#include "2d/CCTMXObjectGroup.h" // needed for Vector<TMXObjectGroup*> for binding
-
-#include <string>
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCValue.h"               // for ValueMap, ValueMapIntKey
+#include "base/CCVector.h"              // for Vector
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCSAXParser.h"       // for SAXDelegator
 
 NS_CC_BEGIN
-
-class TMXLayerInfo;
-class TMXTilesetInfo;
 
 /** @file
 * Internal TMX parser

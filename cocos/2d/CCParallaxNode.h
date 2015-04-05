@@ -30,11 +30,11 @@ THE SOFTWARE.
 #include <stdint.h>                     // for uint32_t
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
-#include "platform/CCPlatformMacros.h" // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
-#include "platform/CCPlatformDefine.h"	// for CC_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_DISALLOW_COPY_AND_ASSIGN, etc
 
 NS_CC_BEGIN
 
