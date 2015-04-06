@@ -25,16 +25,19 @@ THE SOFTWARE.
 #ifndef __CC_EXTENTIONS_CCINPUTDELEGATE_H__
 #define __CC_EXTENTIONS_CCINPUTDELEGATE_H__
 
-#include "platform/CCPlatformMacros.h"
-#include "base/CCTouch.h"
-#include "base/CCEvent.h"
-#include "base/ccTypes.h"
-#include "base/CCEventKeyboard.h"
-#include "base/CCEventListener.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <vector>                       // for vector
+#include "base/CCEventKeyboard.h"       // for EventKeyboard, etc
+#include "base/CCTouch.h"               // for Touch, Touch::DispatchMode
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE
 
 namespace cocos2d {
-    class __Set;
+class Acceleration;
+class Event;
+class EventListener;
+class __Set;
 }
 
 namespace cocostudio {

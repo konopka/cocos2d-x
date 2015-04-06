@@ -25,9 +25,13 @@ THE SOFTWARE.
 #ifndef __ActionFRAME_H__
 #define __ActionFRAME_H__
 
-#include "math/CCGeometry.h"
-#include "2d/CCActionInterval.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <vector>                       // for vector
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccTypes.h"               // for Color3B
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { class ActionInterval; }
 
 namespace cocostudio {
     

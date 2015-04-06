@@ -25,10 +25,10 @@ THE SOFTWARE.
 #ifndef __CCUTILMATH_H__
 #define __CCUTILMATH_H__
 
-#include "2d/CCSprite.h"
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CocosStudioExport.h"
-#include <math.h>
+#include <math.h>                       // for M_PI
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { class Sprite; }
 
 namespace cocostudio {
 

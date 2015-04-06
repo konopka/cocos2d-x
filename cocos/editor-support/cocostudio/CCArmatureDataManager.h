@@ -25,11 +25,19 @@ THE SOFTWARE.
 #ifndef __CCARMATUREDATAMANAGER_H__
 #define __CCARMATUREDATAMANAGER_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for SEL_SCHEDULE, Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 
 namespace cocostudio {
+
+class AnimationData;
+class ArmatureData;
+class TextureData;
 
 struct RelativeData
 {

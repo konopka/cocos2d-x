@@ -25,16 +25,18 @@ THE SOFTWARE.
 #ifndef __CCARMATURE_DATAS_H__
 #define __CCARMATURE_DATAS_H__
 
-#include "base/CCRef.h"
-#include "base/ccTypes.h"
-#include "base/CCVector.h"
-#include "base/CCMap.h"
-#include "math/CCAffineTransform.h"
-
-#include "cocostudio/CCArmatureDefine.h"
-#include "2d/CCTweenFunction.h"
-#include "cocostudio/CocosStudioExport.h"
-
+#include <sys/types.h>                  // for ssize_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCTweenFunction.h"         // for TweenType
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "base/ccTypes.h"               // for BlendFunc, Color4B
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/CCAffineTransform.h"     // for AffineTransform
+#include "math/Vec2.h"                  // for Vec2
 
 #define CC_CREATE_NO_PARAM_NO_INIT(varType)\
 public: \
@@ -63,6 +65,20 @@ public: \
 }
 
 namespace cocostudio {
+
+class AnimationData;
+class ArmatureData;
+class ArmatureDisplayData;
+class BaseData;
+class BoneData;
+class ContourData;
+class DisplayData;
+class FrameData;
+class MovementBoneData;
+class MovementData;
+class ParticleDisplayData;
+class SpriteDisplayData;
+class TextureData;
 
 /**
  * The base node include a lot of attributes.

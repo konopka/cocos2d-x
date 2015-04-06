@@ -25,12 +25,23 @@
 #ifndef __TestCpp__WidgetReader__
 #define __TestCpp__WidgetReader__
 
-#include "WidgetReaderProtocol.h"
-#include "cocostudio/CCSGUIReader.h"
-#include "ui/GUIDefine.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include <functional>                   // for function
+#include <string>                       // for operator==, string
+#include "WidgetReaderProtocol.h"       // for WidgetReaderProtocol
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccTypes.h"               // for Color3B
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 #include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "cocostudio/WidgetReader/NodeReaderProtocol.h"
+#include "flatbuffers/flatbuffers.h"    // for Table (ptr only), Offset, etc
+#include "json/document.h"              // for Value
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayoutParameter.h"       // for RelativeLayoutParameter, etc
+#include "ui/UIWidget.h"                // for Widget, etc
+
+namespace cocos2d { class Node; }
+namespace tinyxml2 { class XMLElement; }
 
 namespace cocostudio
 {

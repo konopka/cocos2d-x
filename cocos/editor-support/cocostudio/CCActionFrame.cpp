@@ -23,7 +23,10 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCActionFrame.h"
-#include "2d/CCActionEase.h"
+#include <stddef.h>                     // for size_t
+#include "2d/CCActionEase.h"            // for EaseQuadraticActionOut, etc
+#include "2d/CCActionInterval.h"        // for ActionInterval, FadeTo, etc
+#include "base/CCConsole.h"             // for log
 
 using namespace cocos2d;
 

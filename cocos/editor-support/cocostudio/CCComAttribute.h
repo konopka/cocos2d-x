@@ -25,10 +25,12 @@ THE SOFTWARE.
 #ifndef __CC_EXTENTIONS_CCCOMATTRIBUTE_H__
 #define __CC_EXTENTIONS_CCCOMATTRIBUTE_H__
 
+#include <string>                       // for string
+#include "2d/CCComponent.h"             // for Component
 #include "CCComBase.h"
-#include "2d/CCComponent.h"
-#include "base/CCValue.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "base/CCValue.h"               // for ValueMap
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Document
 
 namespace cocostudio {
 

@@ -23,8 +23,9 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCDatas.h"
-#include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCTransformHelp.h"
+#include <math.h>                       // for M_PI
+#include <stddef.h>                     // for size_t
+#include "cocostudio/CCUtilMath.h"      // for CC_DOUBLE_PI
 
 using namespace cocos2d;
 

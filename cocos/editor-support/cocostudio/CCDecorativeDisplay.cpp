@@ -24,6 +24,7 @@ THE SOFTWARE.
 
 #include "cocostudio/CCDecorativeDisplay.h"
 #include "2d/CCNode.h"
+#include "cocostudio/CCDatas.h"         // for DisplayData, etc
 
 using namespace cocos2d;
 

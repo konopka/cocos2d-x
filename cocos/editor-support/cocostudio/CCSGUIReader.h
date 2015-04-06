@@ -25,12 +25,17 @@ THE SOFTWARE.
 #ifndef __CCSGUIREADER_H__
 #define __CCSGUIREADER_H__
 
-#include "ui/UILayout.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "WidgetReader/WidgetReaderProtocol.h"
-#include "base/ObjectFactory.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "base/CCValue.h"
+#include <map>                          // for map, map<>::value_compare
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ObjectFactory.h"         // for ObjectFactory, etc
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value
+#include "math/CCGeometry.h"            // for Size
+
+namespace cocos2d { namespace ui { class Widget; } }
 
 namespace protocolbuffers
 {
@@ -45,6 +50,7 @@ namespace tinyxml2
 namespace cocostudio {
     
     class CocoLoader;
+    class WidgetReaderProtocol;
     struct stExpCocoNode;
 
     

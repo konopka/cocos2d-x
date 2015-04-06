@@ -23,9 +23,11 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCColliderDetector.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCTransformHelp.h"
-
+//#include <ext/alloc_traits.h>
+#include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
+#include "cocostudio/CCDatas.h"         // for ContourData
+#include "math/CCAffineTransform.h"     // for PointApplyTransform
 
 
 using namespace cocos2d;

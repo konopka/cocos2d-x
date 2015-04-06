@@ -24,6 +24,7 @@ THE SOFTWARE.
 
 #include "cocostudio/CCBone.h"
 #include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
 #include "base/CCVector.h"              // for Vector
 #include "base/ccMacros.h"              // for CCASSERT, etc
 #include "cocostudio/CCArmature.h"      // for Armature
@@ -38,8 +39,6 @@ THE SOFTWARE.
 using namespace cocos2d;
 
 namespace cocostudio {
-
-class ColliderDetector;
 
 Bone *Bone::create()
 {

@@ -22,22 +22,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "platform/CCFileUtils.h"
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-#include "base/ccUtils.h"
-
-#include "tinyxml2.h"
-
 #include "cocostudio/CCDataReaderHelper.h"
-#include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CCTransformHelp.h"
-#include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-
-#include "cocostudio/CocoLoader.h"
-
+#include "platform/CCGL.h"                    // for GLenum, GL_ONE, etc
+#include <math.h>                       // for M_PI
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi, free
+#include <string.h>                     // for strcmp
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator!=, etc
+#include "2d/CCTweenFunction.h"         // for TweenType, etc
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCValue.h"               // for ValueMap
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_DEGREES_TO_RADIANS, etc
+#include "base/ccTypes.h"               // for BlendFunc, etc
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "cocostudio/CCArmatureDefine.h"  // for VERSION_COMBINED, etc
+#include "cocostudio/CCDatas.h"         // for FrameData, BaseData, etc
+#include "cocostudio/CCTransformHelp.h"  // for TransformHelp
+#include "cocostudio/CCTween.h"         // for TweenType
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, CocoLoader
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "json/rapidjson.h"             // for StringStream, SizeType, etc
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "tinyxml2.h"                   // for XMLElement, etc
 
 using namespace cocos2d;
 
@@ -142,7 +155,7 @@ static const char *CONTENT_SCALE = "content_scale";
 
 namespace cocostudio {
 
-
+using TweenType = cocos2d::tweenfunc::TweenType;
 
 float s_PositionReadScale = 1;
 

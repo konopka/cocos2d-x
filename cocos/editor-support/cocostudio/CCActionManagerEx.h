@@ -25,9 +25,17 @@ THE SOFTWARE.
 #ifndef __ActionMANAGER_H__
 #define __ActionMANAGER_H__
 
-#include "cocostudio/CCActionObject.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "base/CCRef.h"                 // for Ref
+#include "cocostudio/CCActionObject.h"  // for ActionObject
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value
+
+namespace cocos2d {
+class CallFunc;
+template <class T> class Vector;
+}
 
 namespace cocostudio {
     

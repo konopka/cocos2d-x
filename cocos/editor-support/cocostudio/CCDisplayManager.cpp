@@ -23,12 +23,19 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCDisplayManager.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCArmature.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCSprite.h"                // for Sprite
+#include "base/ccMacros.h"              // for CCASSERT
+#include "cocostudio/CCArmature.h"      // for Armature, CCDisplayManager
+#include "cocostudio/CCArmatureDefine.h"  // for CS_RETURN_IF, etc
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCColliderDetector.h"  // for ColliderDetector
+#include "cocostudio/CCDecorativeDisplay.h"  // for DecorativeDisplay
+#include "cocostudio/CCDisplayFactory.h"  // for DisplayFactory
+#include "cocostudio/CCSkin.h"          // for Skin
 #include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCSkin.h"
-
-#include "2d/CCParticleSystemQuad.h"
 
 using namespace cocos2d;
 

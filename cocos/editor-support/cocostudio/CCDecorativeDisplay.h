@@ -25,10 +25,11 @@ THE SOFTWARE.
 #ifndef __CCDECORATIVEDISPLAY_H__
 #define __CCDECORATIVEDISPLAY_H__
 
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "base/CCRef.h"                 // for Ref
 #include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDisplayFactory.h"
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 #include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
 
 
 #if ENABLE_PHYSICS_BOX2D_DETECT || ENABLE_PHYSICS_CHIPMUNK_DETECT || ENABLE_PHYSICS_SAVE_CALCULATED_VERTEX
@@ -40,6 +41,9 @@ namespace cocos2d {
 }
 
 namespace cocostudio {
+
+class DisplayData;
+
 /**
  *  @js NA
  *  @lua NA

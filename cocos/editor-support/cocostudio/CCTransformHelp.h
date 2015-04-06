@@ -25,11 +25,16 @@ THE SOFTWARE.
 #ifndef __CCTRANSFORMHELP_H__
 #define __CCTRANSFORMHELP_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Mat4.h"                  // for Mat4
+namespace cocos2d { 
+class Vec2;
+struct AffineTransform; 
+}
 
 namespace cocostudio {
+
+class BaseData;
 
 /*
  * use to calculate the matrix of node from parent node

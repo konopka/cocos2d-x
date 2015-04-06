@@ -23,7 +23,11 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCComController.h"
-#include "2d/CCNode.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "cocostudio/CCComBase.h"
 
 namespace cocostudio {
 

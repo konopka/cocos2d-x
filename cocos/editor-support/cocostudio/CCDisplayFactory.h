@@ -25,10 +25,8 @@ THE SOFTWARE.
 #ifndef __CCDISPLAYFACTORY_H__
 #define __CCDISPLAYFACTORY_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+namespace cocos2d { class Node; }
 
 namespace cocostudio {
 

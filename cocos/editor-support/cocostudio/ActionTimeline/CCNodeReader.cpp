@@ -30,6 +30,9 @@ THE SOFTWARE.
 #include "2d/CCSpriteFrameCache.h"
 #include "platform/CCFileUtils.h"
 #include "cocostudio/CCSGUIReader.h"
+#include "ui/UIWidget.h"
+#include "ui/UILayout.h"
+#include "cocostudio/WidgetReader/WidgetReaderProtocol.h"
 
 using namespace cocos2d;
 using namespace ui;

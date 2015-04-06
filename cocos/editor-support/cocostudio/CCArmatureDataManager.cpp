@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "2d/CCSpriteFrameCache.h"
-
 #include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CCTransformHelp.h"
-#include "cocostudio/CCDataReaderHelper.h"
+#include <new>                          // for nothrow, operator new
+#include "cocostudio/CCArmature.h"      // for CCArmatureDataManager
+#include "cocostudio/CCDataReaderHelper.h"  // for DataReaderHelper
+#include "cocostudio/CCDatas.h"         // for AnimationData, ArmatureData, etc
 #include "cocostudio/CCSpriteFrameCacheHelper.h"
 
 using namespace cocos2d;

@@ -23,9 +23,13 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCSpriteFrameCacheHelper.h"
-#include "platform/CCFileUtils.h"
-#include "2d/CCSpriteFrame.h"
-#include "2d/CCSpriteFrameCache.h"
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for _Node_iterator, operator!=, etc
+#include <utility>                      // for pair
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "base/CCValue.h"               // for ValueMap
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 using namespace cocos2d;
 

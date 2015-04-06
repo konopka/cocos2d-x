@@ -25,20 +25,16 @@ THE SOFTWARE.
 #ifndef __CCDATAREADERHELPER_H__
 #define __CCDATAREADERHELPER_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "cocostudio/CocosStudioExport.h"
-
-#include "json/document.h"
-#include "DictionaryHelper.h"
-
-#include <string>
-#include <queue>
-#include <mutex>
-#include <thread>
-#include <condition_variable>
+#include <condition_variable>           // for condition_variable
+#include <mutex>                        // for mutex
+#include <queue>                        // for queue
+#include <string>                       // for string
+#include <thread>                       // for thread
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCRef.h"                 // for SEL_SCHEDULE, Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value
 
 namespace tinyxml2
 {
@@ -46,8 +42,19 @@ namespace tinyxml2
 }
 
 namespace cocostudio {
-    class CocoLoader;
-    struct stExpCocoNode;
+class AnimationData;
+class ArmatureData;
+class BaseData;
+class BoneData;
+class CocoLoader;
+class ContourData;
+class DisplayData;
+class FrameData;
+class MovementBoneData;
+class MovementData;
+class TextureData;
+struct stExpCocoNode;
+
 /**
  *  @js NA
  *  @lua NA

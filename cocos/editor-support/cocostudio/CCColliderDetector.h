@@ -25,9 +25,14 @@ THE SOFTWARE.
 #ifndef __CCCOLLIDERDETECTOR_H__
 #define __CCCOLLIDERDETECTOR_H__
 
+#include <vector>                       // for vector
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
 #include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { class Mat4; }
 
 #ifndef PT_RATIO
 #define PT_RATIO 32
@@ -44,6 +49,7 @@ THE SOFTWARE.
 namespace cocostudio {
 
 class Bone;
+class ContourData;
 
 /**
  *  @js NA

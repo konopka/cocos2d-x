@@ -23,7 +23,15 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCActionManagerEx.h"
-#include "cocostudio/CocoLoader.h"
+#include <string.h>                     // for strcmp
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCActionObject.h"  // for ActionObject
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
 
 using namespace cocos2d;
 

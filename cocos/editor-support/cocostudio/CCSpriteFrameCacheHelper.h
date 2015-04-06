@@ -24,12 +24,11 @@ THE SOFTWARE.
 #ifndef __CCSPRITEFRAMECACHEHELPER_H__
 #define __CCSPRITEFRAMECACHEHELPER_H__
 
-#include "platform/CCPlatformMacros.h"
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CocosStudioExport.h"
-#include <string>
-#include <map>
-#include <vector>
+#include <map>                          // for map
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE
 
 namespace cocos2d {
     class SpriteFrame;

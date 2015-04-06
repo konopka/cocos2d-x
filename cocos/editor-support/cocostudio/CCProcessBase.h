@@ -25,9 +25,9 @@ THE SOFTWARE.
 #ifndef __CCPROCESSBASE_H__
 #define __CCPROCESSBASE_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "2d/CCTweenFunction.h"         // for TweenType
+#include "base/CCRef.h"                 // for Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 
 namespace cocostudio {
 

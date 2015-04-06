@@ -25,12 +25,22 @@ THE SOFTWARE.
 #ifndef __ActionNODE_H__
 #define __ActionNODE_H__
 
-#include "cocostudio/CCActionFrame.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "base/CCRef.h"                 // for Ref
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value
+
+namespace cocos2d { 
+class Action;
+class Node;
+class Spawn;
+template <class T> class Vector; 
+}
 
 namespace cocostudio {
-    
+
+class ActionFrame;
 class CocoLoader;
 struct stExpCocoNode;
 /**

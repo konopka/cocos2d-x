@@ -23,12 +23,17 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCActionObject.h"
-#include "cocostudio/CocoLoader.h"
-
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-#include "2d/CCActionInstant.h"
-#include "base/ccUtils.h"
+#include <stdlib.h>                     // for atoi
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInstant.h"         // for CallFunc
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CC_REPEAT_FOREVER
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCActionNode.h"    // for ActionNode
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
 
 using namespace cocos2d;
 

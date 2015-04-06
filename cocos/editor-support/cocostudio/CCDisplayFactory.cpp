@@ -23,13 +23,25 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCDisplayFactory.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCSkin.h"
-#include "cocostudio/CCArmatureDataManager.h"
-#include "cocostudio/CCTransformHelp.h"
-
-#include "2d/CCParticleSystemQuad.h"
+#include <stddef.h>                     // for size_t
+#include <string>                       // for allocator, string, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystem.h"        // for ParticleSystem
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "cocostudio/CCArmatureDefine.h"
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCColliderDetector.h"  // for ColliderDetector
+#include "cocostudio/CCDatas.h"         // for SpriteDisplayData, etc
+#include "cocostudio/CCDecorativeDisplay.h"  // for DecorativeDisplay
+#include "cocostudio/CCDisplayManager.h"  // for DisplayManager
+#include "cocostudio/CCSkin.h"          // for Skin
+#include "cocostudio/CCTransformHelp.h"  // for TransformHelp
+#include "math/CCAffineTransform.h"     // for PointApplyTransform, etc
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous)
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 

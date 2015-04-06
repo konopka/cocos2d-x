@@ -23,11 +23,22 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCActionNode.h"
-#include "cocostudio/CCActionFrameEasing.h"
-#include "ui/UIWidget.h"
-#include "ui/UIHelper.h"
-#include "cocostudio/CocoLoader.h"
-#include "base/ccUtils.h"
+#include <stdlib.h>                     // for atoi
+#include <sys/types.h>                  // for ssize_t
+#include <new>                          // for nothrow, operator new
+#include "2d/CCAction.h"                // for Action, FiniteTimeAction
+#include "2d/CCActionInterval.h"        // for Sequence, ActionInterval, etc
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE_NULL, etc
+#include "base/CCVector.h"              // for Vector
+#include "base/ccTypes.h"               // for Color3B
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCActionFrame.h"   // for ActionScaleFrame, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIHelper.h"                // for Helper
+#include "ui/UIWidget.h"                // for Widget
 
 using namespace cocos2d;
 using namespace ui;

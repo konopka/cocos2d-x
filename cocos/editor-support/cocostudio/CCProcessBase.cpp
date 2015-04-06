@@ -23,7 +23,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCProcessBase.h"
-#include "cocostudio/CCUtilMath.h"
+#include <math.h>                       // for fmodf
 
 using namespace cocos2d;
 

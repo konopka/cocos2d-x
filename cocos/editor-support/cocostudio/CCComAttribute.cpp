@@ -23,7 +23,14 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCComAttribute.h"
-#include "platform/CCFileUtils.h"
+#include <stdlib.h>                     // for atoi
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for operator!=, etc
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CC_SAFE_DELETE
+#include "cocostudio/CCComBase.h"       // for SerData, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 using namespace cocos2d;
 

@@ -25,11 +25,22 @@ THE SOFTWARE.
 #ifndef __CCSSCENEREADER_H__
 #define __CCSSCENEREADER_H__
 
-#include "cocostudio/DictionaryHelper.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Value, Document
+
+namespace cocos2d { 
+class Component;
+class Node;
+class Ref; 
+}
 
 namespace cocostudio {
 
+class CocoLoader;
+struct stExpCocoNode;
 
 class CC_STUDIO_DLL SceneReader
 {

@@ -23,11 +23,30 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCComRender.h"
-#include "cocostudio/CocoStudio.h"
-#include "platform/CCFileUtils.h"
-#include "2d/CCParticleSystemQuad.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "2d/CCTMXTiledMap.h"
+#include <ctype.h>                      // for toupper
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for strcmp
+#include <algorithm>                    // for transform
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CC_SAFE_DELETE, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCData.h"                // for Data
+#include "cocostudio/CCArmature.h"      // for Armature, CCArmature
+#include "cocostudio/CCArmatureAnimation.h"  // for ArmatureAnimation
+#include "cocostudio/CCArmatureDataManager.h"  // for ArmatureDataManager
+#include "cocostudio/CCComBase.h"       // for SerData, etc
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, CocoLoader
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "json/rapidjson.h"             // for Type, Type::kObjectType
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "ui/UIWidget.h"                // for Widget
 
 using namespace cocos2d;
 
@@ -250,7 +269,7 @@ bool ComRender::serialize(void* r)
                                             if (str1 != nullptr)
                                             {
                                                 ArmatureDataManager::getInstance()->addArmatureFileInfo(filePath.c_str());
-                                                Armature *pAr = CCArmature::create(str1);
+                                                Armature *pAr = Armature::create(str1);
                                                 _render = pAr;
                                                 _render->retain();
                                                 const char *actionName = nullptr;

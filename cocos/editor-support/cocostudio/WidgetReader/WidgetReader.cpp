@@ -1,18 +1,25 @@
 
 
 #include "WidgetReader.h"
-
-#include "cocostudio/CocoLoader.h"
-#include "ui/UIButton.h"
-#include "../ActionTimeline/CCActionTimeline.h"
-#include "cocostudio/CCObjectExtensionData.h"
-#include "cocostudio/CSParseBinary_generated.h"
-#include "base/CCDirector.h"
-#include "base/ccUtils.h"
-#include "tinyxml2.h"
-#include "flatbuffers/flatbuffers.h"
-#include "ui/UILayoutComponent.h"
-#include "cocostudio/ActionTimeline/CSLoader.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <stdlib.h>                     // for atof, atoi, atol
+#include <string.h>                     // for strcmp
+#include <sys/types.h>                  // for int32_t
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, USING_NS_CC
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCObjectExtensionData.h"  // for ObjectExtensionData
+#include "cocostudio/CCSGUIReader.h"    // for GUIReader
+#include "cocostudio/CSParseBinary_generated.h"  // for WidgetOptions, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "flatbuffers/flatbuffers.h"    // for FlatBufferBuilder, String, etc
+#include "math/CCGeometry.h"            // for Size
+#include "tinyxml2.h"                   // for XMLAttribute, XMLElement
+#include "ui/UILayoutComponent.h"       // for LayoutComponent, etc
 
 USING_NS_CC;
 using namespace ui;

@@ -23,6 +23,8 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCUtilMath.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "math/CCGeometry.h"            // for Size, Rect
 
 using namespace cocos2d;
 

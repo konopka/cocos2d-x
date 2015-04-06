@@ -23,7 +23,10 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCTransformHelp.h"
-#include "cocostudio/CCUtilMath.h"
+#include <math.h>                       // for cos, sin, atan2f, sqrt
+#include "cocostudio/CCDatas.h"         // for BaseData
+#include "math/CCAffineTransform.h"     // for AffineTransform, etc
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 

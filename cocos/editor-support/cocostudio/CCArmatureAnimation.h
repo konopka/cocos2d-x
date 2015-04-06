@@ -26,13 +26,24 @@ THE SOFTWARE.
 #ifndef __CCANIMATION_H__
 #define __CCANIMATION_H__
 
-#include "cocostudio/CCProcessBase.h"
-#include "cocostudio/CCTween.h"
-#include "cocostudio/CocosStudioExport.h"
-#include <queue>
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for function
+#include <queue>                        // for queue
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCDatas.h"         // for AnimationData
+#include "cocostudio/CCProcessBase.h"   // for ProcessBase
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
 
 namespace cocostudio {
 
+class Armature;
+class Bone;
+class MovementData;
+class Tween;
 
 enum MovementEventType
 {

@@ -25,14 +25,21 @@ THE SOFTWARE.
 #ifndef __CCDISPLAYMANAGER_H__
 #define __CCDISPLAYMANAGER_H__
 
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCDecorativeDisplay.h"
-#include "cocostudio/CCDatas.h"
-#include "cocostudio/CocosStudioExport.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCDatas.h"         // for DisplayType, etc
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { class Node; }
 
 namespace cocostudio {
 
 class Bone;
+class DecorativeDisplay;
 
 /**! DisplayManager manages Bone's display
  *  @js NA

@@ -24,11 +24,19 @@ THE SOFTWARE.
 
 
 #include "cocostudio/CCTween.h"
-#include "cocostudio/CCArmatureAnimation.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCTransformHelp.h"
+#include <math.h>                       // for fmodf, sin
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "base/CCVector.h"              // for Vector
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCArmatureAnimation.h"  // for ArmatureAnimation
+#include "cocostudio/CCArmatureDefine.h"  // for VERSION_COMBINED
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCDatas.h"         // for FrameData, MovementBoneData, etc
+#include "cocostudio/CCDisplayManager.h"  // for DisplayManager
+#include "cocostudio/CCTransformHelp.h"  // for TransformHelp
+#include "cocostudio/CCUtilMath.h"      // for CC_HALF_PI
 
 
 namespace cocostudio {
@@ -475,7 +483,7 @@ float Tween::updateFrameData(float currentPercent)
     /*
      *  If frame tween easing equal to TWEEN_EASING_MAX, then it will not do tween.
      */
-    TweenType tweenType = (_frameTweenEasing != Linear) ? _frameTweenEasing : _tweenEasing;
+    cocos2d::tweenfunc::TweenType tweenType = (_frameTweenEasing != Linear) ? _frameTweenEasing : _tweenEasing;
     if (tweenType != cocos2d::tweenfunc::TWEEN_EASING_MAX && tweenType != Linear && !_passLastFrame)
     {
         currentPercent = cocos2d::tweenfunc::tweenTo(currentPercent, tweenType, _from->easingParams);

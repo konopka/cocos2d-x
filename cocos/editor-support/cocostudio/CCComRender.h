@@ -25,9 +25,13 @@ THE SOFTWARE.
 #ifndef __CC_EXTENTIONS_CCCOMRENDER_H__
 #define __CC_EXTENTIONS_CCCOMRENDER_H__
 
+#include <string>                       // for string
+#include "2d/CCComponent.h"             // for Component
 #include "CCComBase.h"
-#include "2d/CCComponent.h"
-#include "cocostudio/CocosStudioExport.h"
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "cocostudio/CocosStudioExport.h"  // for CC_STUDIO_DLL
+#include "json/document.h"              // for Document
+namespace cocos2d { class Node; }
 
 namespace cocostudio {
 

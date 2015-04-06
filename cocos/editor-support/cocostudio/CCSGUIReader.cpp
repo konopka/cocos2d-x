@@ -22,30 +22,55 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"
-#include "cocostudio/CCActionManagerEx.h"
-#include <fstream>
-#include <iostream>
-#include "WidgetReader/ButtonReader/ButtonReader.h"
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for strcmp
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>
+#include <utility>                      // for pair
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "WidgetReader/ButtonReader/ButtonReader.h"  // for ButtonReader
 #include "WidgetReader/CheckBoxReader/CheckBoxReader.h"
-#include "WidgetReader/SliderReader/SliderReader.h"
 #include "WidgetReader/ImageViewReader/ImageViewReader.h"
+#include "WidgetReader/LayoutReader/LayoutReader.h"  // for LayoutReader
+#include "WidgetReader/ListViewReader/ListViewReader.h"
 #include "WidgetReader/LoadingBarReader/LoadingBarReader.h"
-#include "WidgetReader/TextAtlasReader/TextAtlasReader.h"
-#include "WidgetReader/TextReader/TextReader.h"
-#include "WidgetReader/TextBMFontReader/TextBMFontReader.h"
-#include "WidgetReader/TextFieldReader/TextFieldReader.h"
-#include "WidgetReader/LayoutReader/LayoutReader.h"
 #include "WidgetReader/PageViewReader/PageViewReader.h"
 #include "WidgetReader/ScrollViewReader/ScrollViewReader.h"
-#include "WidgetReader/ListViewReader/ListViewReader.h"
-#include "cocostudio/CocoLoader.h"
-#include "ui/CocosGUI.h"
-#include "tinyxml2.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "base/CCDirector.h"
-#include "base/ccUtils.h"
-#include "platform/CCFileUtils.h"
+#include "WidgetReader/SliderReader/SliderReader.h"  // for SliderReader
+#include "WidgetReader/TextAtlasReader/TextAtlasReader.h"
+#include "WidgetReader/TextBMFontReader/TextBMFontReader.h"
+#include "WidgetReader/TextFieldReader/TextFieldReader.h"
+#include "WidgetReader/TextReader/TextReader.h"  // for TextReader
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/ccMacros.h"              // for CC_CONTENT_SCALE_FACTOR, etc
+#include "base/ccTypes.h"               // for Color3B, TextHAlignment, etc
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCActionManagerEx.h"  // for ActionManagerEx
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, CocoLoader
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "cocostudio/WidgetReader/NodeReaderDefine.h"
+#include "cocostudio/WidgetReader/WidgetReaderProtocol.h"
+#include "json/rapidjson.h"             // for Type, Type::kObjectType, etc
+#include "math/Vec2.h"                  // for Vec2
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "ui/GUIDefine.h"               // for CREATE_CLASS_GUI_INFO, etc
+#include "ui/UIButton.h"                // for Button
+#include "ui/UICheckBox.h"              // for CheckBox
+#include "ui/UIDeprecated.h"            // for TextureResType
+#include "ui/UIImageView.h"             // for ImageView
+#include "ui/UILayout.h"                // for Layout, etc
+#include "ui/UIListView.h"              // for ListView
+#include "ui/UILoadingBar.h"            // for LoadingBar, etc
+#include "ui/UIPageView.h"              // for PageView
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+#include "ui/UISlider.h"                // for Slider
+#include "ui/UIText.h"                  // for Text
+#include "ui/UITextAtlas.h"             // for TextAtlas
+#include "ui/UITextBMFont.h"            // for TextBMFont
+#include "ui/UITextField.h"             // for TextField
+#include "ui/UIWidget.h"                // for Widget, etc
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -717,7 +742,7 @@ void WidgetPropertiesReader0250::setPropsForButtonFromJsonDictionary(Widget*widg
         
         if (useMergedTexture)
         {
-            button->loadTextures(normalFileName, pressedFileName, disabledFileName,TextureResType::PLIST);
+            button->loadTextures(normalFileName, pressedFileName, disabledFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -737,7 +762,7 @@ void WidgetPropertiesReader0250::setPropsForButtonFromJsonDictionary(Widget*widg
     {
         if (useMergedTexture)
         {
-            button->loadTextures(normalFileName, pressedFileName, disabledFileName,TextureResType::PLIST);
+            button->loadTextures(normalFileName, pressedFileName, disabledFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -798,7 +823,7 @@ void WidgetPropertiesReader0250::setPropsForCheckBoxFromJsonDictionary(Widget*wi
     
     if (useMergedTexture)
     {
-        checkBox->loadTextures(backGroundFileName, backGroundSelectedFileName, frontCrossFileName,backGroundDisabledFileName,frontCrossDisabledFileName,TextureResType::PLIST);
+        checkBox->loadTextures(backGroundFileName, backGroundSelectedFileName, frontCrossFileName,backGroundDisabledFileName,frontCrossDisabledFileName, Widget::TextureResType::PLIST);
     }
     else
     {
@@ -833,7 +858,7 @@ void WidgetPropertiesReader0250::setPropsForImageViewFromJsonDictionary(Widget*w
     {
         if (useMergedTexture)
         {
-            imageView->loadTexture(imageFileName,TextureResType::PLIST);
+            imageView->loadTexture(imageFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -860,7 +885,7 @@ void WidgetPropertiesReader0250::setPropsForImageViewFromJsonDictionary(Widget*w
     {
         if (useMergedTexture)
         {
-            imageView->loadTexture(imageFileName,TextureResType::PLIST);
+            imageView->loadTexture(imageFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -978,7 +1003,7 @@ void WidgetPropertiesReader0250::setPropsForLayoutFromJsonDictionary(Widget*widg
         float ch = DICTOOL->getFloatValue_json(options, "capInsetsHeight");
         if (useMergedTexture)
         {
-            panel->setBackGroundImage(imageFileName,TextureResType::PLIST);
+            panel->setBackGroundImage(imageFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -991,7 +1016,7 @@ void WidgetPropertiesReader0250::setPropsForLayoutFromJsonDictionary(Widget*widg
         
         if (useMergedTexture)
         {
-            panel->setBackGroundImage(imageFileName,TextureResType::PLIST);
+            panel->setBackGroundImage(imageFileName, Widget::TextureResType::PLIST);
         }
         else
         {
@@ -1033,7 +1058,7 @@ void WidgetPropertiesReader0250::setPropsForSliderFromJsonDictionary(Widget*widg
             const char* imageFileName_tp = (imageFileName && (strcmp(imageFileName, "") != 0))?tp_b.append(imageFileName).c_str():nullptr;
             if (useMergedTexture)
             {
-                slider->loadBarTexture(imageFileName,TextureResType::PLIST);
+                slider->loadBarTexture(imageFileName, Widget::TextureResType::PLIST);
             }
             else
             {
@@ -1048,7 +1073,7 @@ void WidgetPropertiesReader0250::setPropsForSliderFromJsonDictionary(Widget*widg
             const char* imageFileName_tp = (imageFileName && (strcmp(imageFileName, "") != 0))?tp_b.append(imageFileName).c_str():nullptr;
             if (useMergedTexture)
             {
-                slider->loadBarTexture(imageFileName,TextureResType::PLIST);
+                slider->loadBarTexture(imageFileName, Widget::TextureResType::PLIST);
             }
             else
             {
@@ -1069,7 +1094,7 @@ void WidgetPropertiesReader0250::setPropsForSliderFromJsonDictionary(Widget*widg
     const char* disabledFileName_tp =  (disabledFileName && (strcmp(disabledFileName, "") != 0))?tp_d.append(disabledFileName).c_str():nullptr;
     if (useMergedTexture)
     {
-        slider->loadSlidBallTextures(normalFileName,pressedFileName,disabledFileName,TextureResType::PLIST);
+        slider->loadSlidBallTextures(normalFileName,pressedFileName,disabledFileName, Widget::TextureResType::PLIST);
     }
     else
     {
@@ -1082,7 +1107,7 @@ void WidgetPropertiesReader0250::setPropsForSliderFromJsonDictionary(Widget*widg
     const char* imageFileName_tp = (imageFileName && (strcmp(imageFileName, "") != 0))?tp_b.append(imageFileName).c_str():nullptr;
     if (useMergedTexture)
     {
-        slider->loadProgressBarTexture(imageFileName, TextureResType::PLIST);
+        slider->loadProgressBarTexture(imageFileName, Widget::TextureResType::PLIST);
     }
     else
     {
@@ -1151,7 +1176,7 @@ void WidgetPropertiesReader0250::setPropsForLoadingBarFromJsonDictionary(Widget 
     const char* imageFileName_tp = (imageFileName && (strcmp(imageFileName, "") != 0))?tp_b.append(imageFileName).c_str():nullptr;
     if (useMergedTexture)
     {
-        loadingBar->loadTexture(imageFileName,TextureResType::PLIST);
+        loadingBar->loadTexture(imageFileName, Widget::TextureResType::PLIST);
     }
     else
     {

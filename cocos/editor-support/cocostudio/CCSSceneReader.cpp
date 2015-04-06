@@ -22,12 +22,39 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
-#include "audio/include/SimpleAudioEngine.h"
-#include "base/ObjectFactory.h"
-#include "base/ccUtils.h"
-#include "platform/CCFileUtils.h"
+#include <ctype.h>                      // for toupper
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi, atof
+#include <string.h>                     // for strcmp
+#include <algorithm>                    // for transform
+#include <functional>                   // for function, operator!=
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for operator==, string, etc
+#include <vector>                       // for vector, vector<>::iterator
+#include "2d/CCComponent.h"             // for Component
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CCLOG, etc
+#include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
+#include "base/CCConsole.h"             // for log
+#include "base/CCData.h"                // for Data
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector, Vector<>::iterator
+#include "base/ObjectFactory.h"         // for ObjectFactory
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccUtils.h"               // for atof
+#include "cocostudio/CCComAttribute.h"  // for ComAttribute
+#include "cocostudio/CCComAudio.h"      // for ComAudio
+#include "cocostudio/CCComBase.h"       // for SerData, etc
+#include "cocostudio/CCComController.h"  // for ComController
+#include "cocostudio/CCComRender.h"     // for ComRender
+#include "cocostudio/CCSSceneReader.h"  // for SceneReader, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, CocoLoader
+#include "cocostudio/DictionaryHelper.h"  // for DictionaryHelper, DICTOOL
+#include "cocostudio/TriggerMng.h"      // for TriggerMng
+#include "json/document.h"              // for Document, Value
+#include "json/rapidjson.h"             // for Type, Type::kObjectType
+#include "math/CCGeometry.h"            // for Size
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 using namespace cocos2d;
 using namespace ui;

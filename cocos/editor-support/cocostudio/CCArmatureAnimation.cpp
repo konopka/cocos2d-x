@@ -23,11 +23,19 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCArmatureAnimation.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCBone.h"
-#include "cocostudio/CCArmatureDefine.h"
-#include "cocostudio/CCUtilMath.h"
-#include "cocostudio/CCDatas.h"
+//#include <ext/alloc_traits.h>
+#include <math.h>                       // for fmodf
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "2d/CCTweenFunction.h"         // for TweenType
+#include "base/CCMap.h"                 // for Map
+#include "base/ccMacros.h"              // for CCASSERT
+#include "cocostudio/CCArmature.h"      // for Armature
+#include "cocostudio/CCBone.h"          // for Bone
+#include "cocostudio/CCDatas.h"         // for MovementData, AnimationData, etc
+#include "cocostudio/CCDisplayManager.h"  // for DisplayManager
+#include "cocostudio/CCTween.h"         // for Tween, TweenType
+#include "platform/CCPlatformDefine.h"  // for CC_ASSERT
 
 using namespace cocos2d;
 

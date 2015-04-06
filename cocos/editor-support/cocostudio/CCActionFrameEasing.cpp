@@ -22,10 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include <math.h>
 #include "cocostudio/CCActionFrameEasing.h"
-#include "cocostudio/DictionaryHelper.h"
-#include "platform/CCStdC.h"
+#include <math.h>                       // for powf, M_PI
+#include "platform/CCStdC.h"            // for sinf
 
 namespace cocostudio {
 

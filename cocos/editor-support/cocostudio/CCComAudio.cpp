@@ -23,8 +23,17 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "cocostudio/CCComAudio.h"
-#include "audio/include/SimpleAudioEngine.h"
-#include "platform/CCFileUtils.h"
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for strcmp
+#include <new>                          // for nothrow, operator new
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_BREAK_IF, CC_SAFE_DELETE
+#include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
+#include "cocostudio/CCComBase.h"       // for SerData, etc
+#include "cocostudio/CocoLoader.h"      // for stExpCocoNode, etc
+#include "cocostudio/DictionaryHelper.h"  // for DICTOOL, DictionaryHelper
+#include "json/document.h"              // for Value
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 namespace cocostudio {
 
