@@ -30,11 +30,11 @@
 #ifndef __CC_WEBSOCKET_H__
 #define __CC_WEBSOCKET_H__
 
-#include <string>
-#include <vector>
-
-#include "platform/CCPlatformMacros.h"
-#include "platform/CCStdC.h"
+#include "base/CCConsole.h"             // for ssize_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 
 struct libwebsocket;
 struct libwebsocket_context;
@@ -49,8 +49,8 @@ NS_CC_BEGIN
 
 namespace network {
 
+class WsMessage; 
 class WsThreadHelper;
-class WsMessage;
 
 /**
  * WebSocket is wrapper of the libwebsockets-protocol, let the develop could call the websocket easily.

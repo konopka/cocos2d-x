@@ -28,17 +28,22 @@
  ****************************************************************************/
 
 #include "WebSocket.h"
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-
-#include <thread>
-#include <mutex>
-#include <queue>
-#include <list>
-#include <signal.h>
-#include <errno.h>
-
-#include "libwebsockets.h"
+#include <stddef.h>                     // for size_t
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for memcpy, strcpy, memset
+#include <algorithm>                    // for min
+#include <chrono>                       // for milliseconds
+#include <list>                         // for list, _List_iterator, etc
+#include <mutex>                        // for mutex, lock_guard
+#include <new>                          // for nothrow, operator new
+#include <ratio>                        // for ratio
+#include <thread>                       // for thread, sleep_for
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE_ARRAY, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CCASSERT
+#include "libwebsockets.h"              // for libwebsocket_protocols, etc
 
 #define WS_WRITE_BUFFER_SIZE 2048
 

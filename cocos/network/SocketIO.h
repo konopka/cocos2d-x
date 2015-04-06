@@ -59,10 +59,13 @@ in the onClose method the pointer should be set to NULL or used to connect to a 
 #ifndef __CC_SOCKETIO_H__
 #define __CC_SOCKETIO_H__
 
-#include "platform/CCPlatformMacros.h"
-#include "base/CCMap.h"
-
-#include <string>
+#include <functional>                   // for function
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for Ref
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for CCLOG, etc
 
 /**
  * @addtogroup core
@@ -74,8 +77,8 @@ NS_CC_BEGIN
 namespace network {
 
 //forward declarations
-class SIOClientImpl;
 class SIOClient;
+class SIOClientImpl;
 
 /**
  * Singleton and wrapper class to provide static creation method as well as registry of all sockets.

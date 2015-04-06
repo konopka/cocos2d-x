@@ -28,12 +28,25 @@
  ****************************************************************************/
 
 #include "SocketIO.h"
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-#include "WebSocket.h"
-#include "HttpClient.h"
-#include <algorithm>
-#include <sstream>
+#include <stddef.h>                     // for size_t
+#include <stdio.h>                      // for sprintf
+#include <stdlib.h>                     // for atoi
+#include <string.h>                     // for strlen
+#include <algorithm>                    // for remove_copy
+#include <iterator>                     // for back_insert_iterator, etc
+#include <new>                          // for nothrow, operator new
+#include <sstream>                      // for basic_ostream, operator<<, etc
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
+#include "HttpClient.h"                 // for HttpClient
+#include "WebSocket.h"                  // for WebSocket, WebSocket::Data, etc
+#include "base/CCConsole.h"             // for log
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "network/HttpRequest.h"        // for HttpRequest, etc
+#include "network/HttpResponse.h"       // for HttpResponse
 
 NS_CC_BEGIN
 

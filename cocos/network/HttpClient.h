@@ -27,8 +27,9 @@
 #ifndef __CCHTTPCLIENT_H__
 #define __CCHTTPCLIENT_H__
 
-#include "network/HttpRequest.h"
-#include "network/HttpResponse.h"
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 /**
  * @addtogroup core
@@ -38,6 +39,9 @@
 NS_CC_BEGIN
 
 namespace network {
+
+class HttpRequest;
+class HttpResponse;
 
 /** Singleton that handles asynchrounous http requests.
  *

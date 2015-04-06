@@ -25,20 +25,26 @@
  ****************************************************************************/
 
 #include "HttpClient.h"
-
-#include <thread>
-#include <queue>
-#include <condition_variable>
-
-#include <errno.h>
-
-#include <curl/curl.h>
-
-#include "base/CCVector.h"
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-
-#include "platform/CCFileUtils.h"
+#include <curl/curl.h>                  // for curl_easy_setopt, etc
+#include <curl/easy.h>                  // for curl_easy_cleanup, etc
+//#include <cxxabi.h>                     // for __forced_unwind
+#include <stddef.h>                     // for size_t
+#include <stdint.h>                     // for int32_t
+#include <sys/types.h>                  // for ssize_t
+#include <condition_variable>           // for condition_variable_any
+#include <functional>                   // for _Bind, operator!=
+#include <mutex>                        // for mutex, lock_guard
+#include <new>                          // for nothrow, operator new
+#include <thread>                       // for thread
+#include <vector>                       // for vector, vector<>::iterator
+#include "CCPlatformConfig.h"           // for CC_PLATFORM_WIN32, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_0, CCASSERT
+#include "network/HttpRequest.h"        // for HttpRequest, etc
+#include "network/HttpResponse.h"       // for HttpResponse
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 NS_CC_BEGIN
 
