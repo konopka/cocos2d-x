@@ -22,18 +22,28 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "AssetsManagerEx.h"
+#include <stddef.h>                     // for size_t
+#include <stdio.h>                      // for fclose, NULL, fopen, fwrite, etc
+#include <string.h>                     // for strcmp, strlen
+#include <zconf.h>                      // for uLong
+#include <functional>                   // for _Bind, bind, _1, _2, _3, _4
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
 #include "CCEventListenerAssetsManagerEx.h"
-#include "deprecated/CCString.h"
-#include "base/CCDirector.h"
-
-#include <curl/curl.h>
-#include <curl/easy.h>
-#include <stdio.h>
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_RELEASE, etc
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "assets-manager/CCEventAssetsManagerEx.h"
+#include "assets-manager/Downloader.h"  // for Downloader, etc
+#include "assets-manager/Manifest.h"    // for Manifest, Manifest::Asset, etc
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "deprecated/CCString.h"        // for format
 
 #ifdef MINIZIP_FROM_SYSTEM
 #include <minizip/unzip.h>
 #else // from our embedded sources
-#include "unzip.h"
+#include "unzip.h"                      // for unzClose, etc
 #endif
 
 using namespace cocos2d;

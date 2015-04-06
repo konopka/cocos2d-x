@@ -25,18 +25,22 @@
 #ifndef __AssetsManagerEx__
 #define __AssetsManagerEx__
 
-#include "base/CCEventDispatcher.h"
-#include "platform/CCFileUtils.h"
-#include "CCEventAssetsManagerEx.h"
-#include "Downloader.h"
-#include "Manifest.h"
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
-#include "json/document.h"
+#include <memory>                       // for shared_ptr
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include <vector>                       // for vector
+#include "CCEventAssetsManagerEx.h"     // for EventAssetsManagerEx, etc
+#include "Downloader.h"                 // for Downloader, etc
+#include "Manifest.h"                   // for Manifest
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
 
-#include <string>
-#include <unordered_map>
-#include <vector>
+namespace cocos2d { 
+class EventDispatcher;
+class FileUtils; 
+}
 
 NS_CC_EXT_BEGIN
 

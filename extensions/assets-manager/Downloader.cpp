@@ -24,22 +24,18 @@
 
 #include "Downloader.h"
 #include <curl/curl.h>                  // for curl_easy_setopt, etc
-#include <curl/easy.h>                  // for curl_easy_cleanup, etc
 #include <curl/multi.h>                 // for curl_multi_strerror, etc
 #include <stddef.h>                     // for size_t
 #include <string.h>                     // for memcpy
-//#include <sys/select.h>                 // for FD_ZERO, fd_set, select
-//#include <sys/time.h>                   // for timeval
 #include <cerrno>                       // for errno
-#include <cstdio>                       // for fclose, fopen, FILE, NULL, etc
 #include <thread>                       // for thread
 #include <utility>                      // for pair
 #include "CCFileUtils.h"                // for FileUtils
-#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_LINUX, etc
 #include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/CCScheduler.h"           // for Scheduler
 #include "deprecated/CCString.h"        // for format
+#include "platform/CCPlatformConfig.h"  // for CC_PLATFORM_LINUX, etc
 
 NS_CC_EXT_BEGIN
 

@@ -22,29 +22,34 @@
  THE SOFTWARE.
  ****************************************************************************/
 #include "AssetsManager.h"
-
-#include <curl/curl.h>
-#include <curl/easy.h>
-#include <stdio.h>
-#include <vector>
-#include <thread>
+#include <curl/curl.h>                  // for curl_easy_setopt, etc
+#include <curl/easy.h>                  // for curl_easy_cleanup, etc
+#include <stdio.h>                      // for fclose, fopen, FILE, fwrite, etc
+#include <stdlib.h>                     // for system
+#include <string.h>                     // for strlen
+#include <zconf.h>                      // for uLong
+#include <new>                          // for nothrow, operator new
+#include <thread>                       // for thread
+#include <vector>                       // for vector, vector<>::iterator
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
 
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32) && (CC_TARGET_PLATFORM != CC_PLATFORM_WP8) && (CC_TARGET_PLATFORM != CC_PLATFORM_WINRT)
 #include <sys/types.h>
-#include <sys/stat.h>
-#include <errno.h>
-#include <dirent.h>
+#include <sys/stat.h>                   // for mkdir, umask, S_IRWXG, etc
+#include <dirent.h>                     // for opendir, DIR
+#include <errno.h>                      // for EEXIST, errno
 #endif
 
-#include "base/CCDirector.h"
-#include "base/CCScheduler.h"
-#include "base/CCUserDefault.h"
-#include "platform/CCFileUtils.h"
+#include "base/CCDirector.h"            // for Director
+#include "base/CCScheduler.h"           // for Scheduler
+#include "base/CCUserDefault.h"         // for UserDefault
+#include "platform/CCFileUtils.h"       // for FileUtils
 
 #ifdef MINIZIP_FROM_SYSTEM
 #include <minizip/unzip.h>
 #else // from our embedded sources
-#include "unzip.h"
+#include "unzip.h"                      // for unzClose, etc
 #endif
 
 using namespace cocos2d;

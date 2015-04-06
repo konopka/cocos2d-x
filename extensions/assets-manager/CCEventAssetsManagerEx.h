@@ -25,10 +25,11 @@
 #ifndef __cocos2d_libs__CCEventAssetsManagerEx__
 #define __cocos2d_libs__CCEventAssetsManagerEx__
 
-#include "base/CCEvent.h"
-#include "base/CCEventCustom.h"
-#include "extensions/ExtensionMacros.h" 
-#include "extensions/ExtensionExport.h"
+#include <string>                       // for string
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
 
 NS_CC_EXT_BEGIN
 

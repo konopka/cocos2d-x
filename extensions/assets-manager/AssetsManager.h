@@ -25,13 +25,13 @@
 #ifndef __AssetsManager__
 #define __AssetsManager__
 
-#include <string>
-
-#include <mutex>
-
-#include "2d/CCNode.h"
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
+#include <stddef.h>                     // for NULL
+#include <functional>                   // for function
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
 
 NS_CC_EXT_BEGIN
 
