@@ -1,9 +1,24 @@
 #ifndef _CCB_CCNODELOADER_H_
 #define _CCB_CCNODELOADER_H_
 
-#include "extensions/GUI/CCControlExtension/CCInvocation.h"
+#include <assert.h>                     // for assert
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
 #include "CCBReader.h"
-#include "extensions/GUI/CCControlExtension/CCControl.h"
+#include "base/CCConsole.h"             // for log
+#include "base/CCRef.h"                 // for Ref, SEL_MenuHandler
+#include "base/CCValue.h"               // for ValueMap
+#include "base/ccTypes.h"               // for Color4F (ptr only), etc
+#include "extensions/GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { 
+class Animation;
+class SpriteFrame;
+class Texture2D; 
+}
 
 namespace cocosbuilder {
 

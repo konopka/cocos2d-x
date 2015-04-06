@@ -24,7 +24,16 @@
  ****************************************************************************/
 
 #include "CCTableView.h"
-#include "CCTableViewCell.h"
+#include <algorithm>                    // for sort
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "CCTableViewCell.h"            // for TableViewCell
+#include "GUI/CCScrollView/CCScrollView.h"  // for ScrollView::Direction, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccTypes.h"               // for CC_INVALID_INDEX
+#include "platform/CCStdC.h"            // for MAX
+#include "math/Vec2.h"                  // for Vec2::operator*
 
 NS_CC_EXT_BEGIN
 

@@ -25,9 +25,10 @@
 #define __CCSAXPARSER_H__
 /// @cond DO_NOT_SHOW
 
-#include "platform/CCPlatformConfig.h"
-#include "platform/CCCommon.h"
-#include <string>
+#include <stddef.h>                     // for size_t
+#include <string>                       // for string
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 NS_CC_BEGIN
 

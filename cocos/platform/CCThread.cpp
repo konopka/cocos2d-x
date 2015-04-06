@@ -24,6 +24,8 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "platform/CCThread.h"
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
 

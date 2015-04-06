@@ -26,12 +26,22 @@
 #ifndef __CCTABLEVIEW_H__
 #define __CCTABLEVIEW_H__
 
-#include "CCScrollView.h"
-#include "CCTableViewCell.h"
-#include "extensions/ExtensionExport.h"
+#include <stddef.h>                     // for NULL
+#include <sys/types.h>                  // for ssize_t
+#include <set>                          // for set
+#include <vector>                       // for vector
+#include "CCScrollView.h"               // for ScrollViewDelegate, etc
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "base/CCVector.h"              // for Vector
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/CCGeometry.h"            // for Size, Size::ZERO
+#include "math/Vec2.h"                  // for Vec2
 
-#include <set>
-#include <vector>
+namespace cocos2d { 
+class Event;
+class Node;
+class Touch; 
+}
 
 /**
  * @addtogroup ui
@@ -40,6 +50,7 @@
 NS_CC_EXT_BEGIN
 
 class TableView;
+class TableViewCell;
 
 /**
  * Sole purpose of this delegate is to single touch event in this version.

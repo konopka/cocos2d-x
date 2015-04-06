@@ -26,6 +26,14 @@
  */
 
 #include "CCControlPotentiometer.h"
+#include <math.h>                       // for atan2, sqrt, M_PI
+#include <new>                          // for nothrow, operator new
+#include "2d/CCProgressTimer.h"         // for ProgressTimer
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/ccTypes.h"               // for Color3B, Color3B::GRAY, etc
+#include "platform/CCStdC.h"            // for MIN
+#include "math/CCGeometry.h"            // for Size
 
 NS_CC_EXT_BEGIN
 

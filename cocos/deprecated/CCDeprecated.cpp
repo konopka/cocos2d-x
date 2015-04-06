@@ -23,7 +23,19 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "cocos2d.h"
+#include "platform/CCGL.h"              // for GLfloat, GLubyte
+#include "2d/CCDrawingPrimitives.h"     // for drawCircle, drawSolidCircle, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/ccTypes.h"               // for Color3B, BlendFunc, Color4F, etc
+#include "deprecated/CCDeprecated.h"    // for KM_GL_MODELVIEW, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL, CC_ASSERT
+#include "math/CCGeometry.h"            // for Rect, Size, Rect::ZERO, etc
+#include "math/Mat4.h"                  // for Mat4, Mat4::(anonymous), etc
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4, etc
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
 
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

@@ -30,12 +30,23 @@
 #ifndef __CCCONTROL_H__
 #define __CCCONTROL_H__
 
-#include "CCControlUtils.h"
-#include "2d/CCLayer.h"
-#include "extensions/ExtensionExport.h"
+#include <unordered_map>                // for unordered_map
+#include "2d/CCLayer.h"                 // for Layer
+#include "CCPlatformMacros.h"           // for CC_DISALLOW_COPY_AND_ASSIGN, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d 
+{ 
+class Event;
+class Touch;
+template <class T> class Vector; 
+}
 
 NS_CC_EXT_BEGIN
-
 
 class Invocation;
 

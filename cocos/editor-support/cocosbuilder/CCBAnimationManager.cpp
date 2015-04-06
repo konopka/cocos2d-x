@@ -1,13 +1,30 @@
 #include "CCBAnimationManager.h"
-
-#include "CCBReader.h"
-#include "CCNode+CCBRelativePositioning.h"
-#include "audio/include/SimpleAudioEngine.h"
-#include "CCBSelectorResolver.h"
-
-#include <string>
-#include <sstream>
-#include <set>
+//#include <ext/alloc_traits.h>
+#include <sys/types.h>                  // for ssize_t
+#include <functional>                   // for _Bind
+#include <memory>                       // for __shared_ptr, make_shared, etc
+#include <new>                          // for nothrow, operator new
+#include <set>                          // for set, etc
+#include <sstream>                      // for stringstream, basic_ostream, etc
+#include <string>                       // for string, operator==, etc
+#include <utility>                      // for pair
+#include <vector>                       // for vector
+#include "2d/CCAction.h"                // for FiniteTimeAction, etc
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "CCBReader.h"                  // for CCBReader, etc
+#include "CCBSelectorResolver.h"        // for CCBSelectorResolver
+#include "CCNode+CCBRelativePositioning.h"  // for getAbsolutePosition, etc
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "audio/include/SimpleAudioEngine.h"  // for SimpleAudioEngine
+#include "base/CCConsole.h"             // for log
+#include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_0
+#include "base/ccTypes.h"               // for Color3B
+#include "cocosbuilder/CCBKeyframe.h"   // for CCBKeyframe, etc
+#include "cocosbuilder/CCBSequence.h"   // for CCBSequence
+#include "cocosbuilder/CCBSequenceProperty.h"  // for CCBSequenceProperty
+#include "math/Vec2.h"                  // for Vec2
 
 using namespace cocos2d;
 using namespace std;

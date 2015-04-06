@@ -1,4 +1,10 @@
 #include "CCControlButtonLoader.h"
+#include <string.h>                     // for strcmp
+#include "GUI/CCControlExtension/CCControlButton.h"  // for ControlButton
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "cocosbuilder/CCControlLoader.h"  // for ControlLoader
+#include "math/CCGeometry.h"            // for Size
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

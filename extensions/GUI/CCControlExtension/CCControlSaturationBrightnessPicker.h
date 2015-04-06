@@ -33,9 +33,19 @@
 #ifndef __CCCONTROL_SATURATION_PICKER_H__
 #define __CCCONTROL_SATURATION_PICKER_H__
 
-#include "CCControl.h"
-#include "CCInvocation.h"
-#include "extensions/ExtensionExport.h"
+#include "CCControl.h"                  // for Control
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE_READONLY
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for HSV
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { 
+class Event;
+class Node;
+class Sprite;
+class Touch; 
+}
 
 NS_CC_EXT_BEGIN
 

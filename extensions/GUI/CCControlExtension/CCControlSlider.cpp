@@ -28,8 +28,16 @@
  */
 
 #include "CCControlSlider.h"
-#include "base/CCTouch.h"
-#include "base/CCDirector.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for ControlUtils
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B, Color3B::GRAY
+#include "platform/CCStdC.h"            // for MAX, MIN
+#include "math/CCGeometry.h"            // for Size, Rect
 
 NS_CC_EXT_BEGIN
 

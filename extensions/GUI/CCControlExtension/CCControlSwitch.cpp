@@ -26,12 +26,20 @@
  */
 
 #include "CCControlSwitch.h"
-#include "2d/CCSprite.h"
-#include "2d/CCActionTween.h"
-#include "2d/CCLabel.h"
-#include "2d/CCClippingNode.h"
-#include "renderer/ccShaders.h"
-#include "2d/CCRenderTexture.h"
+#include "platform/CCGL.h"              // for GLuint
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCActionTween.h"           // for ActionTween, etc
+#include "2d/CCClippingNode.h"          // for ClippingNode
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE, etc
+#include "math/CCGeometry.h"            // for Size
+#include "renderer/CCTexture2D.h"       // for Texture2D
 
 NS_CC_EXT_BEGIN
 // ControlSwitchSprite

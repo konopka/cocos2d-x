@@ -1,7 +1,17 @@
 #ifndef _CCB_CCSPRITELOADER_H_
 #define _CCB_CCSPRITELOADER_H_
 
+#include "2d/CCSprite.h"                // for Sprite
 #include "CCNodeLoader.h"
+#include "cocosbuilder/CCBReader.h"     // for CCBReader (ptr only), etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+
+namespace cocos2d { 
+class Node;
+class SpriteFrame;
+struct BlendFunc;
+struct Color3B;
+}
 
 namespace cocosbuilder {
 

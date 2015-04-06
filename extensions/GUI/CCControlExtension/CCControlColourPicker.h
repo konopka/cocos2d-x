@@ -33,11 +33,21 @@
 #define __CCCONTROL_COLOUR_PICKER_H__
 
 
-#include "CCControl.h"
-#include "CCControlUtils.h"
-#include "CCControlHuePicker.h"
-#include "CCControlSaturationBrightnessPicker.h"
-#include "extensions/ExtensionExport.h"
+#include "CCControl.h"                  // for Control, Control::EventType
+#include "CCControlUtils.h"             // for HSV
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/GUI/CCControlExtension/CCControlHuePicker.h"
+#include "extensions/GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h"
+
+namespace cocos2d { 
+class Event;
+class Ref;
+class Touch;
+struct Color3B; 
+}
 
 NS_CC_EXT_BEGIN
 

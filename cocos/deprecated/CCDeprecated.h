@@ -31,9 +31,96 @@
 #ifndef __COCOS2D_CCDEPRECATED_H__
 #define __COCOS2D_CCDEPRECATED_H__
 
-#include <math.h>
-#include "math/CCGeometry.h"
-#include "base/ccTypes.h"
+#include "platform/CCGL.h"              // for GLubyte, GLfloat, GLuint, etc
+#include "2d/CCAction.h"                // for Action, Action::INVALID_TAG, etc
+#include "2d/CCActionCamera.h"          // for ActionCamera, OrbitCamera
+#include "2d/CCActionCatmullRom.h"      // for CardinalSplineBy, etc
+#include "2d/CCActionEase.h"            // for ActionEase, EaseBackIn, etc
+#include "2d/CCActionGrid.h"            // for Grid3DAction, GridAction, etc
+#include "2d/CCActionGrid3D.h"          // for FlipX3D, FlipY3D, Lens3D, etc
+#include "2d/CCActionInstant.h"         // for ActionInstant, CallFunc, etc
+#include "2d/CCActionInterval.h"        // for ActionInterval, Animate, etc
+#include "2d/CCActionManager.h"         // for ActionManager
+#include "2d/CCActionPageTurn3D.h"      // for PageTurn3D
+#include "2d/CCActionProgressTimer.h"   // for ProgressFromTo, ProgressTo
+#include "2d/CCActionTiledGrid.h"       // for FadeOutBLTiles, etc
+#include "2d/CCActionTween.h"           // for ActionTween
+#include "2d/CCAnimation.h"             // for Animation, AnimationFrame
+#include "2d/CCAnimationCache.h"        // for AnimationCache
+#include "2d/CCAtlasNode.h"             // for AtlasNode
+#include "2d/CCCamera.h"                // for Camera
+#include "2d/CCClippingNode.h"          // for ClippingNode
+#include "2d/CCComponent.h"             // for Component
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCGrid.h"                  // for Grid3D, GridBase, etc
+#include "2d/CCLabelAtlas.h"            // for LabelAtlas
+#include "2d/CCLayer.h"                 // for Layer, LayerColor, etc
+#include "2d/CCMenu.h"                  // for Menu, Menu::State, etc
+#include "2d/CCMenuItem.h"              // for MenuItem, MenuItemAtlasFont, etc
+#include "2d/CCMotionStreak.h"          // for MotionStreak
+#include "2d/CCNode.h"                  // for Node, ::kNodeOnCleanup, etc
+#include "2d/CCParallaxNode.h"          // for ParallaxNode
+#include "2d/CCParticleBatchNode.h"     // for ParticleBatchNode, etc
+#include "2d/CCParticleExamples.h"      // for ParticleExplosion, etc
+#include "2d/CCParticleSystem.h"        // for ParticleSystem, etc
+#include "2d/CCParticleSystemQuad.h"    // for ParticleSystemQuad
+#include "2d/CCProgressTimer.h"         // for ProgressTimer, etc
+#include "2d/CCRenderTexture.h"         // for RenderTexture
+#include "2d/CCScene.h"                 // for Scene
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "2d/CCTMXLayer.h"              // for TMXLayer
+#include "2d/CCTMXObjectGroup.h"        // for TMXObjectGroup
+#include "2d/CCTMXTiledMap.h"           // for TMXTiledMap
+#include "2d/CCTMXXMLParser.h"          // for TMXLayerInfo, TMXMapInfo, etc
+#include "2d/CCTextFieldTTF.h"          // for TextFieldDelegate, etc
+#include "2d/CCTileMapAtlas.h"          // for TileMapAtlas
+#include "2d/CCTransition.h"            // for TransitionScene, etc
+#include "2d/CCTransitionPageTurn.h"    // for TransitionPageTurn
+#include "2d/CCTransitionProgress.h"    // for TransitionProgress, etc
+#include "CCApplicationProtocol.h"
+#include "CCCommon.h"                   // for LanguageType, etc
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCGLView.h"                   // for ResolutionPolicy, GLView, etc
+#include "CCImage.h"                    // for Image, Image::Format, etc
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "base/CCConfiguration.h"       // for Configuration
+#include "base/CCData.h"                // for Data
+#include "base/CCDataVisitor.h"         // for DataVisitor, PrettyPrinter
+#include "base/CCDirector.h"            // for Director, etc
+#include "base/CCEvent.h"               // for Event
+#include "base/CCIMEDelegate.h"         // for IMEDelegate, etc
+#include "base/CCProtocols.h"           // for BlendProtocol, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCScheduler.h"           // for Scheduler, etc
+#include "base/CCTouch.h"               // for Touch, Touch::DispatchMode, etc
+#include "base/CCUserDefault.h"         // for UserDefault
+#include "base/ccTypes.h"               // for Color3B, Color4F, Color4B, etc
+#include "deprecated/CCArray.h"         // for __Array
+#include "deprecated/CCBool.h"          // for __Bool
+#include "deprecated/CCDictionary.h"    // for __Dictionary
+#include "deprecated/CCDouble.h"        // for __Double
+#include "deprecated/CCFloat.h"         // for __Float
+#include "deprecated/CCInteger.h"       // for __Integer
+#include "deprecated/CCNotificationCenter.h"  // for __NotificationCenter
+#include "deprecated/CCSet.h"           // for __Set, __SetIterator
+#include "deprecated/CCString.h"        // for __String
+#include "platform/CCApplication.h"     // for Application
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCAffineTransform.h"     // for AffineTransform, etc
+#include "math/CCGeometry.h"            // for Size, Rect
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "math/Vec3.h"                  // for Vec3
+#include "math/Vec4.h"                  // for Vec4
+#include "renderer/CCGLProgram.h"       // for GLProgram, etc
+#include "renderer/CCGLProgramCache.h"  // for GLProgramCache
+#include "renderer/CCTexture2D.h"       // for Texture2D, etc
+#include "renderer/CCTextureAtlas.h"    // for TextureAtlas
+#include "renderer/CCTextureCache.h"    // for TextureCache
+#include "renderer/ccGLStateCache.h"    // for deleteTexture, etc
 
 NS_CC_BEGIN
 

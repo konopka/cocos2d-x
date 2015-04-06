@@ -28,14 +28,24 @@
  */
 
 #include "CCControl.h"
-#include "base/CCDirector.h"
-#include "2d/CCMenu.h"
-#include "base/CCTouch.h"
-#include "CCInvocation.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventListenerTouch.h"
+#include <functional>                   // for _Bind
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include <vector>                       // for vector, allocator
+#include "2d/CCNode.h"                  // for Node
+#include "CCInvocation.h"               // for Invocation
+#include "base/CCDirector.h"            // for Director
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_2
+#include "math/CCGeometry.h"            // for Rect
 
 NS_CC_EXT_BEGIN
+
+class Invocation;
 
 Control::Control()
 : _enabled(false)

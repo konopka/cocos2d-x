@@ -28,11 +28,17 @@
 #ifndef __CCCONTROLSWITCH_H__
 #define __CCCONTROLSWITCH_H__
 
-#include "CCControl.h"
-#include "extensions/ExtensionExport.h"
+#include "CCControl.h"                  // for Control
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/Vec2.h"                  // for Vec2
 
-namespace cocos2d { class Sprite; }
-namespace cocos2d { class Label; }
+namespace cocos2d { 
+class Event;
+class Label;
+class Sprite;
+class Touch; 
+}
 
 NS_CC_EXT_BEGIN
 

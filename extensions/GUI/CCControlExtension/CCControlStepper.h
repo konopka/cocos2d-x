@@ -28,9 +28,18 @@
 #ifndef __CCCONTROLSTEPPER_H__
 #define __CCCONTROLSTEPPER_H__
 
-#include "CCControl.h"
-#include "2d/CCLabel.h"
-#include "extensions/ExtensionExport.h"
+#include "CCControl.h"                  // for Control
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE_RETAIN
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { 
+class Event;
+class Touch; 
+}
 
 NS_CC_EXT_BEGIN
 

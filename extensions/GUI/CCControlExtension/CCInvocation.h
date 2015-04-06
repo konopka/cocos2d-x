@@ -30,10 +30,11 @@
 #ifndef __CCINVOCATION_H__
 #define __CCINVOCATION_H__
 
-#include "base/CCRef.h"
-#include "../../ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
-#include "CCControl.h"
+#include "../../ExtensionMacros.h"      // for NS_CC_EXT_BEGIN, etc
+#include "CCControl.h"                  // for Control, Control::EventType, etc
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE_READONLY
+#include "base/CCRef.h"                 // for Ref
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
 
 NS_CC_EXT_BEGIN
 

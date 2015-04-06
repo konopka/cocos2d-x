@@ -27,7 +27,8 @@ THE SOFTWARE.
 #define __CC_PLATFORM_THREAD_H__
 /// @cond DO_NOT_SHOW
 
-#include "platform/CCPlatformMacros.h"
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
 

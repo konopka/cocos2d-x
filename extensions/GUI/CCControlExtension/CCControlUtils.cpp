@@ -23,6 +23,11 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "CCControlUtils.h"
+#include <math.h>                       // for isnan
+#include "2d/CCNode.h"                  // for Node
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "platform/CCStdC.h"         // for MAX, MIN
 
 NS_CC_EXT_BEGIN
 

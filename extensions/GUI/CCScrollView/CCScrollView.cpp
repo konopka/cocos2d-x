@@ -24,15 +24,29 @@
  ****************************************************************************/
 
 #include "CCScrollView.h"
-#include "platform/CCDevice.h"
-#include "2d/CCActionInstant.h"
-#include "2d/CCActionInterval.h"
-#include "2d/CCActionTween.h"
-#include "base/CCDirector.h"
-#include "base/CCEventDispatcher.h"
-#include "renderer/CCRenderer.h"
-
-#include <algorithm>
+#include "platform/CCGL.h"              // for GL_SCISSOR_TEST, glDisable, etc
+#include <math.h>                       // for fabsf, fabs
+#include <algorithm>                    // for find
+#include <functional>                   // for _Bind, function
+#include <new>                          // for nothrow, operator new
+#include "2d/CCActionInstant.h"         // for CallFuncN
+#include "2d/CCActionInterval.h"        // for MoveTo, Sequence
+#include "2d/CCActionTween.h"           // for ActionTween
+#include "CCGLView.h"                   // for GLView
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCEventListenerTouch.h"  // for EventListenerTouchOneByOne, etc
+#include "base/CCEventTouch.h"          // for EventTouch, etc
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR, etc
+#include "base/CCTouch.h"               // for Touch
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CC_CALLBACK_2, etc
+#include "platform/CCStdC.h"            // for MAX, MIN, sqrtf
+#include "math/Vec2.h"                  // for Vec2::operator+, etc
+#include "platform/CCDevice.h"          // for Device
+#include "renderer/CCRenderer.h"        // for Renderer
 
 NS_CC_EXT_BEGIN
 

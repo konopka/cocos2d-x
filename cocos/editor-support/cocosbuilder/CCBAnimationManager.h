@@ -1,18 +1,30 @@
 #ifndef __CCB_CCBANIMATION_MANAGER_H__
 #define __CCB_CCBANIMATION_MANAGER_H__
 
-#include "base/CCMap.h"
-#include "2d/CCActionInterval.h"
-#include "2d/CCActionInstant.h"
-#include "2d/CCActionEase.h"
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "2d/CCActionEase.h"            // for ActionEase
+#include "2d/CCActionInstant.h"         // for ActionInstant, etc
+#include "2d/CCActionInterval.h"        // for ActionInterval, etc
+#include "CCBKeyframe.h"                // for CCBKeyframe, etc
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "2d/CCNode.h"                  // for Node
+#include "base/CCMap.h"                 // for Map
+#include "base/CCRef.h"                 // for SEL_CallFunc, Ref
+#include "base/CCValue.h"               // for ValueVector, etc
+#include "base/CCVector.h"              // for Vector
+#include "extensions/GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
+#include "cocosbuilder/CCBSequence.h"   // for CCBSequence
 
-#include "extensions/ExtensionMacros.h"
-#include "CCBSequence.h"
-#include "CCBKeyframe.h"
-#include "CCBSequenceProperty.h"
-#include "extensions/GUI/CCControlExtension/CCControl.h"
+namespace cocos2d { 
+class SpriteFrame; 
+}
 
 namespace cocosbuilder {
+
+class CCBSequenceProperty;
 
 class CC_DLL CCBAnimationManagerDelegate
 {

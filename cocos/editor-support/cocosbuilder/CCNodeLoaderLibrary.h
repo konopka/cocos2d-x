@@ -1,7 +1,13 @@
 #ifndef _CCB_CCNODELOADERLIBRARY_H_
 #define _CCB_CCNODELOADERLIBRARY_H_
 
+#include <map>                          // for map, map<>::value_compare
+#include <string>                       // for string
+#include <utility>                      // for pair
 #include "CCBReader.h"
+#include "CCPlatformMacros.h"           // for CC_DEPRECATED_ATTRIBUTE
+#include "base/CCRef.h"                 // for Ref
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 
 namespace cocosbuilder {
 

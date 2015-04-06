@@ -30,6 +30,14 @@
  */
 
 #include "CCControlHuePicker.h"
+#include <math.h>                       // for pow, atan2f, sqrt
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for ControlUtils
+#include "base/ccMacros.h"              // for CC_DEGREES_TO_RADIANS, etc
+#include "platform/CCStdC.h"            // for cosf, sinf
+#include "math/CCGeometry.h"            // for Rect, Size
 
 NS_CC_EXT_BEGIN
 

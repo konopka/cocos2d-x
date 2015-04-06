@@ -30,8 +30,21 @@
  */
 
 #include "CCControlColourPicker.h"
-#include "2d/CCSpriteFrameCache.h"
-#include "2d/CCSpriteBatchNode.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "2d/CCSpriteBatchNode.h"       // for SpriteBatchNode
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "GUI/CCControlExtension/CCControlHuePicker.h"
+#include "GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h"
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for RGBA, HSV, etc
+#include "GUI/CCControlExtension/CCInvocation.h"
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
+
+using namespace cocos2d;
 
 NS_CC_EXT_BEGIN
 

@@ -34,9 +34,16 @@
 #ifndef __CCCONTROL_UTILS_H__
 #define __CCCONTROL_UTILS_H__
 
-#include "2d/CCSprite.h"
-#include "../../ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
+#include "../../ExtensionMacros.h"      // for NS_CC_EXT_BEGIN, etc
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccTypes.h"               // for Color3B
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/CCGeometry.h"            // for Rect
+#include "math/Vec2.h"                  // for Vec2
+namespace cocos2d { 
+class Node;
+class Sprite;
+}
 
 NS_CC_EXT_BEGIN
 

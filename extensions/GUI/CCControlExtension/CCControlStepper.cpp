@@ -26,6 +26,15 @@
  */
 
 #include "CCControlStepper.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for ControlUtils
+#include "base/CCRef.h"                 // for CC_SCHEDULE_SELECTOR
+#include "base/ccMacros.h"              // for CCASSERT, CC_REPEAT_FOREVER
+#include "base/ccTypes.h"               // for Color3B, Color3B::WHITE, etc
+#include "math/CCGeometry.h"            // for Size, Rect
 
 NS_CC_EXT_BEGIN
 

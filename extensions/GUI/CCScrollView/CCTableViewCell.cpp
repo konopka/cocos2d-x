@@ -24,6 +24,8 @@
  ****************************************************************************/
 
 #include "CCTableViewCell.h"
+#include "ExtensionMacros.h"            // for NS_CC_EXT_BEGIN, etc
+#include "base/ccTypes.h"               // for CC_INVALID_INDEX
 
 NS_CC_EXT_BEGIN
 

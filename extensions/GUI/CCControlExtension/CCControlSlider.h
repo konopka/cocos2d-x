@@ -30,9 +30,17 @@
 #ifndef __CCCONTROL_SLIDER_H__
 #define __CCCONTROL_SLIDER_H__
 
-#include "CCControl.h"
-#include "CCInvocation.h"
-#include "extensions/ExtensionExport.h"
+#include "CCControl.h"                  // for Control
+#include "CCPlatformMacros.h"           // for CC_SYNTHESIZE_RETAIN, etc
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "2d/CCSprite.h"                // for Sprite
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { 
+class Event;
+class Touch; 
+}
 
 NS_CC_EXT_BEGIN
 

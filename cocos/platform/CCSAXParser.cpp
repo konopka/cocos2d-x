@@ -23,11 +23,11 @@
  ****************************************************************************/
 
 #include "platform/CCSAXParser.h"
-
-#include <vector> // because its based on windows 8 build :P
-
-#include "platform/CCFileUtils.h"
-#include "tinyxml2.h"
+#include <string.h>                     // for strlen
+#include <vector>                       // for vector
+#include "base/CCData.h"                // for Data
+#include "platform/CCFileUtils.h"       // for FileUtils
+#include "tinyxml2.h"                   // for XMLElement, XMLText, etc
 
 
 NS_CC_BEGIN

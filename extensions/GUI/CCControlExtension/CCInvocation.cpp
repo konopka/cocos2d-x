@@ -25,6 +25,9 @@
  */
 
 #include "CCInvocation.h"
+#include <new>                          // for nothrow, operator new
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
 
 NS_CC_EXT_BEGIN
 

@@ -1,4 +1,8 @@
 #include "CCSpriteLoader.h"
+#include <string.h>                     // for strcmp
+#include "CCPlatformMacros.h"           // for CCLOG
+#include "base/ccTypes.h"               // for BlendFunc, Color3B
+#include "cocosbuilder/CCNodeLoader.h"  // for NodeLoader
 
 using namespace cocos2d;
 

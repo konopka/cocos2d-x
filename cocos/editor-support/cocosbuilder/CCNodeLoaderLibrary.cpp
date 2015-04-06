@@ -1,19 +1,20 @@
 #include "CCNodeLoaderLibrary.h"
-
-#include "CCLayerLoader.h"
-#include "CCLayerColorLoader.h"
-#include "CCLayerGradientLoader.h"
-#include "CCLabelBMFontLoader.h"
-#include "CCLabelTTFLoader.h"
-#include "CCSpriteLoader.h"
-#include "CCScale9SpriteLoader.h"
-#include "CCBFileLoader.h"
-#include "CCMenuLoader.h"
-#include "CCMenuItemLoader.h"
-#include "CCMenuItemImageLoader.h"
-#include "CCControlButtonLoader.h"
-#include "CCParticleSystemQuadLoader.h"
-#include "CCScrollViewLoader.h"
+#include <assert.h>                     // for assert
+#include <new>                          // for nothrow, operator new
+#include "CCBFileLoader.h"              // for CCBFileLoader
+#include "CCControlButtonLoader.h"      // for ControlButtonLoader
+#include "CCLabelBMFontLoader.h"        // for LabelBMFontLoader
+#include "CCLabelTTFLoader.h"           // for LabelTTFLoader
+#include "CCLayerColorLoader.h"         // for LayerColorLoader
+#include "CCLayerGradientLoader.h"      // for LayerGradientLoader
+#include "CCLayerLoader.h"              // for LayerLoader
+#include "CCMenuItemImageLoader.h"      // for MenuItemImageLoader
+#include "CCMenuLoader.h"               // for MenuLoader
+#include "CCParticleSystemQuadLoader.h"  // for ParticleSystemQuadLoader
+#include "CCScale9SpriteLoader.h"       // for Scale9SpriteLoader
+#include "CCScrollViewLoader.h"         // for ScrollViewLoader
+#include "CCSpriteLoader.h"             // for SpriteLoader
+#include "cocosbuilder/CCNodeLoader.h"  // for NodeLoader
 
 using namespace cocos2d;
 

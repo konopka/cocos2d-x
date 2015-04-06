@@ -30,10 +30,26 @@
 #ifndef __CCCONTROL_BUTTON_H__
 #define __CCCONTROL_BUTTON_H__
 
-#include "CCControl.h"
-#include "CCInvocation.h"
-#include "base/CCMap.h"
-#include "ui/UIScale9Sprite.h"
+#include "platform/CCGL.h"              // for GLubyte
+#include <string>                       // for string
+#include <unordered_map>                // for unordered_map
+#include "CCControl.h"                  // for Control::State, Control
+#include "CCPlatformMacros.h"           // for CC_PROPERTY_PASS_BY_REF, etc
+#include "ExtensionExport.h"            // for CC_EX_DLL
+#include "GUI/CCControlExtension/../../ExtensionMacros.h"
+#include "base/CCMap.h"                 // for Map
+#include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
+#include "base/ccTypes.h"               // for Color3B
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
+
+namespace cocos2d {
+class Event;
+class Node;
+class SpriteFrame;
+class Touch;
+}
 
 NS_CC_EXT_BEGIN
 

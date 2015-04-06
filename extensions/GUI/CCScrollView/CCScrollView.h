@@ -26,11 +26,27 @@
 #ifndef __CCSCROLLVIEW_H__
 #define __CCSCROLLVIEW_H__
 
-#include "2d/CCLayer.h"
-#include "base/CCEventListenerTouch.h"
-#include "2d/CCActionTween.h"
-#include "extensions/ExtensionMacros.h"
-#include "extensions/ExtensionExport.h"
+#include <stddef.h>                     // for NULL
+#include <stdint.h>                     // for uint32_t
+#include <string>                       // for string
+#include <vector>                       // for vector
+#include "2d/CCActionTween.h"           // for ActionTweenDelegate
+#include "2d/CCLayer.h"                 // for Layer
+#include "2d/CCNode.h"                  // for Node
+#include "extensions/ExtensionExport.h"  // for CC_EX_DLL
+#include "extensions/ExtensionMacros.h"  // for NS_CC_EXT_BEGIN, etc
+#include "math/CCGeometry.h"            // for Rect, Size
+#include "math/Mat4.h"                  // for Mat4
+#include "math/Vec2.h"                  // for Vec2
+#include "renderer/CCCustomCommand.h"   // for CustomCommand
+
+namespace cocos2d { 
+class Event;
+class EventListenerTouchOneByOne;
+class Ref;
+class Renderer;
+class Touch;
+}
 
 /**
  * @addtogroup ui

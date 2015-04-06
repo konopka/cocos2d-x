@@ -26,9 +26,17 @@
  */
 
 #include "CCControlButton.h"
-#include "2d/CCLabel.h"
-#include "2d/CCAction.h"
-#include "2d/CCActionInterval.h"
+#include <new>                          // for nothrow, operator new
+#include <utility>                      // for pair
+#include "2d/CCAction.h"                // for Action
+#include "2d/CCActionInterval.h"        // for ScaleTo
+#include "2d/CCLabel.h"                 // for Label
+#include "2d/CCNode.h"                  // for Node
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "GUI/CCControlExtension/CCControlUtils.h"  // for ControlUtils
+#include "base/CCProtocols.h"           // for LabelProtocol
+#include "base/ccMacros.h"              // for CCASSERT
+#include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 using namespace std;
 

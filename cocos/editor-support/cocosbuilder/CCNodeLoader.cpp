@@ -1,10 +1,31 @@
-#include "cocos2d.h"
-
 #include "CCNodeLoader.h"
-#include "CCBSelectorResolver.h"
-#include "CCBMemberVariableAssigner.h"
-#include "CCBAnimationManager.h"
-#include "CCNode+CCBRelativePositioning.h"
+//#include <ext/alloc_traits.h>
+#include <string.h>                     // for strcmp
+#include <sys/types.h>                  // for ssize_t
+#include <memory>                       // for allocator, make_shared, etc
+#include <new>                          // for nothrow, operator new, etc
+#include <set>                          // for set, etc
+#include <unordered_map>
+#include <vector>                       // for vector
+#include "2d/CCAnimationCache.h"        // for AnimationCache
+#include "2d/CCSpriteFrame.h"           // for SpriteFrame
+#include "2d/CCSpriteFrameCache.h"      // for SpriteFrameCache
+#include "CCBAnimationManager.h"        // for CCBAnimationManager
+#include "CCBSelectorResolver.h"        // for CCBSelectorResolver
+#include "CCFileUtils.h"                // for FileUtils
+#include "CCNode+CCBRelativePositioning.h"  // for getAbsolutePosition, etc
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE_ARRAY, etc
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/CCData.h"                // for Data
+#include "base/CCDirector.h"            // for Director
+#include "base/CCVector.h"              // for Vector
+#include "base/ccMacros.h"              // for CCASSERT
+#include "cocosbuilder/CCBReader.h"     // for CCBReader, etc
+#include "deprecated/CCArray.h"         // for __Array, CCARRAY_FOREACH
+#include "deprecated/CCDeprecated.h"    // for Array, String
+#include "deprecated/CCString.h"        // for __String
+#include "renderer/CCTexture2D.h"       // for Texture2D
+#include "renderer/CCTextureCache.h"    // for TextureCache
 
 
 using namespace std;

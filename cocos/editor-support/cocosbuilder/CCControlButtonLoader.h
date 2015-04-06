@@ -1,8 +1,19 @@
 #ifndef _CCB_CCCONTROLBUTTONLOADER_H_
 #define _CCB_CCCONTROLBUTTONLOADER_H_
 
-#include "CCControlLoader.h"
+#include "CCControlLoader.h"            // for ControlLoader
+#include "cocosbuilder/CCBReader.h"     // for CCBReader (ptr only), etc
+#include "cocosbuilder/CCNodeLoader.h"
 #include "extensions//GUI/CCControlExtension/CCControlButton.h"
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
+
+namespace cocos2d { 
+class Node;
+class Size;
+class SpriteFrame;
+struct Color3B;
+}
 
 namespace cocosbuilder {
 

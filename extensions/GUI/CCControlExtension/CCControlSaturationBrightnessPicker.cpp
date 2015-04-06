@@ -30,6 +30,14 @@
  */
 
 #include "CCControlSaturationBrightnessPicker.h"
+#include "platform/CCGL.h"                    // for GLubyte
+#include <math.h>                       // for fabs, atan2f
+#include <new>                          // for nothrow, operator new
+#include "2d/CCSprite.h"                // for Sprite
+#include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
+#include "base/ccTypes.h"               // for Color3B
+#include "platform/CCStdC.h"         // for sqrtf, cosf, sinf
+#include "math/CCGeometry.h"            // for Size, Rect
 
 NS_CC_EXT_BEGIN
 
