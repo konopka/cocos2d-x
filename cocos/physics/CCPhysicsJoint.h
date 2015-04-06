@@ -25,17 +25,18 @@
 #ifndef __CCPHYSICS_JOINT_H__
 #define __CCPHYSICS_JOINT_H__
 
-#include "base/ccConfig.h"
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS
 #if CC_USE_PHYSICS
 
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 struct cpConstraint;
 
 NS_CC_BEGIN
 
-class Node;
 class PhysicsBody;
 class PhysicsWorld;
 

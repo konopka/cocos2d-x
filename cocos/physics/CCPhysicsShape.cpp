@@ -25,15 +25,15 @@
 #include "physics/CCPhysicsShape.h"
 #if CC_USE_PHYSICS
 
-#include <climits>
-#include <unordered_map>
-
-#include "chipmunk.h"
-#include "chipmunk_unsafe.h"
-
-#include "CCPhysicsBody.h"
-#include "CCPhysicsWorld.h"
-#include "CCPhysicsHelper.h"
+#include <climits>                      // for UINT_MAX
+#include <cmath>                        // for abs
+#include <new>                          // for nothrow, operator new
+#include <unordered_map>                // for unordered_map
+#include <utility>                      // for pair
+#include "CCPhysicsBody.h"              // for PhysicsBody
+#include "CCPhysicsHelper.h"            // for PhysicsHelper
+#include "chipmunk.h"                   // for cpCentroidForPoly, etc
+#include "chipmunk_unsafe.h"            // for cpSegmentShapeSetEndpoints, etc
 
 NS_CC_BEGIN
 extern const float PHYSICS_INFINITY;

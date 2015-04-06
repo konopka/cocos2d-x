@@ -24,12 +24,13 @@
 
 #include "physics/CCPhysicsJoint.h"
 #if CC_USE_PHYSICS
-#include "chipmunk.h"
-
-#include "CCPhysicsBody.h"
-#include "CCPhysicsWorld.h"
-#include "CCPhysicsHelper.h"
-#include "2d/CCNode.h"
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "CCPhysicsBody.h"              // for PhysicsBody
+#include "CCPhysicsHelper.h"            // for PhysicsHelper
+#include "CCPhysicsWorld.h"             // for PhysicsWorld, etc
+#include "base/ccMacros.h"              // for CCASSERT
+#include "chipmunk.h"                   // for cpfpow
 
 NS_CC_BEGIN
 

@@ -25,19 +25,20 @@
 #ifndef __CCPHYSICS_CONTACT_H__
 #define __CCPHYSICS_CONTACT_H__
 
-#include "base/ccConfig.h"
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS
 #if CC_USE_PHYSICS
 
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
-#include "base/CCEventListenerCustom.h"
-#include "base/CCEvent.h"
-#include "base/CCEventCustom.h"
+#include <functional>                   // for function
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/CCEventListenerCustom.h"  // for EventListenerCustom
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
 
-class PhysicsShape;
 class PhysicsBody;
+class PhysicsShape; 
 class PhysicsWorld;
 
 typedef Vec2 Vect;

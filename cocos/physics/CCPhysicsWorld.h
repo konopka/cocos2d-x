@@ -25,23 +25,30 @@
 #ifndef __CCPHYSICS_WORLD_H__
 #define __CCPHYSICS_WORLD_H__
 
-#include "base/ccConfig.h"
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS
 #if CC_USE_PHYSICS
 
-#include "base/CCVector.h"
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
-#include "physics/CCPhysicsBody.h"
-#include <list>
+#include <functional>                   // for function
+#include <list>                         // for list
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCVector.h"              // for Vector
+#include "physics/CCPhysicsBody.h"      // for PhysicsBody
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/Vec2.h"                  // for Vec2
 
 struct cpSpace;
 
 NS_CC_BEGIN
 
-class PhysicsBody;
+class DrawNode;
+class PhysicsContact;
+class PhysicsDebugDraw;
 class PhysicsJoint;
 class PhysicsShape;
-class PhysicsContact;
+class PhysicsWorld;
+class Rect;
+class Scene;
 
 typedef Vec2 Vect;
 

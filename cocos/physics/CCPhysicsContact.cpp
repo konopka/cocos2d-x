@@ -23,11 +23,14 @@
  ****************************************************************************/
 #include "CCPhysicsContact.h"
 #if CC_USE_PHYSICS
-#include "chipmunk.h"
 
-#include "CCPhysicsBody.h"
-#include "CCPhysicsHelper.h"
-#include "base/CCEventCustom.h"
+#include <new>                          // for nothrow, operator new
+#include "CCPhysicsBody.h"              // for Vect
+#include "CCPhysicsHelper.h"            // for PhysicsHelper
+#include "base/CCEventCustom.h"         // for EventCustom
+#include "base/ccMacros.h"              // for CCASSERT
+#include "chipmunk.h"                   // for CP_NO_GROUP, cpVect
+#include "physics/CCPhysicsShape.h"     // for PhysicsShape
 
 NS_CC_BEGIN
 

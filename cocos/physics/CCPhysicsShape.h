@@ -25,11 +25,15 @@
 #ifndef __CCPHYSICS_SHAPE_H__
 #define __CCPHYSICS_SHAPE_H__
 
-#include "base/ccConfig.h"
+#include "base/ccConfig.h"              // for CC_USE_PHYSICS
 #if CC_USE_PHYSICS
 
-#include "base/CCRef.h"
-#include "math/CCGeometry.h"
+#include <vector>                       // for vector
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 
 struct cpShape;
 

@@ -24,17 +24,16 @@
 #include "physics/CCPhysicsBody.h"
 #if CC_USE_PHYSICS
 
-#include <climits>
-#include <algorithm>
-#include <cmath>
-
-#include "chipmunk.h"
-
-#include "2d/CCScene.h"
-#include "CCPhysicsShape.h"
-#include "CCPhysicsJoint.h"
-#include "CCPhysicsWorld.h"
-#include "CCPhysicsHelper.h"
+#include <algorithm>                    // for find
+#include <climits>                      // for UINT_MAX
+#include <cmath>                        // for M_PI, abs
+#include <new>                          // for nothrow, operator new
+#include "2d/CCNode.h"                  // for Node
+#include "CCPhysicsHelper.h"            // for PhysicsHelper
+#include "CCPhysicsJoint.h"             // for PhysicsJoint
+#include "CCPhysicsShape.h"             // for PhysicsShape, etc
+#include "CCPhysicsWorld.h"             // for PhysicsWorld, Vect
+#include "chipmunk.h"                   // for CP_PRIVATE
 
 static inline void cpBodyUpdateVelocityWithoutGravity(cpBody *body, cpVect gravity, cpFloat damping, cpFloat dt)
 {

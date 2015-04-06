@@ -24,22 +24,25 @@
 
 #include "physics/CCPhysicsWorld.h"
 #if CC_USE_PHYSICS
-#include <algorithm>
-#include <climits>
-
-#include "chipmunk.h"
-#include "CCPhysicsBody.h"
-#include "CCPhysicsShape.h"
-#include "CCPhysicsContact.h"
-#include "CCPhysicsJoint.h"
-#include "CCPhysicsContact.h"
-#include "CCPhysicsHelper.h"
-
-#include "2d/CCDrawNode.h"
-#include "2d/CCScene.h"
-#include "base/CCDirector.h"
-#include "base/CCEventDispatcher.h"
-#include "base/CCEventCustom.h"
+#include <float.h>                      // for FLT_EPSILON
+#include <math.h>                       // for INFINITY, M_PI
+#include <algorithm>                    // for find
+#include <new>                          // for nothrow, operator new, etc
+#include <unordered_map>                // for _Node_iterator, operator!=, etc
+#include <utility>                      // for pair
+#include "2d/CCDrawNode.h"              // for DrawNode
+#include "2d/CCScene.h"                 // for Scene
+#include "CCPhysicsBody.h"              // for PhysicsBody
+#include "CCPhysicsContact.h"           // for PhysicsContact, etc
+#include "CCPhysicsHelper.h"            // for PhysicsHelper
+#include "CCPhysicsJoint.h"             // for PhysicsJoint
+#include "CCPhysicsShape.h"             // for PhysicsShape
+#include "base/CCEventDispatcher.h"     // for EventDispatcher
+#include "base/CCRef.h"                 // for Ref
+#include "base/ccMacros.h"              // for CCASSERT
+#include "base/ccTypes.h"               // for Color4F, CC_INVALID_INDEX
+#include "chipmunk.h"                   // for cpVect, cpFloat, etc
+#include "platform/CCStdC.h"            // for cosf, sinf
 
 NS_CC_BEGIN
 const float PHYSICS_INFINITY = INFINITY;
