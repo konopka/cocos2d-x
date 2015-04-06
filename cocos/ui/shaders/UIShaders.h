@@ -25,8 +25,9 @@
 #ifndef __UISHADERS_H__
 #define __UISHADERS_H__
 
-#include "platform/CCGL.h"
-#include "platform/CCPlatformMacros.h"
+#include "platform/CCGL.h"              // for GLchar
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 
 NS_CC_BEGIN
 

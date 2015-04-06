@@ -29,8 +29,9 @@
 #include "2d/CCLabel.h"                 // for Label
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "base/ccUTF8.h"
-#include "CCStdC.h"						// for MAX
+#include "platform/CCStdC.h"            // for MAX
 #include "platform/CCFileUtils.h"       // for FileUtils
 #include "ui/UIHelper.h"                // for Helper
 

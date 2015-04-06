@@ -23,9 +23,12 @@
  ****************************************************************************/
 
 #include "UILayoutComponent.h"
-#include "2d/CCNode.h"
-#include "GUIDefine.h"
-#include "UIHelper.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for string
+#include "2d/CCNode.h"                  // for Node
+#include "GUIDefine.h"                  // for __LAYOUT_COMPONENT_NAME
+#include "UIHelper.h"                   // for Helper
+#include "math/CCGeometry.h"            // for Size, Rect
 
 NS_CC_BEGIN
 

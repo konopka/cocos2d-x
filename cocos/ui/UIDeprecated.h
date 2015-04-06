@@ -26,13 +26,15 @@
 #define cocos2d_libs_UIDeprecated_h
 /// @cond DO_NOT_SHOW
 
-#include "platform/CCPlatformMacros.h"
-#include "ui/UIWidget.h"
-#include "ui/UILayout.h"
-#include "ui/UIListView.h"
-#include "ui/UILoadingBar.h"
-#include "ui/UIPageView.h"
-#include "ui/UIRichText.h"
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
+#include "ui/UILayout.h"                // for Layout, Layout::Type, etc
+#include "ui/UILayoutParameter.h"       // for RelativeLayoutParameter, etc
+#include "ui/UIListView.h"              // for ListView, ListView::Gravity, etc
+#include "ui/UILoadingBar.h"            // for LoadingBar, etc
+#include "ui/UIPageView.h"              // for PageView, etc
+#include "ui/UIRichText.h"              // for RichElement, etc
+#include "ui/UIScrollView.h"            // for ScrollView, etc
+#include "ui/UIWidget.h"                // for Widget, Widget::BrightStyle, etc
 
 NS_CC_BEGIN
 

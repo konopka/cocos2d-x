@@ -25,9 +25,11 @@
 #ifndef __LAYOUTPARMETER_H__
 #define __LAYOUTPARMETER_H__
 
-#include <string>
-#include "base/CCRef.h"
-#include "ui/GUIExport.h"
+#include <string>                       // for string
+#include "CCPlatformConfig.h"           // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
 
 /**
  * @addtogroup ui

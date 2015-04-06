@@ -30,15 +30,15 @@ THE SOFTWARE.
 #include <string>                       // for string
 #include "2d/CCNode.h"                  // for Node
 #include "2d/CCProtectedNode.h"         // for ProtectedNode
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "base/CCMap.h"                 // for Map
 #include "base/CCRef.h"                 // for Ref
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
-#include "platform/CCPlatformDefine.h"	// for CC_UNUSED_PARAM
+#include "platform/CCPlatformDefine.h"  // for CC_UNUSED_PARAM
 #include "math/CCGeometry.h"            // for Size
 #include "math/Mat4.h"                  // for Mat4
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "platform/CCPlatformMacros.h"  // for CC_DEPRECATED_ATTRIBUTE, etc
 #include "ui/GUIExport.h"               // for CC_GUI_DLL
 #include "ui/UILayoutParameter.h"       // for LayoutParameter, etc
 

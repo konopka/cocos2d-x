@@ -25,11 +25,10 @@ THE SOFTWARE.
 #include "ui/UITextAtlas.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "math/Vec2.h"                  // for Point
 
 NS_CC_BEGIN
-
-class Node;
 
 namespace ui {
     

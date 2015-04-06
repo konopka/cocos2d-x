@@ -26,6 +26,7 @@ THE SOFTWARE.
 #include <math.h>                       // for fabs
 #include <new>                          // for nothrow, operator new
 #include "2d/CCNode.h"                  // for ::kNodeOnEnter, Node
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE, etc
 #include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
 #include "base/CCTouch.h"               // for Touch
 #include "base/ccMacros.h"              // for CCASSERT
@@ -33,8 +34,6 @@ THE SOFTWARE.
 #include "math/Vec2.h"                  // for Vec2
 
 NS_CC_BEGIN
-
-class Event;
 
 namespace ui {
     

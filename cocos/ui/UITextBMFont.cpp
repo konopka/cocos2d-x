@@ -25,10 +25,9 @@ THE SOFTWARE.
 #include "ui/UITextBMFont.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for Label
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 
 NS_CC_BEGIN
-
-class Node;
 
 namespace ui {
     

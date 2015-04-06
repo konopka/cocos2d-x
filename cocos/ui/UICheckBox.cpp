@@ -25,10 +25,9 @@ THE SOFTWARE.
 #include "ui/UICheckBox.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 
 NS_CC_BEGIN
-
-class Node;
 
 namespace ui {
     

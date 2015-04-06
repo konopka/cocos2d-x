@@ -25,16 +25,16 @@
 #ifndef __UIRICHTEXT_H__
 #define __UIRICHTEXT_H__
 
-#include "platform/CCGL.h"				// for GLubyte
+#include "platform/CCGL.h"              // for GLubyte
 #include <string>                       // for string
 #include <vector>                       // for vector
-#include "platform/CCPlatformMacros.h" // for CC_SAFE_RELEASE, etc
 #include "base/CCRef.h"                 // for Ref
 #include "base/CCVector.h"              // for Vector
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for Color3B
 #include "math/CCGeometry.h"            // for Rect, Size
 #include "math/Vec2.h"                  // for Vec2
+#include "platform/CCPlatformMacros.h"  // for CC_SAFE_RELEASE, etc
 #include "ui/GUIExport.h"               // for CC_GUI_DLL
 #include "ui/UIWidget.h"                // for Widget
 

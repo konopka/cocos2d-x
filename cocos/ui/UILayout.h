@@ -31,7 +31,7 @@ THE SOFTWARE.
 #include <functional>                   // for function
 #include <string>                       // for string
 #include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
-#include "platform/CCPlatformMacros.h" // for NS_CC_BEGIN, NS_CC_END
+#include "platform/CCPlatformMacros.h"  // for NS_CC_BEGIN, NS_CC_END
 #include "base/CCVector.h"              // for Vector
 #include "base/ccConfig.h"              // for CC_CONSTRUCTOR_ACCESS
 #include "base/ccTypes.h"               // for Color3B

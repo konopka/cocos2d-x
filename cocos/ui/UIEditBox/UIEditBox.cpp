@@ -27,18 +27,16 @@
 #include <functional>                   // for _Bind
 #include <new>                          // for nothrow, operator new
 #include "2d/CCNode.h"                  // for Node, ::kNodeOnEnter
-#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, CCLOG, etc
 #include "UIEditBoxImpl.h"              // for EditBoxImpl, etc
 #include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
 #include "base/ccMacros.h"              // for CC_CALLBACK_2
 #include "math/CCAffineTransform.h"     // for RectApplyTransform
 #include "math/CCGeometry.h"            // for Size, Rect
+#include "platform/CCPlatformConfig.h"  // for CC_TARGET_PLATFORM, etc
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 NS_CC_BEGIN
-
-class Ref;
-class Renderer;
 
 namespace ui {
 

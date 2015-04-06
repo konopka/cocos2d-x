@@ -23,7 +23,13 @@
  ****************************************************************************/
 
 #include "UILayoutManager.h"
-#include "UILayout.h"
+#include <new>                          // for nothrow, operator new
+#include <string>                       // for operator==, string
+#include "2d/CCNode.h"                  // for Node
+#include "UILayout.h"                   // for LayoutProtocol
+#include "math/CCGeometry.h"            // for Size
+#include "math/Vec2.h"                  // for Vec2
+#include "ui/UILayoutParameter.h"       // for RelativeLayoutParameter, etc
 
 NS_CC_BEGIN
 

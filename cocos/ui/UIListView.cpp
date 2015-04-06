@@ -26,14 +26,13 @@ THE SOFTWARE.
 #include <stddef.h>                     // for size_t
 #include <new>                          // for nothrow, operator new
 #include "2d/CCNode.h"                  // for Node
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE, etc
 #include "base/ccMacros.h"              // for CCASSERT
 #include "math/CCGeometry.h"            // for Size
 #include "ui/UILayout.h"                // for Layout, Layout::Type, etc
 #include "ui/UILayoutParameter.h"       // for LinearLayoutParameter, etc
 
 NS_CC_BEGIN
-
-class Touch;
 
 namespace ui {
     

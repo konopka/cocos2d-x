@@ -24,10 +24,9 @@
 
 #include "ui/UIRelativeBox.h"
 #include <new>                          // for nothrow, operator new
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 
 NS_CC_BEGIN
-
-class Size;
 
 namespace ui{
     

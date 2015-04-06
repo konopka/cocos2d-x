@@ -25,9 +25,12 @@
 #ifndef __cocos2d_libs__CCLayoutManager__
 #define __cocos2d_libs__CCLayoutManager__
 
-#include "base/CCRef.h"
-#include "base/CCVector.h"
-#include "ui/GUIExport.h"
+#include <sys/types.h>                  // for ssize_t
+#include "CCPlatformMacros.h"           // for NS_CC_BEGIN, NS_CC_END
+#include "base/CCRef.h"                 // for Ref
+#include "base/CCVector.h"              // for Vector
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
+#include "ui/UIWidget.h"                // for Widget
 
 /**
  * @addtogroup ui
@@ -38,7 +41,6 @@ NS_CC_BEGIN
 namespace ui {
     
 class LayoutProtocol;
-class Widget;
 class RelativeLayoutParameter;
 
 /**

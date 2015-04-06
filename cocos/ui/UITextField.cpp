@@ -27,15 +27,11 @@ THE SOFTWARE.
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for TTFConfig, Label
 #include "2d/CCNode.h"                  // for ::kNodeOnEnter, etc
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
 #include "base/ccUTF8.h"
 #include "platform/CCFileUtils.h"       // for FileUtils
 #include "ui/UIHelper.h"                // for Helper
-
-namespace cocos2d { 
-	class Event;
-	class Touch; 
-}
 
 NS_CC_BEGIN
 

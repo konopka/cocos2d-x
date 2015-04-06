@@ -26,6 +26,7 @@ THE SOFTWARE.
 #include <new>                          // for nothrow, operator new
 #include <unordered_map>                // for _Node_iterator, operator!=, etc
 #include <utility>                      // for pair
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, etc
 #include "base/CCDirector.h"            // for Director
 #include "base/CCEventDispatcher.h"     // for EventDispatcher
 #include "base/CCEventFocus.h"          // for EventFocus
@@ -43,9 +44,6 @@ THE SOFTWARE.
 #include "ui/shaders/UIShaders.h"       // for ccUIGrayScale_frag
 
 NS_CC_BEGIN
-
-class Event;
-class Renderer;
 
 namespace ui {
     

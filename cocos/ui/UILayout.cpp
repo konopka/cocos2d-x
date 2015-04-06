@@ -31,11 +31,12 @@ THE SOFTWARE.
 #include "2d/CCNode.h"                  // for Node, ::kNodeOnEnter
 #include "2d/CCProtectedNode.h"         // for ProtectedNode
 #include "CCGLView.h"                   // for GLView
+#include "CCPlatformMacros.h"           // for CCLOG, CC_SAFE_DELETE, etc
 #include "base/CCDirector.h"            // for Director, MATRIX_STACK_TYPE, etc
 #include "base/CCScriptSupport.h"       // for ScriptEngineManager, etc
 #include "base/ccMacros.h"              // for CCASSERT, CC_CALLBACK_2, etc
 #include "math/CCAffineTransform.h"     // for AffineTransform
-#include "math/Vec2.h"					// for Vec2::operator-
+#include "math/Vec2.h"                  // for Vec2, Vec2::ZERO
 #include "renderer/CCGLProgram.h"       // for GLProgram, etc
 #include "renderer/CCGLProgramCache.h"  // for GLProgramCache
 #include "renderer/CCRenderer.h"        // for Renderer

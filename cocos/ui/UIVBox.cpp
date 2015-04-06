@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "ui/UIVBox.h"
+#include <new>                          // for nothrow, operator new
 
 NS_CC_BEGIN
 

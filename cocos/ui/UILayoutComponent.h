@@ -24,10 +24,16 @@ THE SOFTWARE.
 
 #ifndef __cocos2d_libs__LayoutComponent__
 #define __cocos2d_libs__LayoutComponent__
-#include "2d/CCComponent.h"
-#include "ui/GUIExport.h"
+#include "2d/CCComponent.h"             // for Component
+#include "CCPlatformMacros.h"           // for CREATE_FUNC, NS_CC_BEGIN, etc
+#include "math/Vec2.h"                  // for Point, Vec2
+#include "ui/GUIExport.h"               // for CC_GUI_DLL
 
 NS_CC_BEGIN
+
+class Node;
+class Size;
+
 /**
  * @addtogroup ui
  * @{

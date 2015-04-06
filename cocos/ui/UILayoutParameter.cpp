@@ -23,7 +23,7 @@
  ****************************************************************************/
 
 #include "ui/UILayoutParameter.h"
-#include "ui/UILayout.h"
+#include <new>                          // for nothrow, operator new
 
 NS_CC_BEGIN
 

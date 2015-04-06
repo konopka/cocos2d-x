@@ -25,13 +25,12 @@ THE SOFTWARE.
 #include "ui/UILoadingBar.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCSprite.h"                // for Sprite
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "math/Vec2.h"                  // for Vec2
 #include "ui/UIHelper.h"                // for Helper
 #include "ui/UIScale9Sprite.h"          // for Scale9Sprite
 
 NS_CC_BEGIN
-
-class Node;
 
 namespace ui {
     

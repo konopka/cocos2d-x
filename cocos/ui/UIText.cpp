@@ -25,11 +25,10 @@ THE SOFTWARE.
 #include "ui/UIText.h"
 #include <new>                          // for nothrow, operator new
 #include "2d/CCLabel.h"                 // for Label, TTFConfig
+#include "CCPlatformMacros.h"           // for CC_SAFE_DELETE, NS_CC_BEGIN, etc
 #include "platform/CCFileUtils.h"       // for FileUtils
 
 NS_CC_BEGIN
-
-class Node;
 
 namespace ui {
 
