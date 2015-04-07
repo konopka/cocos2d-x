@@ -1,4 +1,5 @@
 #include "CCBKeyframe.h"
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
 
 using namespace cocos2d;
 

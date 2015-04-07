@@ -1,4 +1,5 @@
 #include "CCBSequenceProperty.h"
+#include "cocosbuilder/CCBKeyframe.h"   // for CCBKeyframe
 
 using namespace cocos2d;
 using namespace std;

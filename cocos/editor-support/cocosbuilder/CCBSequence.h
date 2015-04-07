@@ -1,10 +1,10 @@
 #ifndef __CCB_CCSEQUENCE_H__
 #define __CCB_CCSEQUENCE_H__
 
-#include <string>
-
-#include "base/CCRef.h"
-#include "CCBSequenceProperty.h"
+#include <string>                       // for string
+#include "base/CCRef.h"                 // for Ref
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "cocosbuilder/CCBSequenceProperty.h"
 
 namespace cocosbuilder {
 

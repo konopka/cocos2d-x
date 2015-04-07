@@ -1,4 +1,6 @@
 #include "CCBSequence.h"
+#include "CCBSequenceProperty.h"        // for CCBSequenceProperty
+#include "CCPlatformMacros.h"           // for CC_SAFE_RELEASE, etc
 
 using namespace cocos2d;
 using namespace std;

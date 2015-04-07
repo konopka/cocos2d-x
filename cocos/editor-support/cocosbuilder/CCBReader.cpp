@@ -16,6 +16,7 @@
 #include "CCNodeLoader.h"               // for NodeLoader
 #include "CCNodeLoaderLibrary.h"        // for NodeLoaderLibrary
 #include "CCNodeLoaderListener.h"       // for NodeLoaderListener
+#include "CCPlatformMacros.h"           // for CC_SAFE_RETAIN, etc
 #include "GUI/CCControlExtension/CCControl.h"  // for Control, etc
 #include "base/CCConsole.h"             // for log
 #include "base/CCData.h"                // for Data

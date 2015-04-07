@@ -1,4 +1,6 @@
 #include "CCBFileLoader.h"
+#include <string.h>                     // for strcmp
+#include "cocosbuilder/CCNodeLoader.h"  // for NodeLoader
 
 using namespace cocos2d;
 

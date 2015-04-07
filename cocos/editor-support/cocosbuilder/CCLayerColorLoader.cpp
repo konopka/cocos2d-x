@@ -1,4 +1,7 @@
 #include "CCLayerColorLoader.h"
+#include <string.h>                     // for strcmp
+#include "base/ccTypes.h"               // for BlendFunc, Color3B
+#include "cocosbuilder/CCLayerLoader.h"  // for LayerLoader
 
 using namespace cocos2d;
 

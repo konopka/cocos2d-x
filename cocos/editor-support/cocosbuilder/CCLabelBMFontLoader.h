@@ -1,10 +1,16 @@
 #ifndef _CCB_CCLABELBMFONTLOADER_H_
 #define _CCB_CCLABELBMFONTLOADER_H_
 
-#include "base/CCRef.h"
-#include "2d/CCLabel.h"
-
+#include "2d/CCLabel.h"                 // for Label
 #include "CCNodeLoader.h"
+#include "cocosbuilder/CCBReader.h"     // for CCBReader (ptr only), etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+
+namespace cocos2d { 
+class Node;
+struct BlendFunc;
+struct Color3B;
+}
 
 namespace cocosbuilder {
 

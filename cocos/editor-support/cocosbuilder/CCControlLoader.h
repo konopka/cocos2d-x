@@ -2,7 +2,10 @@
 #define _CCB_CCCONTROLLOADER_H_
 
 #include "CCNodeLoader.h"
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
 #include "extensions/GUI/CCControlExtension/CCControl.h"
+
+namespace cocos2d { class Node; }
 
 namespace cocosbuilder {
 

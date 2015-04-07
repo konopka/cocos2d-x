@@ -2,6 +2,9 @@
 #define _CCB_CCBFILELOADER_H_
 
 #include "CCNodeLoader.h"
+#include "cocosbuilder/CCBReader.h"     // for CCBFile, etc
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+#include "2d/CCNode.h"                  // for Node
 
 namespace cocosbuilder {
 

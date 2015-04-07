@@ -1,7 +1,17 @@
 #ifndef _CCB_CCLAYERCOLORLOADER_H_
 #define _CCB_CCLAYERCOLORLOADER_H_
 
-#include "CCLayerLoader.h"
+#include "2d/CCLayer.h"                 // for LayerColor
+#include "CCLayerLoader.h"              // for LayerLoader
+#include "cocosbuilder/CCBReader.h"     // for CCBReader (ptr only), etc
+#include "cocosbuilder/CCNodeLoader.h"
+#include "platform/CCPlatformDefine.h"  // for CC_DLL
+
+namespace cocos2d { 
+class Node;
+struct BlendFunc;
+struct Color3B; 
+}
 
 namespace cocosbuilder {
 

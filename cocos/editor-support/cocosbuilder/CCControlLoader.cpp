@@ -1,4 +1,7 @@
 #include "CCControlLoader.h"
+#include <string.h>                     // for strcmp
+#include "GUI/CCControlExtension/CCControl.h"  // for Control
+#include "cocosbuilder/CCNodeLoader.h"  // for BlockControlData, etc
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

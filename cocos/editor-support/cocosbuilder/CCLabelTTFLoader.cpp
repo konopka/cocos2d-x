@@ -1,4 +1,8 @@
 #include "CCLabelTTFLoader.h"
+#include <string.h>                     // for strcmp
+#include "base/ccTypes.h"               // for BlendFunc, Color3B, etc
+#include "cocosbuilder/CCNodeLoader.h"  // for NodeLoader
+#include "math/CCGeometry.h"            // for Size
 
 using namespace cocos2d;
 
